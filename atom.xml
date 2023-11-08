@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Ilosyi.github.io</id>
     <title>Gridea</title>
-    <updated>2023-11-08T01:26:10.045Z</updated>
+    <updated>2023-11-08T01:30:48.505Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Ilosyi.github.io"/>
     <link rel="self" href="https://Ilosyi.github.io/atom.xml"/>
-    <subtitle>你好，这里是losyi的博客</subtitle>
+    <subtitle>losyi的博客</subtitle>
     <logo>https://Ilosyi.github.io/images/avatar.png</logo>
     <icon>https://Ilosyi.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Gridea</rights>

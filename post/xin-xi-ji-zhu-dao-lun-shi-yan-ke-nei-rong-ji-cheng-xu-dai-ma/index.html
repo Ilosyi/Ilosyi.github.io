@@ -7,7 +7,7 @@
 <meta name="description" content="">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://Ilosyi.github.io/favicon.ico?v=1700015897031">
+<link rel="shortcut icon" href="https://Ilosyi.github.io/favicon.ico?v=1700053373241">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -118,69 +118,82 @@
 <p>（2）针对教师提问进行回答，讲解程序实现主要思路；（并不会）</p>
 <p>（3）根据教师要求，改变输入条件，重新运行程序，观察运行结果(并不会)</p>
 <h4 id="解">解：</h4>
-<p>/<em>代码</em>/<br>
-#include &lt;stdio.h&gt;<br>
-#include &lt;stdlib.h&gt;<br>
-void convertAndPrint(char* hexadecimal, int Base) {<br>
-long int d;<br>
-if (sscanf_s(hexadecimal, &quot;%lx&quot;, &amp;d) == 1)//转换为10进制数字<br>
-{<br>
-printf(&quot;输出(%d进制): &quot;, Base);<br>
-if (Base == 10) {<br>
-printf(&quot;%ld\n&quot;, d);<br>
-}<br>
-else if (Base &gt;= 2 &amp;&amp; Base &lt;= 12) {<br>
-long int quo = d;<br>
-int i = 0;<br>
-char result[100];<br>
-while (quo &gt; 0)<br>
-{                                      //反复相除<br>
-int r = quo % Base;<br>
-result[i] = (r &lt; 10) ? ('0' + r)<br>
-: ('A' + r - 10);<br>
-i++;<br>
-quo /= Base;<br>
-}<br>
-for (int j = i - 1; j &gt;= 0; j--) //打印结果<br>
-{<br>
-printf(&quot;%c&quot;, result[j]);<br>
-}<br>
-printf(&quot;\n&quot;);<br>
-}<br>
-}<br>
-else {<br>
-printf(&quot;输入错误\n&quot;);<br>
-}<br>
-}<br>
-int main() {<br>
-char input[20];<br>
-int Base;<br>
-printf(&quot;输入(16进制)：&quot;);<br>
-if (scanf_s(&quot;%19s&quot;, input, sizeof(input)) != 1) {<br>
-printf(&quot;输入错误\n&quot;);<br>
-return 1;<br>
-}<br>
-char input2[30];//删除空格后的字符串<br>
-for (int i = 0; input[i] != '\0'; i++)<br>
-{<br>
-if (input[i] != ' ')<br>
-{<br>
-input2[i] = input[i];<br>
-}<br>
-else<br>
-{<br>
-i--;<br>
-}<br>
-}<br>
-printf(&quot;输入目标进制（2-12）：&quot;);<br>
-if (scanf_s(&quot;%d&quot;, &amp;Base) != 1 || Base &lt; 2 || Base &gt; 12) {<br>
-printf(&quot;目标进制不在范围内\n&quot;);<br>
-return 1;<br>
-}<br>
-convertAndPrint(input, Base);<br>
-return 0;<br>
-}<br>
-注：助教测试时考虑到大家水平，可以不考虑输入有效性检查，可使用一些已有的库函数。❤️</p>
+<p>/<em>代码</em>/</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+// 函数声明，将十六进制数转换为指定进制并打印
+void convertAndPrint(char* hexadecimal, int Base);
+int main() {
+char input[20];
+int Base;
+
+// 用户输入十六进制数
+printf(&quot;输入(16进制)：&quot;);
+if (scanf_s(&quot;%19s&quot;, input, sizeof(input)) != 1) {
+printf(&quot;输入错误\n&quot;);
+return 1;
+}
+
+char input2[30]; // 删除空格后的字符串
+for (int i = 0; input[i] != '\0'; i++) {
+if (input[i] != ' ') {
+        input2[i] = input[i];
+    }
+    else {
+        i--;
+    }
+}
+
+// 用户输入目标进制
+printf(&quot;输入目标进制（2-12）：&quot;);
+if (scanf_s(&quot;%d&quot;, &amp;Base) != 1 || Base &lt; 2 || Base &gt; 12) {
+    printf(&quot;目标进制不在范围内\n&quot;);
+    return 1;
+}
+
+// 调用函数进行转换并打印结果
+convertAndPrint(input, Base);
+
+return 0;
+}
+
+// 十六进制数转换为指定进制并打印
+void convertAndPrint(char* hexadecimal, int Base) {
+long int d;
+// 将十六进制数转换为十进制数字
+if (sscanf_s(hexadecimal, &quot;%lx&quot;, &amp;d) == 1) {
+printf(&quot;输出(%d进制): &quot;, Base);
+
+if (Base == 10) {
+        printf(&quot;%ld\n&quot;, d);
+    }
+    else if (Base &gt;= 2 &amp;&amp; Base &lt;= 12) {
+        long int quo = d;
+        int i = 0;
+        char result[100];
+
+        // 反复相除，将余数保存在result数组中
+        while (quo &gt; 0) {
+            int r = quo % Base;
+            result[i] = (r &lt; 10) ? ('0' + r) : ('A' + r - 10);
+            i++;
+            quo /= Base;
+        }
+
+        // 打印结果
+        for (int j = i - 1; j &gt;= 0; j--) {
+            printf(&quot;%c&quot;, result[j]);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+else {
+    printf(&quot;输入错误\n&quot;);
+}
+}
+</code></pre>
+<p>注：助教测试时考虑到大家水平，可以不考虑输入有效性检查，可使用一些已有的库函数。❤️</p>
 
             </div>
           </article>
@@ -204,7 +217,7 @@ return 0;<br>
 
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://Ilosyi.github.io/images/avatar.png?v=1700015897031" class="no-responsive avatar">
+    <img src="https://Ilosyi.github.io/images/avatar.png?v=1700053373241" class="no-responsive avatar">
     <div class="text-muted"></div>
     <div class="social-container">
       
@@ -226,6 +239,12 @@ return 0;<br>
     </div>
     <div class="row">
       <ul>
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/er-wei-shu-zu-ba-huang-hou-yu-mi-gong-wen-ti/">二维数组：八皇后 幻方 迷宫问题</a>
+            </li>
+          
         
           
             <li>
@@ -264,7 +283,7 @@ return 0;<br>
           大一
         </a>
       
-        <a href="https://Ilosyi.github.io/tag/ma9iK4-3D/" class="badge secondary">
+        <a href="https://Ilosyi.github.io/tag/ma9iK4-3D/" class="badge ">
           Gridea
         </a>
       

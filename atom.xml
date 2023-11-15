@@ -2,13 +2,261 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Ilosyi.github.io</id>
     <title>losyi的博客</title>
-    <updated>2023-11-15T02:50:49.949Z</updated>
+    <updated>2023-11-15T13:02:55.894Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Ilosyi.github.io"/>
     <link rel="self" href="https://Ilosyi.github.io/atom.xml"/>
     <logo>https://Ilosyi.github.io/images/avatar.png</logo>
     <icon>https://Ilosyi.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, losyi的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[二维数组：八皇后 幻方 迷宫问题]]></title>
+        <id>https://Ilosyi.github.io/post/er-wei-shu-zu-ba-huang-hou-yu-mi-gong-wen-ti/</id>
+        <link href="https://Ilosyi.github.io/post/er-wei-shu-zu-ba-huang-hou-yu-mi-gong-wen-ti/">
+        </link>
+        <updated>2023-11-15T03:02:28.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="一-数组知识回顾">一、数组知识回顾</h1>
+<h2 id="一维数组"><strong>一维数组</strong></h2>
+<figure data-type="image" tabindex="1"><img src="https://Ilosyi.github.io/post-images/1700017396788.png" alt="" loading="lazy"></figure>
+<h2 id="二维数组"><strong>二维数组</strong></h2>
+<figure data-type="image" tabindex="2"><img src="https://Ilosyi.github.io/post-images/1700017554841.png" alt="" loading="lazy"></figure>
+<h1 id="二-八皇后问题">二、八皇后问题</h1>
+<p>八皇后问题是国际西洋棋棋手马克 斯·贝瑟尔于1848年提出： 在8×8格的国际象棋上摆放八个皇 后，使其不能互相攻击，即任意两个皇 后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。<br>
+高斯认为有76种方案。1854年在柏林的 象棋杂志上不同的作者发表了40种不同的解 ，后来有人用图论的方法解出92种结果。 计算机发明后，有多种计算机语言可以 解决此问题。</p>
+<h4 id="数据结构二维数组一维数组"><strong>数据结构：二维数组？一维数组？</strong></h4>
+<h3 id="方案一二维数组"><strong>方案一：二维数组</strong></h3>
+<p><img src="https://Ilosyi.github.io/post-images/1700018201814.png" alt="" loading="lazy"><br>
+用一个8行8列的二维数组存储8*8的国际 象棋棋盘，数组元素初值为0；0-代表没有放皇后 1-代表放置了皇后。<br>
+<code>int board[MAX_N][MAX_N];</code><br>
+例如：<br>
+chess[0][5]=1;//在第0行第5列放一个皇后<br>
+chess[1][1]=1;//在第1行第1列放一个皇后</p>
+<h3 id="方案二一维数组"><strong>方案二：一维数组</strong></h3>
+<p>用下标代表行，值代表列。只要数组每个值各不相同，就说明不在同一行和列，从而简化了冲突的判断，只需要考虑是否<strong>对角线冲突</strong>。<br>
+<img src="https://Ilosyi.github.io/post-images/1700050927644.png" alt="" loading="lazy"><br>
+实际上等价于行号差与列号差的绝对值相同。因此可这样进行冲突检测：<br>
+<code>if (queen[i] == col || abs(queen[i] - col) == abs(i - row))</code><br>
+那么如何摆放呢？</p>
+<h1 id="三-枚举方法">三、枚举方法</h1>
+<p>最适合计算机也一定不会遗漏任何一种摆放的方法！摆放方式共有：8×8 ×8 ×8 ×8 ×8 ×8 ×8 = 8^8<br>
+用八层for循环枚举。<br>
+分析：同一列没有必要再摆放，若第n个皇后与前面冲突，则不用进行n+1个皇后的摆放，而应回到上一步。（回溯思想）</p>
+<pre><code>void queen() {
+int chess[8], i; // chess数组存放皇后的摆放，i用于输出皇后的循环变量
+
+for (chess[0] = 0; chess[0] &lt;= 7; chess[0]++) // 对应第0行的8种摆放
+    for (chess[1] = 0; chess[1] &lt;= 7; chess[1]++)
+        for (chess[2] = 0; chess[2] &lt;= 7; chess[2]++)
+            for (chess[3] = 0; chess[3] &lt;= 7; chess[3]++)
+                for (chess[4] = 0; chess[4] &lt;= 7; chess[4]++)
+                    for (chess[5] = 0; chess[5] &lt;= 7; chess[5]++)
+                        for (chess[6] = 0; chess[6] &lt;= 7; chess[6]++)
+                            for (chess[7] = 0; chess[7] &lt;= 7; chess[7]++)
+                                if (check(chess, 8) == 1) // 如果不存在冲突则输出这种摆放方案
+                                    for (i = 0; i &lt; 8; i++) // 输出每一行皇后的位置
+                                        printf(&quot;%d &quot;, chess[i]);}
+</code></pre>
+<p>这段代码通过嵌套的循环尝试所有可能的皇后摆放方式。对于每种摆放方式，它调用名为 check 的函数，检查是否存在皇后之间的冲突（即是否存在在同一行、同一列或对角线上）。如果没有冲突，它就打印出每一行皇后的位置。</p>
+<h1 id="四-回溯方法"><strong>四、回溯方法</strong></h1>
+<pre><code>void queen() {
+int chess[8], i; // chess存放皇后的摆放 i用于输出皇后的循环变量
+
+// 循环尝试每一行的摆放方式
+for (chess[0] = 0; chess[0] &lt;= 7; chess[0]++) {
+    // 对应第0行的8种摆放
+    for (chess[1] = 0; chess[1] &lt;= 7; chess[1]++) {
+        // 如果存在冲突，则看下一种摆放
+        if (check(chess, 2) == 0)
+            continue;
+        else
+            // 循环尝试第2行的摆放方式
+            for (chess[2] = 0; chess[2] &lt;= 7; chess[2]++) {
+                // 如果存在冲突，则看下一种摆放
+                if (check(chess, 3) == 0)
+                    continue;
+                else
+                    // 循环尝试第3行的摆放方式
+                    // ... （以此类推，一直到第7行）
+                    for (chess[7] = 0; chess[7] &lt;= 7; chess[7]++) {
+                        // 如果第8个皇后和前面7个冲突则看下一种摆放，否则输出这种摆放方式
+                        if (check(chess, 8) == 0)
+                            continue;
+                        else
+                            // 输出当前的摆放方式
+                            for (i = 0; i &lt;= 7; i++)
+                                print(chess[i]);
+                    }
+            }
+    }
+}
+}
+// 函数check用于检查当前皇后的摆放是否与前面的皇后有冲突
+int check(int a[], int n) {
+// 实现检查的逻辑，如果有冲突返回0，否则返回1}
+
+// 函数print用于输出当前皇后的摆放
+void print(int queenPosition) {
+// 输出当前皇后的位置}
+</code></pre>
+<p>八重for循环 只能解决8皇后，如果变成N皇后呢？<br>
+有一种思路：<br>
+放下第1个皇后，还需要放下N-1个皇后；<br>
+放下第2个皇后，还需要放下N-2个皇后；<br>
+放下了第N个皇后，结束了(递归出口)<br>
+递归的回溯算法分析：实际上是一个DFS算法<br>
+<img src="https://Ilosyi.github.io/post-images/1700052099457.png" alt="" loading="lazy"><br>
+最终代码（一维数组实现）:</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include&lt;math.h&gt;
+#define N 4
+int queen[N];
+bool isSafe(int row, int col) {
+// 检查同一列是否有皇后
+for (int i = 0; i &lt; row; i++) {
+    if (queen[i] == col || abs(queen[i] - col) == abs(i - row)) {
+        return false;
+    }
+}
+return true;}
+
+int placeQueen(int row) {
+int count = 0;
+if (row == N) {
+    // 所有皇后都已经放置，找到一个解法       
+    return 1;
+}
+
+for (int col = 0; col &lt; N; col++) {
+    if (isSafe(row, col)) {
+        // 在当前位置放置皇后
+        queen[row] = col;
+        // 递归放置下一行的皇后
+        count+=placeQueen(row + 1);
+        
+    }
+}
+return count;}
+int main()
+{
+int count=placeQueen(0);
+printf(&quot;%d&quot;, count);
+return 0;
+}
+</code></pre>
+<h1 id="五-幻方问题"><strong>五、幻方问题</strong></h1>
+<p>幻方是指将若干个自然数排成纵横各为若干个数的正方形，使在同一行、同一列和同一对角线上的几个数的和都相等。此时我们只考虑奇幻方问题。可见：https://www.luogu.com.cn/problem/P2615<br>
+简单来说就是将1放在第一行的中间，下一个数放在上一个数“右上角”，若已被占，放在正下方。<br>
+例如，三阶幻方为：<br>
+8 1 6<br>
+3 5 7<br>
+4 9 2</p>
+<pre><code>#include&lt;stdio.h&gt;
+int n, a[40][40], x, y;
+int main() {
+scanf(&quot;%d&quot;, &amp;n);
+x = 1, y = (n + 1) / 2;
+for (int i = 1; i &lt;= n * n; i++) {
+	a[x][y] = i;
+	if (!a[(x - 2 + n) % n + 1][y % n + 1])
+	{
+		x = (x - 2 + n) % n + 1, y = y % n + 1;
+	}
+	else x = x % n + 1;//数学运算
+}
+for (int i = 1; i &lt;= n; i++) {
+	for (int j = 1; j &lt;= n; j++) {
+		printf(&quot;%d &quot;, a[i][j]);
+	}
+	printf(&quot;\n&quot;);
+}
+}
+</code></pre>
+<p>以下是if法题解，采用了动态内存分配。</p>
+<pre><code>#include &lt;stdio.h&gt; 
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+int n;
+scanf(&quot;%d&quot;, &amp;n);
+
+if (n &lt;= 0)
+{
+    printf(&quot;错误的输入。请输入一个正整数。&quot;);
+    return 1;
+}
+
+int** a = (int**)malloc(sizeof(int*) * n);
+if (a == NULL)
+{
+    printf(&quot;内存分配失败&quot;);
+    return 1;
+}
+
+for (int i = 0; i &lt; n; i++)
+{
+    a[i] = (int*)malloc(sizeof(int) * n);
+    if (a[i] == NULL)
+    {
+        printf(&quot;内存分配失败&quot;);
+        return 1;
+    }
+}
+int i = 0;
+int j = (n - 1) / 2;
+a[i][j] = 1;
+for (int k = 2; k &lt;= n * n; k++)
+{
+    if (i == 0 &amp;&amp; j != n - 1)
+    {
+        i = n - 1;
+        j++;
+    }
+    else if (i != 0 &amp;&amp; j == n - 1)
+    {
+        i--;
+        j = 0;
+    }
+    else if (i == 0 &amp;&amp; j == n - 1)
+    {
+        i++;
+    }
+    else if (i != 0 &amp;&amp; j != n - 1)
+    {
+        if (i-1&gt;=0&amp;&amp;i-1&lt;n&amp;&amp;j+1&gt;=0&amp;&amp;j&lt;n&amp;&amp;(!(a[i - 1][j + 1] &gt;= 1 &amp;&amp; a[i - 1][j + 1] &lt;= n * n)))
+        {
+            i--;
+            j++;
+        }
+        else
+        {
+            i++;
+        }
+    }
+    a[i][j] = k;
+}
+
+for (int i = 0; i &lt; n; i++)
+{
+    for (int j = 0; j &lt; n; j++)
+    {
+        printf(&quot;%d &quot;, a[i][j]);
+    }
+    printf(&quot;\n&quot;);
+}
+
+for (int i = 0; i &lt; n; i++)
+{
+    free(a[i]);
+}
+free(a);
+
+return 0;}
+</code></pre>
+<h1 id="六-迷宫问题"><strong>六、迷宫问题</strong></h1>
+<p>迷宫问题显然无法用一维数组解决，因为同一行不只有一个“皇后”。采用DFS思想，先试探一个方向，若走不通，再返回上一步试探其它方向。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[信息技术导论实验课内容及程序代码]]></title>
         <id>https://Ilosyi.github.io/post/xin-xi-ji-zhu-dao-lun-shi-yan-ke-nei-rong-ji-cheng-xu-dai-ma/</id>
@@ -45,69 +293,82 @@
 <p>（2）针对教师提问进行回答，讲解程序实现主要思路；（并不会）</p>
 <p>（3）根据教师要求，改变输入条件，重新运行程序，观察运行结果(并不会)</p>
 <h4 id="解">解：</h4>
-<p>/<em>代码</em>/<br>
-#include &lt;stdio.h&gt;<br>
-#include &lt;stdlib.h&gt;<br>
-void convertAndPrint(char* hexadecimal, int Base) {<br>
-long int d;<br>
-if (sscanf_s(hexadecimal, &quot;%lx&quot;, &amp;d) == 1)//转换为10进制数字<br>
-{<br>
-printf(&quot;输出(%d进制): &quot;, Base);<br>
-if (Base == 10) {<br>
-printf(&quot;%ld\n&quot;, d);<br>
-}<br>
-else if (Base &gt;= 2 &amp;&amp; Base &lt;= 12) {<br>
-long int quo = d;<br>
-int i = 0;<br>
-char result[100];<br>
-while (quo &gt; 0)<br>
-{                                      //反复相除<br>
-int r = quo % Base;<br>
-result[i] = (r &lt; 10) ? ('0' + r)<br>
-: ('A' + r - 10);<br>
-i++;<br>
-quo /= Base;<br>
-}<br>
-for (int j = i - 1; j &gt;= 0; j--) //打印结果<br>
-{<br>
-printf(&quot;%c&quot;, result[j]);<br>
-}<br>
-printf(&quot;\n&quot;);<br>
-}<br>
-}<br>
-else {<br>
-printf(&quot;输入错误\n&quot;);<br>
-}<br>
-}<br>
-int main() {<br>
-char input[20];<br>
-int Base;<br>
-printf(&quot;输入(16进制)：&quot;);<br>
-if (scanf_s(&quot;%19s&quot;, input, sizeof(input)) != 1) {<br>
-printf(&quot;输入错误\n&quot;);<br>
-return 1;<br>
-}<br>
-char input2[30];//删除空格后的字符串<br>
-for (int i = 0; input[i] != '\0'; i++)<br>
-{<br>
-if (input[i] != ' ')<br>
-{<br>
-input2[i] = input[i];<br>
-}<br>
-else<br>
-{<br>
-i--;<br>
-}<br>
-}<br>
-printf(&quot;输入目标进制（2-12）：&quot;);<br>
-if (scanf_s(&quot;%d&quot;, &amp;Base) != 1 || Base &lt; 2 || Base &gt; 12) {<br>
-printf(&quot;目标进制不在范围内\n&quot;);<br>
-return 1;<br>
-}<br>
-convertAndPrint(input, Base);<br>
-return 0;<br>
-}<br>
-注：助教测试时考虑到大家水平，可以不考虑输入有效性检查，可使用一些已有的库函数。❤️</p>
+<p>/<em>代码</em>/</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+// 函数声明，将十六进制数转换为指定进制并打印
+void convertAndPrint(char* hexadecimal, int Base);
+int main() {
+char input[20];
+int Base;
+
+// 用户输入十六进制数
+printf(&quot;输入(16进制)：&quot;);
+if (scanf_s(&quot;%19s&quot;, input, sizeof(input)) != 1) {
+printf(&quot;输入错误\n&quot;);
+return 1;
+}
+
+char input2[30]; // 删除空格后的字符串
+for (int i = 0; input[i] != '\0'; i++) {
+if (input[i] != ' ') {
+        input2[i] = input[i];
+    }
+    else {
+        i--;
+    }
+}
+
+// 用户输入目标进制
+printf(&quot;输入目标进制（2-12）：&quot;);
+if (scanf_s(&quot;%d&quot;, &amp;Base) != 1 || Base &lt; 2 || Base &gt; 12) {
+    printf(&quot;目标进制不在范围内\n&quot;);
+    return 1;
+}
+
+// 调用函数进行转换并打印结果
+convertAndPrint(input, Base);
+
+return 0;
+}
+
+// 十六进制数转换为指定进制并打印
+void convertAndPrint(char* hexadecimal, int Base) {
+long int d;
+// 将十六进制数转换为十进制数字
+if (sscanf_s(hexadecimal, &quot;%lx&quot;, &amp;d) == 1) {
+printf(&quot;输出(%d进制): &quot;, Base);
+
+if (Base == 10) {
+        printf(&quot;%ld\n&quot;, d);
+    }
+    else if (Base &gt;= 2 &amp;&amp; Base &lt;= 12) {
+        long int quo = d;
+        int i = 0;
+        char result[100];
+
+        // 反复相除，将余数保存在result数组中
+        while (quo &gt; 0) {
+            int r = quo % Base;
+            result[i] = (r &lt; 10) ? ('0' + r) : ('A' + r - 10);
+            i++;
+            quo /= Base;
+        }
+
+        // 打印结果
+        for (int j = i - 1; j &gt;= 0; j--) {
+            printf(&quot;%c&quot;, result[j]);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+else {
+    printf(&quot;输入错误\n&quot;);
+}
+}
+</code></pre>
+<p>注：助教测试时考虑到大家水平，可以不考虑输入有效性检查，可使用一些已有的库函数。❤️</p>
 ]]></content>
     </entry>
     <entry>

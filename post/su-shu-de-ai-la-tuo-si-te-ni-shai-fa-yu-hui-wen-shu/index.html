@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>信息技术导论实验课内容及程序代码 | losyi的博客</title>
+<title>素数的埃拉托斯特尼筛法与回文数 | losyi的博客</title>
 <meta name="description" content="">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -87,12 +87,12 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>信息技术导论实验课内容及程序代码</h1>
+            <h1>素数的埃拉托斯特尼筛法与回文数</h1>
             <p class="article-meta">
-              2023-11-08
+              2023-11-19
               
-                <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge secondary">
-                  报告/作业
+                <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge secondary">
+                  C语言学习笔记（万老师）
                 </a>
               
                 <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge secondary">
@@ -102,140 +102,88 @@
             </p>
             
             <div class="post-content">
-              <p><ul class="markdownIt-TOC">
-<li><a href="#%E5%AE%9E%E9%AA%8C%E4%B8%80">实验一</a>
-<ul>
-<li><a href="#1-%E5%BC%80%E6%9C%BA%E8%BF%9B%E5%85%A5%E5%9B%BA%E4%BB%B6%E6%9F%A5%E7%9C%8Bbios">1 开机进入固件查看（BIOS）</a></li>
-<li><a href="#2-%E9%94%AE%E7%9B%98%E6%8C%87%E6%B3%95%E7%BB%83%E4%B9%A0">2 键盘指法练习</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C">实验二</a>
-<ul>
-<li><a href="#1-windos%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C">1 windos常用命令操作</a></li>
-<li><a href="#2-%E7%BD%91%E7%BB%9C%E7%9A%84%E5%85%B4%E8%B5%B7%E8%A7%86%E9%A2%91">2 网络的兴起（视频）</a></li>
-<li><a href="#3-%E7%A8%8B%E5%BA%8F%E4%BD%9C%E4%B8%9A">3 程序作业</a>
-<ul>
-<li><a href="#1-%E7%AE%80%E8%BF%B0">1 简述</a></li>
-<li><a href="#2-%E7%A8%8B%E5%BA%8F%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82%E8%AF%B4%E6%98%8E">2 程序功能需求说明</a>
-<ul>
-<li><a href="#21-%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E8%A6%81%E6%B1%82">2.1 基本功能要求</a></li>
-<li><a href="#22-%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">2.2 补充说明</a></li>
-<li><a href="#3-%E7%8E%B0%E5%9C%BA%E6%A3%80%E6%9F%A5%E8%A6%81%E6%B1%82">3 现场检查要求</a></li>
-<li><a href="#%E8%A7%A3">解：</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</p>
-<h1 id="实验一">实验一</h1>
-<h2 id="1-开机进入固件查看bios">1 开机进入固件查看（BIOS）</h2>
-<h2 id="2-键盘指法练习">2 键盘指法练习</h2>
-<p>金山打字通，启动！<br>
-测试时会从书上找一句话让你打字。</p>
-<h1 id="实验二">实验二</h1>
-<h2 id="1-windos常用命令操作">1 windos常用命令操作</h2>
-<h2 id="2-网络的兴起视频">2 网络的兴起（视频）</h2>
-<h2 id="3-程序作业">3 程序作业</h2>
-<h3 id="1-简述">1 简述</h3>
-<p>用某种编程语言，实现一段程序，实现进制转换。</p>
-<h3 id="2-程序功能需求说明">2 程序功能需求说明</h3>
-<h4 id="21-基本功能要求">2.1 基本功能要求</h4>
-<p>输入：一串字符 功能：将字符串转为十六进制整数；并根据用户要求，分别将输入转为 3~12 进 制数，并输出转换结果。 输出范例： 输入（十六进制）：0x1234 输出（十进制）：4660</p>
-<h4 id="22-补充说明">2.2 补充说明</h4>
-<p>其他补充说明如下：</p>
-<p>（1）应根据进制转换的 原理自行编写对应代码，严禁直接调用高级语言已有的库函数来实现进制转换功能；</p>
-<p>（2）程序应具备基本的有效性校验功能，应能识别不合理的十六进制数，并给出错误提示，例如，0xG 是个错误的输入；</p>
-<p>（3）字母不区分大小写；</p>
-<p>（4）输出结果中的“十进制”字样，应根据不同进制转换，对应显示数制，如</p>
-<p>“三”、“八”、“十二”； （5）程序应能自动识别输入中多余的空格，例如，0x 6 应视为 0x6，即程序自动删除输入中多余的空格；</p>
-<p>（6）编程语言不限（可优先考虑 C 语言），其他常用编程语言包括：C++、Java、Python 。 （7）不要求实现图形用户界面，控制台程序即可；</p>
-<p>（8）要求用户从键盘输入，不应将输入直接写死在程序中 。</p>
-<p>（9）没有本地开发环境的，可使用如下的在线开发环境，支持 C/C++/Java/Python 等开发语言： https://lightly.teamcode.com/c?bd_vid=11680563935503538366</p>
-<h4 id="3-现场检查要求">3 现场检查要求</h4>
-<p>现场检查内容包括：</p>
-<p>（1）现场运行程序，观察运行结果；</p>
-<p>（2）针对教师提问进行回答，讲解程序实现主要思路；（并不会）</p>
-<p>（3）根据教师要求，改变输入条件，重新运行程序，观察运行结果(并不会)</p>
-<h4 id="解">解：</h4>
-<p>/<em>代码</em>/</p>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-
-// 函数声明，将十六进制数转换为指定进制并打印
-void convertAndPrint(char* hexadecimal, int Base);
-int main() {
-char input[20];
-int Base;
-
-// 用户输入十六进制数
-printf(&quot;输入(16进制)：&quot;);
-if (scanf_s(&quot;%19s&quot;, input, sizeof(input)) != 1) {
-printf(&quot;输入错误\n&quot;);
-return 1;
+              <h5 id="2023111">2023/11/1</h5>
+<h3 id="p1217-usaco15-回文质数-prime-palindromes">P1217 [USACO1.5] 回文质数 Prime Palindromes</h3>
+<p>做这题时全是TEL，于是学习了下筛法与打表</p>
+<h5 id="筛法三种素数筛法普通筛法-埃氏筛法-欧拉筛法">筛法：<a href="https://blog.csdn.net/weixin_46052886/article/details/112255458">三种素数筛法(普通筛法、埃氏筛法、欧拉筛法)</a></h5>
+<p>埃拉托斯特尼筛法（Sieve of Eratosthenes）是一种用于找出一定范围内所有素数的古老算法。它的基本思想是从小到大遍历数字，将素数的倍数标记为合数，从而筛选出素数。码首先创建了一个布尔数组 isPrime，用于标记每个数字是否为素数。然后，它从2开始遍历到 n 的平方根，对于每个素数 p，将其倍数标记为合数。最后，遍历布尔数组，找到所有标记为素数的数字，它们就是小于等于 n 的素数。<br>
+埃拉托斯特尼筛法的时间复杂度是 O(n log log n)，这使得它是一种非常高效的素数筛选算法。</p>
+<p>学习教材C语言程序设计（清华大学出版社卢萍）116页有介绍。</p>
+<h5 id="回文数回文数题解">回文数：<a href="https://leetcode.cn/problems/palindrome-number/solutions/281686/hui-wen-shu-by-leetcode-solution/">回文数题解</a></h5>
+<p>要检查一个整数是否是回文数，可以使用一种更有效的方法而不是反转整个数字。以下是一种优化算法：</p>
+<p>处理特殊情况：<br>
+如果输入是负数，它不可能是回文数，因为负数的反转后的数字不会等于原始数字。<br>
+如果输入以0结尾（除了0本身），也不可能是回文数，因为不会存在以0开头的数字。<br>
+通过比较数字的前半部分和后半部分来检查回文性：<br>
+将整数分成前半部分和后半部分，例如，对于整数12321，前半部分是123，后半部分是21。<br>
+反转后半部分数字，然后与前半部分数字进行比较。<br>
+如果它们相等，那么这个数字是回文数。<br>
+这种算法只需要反转一半的数字，从而减少了计算的时间和内存开销。</p>
+<h4 id="对于回文质数它不可能是偶数位除11">对于回文质数，它不可能是偶数位（除11）</h4>
+<h4 id="具有偶数个数位的回文数一定是-11-的倍数">具有偶数个数位的回文数一定是 11 的倍数</h4>
+<p>证明：<a href="https://www.jianshu.com/p/35f19b524cb9">具备偶数个数位回文数一定是11的倍数证明</a></p>
+<p>具体代码：</p>
+<pre><code class="language-c">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
+#include&lt;stdlib.h&gt;
+bool weishu(int k)  //位数
+{
+	if (k &gt;= 10 &amp;&amp; k &lt; 100 &amp;&amp; k != 11 || k &gt;= 1000 &amp;&amp; k &lt; 10000)return false;
+	else if (k &gt;= 100000 &amp;&amp; k &lt; 1000000 || k &gt;= 10000000 &amp;&amp; k &lt; 100000000)return false;
+	else return true;
 }
+bool isPalindrome(int x) {
+	if ( (x % 10 == 0)) {
+		return false; // 负数或以0结尾的数字不是回文数
+	}
 
-char input2[30]; // 删除空格后的字符串
-for (int i = 0; input[i] != '\0'; i++) {
-if (input[i] != ' ') {
-        input2[i] = input[i];
-    }
-    else {
-        i--;
-    }
+	int reversedHalf = 0;
+	while (x &gt; reversedHalf) {
+		int digit = x % 10;
+		reversedHalf = reversedHalf * 10 + digit;
+		x /= 10;
+	}
+
+	// 如果x的位数是奇数，将reversedHalf除以10后与x比较
+	return x == reversedHalf || x == reversedHalf / 10;
 }
+int main()
+{
+	FILE* file = fopen(&quot;E:\\123.txt&quot;, &quot;w&quot;);
+	int a, n;
+	scanf(&quot;%d%d&quot;, &amp;a, &amp;n);
+	bool* isPrime = (bool*)malloc(sizeof(int) * (n + 1));
+	for (int i = 0; i &lt;= n; i++) {
+		isPrime[i] = true; // 假设每个数字都是素数
+	}
+	isPrime[0] = isPrime[1] = false; // 0和1不是素数
 
-// 用户输入目标进制
-printf(&quot;输入目标进制（2-12）：&quot;);
-if (scanf_s(&quot;%d&quot;, &amp;Base) != 1 || Base &lt; 2 || Base &gt; 12) {
-    printf(&quot;目标进制不在范围内\n&quot;);
-    return 1;
-}
-
-// 调用函数进行转换并打印结果
-convertAndPrint(input, Base);
-
-return 0;
-}
-
-// 十六进制数转换为指定进制并打印
-void convertAndPrint(char* hexadecimal, int Base) {
-long int d;
-// 将十六进制数转换为十进制数字
-if (sscanf_s(hexadecimal, &quot;%lx&quot;, &amp;d) == 1) {
-printf(&quot;输出(%d进制): &quot;, Base);
-
-if (Base == 10) {
-        printf(&quot;%ld\n&quot;, d);
-    }
-    else if (Base &gt;= 2 &amp;&amp; Base &lt;= 12) {
-        long int quo = d;
-        int i = 0;
-        char result[100];
-
-        // 反复相除，将余数保存在result数组中
-        while (quo &gt; 0) {
-            int r = quo % Base;
-            result[i] = (r &lt; 10) ? ('0' + r) : ('A' + r - 10);
-            i++;
-            quo /= Base;
-        }
-
-        // 打印结果
-        for (int j = i - 1; j &gt;= 0; j--) {
-            printf(&quot;%c&quot;, result[j]);
-        }
-        printf(&quot;\n&quot;);
-    }
-}
-else {
-    printf(&quot;输入错误\n&quot;);
-}
+	for (int p = 2; p * p &lt;= n; p++) {
+		if (isPrime[p] == true) {
+			// 如果p是素数，将p的倍数标记为合数
+			for (int i = p * p; i &lt;= n; i += p) {
+				isPrime[i] = false;
+			}
+		}
+	}
+	if (a % 2 == 0) a++;
+	for (int i = a; i &lt;= n; i+=2)
+	{
+		if (i == 9989900)
+		{//如果到了这个数，就break 
+			break;
+		}
+		if (weishu(i)&amp;&amp;isPalindrome(i) &amp;&amp; isPrime[i])
+		{
+			printf(&quot;%d\n&quot;, i); 
+			fprintf(file, &quot;%d,&quot;,i);
+		}
+	}
+	fclose(file);
+	return 0;
 }
 </code></pre>
-<p>注：助教测试时考虑到大家水平，可以不考虑输入有效性检查，可使用一些已有的库函数。❤️</p>
 
             </div>
           </article>
@@ -246,9 +194,9 @@ else {
               <div class="next">
                 下一篇
               </div>
-              <a href="https://Ilosyi.github.io/post/xin-xi-ji-zhu-dao-lun-ke-cheng-lun-wen/">
+              <a href="https://Ilosyi.github.io/post/er-wei-shu-zu-ba-huang-hou-yu-mi-gong-wen-ti/">
                 <h3 class="post-title">
-                  信息技术导论课程论文
+                  二维数组：八皇后 幻方 迷宫问题
                 </h3>
               </a>
             </div>
@@ -347,11 +295,11 @@ else {
     </div>
     <div class="row">
       
-        <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge secondary">
+        <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge success">
           报告/作业
         </a>
       
-        <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge secondary">
+        <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge ">
           大一
         </a>
       

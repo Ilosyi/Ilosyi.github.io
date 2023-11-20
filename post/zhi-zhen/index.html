@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>素数的埃拉托斯特尼筛法与回文数 | losyi的博客</title>
+<title> 指针与数组 | losyi的博客</title>
 <meta name="description" content="">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -87,103 +87,137 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>素数的埃拉托斯特尼筛法与回文数</h1>
+            <h1> 指针与数组</h1>
             <p class="article-meta">
-              2023-11-19
+              2023-11-20
               
-                <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge success">
+                <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge secondary">
                   C语言学习笔记（万老师）
                 </a>
               
-                <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge success">
+                <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge secondary">
                   大一
                 </a>
               
             </p>
             
             <div class="post-content">
-              <h5 id="2023111">2023/11/1</h5>
-<h3 id="p1217-usaco15-回文质数-prime-palindromes">P1217 [USACO1.5] 回文质数 Prime Palindromes</h3>
-<p>做这题时全是TEL，于是学习了下筛法与打表</p>
-<h5 id="筛法三种素数筛法普通筛法-埃氏筛法-欧拉筛法"><strong>筛法</strong>：<a href="https://blog.csdn.net/weixin_46052886/article/details/112255458">三种素数筛法(普通筛法、埃氏筛法、欧拉筛法)</a></h5>
-<p>埃拉托斯特尼筛法（Sieve of Eratosthenes）是一种用于找出一定范围内所有素数的古老算法。它的基本思想是从小到大遍历数字，将素数的倍数标记为合数，从而筛选出素数。码首先创建了一个布尔数组 isPrime，用于标记每个数字是否为素数。然后，它从2开始遍历到 n 的平方根，对于每个素数 p，将其倍数标记为合数。最后，遍历布尔数组，找到所有标记为素数的数字，它们就是小于等于 n 的素数。<br>
-埃拉托斯特尼筛法的时间复杂度是 O(n log log n)，这使得它是一种非常高效的素数筛选算法。</p>
-<p>学习教材C语言程序设计（清华大学出版社卢萍）116页有介绍。</p>
-<h5 id="回文数回文数题解"><strong>回文数</strong>：<a href="https://leetcode.cn/problems/palindrome-number/solutions/281686/hui-wen-shu-by-leetcode-solution/">回文数题解</a></h5>
-<p>要检查一个整数是否是回文数，可以使用一种更有效的方法而不是反转整个数字。以下是一种优化算法：</p>
-<p>处理特殊情况：<br>
-如果输入是负数，它不可能是回文数，因为负数的反转后的数字不会等于原始数字。<br>
-如果输入以0结尾（除了0本身），也不可能是回文数，因为不会存在以0开头的数字。<br>
-通过比较数字的前半部分和后半部分来检查回文性：<br>
-将整数分成前半部分和后半部分，例如，对于整数12321，前半部分是123，后半部分是21。<br>
-反转后半部分数字，然后与前半部分数字进行比较。<br>
-如果它们相等，那么这个数字是回文数。<br>
-这种算法只需要反转一半的数字，从而减少了计算的时间和内存开销。</p>
-<h4 id="对于回文质数它不可能是偶数位除11">对于回文质数，它不可能是偶数位（除11）</h4>
-<h4 id="具有偶数个数位的回文数一定是-11-的倍数">具有偶数个数位的回文数一定是 11 的倍数</h4>
-<p>证明：<a href="https://www.jianshu.com/p/35f19b524cb9">具备偶数个数位回文数一定是11的倍数证明</a></p>
-<p>具体代码：</p>
-<pre><code class="language-c">#define _CRT_SECURE_NO_WARNINGS
-#include &lt;stdio.h&gt;
-#include &lt;stdbool.h&gt;
-#include&lt;stdlib.h&gt;
-bool weishu(int k)  //位数
-{
-	if (k &gt;= 10 &amp;&amp; k &lt; 100 &amp;&amp; k != 11 || k &gt;= 1000 &amp;&amp; k &lt; 10000)return false;
-	else if (k &gt;= 100000 &amp;&amp; k &lt; 1000000 || k &gt;= 10000000 &amp;&amp; k &lt; 100000000)return false;
-	else return true;
-}
-bool isPalindrome(int x) {
-	if ( (x % 10 == 0)) {
-		return false; // 负数或以0结尾的数字不是回文数
-	}
+              <p><ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%B8%80-%E6%95%B0%E7%BB%84">一、数组</a>
+<ul>
+<li><a href="#1%E6%95%B0%E7%BB%84%E6%A6%82%E8%BF%B0">1.数组概述</a>
+<ul>
+<li><a href="#%E6%95%B0%E7%BB%84%E7%89%B9%E7%82%B9">数组特点</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C-10%E4%B8%AA%E5%A3%B0%E6%98%8E%E8%AF%AD%E5%8F%A5%E8%BE%A8%E6%9E%90">二、10个声明语句辨析：</a>
+<ul>
+<li><a href="#1int-a">1.int a;</a></li>
+<li><a href="#2int-a10">2.int a[10]</a></li>
+<li><a href="#3int-f">3.int f()</a></li>
+<li><a href="#4int-p">4.Int *p</a></li>
+<li><a href="#font-color66ccff-5int-p10font"><font color=#66CCFF ><strong>5.int *p[10]</strong></font></a></li>
+<li><a href="#font-color66ccff-6int-pfont"><font color=#66CCFF ><strong>6.int *p()</strong></font></a></li>
+<li><a href="#7int-p">7.int **P</a></li>
+<li><a href="#font-color66ccff-8int-p10font"><font color=#66CCFF ><strong>8.int (*p)[10]</strong></font></a></li>
+<li><a href="#font-color66ccff-9int-pfont"><font color=#66CCFF ><strong>9.int (*p)()</strong></font></a></li>
+<li><a href="#font-color66ccff-10int-p10font"><font color=#66CCFF ><strong>10.int (*p[10])()</strong></font></a>
+<ul>
+<li><a href="#%E4%BE%8B1%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E6%8C%87%E5%90%91%E6%95%B0%E7%BB%84%E7%9A%84%E6%8C%87%E9%92%88">例1（指针数组，指向数组的指针）：</a></li>
+<li><a href="#%E4%BE%8B2%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84">例2（函数指针数组）：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%8F%96%E5%80%BC%E5%8F%96%E5%9D%80%E8%BE%A8%E6%9E%90"><strong>三、二维数组取值取址辨析</strong></a></li>
+</ul>
+</li>
+</ul>
+</p>
+<h2 id="一-数组">一、数组</h2>
+<h3 id="1数组概述">1.数组概述</h3>
+<p>简单数据类型的变量仅能描述一个单独的数据，对客观对象的描述能力十分有限，<strong>数组</strong>属于构造类型，是相同数据类型数据的集合，<strong>元素</strong>是组成数组的数据，可以是各种类型。</p>
+<h4 id="数组特点">数组特点</h4>
+<p>数组的所有元素</p>
+<h2 id="二-10个声明语句辨析">二、10个声明语句辨析：</h2>
+<h3 id="1int-a">1.int a;</h3>
+<p>声明一个整数类型的变量 a</p>
+<h3 id="2int-a10">2.int a[10]</h3>
+<p>声明一个包含10个整数元素的数组 a</p>
+<h3 id="3int-f">3.int f()</h3>
+<p>声明一个返回值类型为整数，无参数的函数</p>
+<h3 id="4int-p">4.Int *p</h3>
+<p>声明一个指向整数的指针</p>
+<h3 id="font-color66ccff-5int-p10font"><font color=#66CCFF ><strong>5.int *p[10]</strong></font></h3>
+<p>声明一个包含10个指向整数的指针的<strong>数组</strong> p</p>
+<h3 id="font-color66ccff-6int-pfont"><font color=#66CCFF ><strong>6.int *p()</strong></font></h3>
+<p>声明一个函数 p，该函数返回一个指向整数的指针</p>
+<h3 id="7int-p">7.int **P</h3>
+<p>声明一个指向指向整数的指针的指针 P</p>
+<h3 id="font-color66ccff-8int-p10font"><font color=#66CCFF ><strong>8.int (*p)[10]</strong></font></h3>
+<p>声明一个指向包含10个整数元素的数组的<strong>指针</strong> p</p>
+<h3 id="font-color66ccff-9int-pfont"><font color=#66CCFF ><strong>9.int (*p)()</strong></font></h3>
+<p>声明一个指向返回整数的函数的<strong>指针</strong> p</p>
+<h3 id="font-color66ccff-10int-p10font"><font color=#66CCFF ><strong>10.int (*p[10])()</strong></font></h3>
+<p>声明一个包含10个指向返回整数的函数的指针的<strong>数组</strong> p</p>
+<h4 id="例1指针数组指向数组的指针">例1（指针数组，指向数组的指针）：</h4>
+<pre><code>int main() {
+int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-	int reversedHalf = 0;
-	while (x &gt; reversedHalf) {
-		int digit = x % 10;
-		reversedHalf = reversedHalf * 10 + digit;
-		x /= 10;
-	}
+int *p1[10];      // 数组，每个元素是一个指向 int 的指针
+int (*p2)[10];    // 指针，指向一个包含 10 个 int 元素的数组
 
-	// 如果x的位数是奇数，将reversedHalf除以10后与x比较
-	return x == reversedHalf || x == reversedHalf / 10;
+p1[0] = &amp;arr[0];  // 第一个元素指向数组的第一个元素
+p2 = &amp;arr;        // 指针指向整个数组
+
+// 使用 p1 和 p2 访问数组元素
+printf(&quot;%d\n&quot;, *p1[0]);   // 输出 arr[0]
+printf(&quot;%d\n&quot;, (*p2)[0]); // 输出 arr[0]
+
+return 0;
+</code></pre>
+<p>}</p>
+<h4 id="例2函数指针数组">例2（函数指针数组）：</h4>
+<pre><code>void task0() { printf(&quot;task0 is called!\n&quot;); }
+void task1() { printf(&quot;task1 is called!\n&quot;); }
+void task2() { printf(&quot;task2 is called!\n&quot;); }
+void task3() { printf(&quot;task3 is called!\n&quot;); }
+void task4() { printf(&quot;task4 is called!\n&quot;); }
+void task5() { printf(&quot;task5 is called!\n&quot;); }
+void task6() { printf(&quot;task6 is called!\n&quot;); }
+void task7() { printf(&quot;task7 is called!\n&quot;); }
+void execute(void (*tasks[])(), char *Task,int num) {
+for (int i = 0; i &lt; num; i++) {
+        tasks[Task[i]]();
 }
+}
+void (*function[8])() = { task0, task1, task2, task3, task4, task5, task6,task7 };
+</code></pre>
+<h2 id="三-二维数组取值取址辨析"><strong>三、二维数组取值取址辨析</strong></h2>
+<pre><code>int a[3][3] = {
+{1, 2, 3},
+{4, 5, 6},
+{7, 8, 9},
+};
 int main()
 {
-	FILE* file = fopen(&quot;E:\\123.txt&quot;, &quot;w&quot;);
-	int a, n;
-	scanf(&quot;%d%d&quot;, &amp;a, &amp;n);
-	bool* isPrime = (bool*)malloc(sizeof(int) * (n + 1));
-	for (int i = 0; i &lt;= n; i++) {
-		isPrime[i] = true; // 假设每个数字都是素数
-	}
-	isPrime[0] = isPrime[1] = false; // 0和1不是素数
-
-	for (int p = 2; p * p &lt;= n; p++) {
-		if (isPrime[p] == true) {
-			// 如果p是素数，将p的倍数标记为合数
-			for (int i = p * p; i &lt;= n; i += p) {
-				isPrime[i] = false;
-			}
-		}
-	}
-	if (a % 2 == 0) a++;
-	for (int i = a; i &lt;= n; i+=2)
-	{
-		if (i == 9989900)
-		{//如果到了这个数，就break 
-			break;
-		}
-		if (weishu(i)&amp;&amp;isPalindrome(i) &amp;&amp; isPrime[i])
-		{
-			printf(&quot;%d\n&quot;, i); 
-			fprintf(file, &quot;%d,&quot;,i);
-		}
-	}
-	fclose(file);
-	return 0;
+printf(&quot;a=%x\n&quot;, a); //二维数组的起始地址
+printf(&quot;*a=%x\n&quot;, *a);//第0行的起始地址
+printf(&quot;*(a+1)=%x\n&quot;, *(a+1));//第1行的起始地址
+printf(&quot;*(a+2)=%x\n&quot;, *(a + 2));//第2行的起始地址
+printf(&quot;*a+1=%x\n&quot;, *a+1);//第0行第2个元素地址
+printf(&quot;*(a+1) + 1=%x\n&quot;, *(a+1) + 1);//第1行第2个元素地址
+printf(&quot;*(a + 2) + 1=%x\n&quot;, *(a + 2) + 1);//第2行第2个元素地址
+printf(&quot;*(*a+1)=%d\n&quot;, *(*a + 1));//第0行第2个元素的值
+printf(&quot;*(*(a+1) + 1)=%d\n&quot;, *(*(a+1) + 1));//第1行第2个元素的值
+printf(&quot;*(*(a+1) + 1)=%d\n&quot;, *(*(a + 2) + 1));//第2行第2个元素的值
 }
 </code></pre>
+<figure data-type="image" tabindex="1"><img src="https://Ilosyi.github.io/post-images/1700461359588.png" alt="运行结果示意图" loading="lazy"></figure>
 
             </div>
           </article>
@@ -194,9 +228,9 @@ int main()
               <div class="next">
                 下一篇
               </div>
-              <a href="https://Ilosyi.github.io/post/er-wei-shu-zu-ba-huang-hou-yu-mi-gong-wen-ti/">
+              <a href="https://Ilosyi.github.io/post/zi-fu-chuan-yu-zi-fu-xiang-guan-han-shu-de-shi-yong/">
                 <h3 class="post-title">
-                  二维数组：八皇后 幻方 迷宫问题
+                  字符串与字符相关函数的使用
                 </h3>
               </a>
             </div>
@@ -311,19 +345,19 @@ int main()
     </div>
     <div class="row">
       
-        <a href="https://Ilosyi.github.io/tag/zfuWuILQ3/" class="badge success">
+        <a href="https://Ilosyi.github.io/tag/zfuWuILQ3/" class="badge warning">
           校园生活
         </a>
       
-        <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge secondary">
+        <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge ">
           C语言学习笔记（万老师）
         </a>
       
-        <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge secondary">
+        <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge ">
           大一
         </a>
       
-        <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge ">
+        <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge secondary">
           报告/作业
         </a>
       

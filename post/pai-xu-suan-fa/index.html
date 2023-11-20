@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>素数的埃拉托斯特尼筛法与回文数 | losyi的博客</title>
+<title>排序算法 | losyi的博客</title>
 <meta name="description" content="">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -87,103 +87,96 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>素数的埃拉托斯特尼筛法与回文数</h1>
+            <h1>排序算法</h1>
             <p class="article-meta">
-              2023-11-19
+              2023-11-20
               
-                <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge success">
+                <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge secondary">
                   C语言学习笔记（万老师）
                 </a>
               
-                <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge success">
+                <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge secondary">
                   大一
                 </a>
               
             </p>
             
             <div class="post-content">
-              <h5 id="2023111">2023/11/1</h5>
-<h3 id="p1217-usaco15-回文质数-prime-palindromes">P1217 [USACO1.5] 回文质数 Prime Palindromes</h3>
-<p>做这题时全是TEL，于是学习了下筛法与打表</p>
-<h5 id="筛法三种素数筛法普通筛法-埃氏筛法-欧拉筛法"><strong>筛法</strong>：<a href="https://blog.csdn.net/weixin_46052886/article/details/112255458">三种素数筛法(普通筛法、埃氏筛法、欧拉筛法)</a></h5>
-<p>埃拉托斯特尼筛法（Sieve of Eratosthenes）是一种用于找出一定范围内所有素数的古老算法。它的基本思想是从小到大遍历数字，将素数的倍数标记为合数，从而筛选出素数。码首先创建了一个布尔数组 isPrime，用于标记每个数字是否为素数。然后，它从2开始遍历到 n 的平方根，对于每个素数 p，将其倍数标记为合数。最后，遍历布尔数组，找到所有标记为素数的数字，它们就是小于等于 n 的素数。<br>
-埃拉托斯特尼筛法的时间复杂度是 O(n log log n)，这使得它是一种非常高效的素数筛选算法。</p>
-<p>学习教材C语言程序设计（清华大学出版社卢萍）116页有介绍。</p>
-<h5 id="回文数回文数题解"><strong>回文数</strong>：<a href="https://leetcode.cn/problems/palindrome-number/solutions/281686/hui-wen-shu-by-leetcode-solution/">回文数题解</a></h5>
-<p>要检查一个整数是否是回文数，可以使用一种更有效的方法而不是反转整个数字。以下是一种优化算法：</p>
-<p>处理特殊情况：<br>
-如果输入是负数，它不可能是回文数，因为负数的反转后的数字不会等于原始数字。<br>
-如果输入以0结尾（除了0本身），也不可能是回文数，因为不会存在以0开头的数字。<br>
-通过比较数字的前半部分和后半部分来检查回文性：<br>
-将整数分成前半部分和后半部分，例如，对于整数12321，前半部分是123，后半部分是21。<br>
-反转后半部分数字，然后与前半部分数字进行比较。<br>
-如果它们相等，那么这个数字是回文数。<br>
-这种算法只需要反转一半的数字，从而减少了计算的时间和内存开销。</p>
-<h4 id="对于回文质数它不可能是偶数位除11">对于回文质数，它不可能是偶数位（除11）</h4>
-<h4 id="具有偶数个数位的回文数一定是-11-的倍数">具有偶数个数位的回文数一定是 11 的倍数</h4>
-<p>证明：<a href="https://www.jianshu.com/p/35f19b524cb9">具备偶数个数位回文数一定是11的倍数证明</a></p>
-<p>具体代码：</p>
-<pre><code class="language-c">#define _CRT_SECURE_NO_WARNINGS
-#include &lt;stdio.h&gt;
-#include &lt;stdbool.h&gt;
-#include&lt;stdlib.h&gt;
-bool weishu(int k)  //位数
-{
-	if (k &gt;= 10 &amp;&amp; k &lt; 100 &amp;&amp; k != 11 || k &gt;= 1000 &amp;&amp; k &lt; 10000)return false;
-	else if (k &gt;= 100000 &amp;&amp; k &lt; 1000000 || k &gt;= 10000000 &amp;&amp; k &lt; 100000000)return false;
-	else return true;
-}
-bool isPalindrome(int x) {
-	if ( (x % 10 == 0)) {
-		return false; // 负数或以0结尾的数字不是回文数
-	}
+              <p><ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#font-color0000ff-%E4%B8%80-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Ffont"><font color=#0000FF ><strong>一、选择排序</strong></font></a></li>
+<li><a href="#font-color0000ff-%E4%BA%8C-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8Ffont"><font color=#0000FF ><strong>二、冒泡排序</strong></font></a>
+<ul>
+<li><a href="#%E6%99%AE%E9%80%9A%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><strong>普通冒泡排序</strong></a></li>
+<li><a href="#%E6%94%B9%E8%BF%9B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><strong>改进冒泡排序</strong></a></li>
+</ul>
+</li>
+<li><a href="#font-color0000ff-%E4%B8%89-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8Ffont"><font color=#0000FF ><strong>三、快速排序</strong></font></a></li>
+<li><a href="#font-color0000ff-%E5%9B%9B-%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8Ffont"><font color=#0000FF ><strong>四、插入排序</strong></font></a>
+<ul>
+<li><a href="#%E6%99%AE%E9%80%9A%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><strong>普通插入排序</strong></a></li>
+<li><a href="#%E6%8A%98%E5%8D%8A%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><strong>折半插入排序</strong></a></li>
+</ul>
+</li>
+<li><a href="#font-color0000ff-%E4%BA%94-%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8Ffont"><font color=#0000FF ><strong>五、希尔排序</strong></font></a></li>
+</ul>
+</li>
+</ul>
+</p>
+<h2 id="font-color0000ff-一-选择排序font"><font color=#0000FF ><strong>一、选择排序</strong></font></h2>
+<p>选择排序（Selection Sort）是一种简单直观的排序算法，其基本思想是在未排序的部分中选择最小（或最大）的元素，然后将其放到已排序部分的末尾。这个过程不断地重复，直到所有元素都排序完成。<br>
+<a href="https://www.bilibili.com/video/BV1qS4y1w7jM/?spm_id_from=333.337.search-card.all.click&amp;vd_source=3d122b36d70c1b8fb284bf43c2a63a86">选择排序的动画演示</a><br>
+/<em>代码实现</em>/</p>
+<pre><code>`void selectionSort(int arr[], int n) {
+int i, j, minIndex, temp;
 
-	int reversedHalf = 0;
-	while (x &gt; reversedHalf) {
-		int digit = x % 10;
-		reversedHalf = reversedHalf * 10 + digit;
-		x /= 10;
-	}
+// 遍历数组
+for (i = 0; i &lt; n - 1; i++) {
+// 假设当前索引为最小值索引
+minIndex = i;
 
-	// 如果x的位数是奇数，将reversedHalf除以10后与x比较
-	return x == reversedHalf || x == reversedHalf / 10;
-}
-int main()
-{
-	FILE* file = fopen(&quot;E:\\123.txt&quot;, &quot;w&quot;);
-	int a, n;
-	scanf(&quot;%d%d&quot;, &amp;a, &amp;n);
-	bool* isPrime = (bool*)malloc(sizeof(int) * (n + 1));
-	for (int i = 0; i &lt;= n; i++) {
-		isPrime[i] = true; // 假设每个数字都是素数
-	}
-	isPrime[0] = isPrime[1] = false; // 0和1不是素数
+// 在未排序部分中寻找最小值的索引
+        for (j = i + 1; j &lt; n; j++) {
+         if (arr[j] &lt; arr[minIndex]) {
+            minIndex = j;
+        }
+    }
 
-	for (int p = 2; p * p &lt;= n; p++) {
-		if (isPrime[p] == true) {
-			// 如果p是素数，将p的倍数标记为合数
-			for (int i = p * p; i &lt;= n; i += p) {
-				isPrime[i] = false;
-			}
-		}
-	}
-	if (a % 2 == 0) a++;
-	for (int i = a; i &lt;= n; i+=2)
-	{
-		if (i == 9989900)
-		{//如果到了这个数，就break 
-			break;
-		}
-		if (weishu(i)&amp;&amp;isPalindrome(i) &amp;&amp; isPrime[i])
-		{
-			printf(&quot;%d\n&quot;, i); 
-			fprintf(file, &quot;%d,&quot;,i);
-		}
-	}
-	fclose(file);
-	return 0;
+// 将找到的最小值与当前位置交换
+    temp = arr[minIndex];
+    arr[minIndex] = arr[i];
+    arr[i] = temp;
+ }
 }
 </code></pre>
+<h2 id="font-color0000ff-二-冒泡排序font"><font color=#0000FF ><strong>二、冒泡排序</strong></font></h2>
+<h3 id="普通冒泡排序"><strong>普通冒泡排序</strong></h3>
+<p>冒泡排序是一种简单的比较排序算法，它反复遍历待排序的元素列表，比较相邻的元素，并将它们交换，直到整个列表按照升序或降序排列。它得名于比较过程中较小（或较大）的元素像气泡一样&quot;浮&quot;到数组的顶端。冒泡排序的时间复杂度为O(n^2)，其中n是元素的数量，因此它在大数据集上的性能不佳，但对于小数据集来说是一种简单的排序方法。<br>
+交换原则：两两比较进行交换，如果小的在后，大的在前即交换<br>
+<a href="https://www.bilibili.com/video/BV1qY4y1h7Lz/?spm_id_from=333.337.search-card.all.click&amp;vd_source=3d122b36d70c1b8fb284bf43c2a63a86">冒泡排序的动画演示</a><br>
+/<em>代码实现</em>/</p>
+<pre><code>#include &lt;stdio.h&gt;
+void bubbleSort(int arr[], int n) {
+ int temp;
+for (int i = 0; i &lt; n - 1; i++) {
+for (int j = 0; j &lt; n - i - 1; j++) {
+if (arr[j] &gt; arr[j + 1]) {
+// 交换arr[j]和arr[j+1]
+temp = arr[j];
+arr[j] = arr[j + 1];
+arr[j + 1] = temp;
+} }}}
+</code></pre>
+<h3 id="改进冒泡排序"><strong>改进冒泡排序</strong></h3>
+<p>冒泡排序改进1：在某次遍历中如果没有数据交换，说明整个数组已经有序。因此通过设置标志位来记录此次遍历有无数据交换就可以判断是否要继续循环。<br>
+冒泡排序改进2：记录某次遍历时最后发生数据交换的位置，这个位置之后的数据显然已经有序了。因此通过记录最后发生数据交换的位置就可以确定下次循环的范围了。</p>
+<h2 id="font-color0000ff-三-快速排序font"><font color=#0000FF ><strong>三、快速排序</strong></font></h2>
+<p>推荐一个讲解视频：<a href="https://www.bilibili.com/video/BV1vP411g7J3/?spm_id_from=333.337.search-card.all.click">全网最清晰快速排序，看完快排思想和代码全部通透，不通透你打我！</a></p>
+<h2 id="font-color0000ff-四-插入排序font"><font color=#0000FF ><strong>四、插入排序</strong></font></h2>
+<h3 id="普通插入排序"><strong>普通插入排序</strong></h3>
+<h3 id="折半插入排序"><strong>折半插入排序</strong></h3>
+<h2 id="font-color0000ff-五-希尔排序font"><font color=#0000FF ><strong>五、希尔排序</strong></font></h2>
 
             </div>
           </article>
@@ -194,9 +187,9 @@ int main()
               <div class="next">
                 下一篇
               </div>
-              <a href="https://Ilosyi.github.io/post/er-wei-shu-zu-ba-huang-hou-yu-mi-gong-wen-ti/">
+              <a href="https://Ilosyi.github.io/post/zhi-zhen/">
                 <h3 class="post-title">
-                  二维数组：八皇后 幻方 迷宫问题
+                   指针与数组
                 </h3>
               </a>
             </div>
@@ -315,15 +308,15 @@ int main()
           校园生活
         </a>
       
-        <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge secondary">
+        <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge success">
           C语言学习笔记（万老师）
         </a>
       
-        <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge secondary">
+        <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge warning">
           大一
         </a>
       
-        <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge ">
+        <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge success">
           报告/作业
         </a>
       

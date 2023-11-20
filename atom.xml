@@ -2,13 +2,1016 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Ilosyi.github.io</id>
     <title>losyi的博客</title>
-    <updated>2023-11-20T11:00:18.449Z</updated>
+    <updated>2023-11-20T15:39:49.162Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Ilosyi.github.io"/>
     <link rel="self" href="https://Ilosyi.github.io/atom.xml"/>
     <logo>https://Ilosyi.github.io/images/avatar.png</logo>
     <icon>https://Ilosyi.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, losyi的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[ C语言实验报告]]></title>
+        <id>https://Ilosyi.github.io/post/c-yu-yan-shi-yan-bao-gao/</id>
+        <link href="https://Ilosyi.github.io/post/c-yu-yan-shi-yan-bao-gao/">
+        </link>
+        <updated>2023-11-20T15:13:19.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="华-中-科-技-大-学-c-语-言-课-程-实-验-报-告">华 中 科 技 大 学 C 语 言 课 程 实 验 报 告</h1>
+<p><ul class="markdownIt-TOC">
+<li><a href="#%E5%8D%8E-%E4%B8%AD-%E7%A7%91-%E6%8A%80-%E5%A4%A7-%E5%AD%A6-c-%E8%AF%AD-%E8%A8%80-%E8%AF%BE-%E7%A8%8B-%E5%AE%9E-%E9%AA%8C-%E6%8A%A5-%E5%91%8A">华 中 科 技 大 学 C 语 言 课 程 实 验 报 告</a>
+<ul>
+<li><a href="#%E5%AE%9E%E9%AA%8C1-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E5%AE%9E%E9%AA%8C">实验1 表达式和标准输入与输出实验</a>
+<ul>
+<li><a href="#11-%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">1.1 实验目的</a></li>
+<li><a href="#12-%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">1.2 实验内容</a>
+<ul>
+<li><a href="#1-%E6%BA%90%E7%A8%8B%E5%BA%8F%E6%94%B9%E9%94%99">1  源程序改错</a>
+<ul>
+<li><a href="#%E8%A7%A3%E7%AD%94">解答：</a></li>
+</ul>
+</li>
+<li><a href="#2-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">2 程序设计</a>
+<ul>
+<li><a href="#1%E8%A7%A3%E7%AD%94">(1)解答：</a></li>
+<li><a href="#2%E8%A7%A3%E7%AD%94">(2)解答：</a></li>
+<li><a href="#3%E8%A7%A3%E7%AD%94">(3)解答：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#13-%E5%AE%9E%E9%AA%8C%E5%B0%8F%E7%BB%93">1.3 实验小结</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C2-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%AE%9E%E9%AA%8C">实验2  流程控制实验</a>
+<ul>
+<li><a href="#21-%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">2.1 实验目的</a></li>
+<li><a href="#22-%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9%E5%8F%8A%E8%A6%81%E6%B1%82">2.2 实验内容及要求</a>
+<ul>
+<li><a href="#1%E7%A8%8B%E5%BA%8F%E6%94%B9%E9%94%99">1．程序改错</a>
+<ul>
+<li><a href="#%E8%A7%A3%E7%AD%94-2">解答：</a></li>
+</ul>
+</li>
+<li><a href="#2%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9%E6%9B%BF%E6%8D%A2">2．程序修改替换</a>
+<ul>
+<li><a href="#1%E8%A7%A3%E7%AD%94-2">(1)解答：</a></li>
+<li><a href="#2%E8%A7%A3%E7%AD%94-2">(2)解答：</a></li>
+<li><a href="#3%E8%A7%A3%E7%AD%94-2">(3)解答：</a></li>
+</ul>
+</li>
+<li><a href="#3%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">3．程序设计</a>
+<ul>
+<li><a href="#1%E8%A7%A3%E7%AD%94-3">(1)解答：</a></li>
+<li><a href="#2%E8%A7%A3%E7%AD%94-3">(2)解答：</a></li>
+<li><a href="#3%E8%A7%A3%E7%AD%94-3">(3)解答：</a></li>
+<li><a href="#4%E8%A7%A3%E7%AD%94">(4)解答：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#23-%E5%AE%9E%E9%AA%8C%E5%B0%8F%E7%BB%93">2.3 实验小结</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C3-%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C">实验3 函数与程序结构实验</a>
+<ul>
+<li><a href="#31%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">3.1实验目的</a></li>
+<li><a href="#32%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">3.2实验内容</a>
+<ul>
+<li><a href="#1%E7%A8%8B%E5%BA%8F%E6%94%B9%E9%94%99%E9%A2%98">1．程序改错题</a>
+<ul>
+<li><a href="#%E8%A7%A3%E7%AD%94-3">解答：</a></li>
+</ul>
+</li>
+<li><a href="#2%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9%E6%9B%BF%E6%8D%A2%E9%A2%98">2．程序修改替换题</a>
+<ul>
+<li><a href="#%E8%A7%A3%E7%AD%94-4">解答：</a></li>
+<li><a href="#%E8%A7%A3%E7%AD%94-5">解答：</a></li>
+</ul>
+</li>
+<li><a href="#3%E8%B7%9F%E8%B8%AA%E8%B0%83%E8%AF%95%E9%A2%98">3．跟踪调试题</a>
+<ul>
+<li><a href="#%E8%A7%A3%E7%AD%94-6">解答：</a></li>
+</ul>
+</li>
+<li><a href="#4%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">4．程序设计</a>
+<ul>
+<li><a href="#1%E8%A7%A3%E7%AD%94-4">(1)解答：</a></li>
+<li><a href="#2%E8%A7%A3%E7%AD%94-4">(2)解答：</a></li>
+<li><a href="#3%E8%A7%A3%E7%AD%94-4">(3)解答：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#33-%E5%AE%9E%E9%AA%8C%E5%B0%8F%E7%BB%93">3.3 实验小结</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C4-%E7%BC%96%E8%AF%91%E9%A2%84%E5%A4%84%E7%90%86%E5%AE%9E%E9%AA%8C">实验4  编译预处理实验</a>
+<ul>
+<li><a href="#41%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">4.1实验目的</a></li>
+<li><a href="#42%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">4.2实验内容</a>
+<ul>
+<li><a href="#1%E7%A8%8B%E5%BA%8F%E6%94%B9%E9%94%99-2">1．程序改错</a></li>
+<li><a href="#2%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9%E6%9B%BF%E6%8D%A2-2">2．程序修改替换</a></li>
+<li><a href="#3%E8%B7%9F%E8%B8%AA%E8%B0%83%E8%AF%95">3．跟踪调试</a></li>
+<li><a href="#4%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-2">4．程序设计</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+<hr>
+<h2 id="实验1-表达式和标准输入与输出实验">实验1 表达式和标准输入与输出实验</h2>
+<h3 id="11-实验目的">1.1 实验目的</h3>
+<p>（1）熟练掌握各种运算符的运算功能，操作数的类型，运算结果的类型及运算过程中的类型转换，重点是C语言特有的运算符，例如位运算符，问号运算符，逗号运算符等；熟记运算符的优先级和结合性。</p>
+<p>（2）掌握getchar, putchar, scanf 和printf 函数的用法。</p>
+<p>（3）掌握简单C程序（顺序结构程序）的编写方法。</p>
+<h3 id="12-实验内容">1.2 实验内容</h3>
+<h4 id="1-源程序改错">1  源程序改错</h4>
+<p>下面给出了一个简单C语言程序例程，用来完成以下工作：<br>
+（1）输入华氏温度f，将它转换成摄氏温度c后输出；</p>
+<p>（2）输入圆的半径值ｒ，计算并输出圆的面积ｓ；</p>
+<p>（3）输入短整数ｋ、ｐ，将ｋ的高字节作为结果的低字节，ｐ的高字节作为结果的高字节，拼成一个新的整数，然后输出；<br>
+在这个例子程序中存在若干语法和逻辑错误。要求参照1.3和1.4的步骤对下面程序进行调试修改，使之能够正确完成指定任务。</p>
+<pre><code class="language-c">1.  #include&lt;stdio.h&gt;       
+2.  #define PI 3.14159;      
+3.  void main( void )
+4. {
+5.   int f ;
+6.   short p, k ;
+7.   double c , r , s ;
+8.  /* for task 1 */
+9.   printf(&quot;Input  Fahrenheit:&quot;) ;
+10.   scanf(&quot;%d&quot;, f ) ;
+11.   c = 5/9*(f-32) ;
+12.   printf( &quot;\n %d (F) = %.2f (C)\n\n&quot;, f, c ) ;
+13.  /* for task 2 */
+14.  printf(&quot;input the radius r:&quot;);
+15.  scanf(&quot;%f&quot;, &amp;r);
+16.  s = PI * r * r;
+17.  printf(&quot;\nThe acreage is %.2f\n\n&quot;,&amp;s);
+18. /* for task 3 */
+19.  printf(&quot;input hex int k, p :&quot;);
+20.  scanf(&quot;%x %x&quot;, &amp;k, &amp;p );
+21.  newint = (p&amp;0xff00)|(k&amp;0xff00)&lt;&lt;8;
+22.  printf(&quot;new int = %x\n\n&quot;,newint);
+23.}
+</code></pre>
+<h5 id="解答">解答：</h5>
+<p>1)第2行的符号常量定义后不能有分号，正确形式为：#define PI 3.14159</p>
+<p>2)第5行的f类型错误，正确形式为：double f ;</p>
+<p>3)第10行的格式符错误，正确形式为：scanf(&quot;%lf&quot;,&amp;f);</p>
+<p>4)第 11 行 c 的类型为 double，正确形式为：c =  5.0/9 * (f-32) ;</p>
+<p>5)第 12 行格式符错误，正确形式为：printf( &quot;\n %.2lf (F) = %.2lf (C)\n\n &quot;, f, c ) ;</p>
+<p>6)第 15 行格式符错误，正确形式为：scanf(&quot;%lf&quot;,&amp;r);</p>
+<p>7)第 17 行printf用法错误，输出不应是地址，正确形式为：printf(&quot;\nThe acreage is %.2lf\n\n&quot;,s)</p>
+<p>8)第 21 行使用位声明变量，且算法错误，正确形式为：int newint = (p&amp;0xff00) | ((k&amp;0xff00)&gt;&gt;8) ;</p>
+<h4 id="2-程序设计">2 程序设计</h4>
+<p>（1）输入字符ｃ，如果ｃ是大写字母，则将ｃ转换成对应的小写，否则ｃ的值不变，输入Ctrl+Z程序结束。要求①用条件表达式；②字符的输入输出用getchar和putchar函数。程序应能循环接受用户的输入，直至输入Ctrl+Z程序结束。</p>
+<h5 id="1解答">(1)解答：</h5>
+<pre><code class="language-c">1.#include&lt;stdio.h&gt; 
+2.int main()
+3.{
+4.    char c;
+5.    while((c=getchar())!=EOF)
+6.    {
+7.        if(c&gt;='A'&amp;&amp;c&lt;='Z')//检验范围
+8.        putchar(c+32);//根据ASCII表，大小写字母差值为32
+9.        else
+10.        putchar(c);
+11.    } 
+12.        return 0;
+13.}
+</code></pre>
+<p>（2）输入无符号短整数x，ｍ，ｎ（0 ≤ｍ≤ 15, 1 ≤ ｎ≤ 16-ｍ）,取出x从第ｍ位开始向左的ｎ位（ｍ从右至左编号为0～15），并使其向左端（第15位）靠齐。要求：①检查m和n的范围；②x的值以十六进制输入，m和n以十进制输入；③结果以十六进制输出。</p>
+<h5 id="2解答">(2)解答：</h5>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main() {
+3.    unsigned short x;
+4.    unsigned short m, n;
+5.    scanf(&quot;%hx%hd%hd&quot;, &amp;x,&amp;m,&amp;n);
+6.    if(m&gt;15||m&lt;0||n&lt;1||n&gt;16-m)
+7.    {
+8.        printf(&quot;输入错误！&quot;);
+9.    }
+10.    else{
+11.
+12.     unsigned short a = (x&gt;&gt;(m-1));//顶到最右边
+13.     unsigned short result = (a&lt;&lt;(15-n));//向左靠齐
+14.
+15.    printf(&quot;%hx&quot;, result);}
+16.
+17.    return 0;
+18.}
+</code></pre>
+<p>（3）IP地址通常是4个用句点分隔的小整数（即点分十进制），但这些地址在机器中是用一个无符号长整型数表示的。例如3232235876，其机内二进制表示就是11000000 10101000 00000001 01100100，按照8位一组用点分开，该IP地址就写成192.168.1.100。<br>
+读入无符号长整型数表示的互联网IP地址，对其译码，以常见的点分十进制形式输出。要求循环输入和输出，直至输入Ctrl+Z结束。</p>
+<h5 id="3解答">(3)解答：</h5>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.
+3.int main() 
+4.{
+5.    int x;
+6.    while (scanf(&quot;%d&quot;, &amp;x) != EOF) {
+7.
+8.        int a = (x &gt;&gt; 24) &amp; 0xFF;  // 第一个八位
+9.        int b = (x &gt;&gt; 16) &amp; 0xFF;  // 第二个八位
+10.        int c = (x &gt;&gt; 8) &amp; 0xFF;   // 第三个八位
+11.        int d = x &amp; 0xFF;          // 第四个八位
+12.        printf(&quot;%d.%d.%d.%d\n&quot;, a, b, c, d);
+13.    }
+14.    return 0;
+15.}
+</code></pre>
+<h3 id="13-实验小结">1.3 实验小结</h3>
+<p>在完成这次实验后，我获得了以下几点体会和经验：</p>
+<p>1.重视细节，善于纠错： 在C语言中，细节非常重要。一个小小的语法错误或逻辑错误都可能导致程序无法正常工作。通过这次实验，我了解了各种常见错误的原因和报错显示，例如全半角逗号分号会报错未识别字符，scanf后面的变量忘记加&amp;会报错C4477,#define后加分号可能导致后面变量被识别为指针，VS2022需要使用scanf_s以保证安全性等等。</p>
+<p>2.输入输出函数的熟练使用： scanf 和 printf 是C语言中常用的输入输出函数。通过实验，我熟悉了几种常见格式字符的用法，和两个函数的使用方法</p>
+<p>3.程序结构： 这个实验强调了顺序结构程序的编写。在实际编程中，理解程序的结构和流程对于正确完成任务非常重要。同时，实验还涉及了循环输入，通过实验，我了解了while的用法和EOF的概念，学会如何循环输入和结束输入，对程序的输入输出有了更深的了解。</p>
+<p>4.流程图的画法：通过实验，我了解visio软件的基本使用，熟悉了用流程图表示程序结构，整理思路。</p>
+<hr>
+<h2 id="实验2-流程控制实验">实验2  流程控制实验</h2>
+<h3 id="21-实验目的">2.1 实验目的</h3>
+<p>（1）掌握复合语句、if语句、switch语句的使用，熟练掌握for、while、do-while三种基本的循环控制语句的使用，掌握重复循环技术，了解转移语句与标号语句。</p>
+<p>（2）练习循环结构for、while、do-while语句的使用。</p>
+<p>（3）练习转移语句和标号语句的使用。</p>
+<p>（4）使用集成开发环境中的调试功能：单步执行、设置断点、观察变量值。</p>
+<h3 id="22-实验内容及要求">2.2 实验内容及要求</h3>
+<h4 id="1程序改错">1．程序改错</h4>
+<p>下面的实验2-1程序是合数判断器<br>
+（合数指自然数中除了能被1和本身整除外，还能被其它数整除的数），在该源程序中存在若干语法和逻辑错误。<br>
+要求对该程序进行调试修改，使之能够正确完成指定任务。</p>
+<p>/* 实验2-1改错题程序：合数判断器*/</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main( )
+3.{ 
+4.int i, x, k, flag = 0;
+5.printf(&quot;本程序判断合数，请输入大于1的整数，以Ctrl+Z结束\n&quot;);
+6.while (scanf(&quot;%d&quot;, &amp;x) !=EOF) {
+7.for(i=2,k=x&gt;&gt;1;i&lt;=k;i++)
+8.  if (!x%i) {
+9.   flag = 1;
+10.   break;
+11. }
+12.if(flag=1) printf(&quot;%d是合数&quot;, x);
+13.else printf(&quot;%d不是合数&quot;, x);
+14.}
+15.return 0;
+16.}
+</code></pre>
+<h5 id="解答-2">解答：</h5>
+<p>（1）错误修改：</p>
+<p>3)第4行flag定义为0后在循环开始时没有归0，正确形式为：在第六行后加语句flag = 0;</p>
+<p>2)第8行运算优先级错误，正确形式为：if (!(x % i))</p>
+<p>3)第12行运算符错误，不应为赋值符，正确形式为：if (flag == 1)</p>
+<h4 id="2程序修改替换">2．程序修改替换</h4>
+<p>（1）修改实验2-1程序，将内层两出口的for循环结构改用单出口结构，即不允许使用break、goto等非结构化语句。</p>
+<h5 id="1解答-2">(1)解答：</h5>
+<p>程序等价为当flag=1后退出循环，可以在for循环中添加一个判断条件，<br>
+因此，题目（1）替换后的程序如下所示：</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main()
+3.{
+4. int i, x, k, flag = 0;
+5. printf(&quot;本程序判断合数，请输入大于1的整数，以Ctrl+Z结束\n&quot;);
+6. while (scanf(&quot;%d&quot;, &amp;x) != EOF)
+7. {
+8.  flag = 0;
+9.  for (i = 2, k = x &gt;&gt; 1; i &lt;= k&amp;&amp;!flag; i++)
+10.   if (!(x % i)) {
+11.    flag = 1;
+12.   }
+13.  if (flag == 1) printf(&quot;%d是合数\n&quot;, x);
+14.  else printf(&quot;%d不是合数\n&quot;, x);
+15. }
+16. return 0;
+17.}
+</code></pre>
+<p>（2）修改实验2-1程序，将for循环改用do-while循环。</p>
+<h5 id="2解答-2">(2)解答：</h5>
+<p>由于do-while循环先进行do操作再进行判断，循环开始前需先获取一次x的值，因此，题目（2）替换后的程序如下所示：</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main()
+3.{
+4. int i, x, k, flag = 0;
+5. printf(&quot;本程序判断合数，请输入大于1的整数，以Ctrl+Z结束\n&quot;);
+6. scanf(&quot;%d&quot;, &amp;x);
+7. do
+8. {
+9.  flag = 0;
+10.  for (i = 2, k = x &gt;&gt; 1; i &lt;= k; i++)
+11.   if (!(x % i)) {
+12.    flag = 1;
+13.    break;
+14.   }
+15.  if (flag == 1) printf(&quot;%d是合数\n&quot;, x);
+16.  else printf(&quot;%d不是合数\n&quot;, x);
+17. } while (scanf(&quot;%d&quot;, &amp;x) != EOF);
+18. return 0;
+19.}
+</code></pre>
+<p>（3）修改实验2-1程序，将其改为纯粹合数求解器，求出所有的3位纯粹合数。一个合数去掉最低位，剩下的数仍是合数；再去掉剩下的数的最低位，余留下来的数还是合数，这样反复，一直到最后剩下一位数仍是合数，这样的数称为纯粹合数。</p>
+<h5 id="3解答-2">(3)解答：</h5>
+<p>根据题意，写出两个辅助函数判断是否为纯粹合数，再遍历三位数，得到答案，因此，题目（3）替换后的程序如下所示：</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int isHeshu(int x){//判断是否是合数
+3. int i, k, flag; flag = 0;
+4.  for (i = 2, k = x &gt;&gt; 1; i &lt;= k; i++)
+5.   if (!(x % i)) {
+6.    flag = 1;break; }
+7.  if (flag == 1) return 1;
+8.  else return 0; 
+9.}
+10.int PureHeshu(int n){//判断是否是纯粹合数
+11. int ret=0;
+12. if (isHeshu(n))
+13. { n /= 10;
+14.  if (isHeshu(n)) {   
+15.   n /= 10;
+16.   if (isHeshu(n)) {
+17.    ret = 1;  } } }
+18. return ret;}
+19.int main(){
+20. for (int m = 100; m &lt; 1000; m++)
+21. {  if (PureHeshu(m))
+22.   printf(&quot;%d &quot;, m); }
+23. return 0;}
+</code></pre>
+<h4 id="3程序设计">3．程序设计</h4>
+<p>(1)假设工资税金按以下方法计算：x ＜ 1000元，不收取税金；1000 ≤ x ＜ 2000，收取5%的税金；2000 ≤ x ＜ 3000，收取10%的税金；3000 ≤ x ＜ 4000，收取15%的税金；4000 ≤ x ＜ 5000，收取20%的税金；5000 ≤ x，收取25%的税金。（注意税金的计算按照阶梯计税法，比如，工资为4500，那么税金=1000<em>5% + 1000</em>10% + 1000<em>15% + 501</em>20%）。编写一个程序,输入工资金额，输出应收取税金额度，要求分别用if语句和switch语句来实现。</p>
+<h5 id="1解答-3">(1)解答：</h5>
+<p>1）解题思路</p>
+<p>1.输入x，根据实际情况，x声明为double</p>
+<p>2.根据x的大小进行选择判断，计算税金</p>
+<p>3.打印结果；</p>
+<p>4.结束</p>
+<p>2）源程序清单<br>
+/* if实现版本*/</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main()
+3.{ double x, tax;
+4. printf(&quot;请输入工资:&quot;);
+5. scanf(&quot;%lf&quot;, &amp;x);
+6. if (x &lt; 1000) tax = 0;
+7. if (x &gt;= 1000 &amp;&amp; x &lt; 2000) tax = (x+1 - 1000) * 0.05;
+8. if (x &gt;= 2000 &amp;&amp; x &lt; 3000) tax = 1000*0.05+(x+1-2000) * 0.1;
+9. if (x &gt;= 3000 &amp;&amp; x &lt; 4000) tax = 1000 * 0.05 + 1000*0.1+(x+1 - 3000) * 0.15;
+10. if (x &gt;= 4000 &amp;&amp; x &lt; 5000) tax = 1000 * 0.05 + 1000 * 0.1 + 1000*0.15+(x+1 - 4000) * 0.2;
+11. if (x &gt;= 5000) tax = 1000 * 0.05 + 1000 * 0.1 + 1000 * 0.15 +1000*0.2+(x+1 - 5000) * 0.25;
+12. printf(&quot;\n应收税金%lf元\n&quot;, tax);
+13.}
+</code></pre>
+<p>/* switch实现版本*/</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main()
+3.{
+1. double x, tax;
+5. printf(&quot;请输入工资:&quot;);
+6. scanf(&quot;%lf&quot;, &amp;x);
+7. int a =(int) x / 1000;
+8. switch (a) {
+9. case 0:tax = 0;
+10.  break;
+11. case 1:tax = (x + 1 - 1000) * 0.05;
+12.  break;
+13. case 2:tax = 1000 * 0.05 + (x + 1 - 2000) * 0.1;
+14.  break;
+15. case 3:tax = 1000 * 0.05 + 1000 * 0.1 + (x + 1 - 3000) * 0.15;
+16.  break;
+17. case 4:tax = 1000 * 0.05 + 1000 * 0.1 + 1000 * 0.15 + (x + 1 - 4000) * 0.2;
+18.  break;
+19. default:tax = 1000 * 0.05 + 1000 * 0.1 + 1000 * 0.15 + 1000 * 0.2 + (x + 1 - 5000) * 0.25;
+20.  break;
+21.}
+22. printf(&quot;\n应收税金%lf元\n&quot;, tax);
+23. return 0;
+24.}
+</code></pre>
+<p>(2)输入一段以!结尾的短文(最多5行,每行不超过50个字符)，要求将它复制到输出，复制过程中将每行一个以上的空格字符用一个空格代替。</p>
+<h5 id="2解答-3">(2)解答：</h5>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main() {
+3.    char input[5][51];   char c;   
+4.    int line = 0;   int charCount = 0; int spaceCount = 0;
+5.    while ((c = getchar()) != '!' &amp;&amp; line &lt; 5){      
+6.        if (c == ' ') {
+7.            spaceCount++;              //空格计数
+8.            if (spaceCount &lt;= 1) {      //保证只有一个空格
+9.                input[line][charCount] = c;
+10.                charCount++;
+11.            }
+12.        }
+13.        else {
+14.            spaceCount = 0;      //归零空格计数
+15.            input[line][charCount] = c;   //将c存入数组
+16.            charCount++;
+17.        }
+18.        if (c == '\n') {
+19.            input[line][charCount] = '\0';    //添加终止符并换行
+20.            line++;
+21.            charCount = 0;
+22.            spaceCount = 0;
+23.        }
+24.    }
+25.    input[line][charCount] = '!';    //添加结尾
+26.    input[line][charCount + 1] = '\0';
+27.    for (int i = 0; i &lt;= line; i++) {
+28.        printf(&quot;%s&quot;, input[i]);   }     //打印短文
+29.    return 0;
+30.}
+</code></pre>
+<p>(3)打印如下的杨辉三角形。<br>
+1                    /*第0行 */</p>
+<pre><code>                     1   1                  /*第1行 */
+                   1   2   1                /*第2行 */
+                 1   3   3   1
+               1   4   6   4   1
+             1   5   10  10  5   1
+           1   6   15  20  15  6   1
+         1   7   21  35  35  21  7   1
+       1   8   28  56  70  56  28  8   1
+     1   9   36  84  126 126 84  36   9   1
+</code></pre>
+<p>第i行第j列位置的数据值可以由组合表示</p>
+<p>根据以上公式，采用顺推法编程，输入最后一行的编号N（0&lt;=N&lt;=6），要求输出金字塔效果的杨辉三角形。<br>
+特别要注意空格的数目，一位数之间是3个空格，两位数之间有2个空格，3位数之间只有一个空格。第N行行首是N个空格。每行末尾是3个空格和换行。</p>
+<h5 id="3解答-3">(3)解答：</h5>
+<p>1） 解题思路</p>
+<p>1．输入整数N<br>
+2．利用for循环打印N个空格，并用第二个for循环控制每行空格的数量比上一行少两个</p>
+<p>3．利用递推关系求出coef</p>
+<p>4．利用双层循环打印出杨辉三角</p>
+<p>5．结束</p>
+<p>2）源程序清单:</p>
+<pre><code class="language-c">1.	#include &lt;stdio.h&gt;
+2.int main() {
+3.    int N;
+4.    scanf(&quot;%d&quot;, &amp;N);
+5.    for (int i = 0; i &lt;= N; i++)  {
+6.        for (int a = 1; a &lt;= N; a++)   {
+7.            printf(&quot; &quot;);
+8.        }
+9.        for (int space = 1; space &lt;= N - i; space++)    {
+10.            printf(&quot;  &quot;);
+11.        }
+12.        int coef = 1;
+13.        for (int j = 0; j &lt;= i; j++) {
+14.            printf(&quot;%d&quot;, coef);
+15.            if (coef &lt; 10)
+16.                printf(&quot;   &quot;);
+17.            if (coef &gt;= 10)
+18.                printf(&quot;  &quot;);
+19.            coef = coef * (i - j) / (j+1);
+20.        }
+21.        printf(&quot;\n&quot;);
+22.    }
+23.    return 0;
+24.}
+</code></pre>
+<p>（4）625这个数很特别，625的平方等于390625，其末3位也是625。请编程输出所有这样的3位数：它的平方的末3位是这个数本身。要求这些数字从小到大排列，每个数字单独占一行。</p>
+<h5 id="4解答">(4)解答：</h5>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.#include &lt;math.h&gt;
+3.int main()
+4.{
+5.    for (int i = 100; i &lt; 1000; i++)
+6.    {
+7.        int a = pow(i, 2);
+8.        if (a % 1000 == i)
+9.        {
+10.            printf(&quot;%d\n&quot;, i);
+11.        }
+12.    return 0;
+13.}
+</code></pre>
+<h3 id="23-实验小结">2.3 实验小结</h3>
+<p>在本实验中，我探索了复合语句、if语句、switch语句，以及for、while、do-while等循环控制语句的使用，还了解了转移语句和标号语句的应用。此外，我还学习了如何使用集成开发环境（IDE）的调试功能，包括单步执行、设置断点以及观察变量值。在完成这次实验后，我获得了以下几点体会和经验：</p>
+<p>1.善于纠错：在编写程序时，仍然经常会遇到语法错误，例如拼写错误、缺少分号、括号不匹配等。这些错误可以导致程序无法编译或运行。通过检查代码，查看IDE提供的错误消息来识别和纠正语法错误。</p>
+<p>2.重视逻辑，学会调试：在程序中，尤其是使用循环可能会出现逻辑错误，导致程序的输出不符合预期，或陷入死循环。我们可以使用调试工具，例如设置断点、单步执行，观察程序的执行过程，和中间变量的值，判断错误原因。</p>
+<p>3.善于选择合适结构：通过实验，我了解每种循环结构和选择结构的特点和用途，知道了while和do-while的区别，if和switch的区别，学会如何选择适合特定情况的循环结构。</p>
+<p>4.更多样结构的流程图画法：通过实验，我熟悉visio软件的基本使用，知道了如何用流程图表示循环结构和选择结构整理思路。</p>
+<hr>
+<h2 id="实验3-函数与程序结构实验">实验3 函数与程序结构实验</h2>
+<h3 id="31实验目的">3.1实验目的</h3>
+<p>（1）熟悉和掌握函数的定义、声明；函数调用与参数传递，函数返回值类型的定义和返回值使用。</p>
+<p>（2）熟悉和掌握不同存储类型变量的使用。</p>
+<p>（3）练习使用集成开发环境中的调试功能：单步执行、设置断点、观察变量值。</p>
+<h3 id="32实验内容">3.2实验内容</h3>
+<h4 id="1程序改错题">1．程序改错题</h4>
+<p>下面是计算s=1!+2!+3!+…+n!的源程序(n&lt;20)。在这个源程序中存在若干语法和逻辑错误。要求对该程序进行调试修改，使之能够输出如下结果：</p>
+<p>k=1		the sum is 1</p>
+<p>k=2		the sum is 3</p>
+<p>k=3		the sum is 9</p>
+<p>……<br>
+k=20	the sum is 2561327494111820313</p>
+<p>/<em>实验3-1改错题程序：计算s=1!+2!+3!+…+n!</em>/</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main(void)
+3.{
+4.    int k;
+5.    for(k=1;k&lt;=20;k++)
+6.         printf(&quot;k=%d\tthe sum is %ld\n&quot;,k,sum_fac(k));
+7.    return 0;
+8.}
+9.long sum_fac(int n)
+10.{
+11.    long s=0;
+12.    int i,fac;
+13.   for(i=1;i&lt;=n;i++)
+14.        fac*=i;
+15.    s+=fac;
+16.    return s;
+17.}
+</code></pre>
+<h5 id="解答-3">解答：</h5>
+<p>（1）错误修改：<br>
+1)第3行未声明sum-fac函数，正确形式为：<br>
+long long sum_fac(int n);</p>
+<p>2)第9行的函数返回值类型出错，正确形式为：<br>
+long long sum_fac(int n);</p>
+<p>3)第11行s的数据类型出错，正确形式为：long long s = 0;</p>
+<p>4)第12行fac的数据类型出错且未初始化，正确形式为：<br>
+long long fac = 1;</p>
+<h4 id="2程序修改替换题">2．程序修改替换题</h4>
+<p>（1）根据将实验3-1改错题程序中sum_fac函数修改为一个递归函数，用递归的方式计算。</p>
+<h5 id="解答-4">解答：</h5>
+<p>替换后的程序如下所示：</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main(void)
+3.{
+4.    long long sum_fac(int n);
+5.    int k;
+6.    for (k = 1; k &lt;= 20; k++)
+7.        printf(&quot;k=%d\tthe sum is %lld\n&quot;, k, sum_fac(k));
+8.    return 0;
+9.}
+10.long long sum_fac(int n)
+11.{
+12.    long long s = 0;
+13.    long long i, fac = 1;
+14.    for (i = 1; i &lt;= n; i++) {
+15.        fac *= i;
+16.    }
+17.    s += fac;
+18.    if (n == 1)
+19.        return s;
+20.    else
+21.        return s + sum_fac(n - 1);
+22.}
+</code></pre>
+<p>（2）下面是计算e^x麦克劳林展开的源程序，其中x是浮点数，n是整数。从键盘输入x和n，然后计算s的值。修改该程序中的sum和fac函数，使之计算量最小。<br>
+/<em>实验3-2程序修改替换第(2)题程序：根据公式计算 s</em>/</p>
+<pre><code class="language-c">1.#include&lt;stdio.h&gt;
+2.double mulx(double x,int n);
+3.long fac(int n);
+4.double sum(double x,int n)
+1.{
+5. int i;
+6. double z=1.0;
+7. for(i=1;i&lt;=n;i++)
+8. {
+9.  z=z+mulx(x,i)/fac(i);
+10. }
+11. return z;
+12. } 
+13. double mulx(double x,int n)
+2.{
+14. int i;
+15. double z=1.0;
+16. for(i=0;i&lt;n;i++)
+17. {
+18.  z=z*x;
+19. }
+20. return z;
+21. } 
+22. long fac(int n)
+3. {
+23.  int i;
+24.  long h=1;
+25.  for(i=2;i&lt;=n;i++)
+26. {
+27.  h=h*i;
+28. }
+29. return h;  
+30. }
+31. int main()
+32. {
+33.  double x;
+34. int n;
+35. printf(&quot;Input x and n:&quot;);
+36. scanf(&quot;%lf%d&quot;,&amp;x,&amp;n);
+37. printf(&quot;The result is %lf:&quot;,sum(x,n));
+38. return 0;   
+39. }
+</code></pre>
+<h5 id="解答-5">解答：</h5>
+<p>采用静态数据类型优化，修改后的程序如下所示：</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2./* 计算s=1+x+x2/2!+x3/3! */
+3.double mulx(double x)
+4.{
+5.    static double z = 1.0;
+6.    z *= x;
+7.    return z;
+8.}
+9.long fac(int n)
+10.{
+11.    static long f = 1; 
+12.//静态局部变量，静态局部变量使用static修饰符定义，
+13.//即使在声明时未赋初值，编译器也会把它初始化为0。且静态局部变量存储于进程的
+14.//全局数据区，即使函数返回，它的值也会保持不变。
+15.    f *= n;
+16.    return f;
+17.}
+18.double sum(double x, int n)
+19.{
+20.    int i;
+21.    double z = 1.0;
+22.    for (i = 1; i &lt;= n; i++)
+23.    {
+24.        z = z + mulx(x) / fac(i);
+25.    }
+26.    return z;
+27.}
+28.int main() {
+29.    double x;
+30.    int n;
+31.    printf(&quot;Input x and n:&quot;);
+32.    scanf(&quot;%lf%d&quot;, &amp;x, &amp;n);
+33.    printf(&quot;The result is %lf:&quot;, sum(x, n));
+34.    return 0;
+35.}
+</code></pre>
+<h4 id="3跟踪调试题">3．跟踪调试题</h4>
+<p>下面是计算fabonacci数列前n项和的源程序，现要求单步执行该程序，在watch窗口中观察Ik,sum,n值。具体操作如下：<br>
+（1）设输入5，观察刚执行完“scanf(&quot;%d&quot;,&amp;k);”语句时，sum、k的值是多少？</p>
+<p>（2）在从main函数第一次进入fabonacci函数前的一刻，观察各变量的值是多少？返回后光条停留在哪个语句上？</p>
+<p>（3）在从main函数第一次进入fabonacci函数后的一刻，观察光条从main函数“sum+=fabonacci(i);”语句调到了哪里？</p>
+<p>（4）在fabonacci函数内部单步执行，观察函数的递归执行过程。体会递归方式实现的计算过程是如何完成数计算的，并特别注意什么时刻结束递归，然后直接从第一个return语句返回到了哪里？</p>
+<p>（5）在fabonacci函数递归执行过程中观察参数n的变化情况，并回答为什么k、sum在fabonacci函数内部不可见？</p>
+<p>/<em>实验3-3跟踪调试题程序：计算fabonacci数列前n项和</em>/</p>
+<pre><code class="language-c">1.#include&lt;stdio.h&gt; 
+2.int main(void)
+3.{
+4.    int i,k;
+5.    long sum=0,fabonacci(int n);
+6.    printf(&quot;Inut n:&quot;);
+7.    scanf(&quot;%d&quot;,&amp;k);
+8.    for(i=1;i&lt;=k;i++){
+9.        sum+=fabonacci(i);
+10.        printf(&quot;i=%d\tthe sum is %ld\n&quot;,i,sum);
+11.    }
+12.    return 0;
+13.}
+14.long fabonacci(int n)
+15.{
+16.    if(n==1 || n==2)
+17.        return 1;
+18.    else
+19.        return fabonacci(n-1)+fabonacci(n-2);
+20.} 
+</code></pre>
+<h5 id="解答-6">解答：</h5>
+<p>(1)sum,k的值分别是0和5。</p>
+<p>(2)如图，sum,k,i的值分别为0，5，1，光条在sum+=fabonacci(i);语句前。</p>
+<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/2fvhj3ri.png" alt="" loading="lazy"></figure>
+<p>(3)光条调到了fabonacci函数体的开始,如图所示：<br>
+<img src="https://Ilosyi.github.io/post-images/1700494376523.png" alt="" loading="lazy"></p>
+<p>(4)观察递归可发现，当n=1或2时，函数直接返回1，当n&gt;=3时，函数调用自身两次，分别计算fabonacci(n-1) 和 fabonacci(n-2)，若fabonacci(n-1) 和 fabonacci(n-2）中n-1或n-2&gt;=3，函数会继续调用自身，直到n=1或2。当结束时，光条回到sum += fabonacci(i);处,如图：<br>
+<img src="https://Ilosyi.github.io/post-images/1700494405575.png" alt="" loading="lazy"></p>
+<p>(5)设输入3，n的值经历了从1-2-3-2-3-1-3的转变，符合上一问中所解释的递归调用过程。定义在函数内部的变量称为局部变量（Local Variable），它的作用域仅限于函数内部， 离开该函数后就是无效的，k,sum定义在main函数内，只在 main 函数内部可见。fabonacci 函数只能访问自己的参数 n，而不能访问 main 函数中的局部变量 k 和 sum。<br>
+<img src="https://Ilosyi.github.io/post-images/1700494463644.png" alt="" loading="lazy"></p>
+<h4 id="4程序设计">4．程序设计</h4>
+<p>（1）编程验证歌德巴赫猜想：任何一个大于等于4的偶数都是两个素数之和。要求设计一个函数，接受形参n，以“n=n1+n2”的形式输出结果，若有多种分解情况，取n1最小的一个输出。<br>
+例如：n=6，输出“6=3+3”。<br>
+main函数循环接收从键盘输入的整数n，如果n是大于或等于4的偶数，调用上述函数进行验证。</p>
+<h5 id="1解答-4">(1)解答：</h5>
+<p>1） 算法流程如图3.9所示<br>
+<img src="https://Ilosyi.github.io/post-images/1700494520909.png" alt="" loading="lazy"><br>
+2）源程序清单</p>
+<pre><code class="language-c">1.#include&lt;stdio.h&gt; 
+2.#include&lt;math.h&gt;
+3.int isPrime(int x)//素数
+4.{
+5.    int ret = 1;
+6.    int i;
+7.    if (x == 1 || (x % 2 == 0 &amp;&amp; x != 2))
+8.        ret = 0;
+9.    for (i = 3; i &lt; sqrt(x); i += 2)
+10.    {
+11.        if (x % i == 0)
+12.        {
+13.            ret = 0;
+14.            break;
+15.        }
+16.    }
+17.    if (ret == 1)
+18.        return ret;
+19.}
+20.void gedebahe(int n)//哥德巴赫猜想的函数和输出
+21.{
+22.
+23.    for (int i = 2; i &lt;= n / 2; i++)
+24.    {
+25.        if (isPrime(i) &amp;&amp; isPrime(n - i))
+26.        {
+27.            printf(&quot;%d=%d+%d\n&quot;, n, i, n - i);
+28.            return;
+29.        }
+30.    }
+31.}
+32.
+33.int main()
+34.{
+35.    int n;
+36.    while (scanf(&quot;%d&quot;, &amp;n) != EOF)
+37.    {
+38.        gedebahe(n);
+39.    }
+40.    return 0;
+41.}
+</code></pre>
+<p>3）测试<br>
+（a） 测试数据：</p>
+<p>表3-1 编程题1的测试数据<br>
+测试用例	程序输入	理论结果<br>
+用例1	       48	         48=5+43<br>
+用例2	       90	         90=7+83<br>
+用例3	       10	         10=3+7<br>
+（b） 对应测试数据的运行结果截图<br>
+<img src="https://Ilosyi.github.io/post-images/1700494616388.png" alt="" loading="lazy"></p>
+<p>2）完全数（Perfect number），又称完美数或完备数，特点是它的所有真因子（即除了自身以外的约数，包括1）之和恰好等于它本身。例如6=1+2+3，28=1+2+4+7+14等。<br>
+编程寻找10000以内的所有完全数。<br>
+要求设计一个函数，判定形参n是否为完全数，如果是，返回1，否则返回0。在main函数中调用该函数求10000以内的所有完全数，并以完全数的真因子之和的形式输出结果，例如“6=1+2+3”。程序输出中，每个完全数单独占一行。</p>
+<h5 id="2解答-4">(2)解答：</h5>
+<p>1） 算法流程如图3.11所示<br>
+<img src="https://Ilosyi.github.io/post-images/1700494638114.png" alt="" loading="lazy"><br>
+2）源程序清单</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int wanshu(int n)
+3.{
+4.    int sum = 0;
+5.    for (int i = 1; i &lt;= n / 2; i++)
+6.    {
+7.        if (n % i == 0) {  //找到一个因子
+8.            sum += i;
+9.        }
+10.    }
+11.    if (sum == n)    //如果两者相等
+12.    {
+13.        return 1;
+14.    }
+15.    else
+16.    {
+17.        return 0;
+18.    }
+19.}
+20.
+21.int main() {
+22.    for (int num = 1; num &lt;= 10000; num++)
+23.    {
+24.        if (wanshu(num))
+25.        {
+26.            printf(&quot;%d=&quot;, num);
+27.            for (int i = 1; i &lt;= num / 2; i++) {
+28.                if (num % i == 0) {
+29.                    printf(&quot;%d&quot;, i);
+30.                    if (i != num / 2) {
+31.                        printf(&quot;+&quot;);
+32.                    }
+33.                }
+34.            }
+35.            printf(&quot;\n&quot;);
+36.        }
+37.    }
+38.    return 0;
+39.}
+</code></pre>
+<p>3）测试<br>
+对应测试数据的运行结果截图<br>
+<img src="https://Ilosyi.github.io/post-images/1700494667269.png" alt="" loading="lazy"><br>
+（3）自幂数是指一个n位数，它的每个位上的数字的n次幂之和等于它本身。水仙花数是3位的自幂数，除此之外，还有4位的四叶玫瑰数、5位的五角星数、6位的六合数、7位的北斗星数、8位的八仙数等。</p>
+<p>编写一个函数，判断其参数n是否为自幂数，如果是，返回1；否则，返回0。要求main函数能反复接收从键盘输入的整数k，k代表位数，然后调用上述函数求k位的自幂数，输出所有k位自幂数，并输出相应的信息，例如“3位的水仙花数共有4个153，370，371，407”。当k=0时程序结束执行。</p>
+<h5 id="3解答-4">(3)解答：</h5>
+<p>1） 算法流程如图3.13所示。<br>
+<img src="https://Ilosyi.github.io/post-images/1700494714778.png" alt="" loading="lazy"><br>
+2）源程序清单</p>
+<pre><code>1.	#include &lt;stdio.h&gt;
+2.#include &lt;math.h&gt;
+3.int shuixianhua(int n) {
+4.    int t = n;
+5.    int sum = 0;
+6.    int d = 0;
+7.    while (t != 0)
+8.    {
+9.        d++;
+10.        t /= 10;
+11.    }
+12.    t = n;
+13.    while (t != 0)
+14.    {
+15.        int a = t % 10;
+16.        sum += pow(a, d);
+17.        t /= 10;
+18.    }
+19.    if (sum == n)
+20.        return 1;
+21.    else
+22.        return 0;
+23.}
+24.int main()
+25.{
+26.    int arr[10];
+27.    int k;
+28.    while (1)
+29.    {
+30.        scanf(&quot;%d&quot;, &amp;k);
+31.        if (k == 0) {
+32.            break;
+33.        }
+34.        int count = 0;
+35.        switch (k)
+36.        {
+37.        case 3:
+38.            printf(&quot;%d位的水仙花数共有&quot;, k);
+39.            break;
+40.        case 4:
+41.            printf(&quot;%d位的四叶玫瑰数共有&quot;, k);
+42.            break;
+43.        case 5:
+44.            printf(&quot;%d位的五角星数共有&quot;, k);
+45.            break;
+46.        case 6:
+47.            printf(&quot;%d位的六合数共有&quot;, k);
+48.            break;
+49.        case 7:
+50.            printf(&quot;%d位的北斗星数共有&quot;, k);
+51.            break;
+52.        case 8:
+53.            printf(&quot;%d位的八仙数共有&quot;, k);
+54.            break;
+55.        default:
+56.            printf(&quot;%d位的数共有&quot;, k);
+57.            break;
+58.        }
+59.        for (int i = pow(10, k - 1); i &lt; pow(10, k); i++)
+60.        {
+61.            if (shuixianhua(i))
+62.            {
+63.                arr[count] = i;
+64.                count++;
+65.            }
+66.        }
+67.        printf(&quot;%d个&quot;, count);
+68.        for (count = count - 1; count &gt;= 0; count--)
+69.        {
+70.            printf(&quot;%d&quot;, arr[count]);
+71.            if (count != 0)
+72.            {
+73.                printf(&quot;,&quot;);
+74.            }
+75.
+76.        }
+77.        printf(&quot;\n&quot;);
+78.    }
+79.    return 0;
+80.}
+</code></pre>
+<p>3）测试<br>
+（a） 测试数据：<br>
+表3-2 编程题3的测试数据<br>
+测试用例	程序输入	理论结果<br>
+用例1	      3	      3位的水仙花数共有4个407,371,370,153<br>
+用例2	      4	      4位的四叶玫瑰数共有3个9474,8208,1634<br>
+用例3	      5	      5位的五角星数共有3个93084,92727,54748<br>
+（b） 对应测试数据的运行结果截图<br>
+<img src="https://Ilosyi.github.io/post-images/1700494773905.png" alt="" loading="lazy"></p>
+<h3 id="33-实验小结">3.3 实验小结</h3>
+<p>在这次上机实验中，我们旨在熟悉和掌握函数的定义、声明，函数调用与参数传递，函数返回值类型的定义和返回值使用，同时了解不了同存储类型变量的使用。此外，我们练习了使用集成开发环境的调试功能，包括单步执行、设置断点、观察变量值，并借此观察函数递归的过程，以下是我在本次实验中遇到的问题和收获。</p>
+<p>1.熟悉了函数的使用：通过实验，我学习了函数的定义，声明，返回值类型和使用，在跟踪调试过程中，我了解的递归的过程，并知道了其缺点，通过调试功能观察到变量在函数调用，递归过程中的变化，对计算机有了更深的了解。</p>
+<p>2.纠错能力得到提升：在改错题中，我意识到数据类型错误，却忘记了printf输出中格式符的变化，通过实验，锻炼了我思维的周密性。</p>
+<p>3.重视数学与编程相结合：本次实验的程序设计题均为数学相关问题，在实验过程中，经常不知道如何确定循环的终止条件，这时需要借助数学只是判断，如完数一定是偶数，可确定for循环中i&lt;=n/2。</p>
+<p>4.了解了算法的优化：通过程序修改替换题，我学会了利用静态数据类型优化算法，减少计算量。在水仙花数题中，通过摸索我知道了可以用数组储存后面需要用到的变量，避免了重复的运算。本次实验对算法思维有一定帮助。</p>
+<hr>
+<h2 id="实验4-编译预处理实验">实验4  编译预处理实验</h2>
+<h3 id="41实验目的">4.1实验目的</h3>
+<p>（1）掌握文件包含、宏定义、条件编译和assert宏的使用；</p>
+<p>（2）练习使用集成开发环境中的调试功能：单步执行、设置断点、观察变量值。</p>
+<p>（3）熟悉多文件编译技术</p>
+<h3 id="42实验内容">4.2实验内容</h3>
+<h4 id="1程序改错-2">1．程序改错</h4>
+<p>下面是用宏来计算平方差、交换两数的源程序.在这个源程序中存在若干错误，要求对该程序进行调试修改，使之能够正确完成指定任务。<br>
+/<em>实验4-1改错与跟踪调试题程序：计算平方差、将换两数</em>/</p>
+<pre><code>#include&lt;stdio.h&gt;
+#define SUM a+b
+#define DIF a-b
+#define SWAP(a,b)  a=b,b=a
+int main() 
+{
+    int a,b;
+    printf(&quot;Input two integers a, b:&quot;);
+    scanf(&quot;%d%d&quot;, &amp;a,&amp;b);
+    printf(&quot;\nSUM=%d\n the difference between square of a and square of b is:%d&quot;,SUM, SUM*DIF);
+    SWAP(a,b);
+    printf(&quot;\nNow a=%d,b=%d\n&quot;,a,b);
+    return 0;
+}
+</code></pre>
+<h4 id="2程序修改替换-2">2．程序修改替换</h4>
+<p>下面是用函数实现求三个数中最大数、计算两浮点数之和的程序。在这个源程序中存在若干语法和逻辑错误。<br>
+要求：（1）对这个例子程序进行调试修改，使之能够正确完成指定任务；<br>
+（2）用带参数的宏替换函数max，来实现求最大数的功能。<br>
+/<em>实验4-2程序修改替换题程序</em>/</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt; 
+int main(void)
+{
+	int a, b, c;
+  	float d, e;
+  	printf(&quot;Input three integers:&quot;);
+  	scanf(&quot;%d %d %d&quot;,&amp;a,&amp;b,&amp;c);
+  	printf(&quot;\nThe maximum of them is %d\n&quot;,max(a,b,c));
+
+  	printf(&quot;Input two floating point numbers:&quot;);
+	scanf(&quot;%f %f&quot;,&amp;d,&amp;e);
+	printf(&quot;\nThe sum of them is  %f\n&quot;,sum(d,e));
+	return 0;
+}
+	
+int max(int x, int y, int z)					
+{
+	int m=z;
+	if (x&gt;y)
+		if(x&gt;z) m=x;
+	else
+    	if(y&gt;z) m=y;
+    return m;
+}
+
+float sum(float x, float y)
+{
+	return x+y;
+}
+</code></pre>
+<h4 id="3跟踪调试">3．跟踪调试</h4>
+<p>下面程序利用R计算圆的面积s，以及面积s的整数部分。现要求：<br>
+（1）修改程序，使程序编译通过且能运行；</p>
+<p>（2）单步执行。进入函数integerl_fraction时，watch窗口中x为何值？在返回main时, watch窗口中i为何值？</p>
+<p>（3）修改程序，使程序能输出面积s值的整数部分（要求四舍五入），不会输出错误信息assertion failed。</p>
+<p>/<em>实验4-3跟踪调试题程序利用R计算圆的面积s</em>/</p>
+<pre><code class="language-c">#define  R
+int main(void)
+{
+	float  r, s;
+	int s_integer=0;
+    printf (&quot;Input a number: &quot;);
+    scanf(&quot;%f&quot;,&amp;r);
+    #ifdef  R
+       s=3.14159*r*r;
+       printf(&quot;Area of round is: %f\n&quot;,s);
+       s_integer=integer_fraction(s);
+       assert((s-s_integer)&lt;0.5);
+       printf(&quot;The integer fraction of area is %d\n&quot;, s_integer);
+    #endif
+    return 0;
+}
+
+int integer_fraction(float x)
+{
+  int i=x;
+  return i;
+}
+</code></pre>
+<h4 id="4程序设计-2">4．程序设计</h4>
+<p>（1）三角形的面积是，其中，a,b,c为三角形的三边，要求编写程序用带参数的宏来计算三角形的面积。定义两个带参数的宏，一个用来求s，另一个用来求area。</p>
+<p>2）用条件编译方法来编写程序。输入一行英文字符序列，可以任选两种方式之一输出：一为原文输出；二为变换字母的大小写后输出。例如小写‘a’变成大写‘A’，大写‘D’变成小写‘d’，其他字符不变。用#define命令控制是否变换字母的大小写。例如，#define CHANGE 1 则输出变换后的文字，若#define CHANGE 0则原文输出。</p>
+<p>（3）假设一个C程序由file1.c和file2.c两个源文件及一个file.h头文件组成，file1.c、file2.c和file.h的内容分别如下所述。试编辑该多文件C程序，补充file.h头文件内容，然后编译和链接。然后运行最后生成的可执行文件。<br>
+/<em>源文件file1.c的内容</em>/</p>
+<pre><code class="language-c">#include &quot;file.h&quot;
+int x,y;             /* 外部变量的定义性说明 */
+char ch;             /* 外部变量的定义性说明 */
+int main(void)
+{
+        x=10;
+        y=20;
+        ch=getchar();
+        printf(&quot;in file1 x=%d,y=%d,ch is %c\n&quot;,x,y,ch);
+        func1();
+ return 0;
+}
+
+/*源文件file2.c的内容为：*/
+#include &quot;file.h&quot;
+void func1(void)
+{
+        x++;
+        y++;
+        ch++;
+        printf(&quot;in file2 x=%d,y=%d,ch is %c\n&quot;,x,y,ch);
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[华科送寝外卖评价]]></title>
         <id>https://Ilosyi.github.io/post/hua-ke-song-qin-wai-mai-ping-jie/</id>
@@ -59,27 +1062,27 @@
 <p>选择排序（Selection Sort）是一种简单直观的排序算法，其基本思想是在未排序的部分中选择最小（或最大）的元素，然后将其放到已排序部分的末尾。这个过程不断地重复，直到所有元素都排序完成。<br>
 <a href="https://www.bilibili.com/video/BV1qS4y1w7jM/?spm_id_from=333.337.search-card.all.click&amp;vd_source=3d122b36d70c1b8fb284bf43c2a63a86">选择排序的动画演示</a><br>
 /<em>代码实现</em>/</p>
-<pre><code>`void selectionSort(int arr[], int n) {
-int i, j, minIndex, temp;
+<pre><code class="language-c">   void selectionSort(int arr[], int n) {
+   int i, j, minIndex, temp;
 
-// 遍历数组
-for (i = 0; i &lt; n - 1; i++) {
-// 假设当前索引为最小值索引
-minIndex = i;
+   // 遍历数组
+   for (i = 0; i &lt; n - 1; i++) {
+   // 假设当前索引为最小值索引
+   minIndex = i;
 
-// 在未排序部分中寻找最小值的索引
-        for (j = i + 1; j &lt; n; j++) {
-         if (arr[j] &lt; arr[minIndex]) {
-            minIndex = j;
-        }
+   // 在未排序部分中寻找最小值的索引
+           for (j = i + 1; j &lt; n; j++) {
+            if (arr[j] &lt; arr[minIndex]) {
+               minIndex = j;
+           }
+       }
+
+   // 将找到的最小值与当前位置交换
+       temp = arr[minIndex];
+       arr[minIndex] = arr[i];
+       arr[i] = temp;
     }
-
-// 将找到的最小值与当前位置交换
-    temp = arr[minIndex];
-    arr[minIndex] = arr[i];
-    arr[i] = temp;
- }
-}
+   }
 </code></pre>
 <h2 id="font-color0000ff-二-冒泡排序font"><font color=#0000FF ><strong>二、冒泡排序</strong></font></h2>
 <h3 id="普通冒泡排序"><strong>普通冒泡排序</strong></h3>
@@ -87,23 +1090,59 @@ minIndex = i;
 交换原则：两两比较进行交换，如果小的在后，大的在前即交换<br>
 <a href="https://www.bilibili.com/video/BV1qY4y1h7Lz/?spm_id_from=333.337.search-card.all.click&amp;vd_source=3d122b36d70c1b8fb284bf43c2a63a86">冒泡排序的动画演示</a><br>
 /<em>代码实现</em>/</p>
-<pre><code>#include &lt;stdio.h&gt;
-void bubbleSort(int arr[], int n) {
- int temp;
-for (int i = 0; i &lt; n - 1; i++) {
-for (int j = 0; j &lt; n - i - 1; j++) {
-if (arr[j] &gt; arr[j + 1]) {
-// 交换arr[j]和arr[j+1]
-temp = arr[j];
-arr[j] = arr[j + 1];
-arr[j + 1] = temp;
-} }}}
+<pre><code class="language-c">   #include &lt;stdio.h&gt;
+   void bubbleSort(int arr[], int n) {
+    int temp;
+   for (int i = 0; i &lt; n - 1; i++) {
+   for (int j = 0; j &lt; n - i - 1; j++) {
+   if (arr[j] &gt; arr[j + 1]) {
+   // 交换arr[j]和arr[j+1]
+   temp = arr[j];
+   arr[j] = arr[j + 1];
+   arr[j + 1] = temp;
+   }
+    }
+    }
+    }
 </code></pre>
 <h3 id="改进冒泡排序"><strong>改进冒泡排序</strong></h3>
 <p>冒泡排序改进1：在某次遍历中如果没有数据交换，说明整个数组已经有序。因此通过设置标志位来记录此次遍历有无数据交换就可以判断是否要继续循环。<br>
-冒泡排序改进2：记录某次遍历时最后发生数据交换的位置，这个位置之后的数据显然已经有序了。因此通过记录最后发生数据交换的位置就可以确定下次循环的范围了。</p>
+冒泡排序改进2：记录某次遍历时最后发生数据交换的位置，这个位置之后的数据显然已经有序了。因此通过记录最后发生数据交换的位置就可以确定下次循环的范围了。<br>
+/<em>代码实现</em>/</p>
+<pre><code class="language-c">   #include &lt;stdio.h&gt;
+   void bubbleSort(int arr[], int n) {
+   int temp;
+   int lastSwap = n - 1; // 初始化最后一次交换位置为数组的最后一个元素
+   for (int i = 0; i &lt; n - 1; i++) {
+   int newLastSwap = -1; // 初始化新的最后一次交换位置为-1，用于判断是否有交换发生
+   for (int j = 0; j &lt; lastSwap; j++) {
+   if (arr[j] &gt; arr[j + 1]) {
+    // 交换arr[j]和arr[j+1]
+   temp = arr[j];
+   arr[j] = arr[j + 1];
+   arr[j + 1] = temp;
+   newLastSwap = j; // 更新最后一次交换的位置
+   }
+   }
+   // 如果没有数据交换，说明整个数组已经有序，可以提前退出排序
+   if (newLastSwap == -1) {
+   break;
+    }
+   lastSwap = newLastSwap; // 更新最后一次交换的位置
+    }
+   }
+</code></pre>
 <h2 id="font-color0000ff-三-快速排序font"><font color=#0000FF ><strong>三、快速排序</strong></font></h2>
-<p>推荐一个讲解视频：<a href="https://www.bilibili.com/video/BV1vP411g7J3/?spm_id_from=333.337.search-card.all.click">全网最清晰快速排序，看完快排思想和代码全部通透，不通透你打我！</a></p>
+<p>推荐一个讲解视频：<a href="https://www.bilibili.com/video/BV1vP411g7J3/?spm_id_from=333.337.search-card.all.click">全网最清晰快速排序，看完快排思想和代码全部通透，不通透你打我！</a><br>
+快速排序的基本思想是选择一个基准元素，将数组分成两部分，左边的部分包含所有小于基准的元素，右边的部分包含所有大于基准的元素，然后对这两部分分别进行快速排序，最终将整个数组排序。<br>
+快速排序的步骤如下：<br>
+1.选择基准元素： 从数组中选择一个基准元素（通常是第一个元素、最后一个元素或者随机选择），记作pivot。<br>
+2.分区（Partition）： 将数组分成两部分，小于基准元素的放在左边，大于基准元素的放在右边，相等的可以放在任意一边。分区过程可以使用双指针法来实现。<br>
+3.递归排序： 递归地对左右两部分进行快速排序。<br>
+4.合并： 由于每次递归调用都会将一个元素放置到其最终位置，所以当递归调用完成时，整个数组就被排序好了。<br>
+这个过程是递归的，当数组被分割为单个元素时，递归结束。<br>
+快速排序的优势在于它的平均时间复杂度为O(n log n)，而且它是原地排序（in-place sorting），只需要常数级别的额外空间。但是，快速排序的性能高度依赖于选择的基准元素，如果选择的基准元素不合适，可能会导致算法的性能下降。为了避免这种情况，通常使用随机选择基准元素或者使用三数取中法（选择第一个、中间一个和最后一个元素中的中间值作为基准）来提高算法的稳定性。<br>
+/<em>代码实现</em>/</p>
 <h2 id="font-color0000ff-四-插入排序font"><font color=#0000FF ><strong>四、插入排序</strong></font></h2>
 <h3 id="普通插入排序"><strong>普通插入排序</strong></h3>
 <h3 id="折半插入排序"><strong>折半插入排序</strong></h3>
@@ -126,6 +1165,7 @@ arr[j + 1] = temp;
 <li><a href="#%E6%95%B0%E7%BB%84%E7%89%B9%E7%82%B9">数组特点</a></li>
 </ul>
 </li>
+<li><a href="#10%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F">10.逆波兰表达式</a></li>
 </ul>
 </li>
 <li><a href="#%E4%BA%8C-10%E4%B8%AA%E5%A3%B0%E6%98%8E%E8%AF%AD%E5%8F%A5%E8%BE%A8%E6%9E%90">二、10个声明语句辨析：</a>
@@ -156,7 +1196,99 @@ arr[j + 1] = temp;
 <h3 id="1数组概述">1.数组概述</h3>
 <p>简单数据类型的变量仅能描述一个单独的数据，对客观对象的描述能力十分有限，<strong>数组</strong>属于构造类型，是相同数据类型数据的集合，<strong>元素</strong>是组成数组的数据，可以是各种类型。</p>
 <h4 id="数组特点">数组特点</h4>
-<p>数组的所有元素</p>
+<h3 id="10逆波兰表达式">10.逆波兰表达式</h3>
+<pre><code>#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;ctype.h&gt;
+#include&lt;string.h&gt;
+#define MAX_STACK_SIZE 100
+
+// 定义全局变量和函数原型
+int stack[MAX_STACK_SIZE];
+int top = -1;
+
+void push(int value) {
+// 将值压入栈
+if (top &lt; MAX_STACK_SIZE - 1) {
+    stack[++top] = value;
+}
+else {
+    printf(&quot;Stack overflow\n&quot;);
+    exit(EXIT_FAILURE);
+}
+}
+
+int pop() {
+// 从栈中弹出值
+if (top &gt;= 0) {
+    return stack[top--];
+}
+else {
+    printf(&quot;Stack underflow\n&quot;);
+    exit(EXIT_FAILURE);
+}
+}
+
+int isOperator(char ch) {
+// 检查字符是否是运算符
+return (ch == '+' || ch == '-' || ch == '*' || ch == '/');
+}
+
+int evaluateRPN(char* expression) {
+char* ptr = expression;
+int operand;
+while (*ptr != '\0') {
+if (isdigit(*ptr)) {
+        // 如果是数字，将其转换为整数并压入栈
+        operand = 0;
+        while (isdigit(*ptr)) {
+            operand = operand * 10 + (*ptr - '0');
+            ptr++;
+        }
+        push(operand);
+    }
+else if(isOperator(*ptr)) {
+        // 如果是运算符，弹出栈顶的两个操作数，进行运算，将结果压入栈
+        int operand2 = pop();
+        int operand1 = pop();
+
+        switch (*ptr) {
+        case '+':
+            push(operand1 + operand2);
+            break;
+        case '-':
+            push(operand1 - operand2);
+            break;
+        case '*':
+            push(operand1 * operand2);
+            break;
+        case '/':
+            push(operand1 / operand2);
+            break;
+        }
+        ptr++;
+    }
+    else {
+        // 忽略空格等非数字和运算符的字符
+        ptr++;
+}
+}
+
+// 栈中的最后一个元素即为计算结果
+return pop();
+}
+int main() {
+char expression[MAX_STACK_SIZE];
+gets_s(expression, MAX_STACK_SIZE);// 逆波兰表达式
+int result = evaluateRPN(expression);
+
+// 输出计算结果
+printf(&quot;Result: %d\n&quot;, result);
+
+return 0;
+}
+</code></pre>
 <h2 id="二-10个声明语句辨析">二、10个声明语句辨析：</h2>
 <h3 id="1int-a">1.int a;</h3>
 <p>声明一个整数类型的变量 a</p>
@@ -682,62 +1814,62 @@ chess[1][1]=1;//在第1行第1列放一个皇后</p>
 <p>最适合计算机也一定不会遗漏任何一种摆放的方法！摆放方式共有：8×8 ×8 ×8 ×8 ×8 ×8 ×8 = 8^8<br>
 用八层for循环枚举。<br>
 分析：同一列没有必要再摆放，若第n个皇后与前面冲突，则不用进行n+1个皇后的摆放，而应回到上一步。（回溯思想）</p>
-<pre><code>void queen() {
-int chess[8], i; // chess数组存放皇后的摆放，i用于输出皇后的循环变量
+<pre><code class="language-c">    void queen() {
+    int chess[8], i; // chess数组存放皇后的摆放，i用于输出皇后的循环变量
 
-for (chess[0] = 0; chess[0] &lt;= 7; chess[0]++) // 对应第0行的8种摆放
-    for (chess[1] = 0; chess[1] &lt;= 7; chess[1]++)
-        for (chess[2] = 0; chess[2] &lt;= 7; chess[2]++)
-            for (chess[3] = 0; chess[3] &lt;= 7; chess[3]++)
-                for (chess[4] = 0; chess[4] &lt;= 7; chess[4]++)
-                    for (chess[5] = 0; chess[5] &lt;= 7; chess[5]++)
-                        for (chess[6] = 0; chess[6] &lt;= 7; chess[6]++)
-                            for (chess[7] = 0; chess[7] &lt;= 7; chess[7]++)
-                                if (check(chess, 8) == 1) // 如果不存在冲突则输出这种摆放方案
-                                    for (i = 0; i &lt; 8; i++) // 输出每一行皇后的位置
-                                        printf(&quot;%d &quot;, chess[i]);}
+    for (chess[0] = 0; chess[0] &lt;= 7; chess[0]++) // 对应第0行的8种摆放
+        for (chess[1] = 0; chess[1] &lt;= 7; chess[1]++)
+            for (chess[2] = 0; chess[2] &lt;= 7; chess[2]++)
+                for (chess[3] = 0; chess[3] &lt;= 7; chess[3]++)
+                    for (chess[4] = 0; chess[4] &lt;= 7; chess[4]++)
+                        for (chess[5] = 0; chess[5] &lt;= 7; chess[5]++)
+                            for (chess[6] = 0; chess[6] &lt;= 7; chess[6]++)
+                                for (chess[7] = 0; chess[7] &lt;= 7; chess[7]++)
+                                    if (check(chess, 8) == 1) // 如果不存在冲突则输出这种摆放方案
+                                        for (i = 0; i &lt; 8; i++) // 输出每一行皇后的位置
+                                            printf(&quot;%d &quot;, chess[i]);}
 </code></pre>
 <p>这段代码通过嵌套的循环尝试所有可能的皇后摆放方式。对于每种摆放方式，它调用名为 check 的函数，检查是否存在皇后之间的冲突（即是否存在在同一行、同一列或对角线上）。如果没有冲突，它就打印出每一行皇后的位置。</p>
 <h1 id="四-回溯方法"><strong>四、回溯方法</strong></h1>
-<pre><code>void queen() {
-int chess[8], i; // chess存放皇后的摆放 i用于输出皇后的循环变量
+<pre><code class="language-c">    void queen() {
+    int chess[8], i; // chess存放皇后的摆放 i用于输出皇后的循环变量
 
-// 循环尝试每一行的摆放方式
-for (chess[0] = 0; chess[0] &lt;= 7; chess[0]++) {
-    // 对应第0行的8种摆放
-    for (chess[1] = 0; chess[1] &lt;= 7; chess[1]++) {
-        // 如果存在冲突，则看下一种摆放
-        if (check(chess, 2) == 0)
-            continue;
-        else
-            // 循环尝试第2行的摆放方式
-            for (chess[2] = 0; chess[2] &lt;= 7; chess[2]++) {
-                // 如果存在冲突，则看下一种摆放
-                if (check(chess, 3) == 0)
-                    continue;
-                else
-                    // 循环尝试第3行的摆放方式
-                    // ... （以此类推，一直到第7行）
-                    for (chess[7] = 0; chess[7] &lt;= 7; chess[7]++) {
-                        // 如果第8个皇后和前面7个冲突则看下一种摆放，否则输出这种摆放方式
-                        if (check(chess, 8) == 0)
-                            continue;
-                        else
-                            // 输出当前的摆放方式
-                            for (i = 0; i &lt;= 7; i++)
-                                print(chess[i]);
-                    }
-            }
+    // 循环尝试每一行的摆放方式
+    for (chess[0] = 0; chess[0] &lt;= 7; chess[0]++) {
+        // 对应第0行的8种摆放
+        for (chess[1] = 0; chess[1] &lt;= 7; chess[1]++) {
+            // 如果存在冲突，则看下一种摆放
+            if (check(chess, 2) == 0)
+                continue;
+            else
+                // 循环尝试第2行的摆放方式
+                for (chess[2] = 0; chess[2] &lt;= 7; chess[2]++) {
+                    // 如果存在冲突，则看下一种摆放
+                    if (check(chess, 3) == 0)
+                        continue;
+                    else
+                        // 循环尝试第3行的摆放方式
+                        // ... （以此类推，一直到第7行）
+                        for (chess[7] = 0; chess[7] &lt;= 7; chess[7]++) {
+                            // 如果第8个皇后和前面7个冲突则看下一种摆放，否则输出这种摆放方式
+                            if (check(chess, 8) == 0)
+                                continue;
+                            else
+                                // 输出当前的摆放方式
+                                for (i = 0; i &lt;= 7; i++)
+                                    print(chess[i]);
+                        }
+                }
+        }
     }
-}
-}
-// 函数check用于检查当前皇后的摆放是否与前面的皇后有冲突
-int check(int a[], int n) {
-// 实现检查的逻辑，如果有冲突返回0，否则返回1}
+    }
+    // 函数check用于检查当前皇后的摆放是否与前面的皇后有冲突
+    int check(int a[], int n) {
+    // 实现检查的逻辑，如果有冲突返回0，否则返回1}
 
-// 函数print用于输出当前皇后的摆放
-void print(int queenPosition) {
-// 输出当前皇后的位置}
+    // 函数print用于输出当前皇后的摆放
+    void print(int queenPosition) {
+    // 输出当前皇后的位置}
 </code></pre>
 <p>八重for循环 只能解决8皇后，如果变成N皇后呢？<br>
 有一种思路：<br>
@@ -747,42 +1879,42 @@ void print(int queenPosition) {
 递归的回溯算法分析：实际上是一个DFS算法<br>
 <img src="https://Ilosyi.github.io/post-images/1700052099457.png" alt="" loading="lazy"><br>
 最终代码（一维数组实现）:</p>
-<pre><code>#include &lt;stdio.h&gt;
-#include&lt;math.h&gt;
-#define N 4
-int queen[N];
-bool isSafe(int row, int col) {
-// 检查同一列是否有皇后
-for (int i = 0; i &lt; row; i++) {
-    if (queen[i] == col || abs(queen[i] - col) == abs(i - row)) {
-        return false;
+<pre><code class="language-c">    #include &lt;stdio.h&gt;
+    #include&lt;math.h&gt;
+    #define N 4
+    int queen[N];
+    bool isSafe(int row, int col) {
+    // 检查同一列是否有皇后
+    for (int i = 0; i &lt; row; i++) {
+        if (queen[i] == col || abs(queen[i] - col) == abs(i - row)) {
+            return false;
+        }
     }
-}
-return true;}
+    return true;}
 
-int placeQueen(int row) {
-int count = 0;
-if (row == N) {
-    // 所有皇后都已经放置，找到一个解法       
-    return 1;
-}
-
-for (int col = 0; col &lt; N; col++) {
-    if (isSafe(row, col)) {
-        // 在当前位置放置皇后
-        queen[row] = col;
-        // 递归放置下一行的皇后
-        count+=placeQueen(row + 1);
-        
+    int placeQueen(int row) {
+    int count = 0;
+    if (row == N) {
+        // 所有皇后都已经放置，找到一个解法       
+        return 1;
     }
-}
-return count;}
-int main()
-{
-int count=placeQueen(0);
-printf(&quot;%d&quot;, count);
-return 0;
-}
+
+    for (int col = 0; col &lt; N; col++) {
+        if (isSafe(row, col)) {
+            // 在当前位置放置皇后
+            queen[row] = col;
+            // 递归放置下一行的皇后
+            count+=placeQueen(row + 1);
+            
+        }
+    }
+    return count;}
+    int main()
+    {
+    int count=placeQueen(0);
+    printf(&quot;%d&quot;, count);
+    return 0;
+    }
 </code></pre>
 <h1 id="五-幻方问题"><strong>五、幻方问题</strong></h1>
 <p>幻方是指将若干个自然数排成纵横各为若干个数的正方形，使在同一行、同一列和同一对角线上的几个数的和都相等。此时我们只考虑奇幻方问题。可见：<a href="https://www.luogu.com.cn/problem/P2615"><strong>洛谷P2615</strong></a><br>
@@ -790,109 +1922,110 @@ return 0;
 例如，三阶幻方为：<br>
 8 1 6<br>
 3 5 7<br>
-4 9 2</p>
-<pre><code>#include&lt;stdio.h&gt;
+4 9 2<br>
+/<em>代码实现</em>/</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
 int n, a[40][40], x, y;
-int main() {
+ int main() {
 scanf(&quot;%d&quot;, &amp;n);
 x = 1, y = (n + 1) / 2;
 for (int i = 1; i &lt;= n * n; i++) {
 	a[x][y] = i;
 	if (!a[(x - 2 + n) % n + 1][y % n + 1])
-	{
-		x = (x - 2 + n) % n + 1, y = y % n + 1;
-	}
+		{
+			x = (x - 2 + n) % n + 1, y = y % n + 1;
+		}
 	else x = x % n + 1;//数学运算
-}
-for (int i = 1; i &lt;= n; i++) {
-	for (int j = 1; j &lt;= n; j++) {
-		printf(&quot;%d &quot;, a[i][j]);
 	}
-	printf(&quot;\n&quot;);
-}
-}
+	for (int i = 1; i &lt;= n; i++) {
+		for (int j = 1; j &lt;= n; j++) {
+			printf(&quot;%d &quot;, a[i][j]);
+		}
+		printf(&quot;\n&quot;);
+	}
+    }
 </code></pre>
 <p>以下是if法题解，采用了动态内存分配。</p>
-<pre><code>#include &lt;stdio.h&gt; 
+<pre><code class="language-c">#include &lt;stdio.h&gt; 
 #include &lt;stdlib.h&gt;
 
 int main()
-{
-int n;
-scanf(&quot;%d&quot;, &amp;n);
+    {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
 
-if (n &lt;= 0)
-{
-    printf(&quot;错误的输入。请输入一个正整数。&quot;);
-    return 1;
-}
+    if (n &lt;= 0)
+    {
+        printf(&quot;错误的输入。请输入一个正整数。&quot;);
+        return 1;
+    }
 
-int** a = (int**)malloc(sizeof(int*) * n);
-if (a == NULL)
-{
-    printf(&quot;内存分配失败&quot;);
-    return 1;
-}
-
-for (int i = 0; i &lt; n; i++)
-{
-    a[i] = (int*)malloc(sizeof(int) * n);
-    if (a[i] == NULL)
+    int** a = (int**)malloc(sizeof(int*) * n);
+    if (a == NULL)
     {
         printf(&quot;内存分配失败&quot;);
         return 1;
     }
-}
-int i = 0;
-int j = (n - 1) / 2;
-a[i][j] = 1;
-for (int k = 2; k &lt;= n * n; k++)
-{
-    if (i == 0 &amp;&amp; j != n - 1)
+
+    for (int i = 0; i &lt; n; i++)
     {
-        i = n - 1;
-        j++;
-    }
-    else if (i != 0 &amp;&amp; j == n - 1)
-    {
-        i--;
-        j = 0;
-    }
-    else if (i == 0 &amp;&amp; j == n - 1)
-    {
-        i++;
-    }
-    else if (i != 0 &amp;&amp; j != n - 1)
-    {
-        if (i-1&gt;=0&amp;&amp;i-1&lt;n&amp;&amp;j+1&gt;=0&amp;&amp;j&lt;n&amp;&amp;(!(a[i - 1][j + 1] &gt;= 1 &amp;&amp; a[i - 1][j + 1] &lt;= n * n)))
+        a[i] = (int*)malloc(sizeof(int) * n);
+        if (a[i] == NULL)
         {
-            i--;
+            printf(&quot;内存分配失败&quot;);
+            return 1;
+        }
+    }
+    int i = 0;
+    int j = (n - 1) / 2;
+    a[i][j] = 1;
+    for (int k = 2; k &lt;= n * n; k++)
+    {
+        if (i == 0 &amp;&amp; j != n - 1)
+        {
+            i = n - 1;
             j++;
         }
-        else
+        else if (i != 0 &amp;&amp; j == n - 1)
+        {
+            i--;
+            j = 0;
+        }
+        else if (i == 0 &amp;&amp; j == n - 1)
         {
             i++;
         }
+        else if (i != 0 &amp;&amp; j != n - 1)
+        {
+            if (i-1&gt;=0&amp;&amp;i-1&lt;n&amp;&amp;j+1&gt;=0&amp;&amp;j&lt;n&amp;&amp;(!(a[i - 1][j + 1] &gt;= 1 &amp;&amp; a[i - 1][j + 1] &lt;= n * n)))
+            {
+                i--;
+                j++;
+            }
+            else
+            {
+                i++;
+            }
+        }
+        a[i][j] = k;
     }
-    a[i][j] = k;
-}
 
-for (int i = 0; i &lt; n; i++)
-{
-    for (int j = 0; j &lt; n; j++)
+    for (int i = 0; i &lt; n; i++)
     {
-        printf(&quot;%d &quot;, a[i][j]);
+        for (int j = 0; j &lt; n; j++)
+        {
+            printf(&quot;%d &quot;, a[i][j]);
+        }
+        printf(&quot;\n&quot;);
     }
-    printf(&quot;\n&quot;);
-}
 
-for (int i = 0; i &lt; n; i++)
-{
-    free(a[i]);
-}
-free(a);
+    for (int i = 0; i &lt; n; i++)
+    {
+        free(a[i]);
+    }
+    free(a);
 
-return 0;}
+    return 0;}
 </code></pre>
 <h1 id="六-迷宫问题"><strong>六、迷宫问题</strong></h1>
 <p>迷宫问题显然无法用一维数组解决，因为同一行不只有一个“皇后”。采用DFS思想，先试探一个方向，若走不通，再返回上一步试探其它方向。</p>
@@ -963,168 +2096,81 @@ return 0;}
 <p>（3）根据教师要求，改变输入条件，重新运行程序，观察运行结果(并不会)</p>
 <h4 id="解">解：</h4>
 <p>/<em>代码</em>/</p>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<pre><code class="language-c">    #include &lt;stdio.h&gt;
+    #include &lt;stdlib.h&gt;
 
-// 函数声明，将十六进制数转换为指定进制并打印
-void convertAndPrint(char* hexadecimal, int Base);
-int main() {
-char input[20];
-int Base;
+    // 函数声明，将十六进制数转换为指定进制并打印
+    void convertAndPrint(char* hexadecimal, int Base);
+    int main() {
+    char input[20];
+    int Base;
 
-// 用户输入十六进制数
-printf(&quot;输入(16进制)：&quot;);
-if (scanf_s(&quot;%19s&quot;, input, sizeof(input)) != 1) {
-printf(&quot;输入错误\n&quot;);
-return 1;
-}
+    // 用户输入十六进制数
+    printf(&quot;输入(16进制)：&quot;);
+    if (scanf_s(&quot;%19s&quot;, input, sizeof(input)) != 1) {
+    printf(&quot;输入错误\n&quot;);
+    return 1;
+    }
 
-char input2[30]; // 删除空格后的字符串
-for (int i = 0; input[i] != '\0'; i++) {
-if (input[i] != ' ') {
-        input2[i] = input[i];
+    char input2[30]; // 删除空格后的字符串
+    for (int i = 0; input[i] != '\0'; i++) {
+    if (input[i] != ' ') {
+            input2[i] = input[i];
+        }
+        else {
+            i--;
+        }
+    }
+
+    // 用户输入目标进制
+    printf(&quot;输入目标进制（2-12）：&quot;);
+    if (scanf_s(&quot;%d&quot;, &amp;Base) != 1 || Base &lt; 2 || Base &gt; 12) {
+        printf(&quot;目标进制不在范围内\n&quot;);
+        return 1;
+    }
+
+    // 调用函数进行转换并打印结果
+    convertAndPrint(input, Base);
+
+    return 0;
+    }
+
+    // 十六进制数转换为指定进制并打印
+    void convertAndPrint(char* hexadecimal, int Base) {
+    long int d;
+    // 将十六进制数转换为十进制数字
+    if (sscanf_s(hexadecimal, &quot;%lx&quot;, &amp;d) == 1) {
+    printf(&quot;输出(%d进制): &quot;, Base);
+
+    if (Base == 10) {
+            printf(&quot;%ld\n&quot;, d);
+        }
+        else if (Base &gt;= 2 &amp;&amp; Base &lt;= 12) {
+            long int quo = d;
+            int i = 0;
+            char result[100];
+
+            // 反复相除，将余数保存在result数组中
+            while (quo &gt; 0) {
+                int r = quo % Base;
+                result[i] = (r &lt; 10) ? ('0' + r) : ('A' + r - 10);
+                i++;
+                quo /= Base;
+            }
+
+            // 打印结果
+            for (int j = i - 1; j &gt;= 0; j--) {
+                printf(&quot;%c&quot;, result[j]);
+            }
+            printf(&quot;\n&quot;);
+        }
     }
     else {
-        i--;
+        printf(&quot;输入错误\n&quot;);
     }
-}
-
-// 用户输入目标进制
-printf(&quot;输入目标进制（2-12）：&quot;);
-if (scanf_s(&quot;%d&quot;, &amp;Base) != 1 || Base &lt; 2 || Base &gt; 12) {
-    printf(&quot;目标进制不在范围内\n&quot;);
-    return 1;
-}
-
-// 调用函数进行转换并打印结果
-convertAndPrint(input, Base);
-
-return 0;
-}
-
-// 十六进制数转换为指定进制并打印
-void convertAndPrint(char* hexadecimal, int Base) {
-long int d;
-// 将十六进制数转换为十进制数字
-if (sscanf_s(hexadecimal, &quot;%lx&quot;, &amp;d) == 1) {
-printf(&quot;输出(%d进制): &quot;, Base);
-
-if (Base == 10) {
-        printf(&quot;%ld\n&quot;, d);
     }
-    else if (Base &gt;= 2 &amp;&amp; Base &lt;= 12) {
-        long int quo = d;
-        int i = 0;
-        char result[100];
-
-        // 反复相除，将余数保存在result数组中
-        while (quo &gt; 0) {
-            int r = quo % Base;
-            result[i] = (r &lt; 10) ? ('0' + r) : ('A' + r - 10);
-            i++;
-            quo /= Base;
-        }
-
-        // 打印结果
-        for (int j = i - 1; j &gt;= 0; j--) {
-            printf(&quot;%c&quot;, result[j]);
-        }
-        printf(&quot;\n&quot;);
-    }
-}
-else {
-    printf(&quot;输入错误\n&quot;);
-}
-}
 </code></pre>
 <p>注：助教测试时考虑到大家水平，可以不考虑输入有效性检查，可使用一些已有的库函数。❤️</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[信息技术导论课程论文]]></title>
-        <id>https://Ilosyi.github.io/post/xin-xi-ji-zhu-dao-lun-ke-cheng-lun-wen/</id>
-        <link href="https://Ilosyi.github.io/post/xin-xi-ji-zhu-dao-lun-ke-cheng-lun-wen/">
-        </link>
-        <updated>2023-11-08T02:27:50.000Z</updated>
-        <content type="html"><![CDATA[<p>课程介绍：每节课会有不同老师来开一个主题讲座（实际上没什么用），最后会布置一个论文作业作为课程成绩（根据学号尾数确定题目）。以下是尾号为0的论文。</p>
-<h1 id="仅供参考请勿抄袭"><strong>仅供参考，请勿抄袭！</strong></h1>
-<p><ul class="markdownIt-TOC">
-<li><a href="#%E4%BB%85%E4%BE%9B%E5%8F%82%E8%80%83%E8%AF%B7%E5%8B%BF%E6%8A%84%E8%A2%AD"><strong>仅供参考，请勿抄袭！</strong></a></li>
-<li><a href="#%E8%AF%BE%E7%A8%8B%E8%AE%BA%E6%96%87-10">课程论文 10</a>
-<ul>
-<li><a href="#%E6%91%98%E8%A6%81">摘要：</a></li>
-<li><a href="#%E6%AD%A3%E6%96%87">正文：</a>
-<ul>
-<li><a href="#%E6%8C%87%E4%BB%A4%E9%9B%86%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF">指令集，中间件与虚拟化技术</a>
-<ul>
-<li><a href="#%E6%8C%87%E4%BB%A4%E9%9B%86">指令集</a></li>
-<li><a href="#%E4%B8%AD%E9%97%B4%E4%BB%B6">中间件</a></li>
-<li><a href="#%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF">虚拟化技术</a></li>
-</ul>
-</li>
-<li><a href="#java%E8%AF%AD%E8%A8%80%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6%E5%92%8C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">java语言的跨平台技术的技术框架和工作原理</a>
-<ul>
-<li><a href="#%E4%B8%80%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6-java%E7%9A%84%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6%E5%8C%85%E6%8B%AC%E4%BB%A5%E4%B8%8B%E5%85%B3%E9%94%AE%E7%BB%84%E4%BB%B6">一.技术框架 Java的跨平台技术框架包括以下关键组件：</a></li>
-<li><a href="#%E4%BA%8C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">二．工作原理 ：</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E6%80%BB%E7%BB%93">总结：</a></li>
-<li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献：</a></li>
-</ul>
-</li>
-</ul>
-</p>
-<h1 id="课程论文-10">课程论文 10</h1>
-<h2 id="摘要">摘要：</h2>
-<p>本论文将介绍计算机科学和信息技术领域中的三个重要概念：指令集、中间件和虚拟化技术。指令集是计算机硬件的核心组成部分，它定义了机器语言指令的集合，使软件能够与硬件交互。中间件是位于应用程序和操作系统之间的软件层，用于简化分布式系统的开发和管理。虚拟化技术通过抽象和隔离物理资源，允许一个物理计算机同时运行多个虚拟操作系统和应用程序，提高资源利用率和灵活性。本文将详细解释这些概念，以便更好地理解它们在计算机科学领域的重要性和应用。 Java是一种流行的编程语言，以其跨平台能力而著称。本论文还将探讨Java的跨平台技术框架和工作原理。Java的跨平台性是通过Java虚拟机（JVM）和字节码实现的。本文介绍了Java的关键组件，包括Java编译器、JVM、字节码、类加载器和Java标准库。通过编写Java应用程序并将其编译成字节码，开发人员可以实现在不同操作系统上运行的可移植性。JVM负责加载字节码并将其翻译成本地机器代码，从而实现了跨平台性。Java的跨平台技术使其成为一种广泛应用于各种平台和设备的编程语言。</p>
-<h2 id="正文">正文：</h2>
-<h3 id="指令集中间件与虚拟化技术">指令集，中间件与虚拟化技术</h3>
-<h4 id="指令集">指令集</h4>
-<p>指令集，就是CPU中用来计算和控制计算机系统的一套指令的集合，这些指令包括 运算、逻辑运算、数据传输等操作，用于控制计算机的各个方面。 从指令集的特点上可以分为两类:</p>
-<p>复杂指令集CISC<br>
-（Complex Instruction Set Computer）包含了大量复杂的指令，可以执行多个低级操作。这使得CISC处理器可以更快地执行某些任务，因为每一项简单或复杂的任务都有一条对应的指令，但也使其硬件复杂。 指令集的复杂性使得CPU和控制单元的电路非常复杂。CISC体系结构的设计者已经提出减少这种中复杂性的解决方案：程序在两个层面上运行。CPU不直接执行机器语言指令，而只执行被称为微操作的简单操作。复杂指令被转化为一系列简单操作然后由CPU执行。这种中执行机制需要一个被称为微内存的特殊内存，它负责保存指令集中的每个复杂指令的一系列操作。使用微操作的程序设计被称为微程序设计。</p>
-<p>精简指令集RISC<br>
-（Reduced Instruction Set Computing）是一种指令长度较短的计算机，其运行速度比CISC要快。RISC的指令系统相对简单，它只要求硬件执行很有限且最常用的那部分指令，大部分复杂的操作则使用成熟的编译技术，由简单指令合成。 RISC体系结构以其高效性和适用于各种应用而闻名，特别是在对速度和效率至关重要的情况下。然而，值得注意的是，现代处理器通常在RISC和CISC设计之间融合了一些特征，在某些情况下模糊了这两种体系结构方法之间的界限。</p>
-<h4 id="中间件">中间件</h4>
-<p>中间件是一种独立的系统软件或服务程序，分布式应用软件借助这种软件在不同的技术之间共享资源，中间件位于客户机服务器的操作系统之上，管理计算资源和网络通信。中间件的功能通常包括以下方面：</p>
-<p>1.通信和消息传递： 中间件允许不同的应用程序或系统之间通过消息传递进行通信。</p>
-<p>2.事务处理： 中间件支持事务处理，确保在分布式系统中的多个操作中维护一致性和可靠性。</p>
-<p>3.安全性和身份验证： 中间件提供安全性层，可以进行身份验证和授权，以确保只有经过授权的用户或系统可以访问数据和服务。</p>
-<p>4.负载均衡： 在分布式系统中，中间件可以分发请求以均衡负载，确保各个组件或服务器的工作负荷分布均匀。</p>
-<p>5.数据转换和格式转换： 中间件可以执行数据格式的转换，以确保不同系统之间的数据可以正确解释和处理。</p>
-<p>6.容错和容纳性： 中间件可以具备容错机制，使系统能够在部分组件失败时继续工作，从而提高可用性和可靠性。</p>
-<p>7.性能优化： 中间件可以通过缓存、请求重排等技术来提高系统性能，减少通信延迟。</p>
-<p>总之，中间件是在分布式和复杂的计算环境中促进应用程序和系统协作的关键组成部分。它提供了一种抽象层，使开发人员能够更容易地构建和维护分布式系统，同时提高了系统的可扩展性、可靠性和性能。中间件在企业应用、云计算、大数据处理等各种领域都发挥着重要作用。</p>
-<h4 id="虚拟化技术">虚拟化技术</h4>
-<p>虚拟化技术（Virtualization）是一种将计算机资源进行抽象和隔离的方法，以便在一台物理计算机上同时运行多个虚拟操作系统和应用程序。虚拟化技术可以应用于多个领域，主要分为几大类： 计算虚拟化，针对CPU和内存资源虚拟化技术。</p>
-<p>网络虚拟化，针对网络链路资源虚拟化技术。</p>
-<p>IO虚拟化，针对IO资源虚拟化技术。</p>
-<p>存储虚拟化，针对磁盘存储资源虚拟化技术。</p>
-<p>服务器虚拟化允许多个虚拟服务器在同一台物理服务器上运行，提高了硬件资源的利用率。</p>
-<p>桌面虚拟化使用户能够在单一计算机上运行多个虚拟桌面。网络虚拟化通过创建虚拟网络层次，提供了网络资源的共享和隔离。存储虚拟化将多个存储设备抽象为一个虚拟存储池，简化了数据管理。 虚拟化技术为企业提供了灵活性、可扩展性和资源利用率的提升，降低了硬件成本和管理复杂性。</p>
-<h3 id="java语言的跨平台技术的技术框架和工作原理">java语言的跨平台技术的技术框架和工作原理</h3>
-<p>Java是一种高度流行的编程语言，其成功的一个关键特性是跨平台能力。跨平台性意味着Java应用程序可以在不同操作系统和硬件架构上运行，而无需对代码进行重写。这一特性是通过Java虚拟机（JVM）和字节码实现的。接下来我将介绍java的技术框架和工作原理</p>
-<h4 id="一技术框架-java的跨平台技术框架包括以下关键组件">一.技术框架 Java的跨平台技术框架包括以下关键组件：</h4>
-<p>1.Java编译器 开发人员使用Java编程语言编写应用程序，编译时首先读入java源程序，然后进行语法检查，如果出现问题就终止编译。语法检查通过后，生成中间代码即字节码，这个过程生成了.class文件，其中包含了应用程序的字节码。</p>
-<p>2.Java虚拟机（JVM）Java虚拟机是Java平台的核心组成部分之一，它是一个在计算机上运行Java字节码的虚拟机。JVM充当了Java应用程序和底层操作系统之间的中间层，将字节码文件加载到内存中，解释或编译为本地机器代码，并执行应用程序，提供了跨平台的特性，使得Java程序可以在不同的操作系统和硬件上运行。</p>
-<p>3.字节码 字节码是一种与特定硬件无关的中间代码。Java编译器将Java源代码编译成字节码，这使得应用程序具有跨平台性。字节码包含一系列操作码（opcodes），这些操作码在JVM上执行。</p>
-<p>类加载器 JVM包括类加载器，它负责从文件系统或网络加载字节码文件，并将它们转换为Java类的运行时表示。类加载器还执行类的链接，包括验证、准备和解析。<br>
-Java标准库 Java标准库是一组预定义的类和API，提供了许多常见的功能，如文件处理、网络通信、多线程管理等。这些库是跨平台的，因为它们的实现是基于JVM，而不依赖于底层操作系统。</p>
-<h4 id="二工作原理">二．工作原理 ：</h4>
-<p>开发人员编写Java应用程序并使用Java编译器将其编译成字节码文件。 用户在目标平台上安装了JVM。当用户希望运行Java应用程序时，JVM将字节码文件加载到内存中，然后执行字节码。JVM可以通过解释字节码执行应用程序，也可以使用即时编译器（JIT Compiler）将字节码编译成本地机器代码，提高应用程序的性能。 由于字节码是与特定硬件无关的，因此Java应用程序可以在任何支持Java的操作系统上运行，实现了跨平台性。</p>
-<h2 id="总结">总结：</h2>
-<p>指令集、中间件和虚拟化技术是计算机科学和信息技术领域中的关键概念。指令集定义了计算机硬件与软件之间的接口，中间件简化了分布式系统的开发，虚拟化技术提供了资源隔离和共享的能力。 这些概念在现代计算领域中具有重要作用。指令集影响着计算机硬件的设计和性能。中间件帮助开发者构建分布式应用程序，实现系统间的协作。虚拟化技术提高了资源利用率，降低了成本，使得计算资源的管理更加高效。</p>
-<h2 id="参考文献">参考文献：</h2>
-<p>[1]Behrouz Forouzan.《计算机科学导论》[M].吕云翔等译.北京：机械工业出版社,2020</p>
-<p>[2]徐悦甡.中间件技术基础[M].西安电子科技大学</p>
-<p>[3]孟宪福. 《分布式对象技术及其应用》.[M].北京：清华大学出版社，2015</p>
-<p>[4] 精简指令集计算机(RISC)浅析.中国知网[J]. 2017-03-12</p>
-<p>[5]Rajkumar Buyya,Christian Vccchiola,S.Thamarai Selvi《深入理解云计算：基本原理和应用程序编程技术》[M].刘丽等译.北京：机械工业出版社,2020</p>
-<p>[6]李刚．疯狂Java讲义（第2版）：电子工业出版社，2014：2</p>
-<p>[7]李晋.Java的昨天，今天和明天[J].信息与电脑,2011(1).</p>
-<p>[8]任哲．JAVA技术应用基础：机械工业出版社，2009：4-6 董云铮，陈千，梅惠平．Java技术应用：清华大学出版社，2007：2</p>
 ]]></content>
     </entry>
 </feed>

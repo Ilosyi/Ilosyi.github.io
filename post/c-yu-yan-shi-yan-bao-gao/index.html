@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title> C语言实验报告 | losyi的博客</title>
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://Ilosyi.github.io/favicon.ico?v=1700494784369">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://Ilosyi.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://Ilosyi.github.io">losyi的博客</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1> C语言实验报告</h1>
+            <p class="article-meta">
+              2023-11-20
+              
+                <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge success">
+                  报告/作业
+                </a>
+              
+                <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge warning">
+                  大一
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <h1 id="华-中-科-技-大-学-c-语-言-课-程-实-验-报-告">华 中 科 技 大 学 C 语 言 课 程 实 验 报 告</h1>
+<p><ul class="markdownIt-TOC">
+<li><a href="#%E5%8D%8E-%E4%B8%AD-%E7%A7%91-%E6%8A%80-%E5%A4%A7-%E5%AD%A6-c-%E8%AF%AD-%E8%A8%80-%E8%AF%BE-%E7%A8%8B-%E5%AE%9E-%E9%AA%8C-%E6%8A%A5-%E5%91%8A">华 中 科 技 大 学 C 语 言 课 程 实 验 报 告</a>
+<ul>
+<li><a href="#%E5%AE%9E%E9%AA%8C1-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E5%AE%9E%E9%AA%8C">实验1 表达式和标准输入与输出实验</a>
+<ul>
+<li><a href="#11-%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">1.1 实验目的</a></li>
+<li><a href="#12-%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">1.2 实验内容</a>
+<ul>
+<li><a href="#1-%E6%BA%90%E7%A8%8B%E5%BA%8F%E6%94%B9%E9%94%99">1  源程序改错</a>
+<ul>
+<li><a href="#%E8%A7%A3%E7%AD%94">解答：</a></li>
+</ul>
+</li>
+<li><a href="#2-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">2 程序设计</a>
+<ul>
+<li><a href="#1%E8%A7%A3%E7%AD%94">(1)解答：</a></li>
+<li><a href="#2%E8%A7%A3%E7%AD%94">(2)解答：</a></li>
+<li><a href="#3%E8%A7%A3%E7%AD%94">(3)解答：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#13-%E5%AE%9E%E9%AA%8C%E5%B0%8F%E7%BB%93">1.3 实验小结</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C2-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%AE%9E%E9%AA%8C">实验2  流程控制实验</a>
+<ul>
+<li><a href="#21-%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">2.1 实验目的</a></li>
+<li><a href="#22-%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9%E5%8F%8A%E8%A6%81%E6%B1%82">2.2 实验内容及要求</a>
+<ul>
+<li><a href="#1%E7%A8%8B%E5%BA%8F%E6%94%B9%E9%94%99">1．程序改错</a>
+<ul>
+<li><a href="#%E8%A7%A3%E7%AD%94-2">解答：</a></li>
+</ul>
+</li>
+<li><a href="#2%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9%E6%9B%BF%E6%8D%A2">2．程序修改替换</a>
+<ul>
+<li><a href="#1%E8%A7%A3%E7%AD%94-2">(1)解答：</a></li>
+<li><a href="#2%E8%A7%A3%E7%AD%94-2">(2)解答：</a></li>
+<li><a href="#3%E8%A7%A3%E7%AD%94-2">(3)解答：</a></li>
+</ul>
+</li>
+<li><a href="#3%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">3．程序设计</a>
+<ul>
+<li><a href="#1%E8%A7%A3%E7%AD%94-3">(1)解答：</a></li>
+<li><a href="#2%E8%A7%A3%E7%AD%94-3">(2)解答：</a></li>
+<li><a href="#3%E8%A7%A3%E7%AD%94-3">(3)解答：</a></li>
+<li><a href="#4%E8%A7%A3%E7%AD%94">(4)解答：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#23-%E5%AE%9E%E9%AA%8C%E5%B0%8F%E7%BB%93">2.3 实验小结</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C3-%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C">实验3 函数与程序结构实验</a>
+<ul>
+<li><a href="#31%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">3.1实验目的</a></li>
+<li><a href="#32%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">3.2实验内容</a>
+<ul>
+<li><a href="#1%E7%A8%8B%E5%BA%8F%E6%94%B9%E9%94%99%E9%A2%98">1．程序改错题</a>
+<ul>
+<li><a href="#%E8%A7%A3%E7%AD%94-3">解答：</a></li>
+</ul>
+</li>
+<li><a href="#2%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9%E6%9B%BF%E6%8D%A2%E9%A2%98">2．程序修改替换题</a>
+<ul>
+<li><a href="#%E8%A7%A3%E7%AD%94-4">解答：</a></li>
+<li><a href="#%E8%A7%A3%E7%AD%94-5">解答：</a></li>
+</ul>
+</li>
+<li><a href="#3%E8%B7%9F%E8%B8%AA%E8%B0%83%E8%AF%95%E9%A2%98">3．跟踪调试题</a>
+<ul>
+<li><a href="#%E8%A7%A3%E7%AD%94-6">解答：</a></li>
+</ul>
+</li>
+<li><a href="#4%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">4．程序设计</a>
+<ul>
+<li><a href="#1%E8%A7%A3%E7%AD%94-4">(1)解答：</a></li>
+<li><a href="#2%E8%A7%A3%E7%AD%94-4">(2)解答：</a></li>
+<li><a href="#3%E8%A7%A3%E7%AD%94-4">(3)解答：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#33-%E5%AE%9E%E9%AA%8C%E5%B0%8F%E7%BB%93">3.3 实验小结</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C4-%E7%BC%96%E8%AF%91%E9%A2%84%E5%A4%84%E7%90%86%E5%AE%9E%E9%AA%8C">实验4  编译预处理实验</a>
+<ul>
+<li><a href="#41%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">4.1实验目的</a></li>
+<li><a href="#42%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">4.2实验内容</a>
+<ul>
+<li><a href="#1%E7%A8%8B%E5%BA%8F%E6%94%B9%E9%94%99-2">1．程序改错</a></li>
+<li><a href="#2%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9%E6%9B%BF%E6%8D%A2-2">2．程序修改替换</a></li>
+<li><a href="#3%E8%B7%9F%E8%B8%AA%E8%B0%83%E8%AF%95">3．跟踪调试</a></li>
+<li><a href="#4%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-2">4．程序设计</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+<hr>
+<h2 id="实验1-表达式和标准输入与输出实验">实验1 表达式和标准输入与输出实验</h2>
+<h3 id="11-实验目的">1.1 实验目的</h3>
+<p>（1）熟练掌握各种运算符的运算功能，操作数的类型，运算结果的类型及运算过程中的类型转换，重点是C语言特有的运算符，例如位运算符，问号运算符，逗号运算符等；熟记运算符的优先级和结合性。</p>
+<p>（2）掌握getchar, putchar, scanf 和printf 函数的用法。</p>
+<p>（3）掌握简单C程序（顺序结构程序）的编写方法。</p>
+<h3 id="12-实验内容">1.2 实验内容</h3>
+<h4 id="1-源程序改错">1  源程序改错</h4>
+<p>下面给出了一个简单C语言程序例程，用来完成以下工作：<br>
+（1）输入华氏温度f，将它转换成摄氏温度c后输出；</p>
+<p>（2）输入圆的半径值ｒ，计算并输出圆的面积ｓ；</p>
+<p>（3）输入短整数ｋ、ｐ，将ｋ的高字节作为结果的低字节，ｐ的高字节作为结果的高字节，拼成一个新的整数，然后输出；<br>
+在这个例子程序中存在若干语法和逻辑错误。要求参照1.3和1.4的步骤对下面程序进行调试修改，使之能够正确完成指定任务。</p>
+<pre><code class="language-c">1.  #include&lt;stdio.h&gt;       
+2.  #define PI 3.14159;      
+3.  void main( void )
+4. {
+5.   int f ;
+6.   short p, k ;
+7.   double c , r , s ;
+8.  /* for task 1 */
+9.   printf(&quot;Input  Fahrenheit:&quot;) ;
+10.   scanf(&quot;%d&quot;, f ) ;
+11.   c = 5/9*(f-32) ;
+12.   printf( &quot;\n %d (F) = %.2f (C)\n\n&quot;, f, c ) ;
+13.  /* for task 2 */
+14.  printf(&quot;input the radius r:&quot;);
+15.  scanf(&quot;%f&quot;, &amp;r);
+16.  s = PI * r * r;
+17.  printf(&quot;\nThe acreage is %.2f\n\n&quot;,&amp;s);
+18. /* for task 3 */
+19.  printf(&quot;input hex int k, p :&quot;);
+20.  scanf(&quot;%x %x&quot;, &amp;k, &amp;p );
+21.  newint = (p&amp;0xff00)|(k&amp;0xff00)&lt;&lt;8;
+22.  printf(&quot;new int = %x\n\n&quot;,newint);
+23.}
+</code></pre>
+<h5 id="解答">解答：</h5>
+<p>1)第2行的符号常量定义后不能有分号，正确形式为：#define PI 3.14159</p>
+<p>2)第5行的f类型错误，正确形式为：double f ;</p>
+<p>3)第10行的格式符错误，正确形式为：scanf(&quot;%lf&quot;,&amp;f);</p>
+<p>4)第 11 行 c 的类型为 double，正确形式为：c =  5.0/9 * (f-32) ;</p>
+<p>5)第 12 行格式符错误，正确形式为：printf( &quot;\n %.2lf (F) = %.2lf (C)\n\n &quot;, f, c ) ;</p>
+<p>6)第 15 行格式符错误，正确形式为：scanf(&quot;%lf&quot;,&amp;r);</p>
+<p>7)第 17 行printf用法错误，输出不应是地址，正确形式为：printf(&quot;\nThe acreage is %.2lf\n\n&quot;,s)</p>
+<p>8)第 21 行使用位声明变量，且算法错误，正确形式为：int newint = (p&amp;0xff00) | ((k&amp;0xff00)&gt;&gt;8) ;</p>
+<h4 id="2-程序设计">2 程序设计</h4>
+<p>（1）输入字符ｃ，如果ｃ是大写字母，则将ｃ转换成对应的小写，否则ｃ的值不变，输入Ctrl+Z程序结束。要求①用条件表达式；②字符的输入输出用getchar和putchar函数。程序应能循环接受用户的输入，直至输入Ctrl+Z程序结束。</p>
+<h5 id="1解答">(1)解答：</h5>
+<pre><code class="language-c">1.#include&lt;stdio.h&gt; 
+2.int main()
+3.{
+4.    char c;
+5.    while((c=getchar())!=EOF)
+6.    {
+7.        if(c&gt;='A'&amp;&amp;c&lt;='Z')//检验范围
+8.        putchar(c+32);//根据ASCII表，大小写字母差值为32
+9.        else
+10.        putchar(c);
+11.    } 
+12.        return 0;
+13.}
+</code></pre>
+<p>（2）输入无符号短整数x，ｍ，ｎ（0 ≤ｍ≤ 15, 1 ≤ ｎ≤ 16-ｍ）,取出x从第ｍ位开始向左的ｎ位（ｍ从右至左编号为0～15），并使其向左端（第15位）靠齐。要求：①检查m和n的范围；②x的值以十六进制输入，m和n以十进制输入；③结果以十六进制输出。</p>
+<h5 id="2解答">(2)解答：</h5>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main() {
+3.    unsigned short x;
+4.    unsigned short m, n;
+5.    scanf(&quot;%hx%hd%hd&quot;, &amp;x,&amp;m,&amp;n);
+6.    if(m&gt;15||m&lt;0||n&lt;1||n&gt;16-m)
+7.    {
+8.        printf(&quot;输入错误！&quot;);
+9.    }
+10.    else{
+11.
+12.     unsigned short a = (x&gt;&gt;(m-1));//顶到最右边
+13.     unsigned short result = (a&lt;&lt;(15-n));//向左靠齐
+14.
+15.    printf(&quot;%hx&quot;, result);}
+16.
+17.    return 0;
+18.}
+</code></pre>
+<p>（3）IP地址通常是4个用句点分隔的小整数（即点分十进制），但这些地址在机器中是用一个无符号长整型数表示的。例如3232235876，其机内二进制表示就是11000000 10101000 00000001 01100100，按照8位一组用点分开，该IP地址就写成192.168.1.100。<br>
+读入无符号长整型数表示的互联网IP地址，对其译码，以常见的点分十进制形式输出。要求循环输入和输出，直至输入Ctrl+Z结束。</p>
+<h5 id="3解答">(3)解答：</h5>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.
+3.int main() 
+4.{
+5.    int x;
+6.    while (scanf(&quot;%d&quot;, &amp;x) != EOF) {
+7.
+8.        int a = (x &gt;&gt; 24) &amp; 0xFF;  // 第一个八位
+9.        int b = (x &gt;&gt; 16) &amp; 0xFF;  // 第二个八位
+10.        int c = (x &gt;&gt; 8) &amp; 0xFF;   // 第三个八位
+11.        int d = x &amp; 0xFF;          // 第四个八位
+12.        printf(&quot;%d.%d.%d.%d\n&quot;, a, b, c, d);
+13.    }
+14.    return 0;
+15.}
+</code></pre>
+<h3 id="13-实验小结">1.3 实验小结</h3>
+<p>在完成这次实验后，我获得了以下几点体会和经验：</p>
+<p>1.重视细节，善于纠错： 在C语言中，细节非常重要。一个小小的语法错误或逻辑错误都可能导致程序无法正常工作。通过这次实验，我了解了各种常见错误的原因和报错显示，例如全半角逗号分号会报错未识别字符，scanf后面的变量忘记加&amp;会报错C4477,#define后加分号可能导致后面变量被识别为指针，VS2022需要使用scanf_s以保证安全性等等。</p>
+<p>2.输入输出函数的熟练使用： scanf 和 printf 是C语言中常用的输入输出函数。通过实验，我熟悉了几种常见格式字符的用法，和两个函数的使用方法</p>
+<p>3.程序结构： 这个实验强调了顺序结构程序的编写。在实际编程中，理解程序的结构和流程对于正确完成任务非常重要。同时，实验还涉及了循环输入，通过实验，我了解了while的用法和EOF的概念，学会如何循环输入和结束输入，对程序的输入输出有了更深的了解。</p>
+<p>4.流程图的画法：通过实验，我了解visio软件的基本使用，熟悉了用流程图表示程序结构，整理思路。</p>
+<hr>
+<h2 id="实验2-流程控制实验">实验2  流程控制实验</h2>
+<h3 id="21-实验目的">2.1 实验目的</h3>
+<p>（1）掌握复合语句、if语句、switch语句的使用，熟练掌握for、while、do-while三种基本的循环控制语句的使用，掌握重复循环技术，了解转移语句与标号语句。</p>
+<p>（2）练习循环结构for、while、do-while语句的使用。</p>
+<p>（3）练习转移语句和标号语句的使用。</p>
+<p>（4）使用集成开发环境中的调试功能：单步执行、设置断点、观察变量值。</p>
+<h3 id="22-实验内容及要求">2.2 实验内容及要求</h3>
+<h4 id="1程序改错">1．程序改错</h4>
+<p>下面的实验2-1程序是合数判断器<br>
+（合数指自然数中除了能被1和本身整除外，还能被其它数整除的数），在该源程序中存在若干语法和逻辑错误。<br>
+要求对该程序进行调试修改，使之能够正确完成指定任务。</p>
+<p>/* 实验2-1改错题程序：合数判断器*/</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main( )
+3.{ 
+4.int i, x, k, flag = 0;
+5.printf(&quot;本程序判断合数，请输入大于1的整数，以Ctrl+Z结束\n&quot;);
+6.while (scanf(&quot;%d&quot;, &amp;x) !=EOF) {
+7.for(i=2,k=x&gt;&gt;1;i&lt;=k;i++)
+8.  if (!x%i) {
+9.   flag = 1;
+10.   break;
+11. }
+12.if(flag=1) printf(&quot;%d是合数&quot;, x);
+13.else printf(&quot;%d不是合数&quot;, x);
+14.}
+15.return 0;
+16.}
+</code></pre>
+<h5 id="解答-2">解答：</h5>
+<p>（1）错误修改：</p>
+<p>3)第4行flag定义为0后在循环开始时没有归0，正确形式为：在第六行后加语句flag = 0;</p>
+<p>2)第8行运算优先级错误，正确形式为：if (!(x % i))</p>
+<p>3)第12行运算符错误，不应为赋值符，正确形式为：if (flag == 1)</p>
+<h4 id="2程序修改替换">2．程序修改替换</h4>
+<p>（1）修改实验2-1程序，将内层两出口的for循环结构改用单出口结构，即不允许使用break、goto等非结构化语句。</p>
+<h5 id="1解答-2">(1)解答：</h5>
+<p>程序等价为当flag=1后退出循环，可以在for循环中添加一个判断条件，<br>
+因此，题目（1）替换后的程序如下所示：</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main()
+3.{
+4. int i, x, k, flag = 0;
+5. printf(&quot;本程序判断合数，请输入大于1的整数，以Ctrl+Z结束\n&quot;);
+6. while (scanf(&quot;%d&quot;, &amp;x) != EOF)
+7. {
+8.  flag = 0;
+9.  for (i = 2, k = x &gt;&gt; 1; i &lt;= k&amp;&amp;!flag; i++)
+10.   if (!(x % i)) {
+11.    flag = 1;
+12.   }
+13.  if (flag == 1) printf(&quot;%d是合数\n&quot;, x);
+14.  else printf(&quot;%d不是合数\n&quot;, x);
+15. }
+16. return 0;
+17.}
+</code></pre>
+<p>（2）修改实验2-1程序，将for循环改用do-while循环。</p>
+<h5 id="2解答-2">(2)解答：</h5>
+<p>由于do-while循环先进行do操作再进行判断，循环开始前需先获取一次x的值，因此，题目（2）替换后的程序如下所示：</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main()
+3.{
+4. int i, x, k, flag = 0;
+5. printf(&quot;本程序判断合数，请输入大于1的整数，以Ctrl+Z结束\n&quot;);
+6. scanf(&quot;%d&quot;, &amp;x);
+7. do
+8. {
+9.  flag = 0;
+10.  for (i = 2, k = x &gt;&gt; 1; i &lt;= k; i++)
+11.   if (!(x % i)) {
+12.    flag = 1;
+13.    break;
+14.   }
+15.  if (flag == 1) printf(&quot;%d是合数\n&quot;, x);
+16.  else printf(&quot;%d不是合数\n&quot;, x);
+17. } while (scanf(&quot;%d&quot;, &amp;x) != EOF);
+18. return 0;
+19.}
+</code></pre>
+<p>（3）修改实验2-1程序，将其改为纯粹合数求解器，求出所有的3位纯粹合数。一个合数去掉最低位，剩下的数仍是合数；再去掉剩下的数的最低位，余留下来的数还是合数，这样反复，一直到最后剩下一位数仍是合数，这样的数称为纯粹合数。</p>
+<h5 id="3解答-2">(3)解答：</h5>
+<p>根据题意，写出两个辅助函数判断是否为纯粹合数，再遍历三位数，得到答案，因此，题目（3）替换后的程序如下所示：</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int isHeshu(int x){//判断是否是合数
+3. int i, k, flag; flag = 0;
+4.  for (i = 2, k = x &gt;&gt; 1; i &lt;= k; i++)
+5.   if (!(x % i)) {
+6.    flag = 1;break; }
+7.  if (flag == 1) return 1;
+8.  else return 0; 
+9.}
+10.int PureHeshu(int n){//判断是否是纯粹合数
+11. int ret=0;
+12. if (isHeshu(n))
+13. { n /= 10;
+14.  if (isHeshu(n)) {   
+15.   n /= 10;
+16.   if (isHeshu(n)) {
+17.    ret = 1;  } } }
+18. return ret;}
+19.int main(){
+20. for (int m = 100; m &lt; 1000; m++)
+21. {  if (PureHeshu(m))
+22.   printf(&quot;%d &quot;, m); }
+23. return 0;}
+</code></pre>
+<h4 id="3程序设计">3．程序设计</h4>
+<p>(1)假设工资税金按以下方法计算：x ＜ 1000元，不收取税金；1000 ≤ x ＜ 2000，收取5%的税金；2000 ≤ x ＜ 3000，收取10%的税金；3000 ≤ x ＜ 4000，收取15%的税金；4000 ≤ x ＜ 5000，收取20%的税金；5000 ≤ x，收取25%的税金。（注意税金的计算按照阶梯计税法，比如，工资为4500，那么税金=1000<em>5% + 1000</em>10% + 1000<em>15% + 501</em>20%）。编写一个程序,输入工资金额，输出应收取税金额度，要求分别用if语句和switch语句来实现。</p>
+<h5 id="1解答-3">(1)解答：</h5>
+<p>1）解题思路</p>
+<p>1.输入x，根据实际情况，x声明为double</p>
+<p>2.根据x的大小进行选择判断，计算税金</p>
+<p>3.打印结果；</p>
+<p>4.结束</p>
+<p>2）源程序清单<br>
+/* if实现版本*/</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main()
+3.{ double x, tax;
+4. printf(&quot;请输入工资:&quot;);
+5. scanf(&quot;%lf&quot;, &amp;x);
+6. if (x &lt; 1000) tax = 0;
+7. if (x &gt;= 1000 &amp;&amp; x &lt; 2000) tax = (x+1 - 1000) * 0.05;
+8. if (x &gt;= 2000 &amp;&amp; x &lt; 3000) tax = 1000*0.05+(x+1-2000) * 0.1;
+9. if (x &gt;= 3000 &amp;&amp; x &lt; 4000) tax = 1000 * 0.05 + 1000*0.1+(x+1 - 3000) * 0.15;
+10. if (x &gt;= 4000 &amp;&amp; x &lt; 5000) tax = 1000 * 0.05 + 1000 * 0.1 + 1000*0.15+(x+1 - 4000) * 0.2;
+11. if (x &gt;= 5000) tax = 1000 * 0.05 + 1000 * 0.1 + 1000 * 0.15 +1000*0.2+(x+1 - 5000) * 0.25;
+12. printf(&quot;\n应收税金%lf元\n&quot;, tax);
+13.}
+</code></pre>
+<p>/* switch实现版本*/</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main()
+3.{
+1. double x, tax;
+5. printf(&quot;请输入工资:&quot;);
+6. scanf(&quot;%lf&quot;, &amp;x);
+7. int a =(int) x / 1000;
+8. switch (a) {
+9. case 0:tax = 0;
+10.  break;
+11. case 1:tax = (x + 1 - 1000) * 0.05;
+12.  break;
+13. case 2:tax = 1000 * 0.05 + (x + 1 - 2000) * 0.1;
+14.  break;
+15. case 3:tax = 1000 * 0.05 + 1000 * 0.1 + (x + 1 - 3000) * 0.15;
+16.  break;
+17. case 4:tax = 1000 * 0.05 + 1000 * 0.1 + 1000 * 0.15 + (x + 1 - 4000) * 0.2;
+18.  break;
+19. default:tax = 1000 * 0.05 + 1000 * 0.1 + 1000 * 0.15 + 1000 * 0.2 + (x + 1 - 5000) * 0.25;
+20.  break;
+21.}
+22. printf(&quot;\n应收税金%lf元\n&quot;, tax);
+23. return 0;
+24.}
+</code></pre>
+<p>(2)输入一段以!结尾的短文(最多5行,每行不超过50个字符)，要求将它复制到输出，复制过程中将每行一个以上的空格字符用一个空格代替。</p>
+<h5 id="2解答-3">(2)解答：</h5>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main() {
+3.    char input[5][51];   char c;   
+4.    int line = 0;   int charCount = 0; int spaceCount = 0;
+5.    while ((c = getchar()) != '!' &amp;&amp; line &lt; 5){      
+6.        if (c == ' ') {
+7.            spaceCount++;              //空格计数
+8.            if (spaceCount &lt;= 1) {      //保证只有一个空格
+9.                input[line][charCount] = c;
+10.                charCount++;
+11.            }
+12.        }
+13.        else {
+14.            spaceCount = 0;      //归零空格计数
+15.            input[line][charCount] = c;   //将c存入数组
+16.            charCount++;
+17.        }
+18.        if (c == '\n') {
+19.            input[line][charCount] = '\0';    //添加终止符并换行
+20.            line++;
+21.            charCount = 0;
+22.            spaceCount = 0;
+23.        }
+24.    }
+25.    input[line][charCount] = '!';    //添加结尾
+26.    input[line][charCount + 1] = '\0';
+27.    for (int i = 0; i &lt;= line; i++) {
+28.        printf(&quot;%s&quot;, input[i]);   }     //打印短文
+29.    return 0;
+30.}
+</code></pre>
+<p>(3)打印如下的杨辉三角形。<br>
+1                    /*第0行 */</p>
+<pre><code>                     1   1                  /*第1行 */
+                   1   2   1                /*第2行 */
+                 1   3   3   1
+               1   4   6   4   1
+             1   5   10  10  5   1
+           1   6   15  20  15  6   1
+         1   7   21  35  35  21  7   1
+       1   8   28  56  70  56  28  8   1
+     1   9   36  84  126 126 84  36   9   1
+</code></pre>
+<p>第i行第j列位置的数据值可以由组合表示</p>
+<p>根据以上公式，采用顺推法编程，输入最后一行的编号N（0&lt;=N&lt;=6），要求输出金字塔效果的杨辉三角形。<br>
+特别要注意空格的数目，一位数之间是3个空格，两位数之间有2个空格，3位数之间只有一个空格。第N行行首是N个空格。每行末尾是3个空格和换行。</p>
+<h5 id="3解答-3">(3)解答：</h5>
+<p>1） 解题思路</p>
+<p>1．输入整数N<br>
+2．利用for循环打印N个空格，并用第二个for循环控制每行空格的数量比上一行少两个</p>
+<p>3．利用递推关系求出coef</p>
+<p>4．利用双层循环打印出杨辉三角</p>
+<p>5．结束</p>
+<p>2）源程序清单:</p>
+<pre><code class="language-c">1.	#include &lt;stdio.h&gt;
+2.int main() {
+3.    int N;
+4.    scanf(&quot;%d&quot;, &amp;N);
+5.    for (int i = 0; i &lt;= N; i++)  {
+6.        for (int a = 1; a &lt;= N; a++)   {
+7.            printf(&quot; &quot;);
+8.        }
+9.        for (int space = 1; space &lt;= N - i; space++)    {
+10.            printf(&quot;  &quot;);
+11.        }
+12.        int coef = 1;
+13.        for (int j = 0; j &lt;= i; j++) {
+14.            printf(&quot;%d&quot;, coef);
+15.            if (coef &lt; 10)
+16.                printf(&quot;   &quot;);
+17.            if (coef &gt;= 10)
+18.                printf(&quot;  &quot;);
+19.            coef = coef * (i - j) / (j+1);
+20.        }
+21.        printf(&quot;\n&quot;);
+22.    }
+23.    return 0;
+24.}
+</code></pre>
+<p>（4）625这个数很特别，625的平方等于390625，其末3位也是625。请编程输出所有这样的3位数：它的平方的末3位是这个数本身。要求这些数字从小到大排列，每个数字单独占一行。</p>
+<h5 id="4解答">(4)解答：</h5>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.#include &lt;math.h&gt;
+3.int main()
+4.{
+5.    for (int i = 100; i &lt; 1000; i++)
+6.    {
+7.        int a = pow(i, 2);
+8.        if (a % 1000 == i)
+9.        {
+10.            printf(&quot;%d\n&quot;, i);
+11.        }
+12.    return 0;
+13.}
+</code></pre>
+<h3 id="23-实验小结">2.3 实验小结</h3>
+<p>在本实验中，我探索了复合语句、if语句、switch语句，以及for、while、do-while等循环控制语句的使用，还了解了转移语句和标号语句的应用。此外，我还学习了如何使用集成开发环境（IDE）的调试功能，包括单步执行、设置断点以及观察变量值。在完成这次实验后，我获得了以下几点体会和经验：</p>
+<p>1.善于纠错：在编写程序时，仍然经常会遇到语法错误，例如拼写错误、缺少分号、括号不匹配等。这些错误可以导致程序无法编译或运行。通过检查代码，查看IDE提供的错误消息来识别和纠正语法错误。</p>
+<p>2.重视逻辑，学会调试：在程序中，尤其是使用循环可能会出现逻辑错误，导致程序的输出不符合预期，或陷入死循环。我们可以使用调试工具，例如设置断点、单步执行，观察程序的执行过程，和中间变量的值，判断错误原因。</p>
+<p>3.善于选择合适结构：通过实验，我了解每种循环结构和选择结构的特点和用途，知道了while和do-while的区别，if和switch的区别，学会如何选择适合特定情况的循环结构。</p>
+<p>4.更多样结构的流程图画法：通过实验，我熟悉visio软件的基本使用，知道了如何用流程图表示循环结构和选择结构整理思路。</p>
+<hr>
+<h2 id="实验3-函数与程序结构实验">实验3 函数与程序结构实验</h2>
+<h3 id="31实验目的">3.1实验目的</h3>
+<p>（1）熟悉和掌握函数的定义、声明；函数调用与参数传递，函数返回值类型的定义和返回值使用。</p>
+<p>（2）熟悉和掌握不同存储类型变量的使用。</p>
+<p>（3）练习使用集成开发环境中的调试功能：单步执行、设置断点、观察变量值。</p>
+<h3 id="32实验内容">3.2实验内容</h3>
+<h4 id="1程序改错题">1．程序改错题</h4>
+<p>下面是计算s=1!+2!+3!+…+n!的源程序(n&lt;20)。在这个源程序中存在若干语法和逻辑错误。要求对该程序进行调试修改，使之能够输出如下结果：</p>
+<p>k=1		the sum is 1</p>
+<p>k=2		the sum is 3</p>
+<p>k=3		the sum is 9</p>
+<p>……<br>
+k=20	the sum is 2561327494111820313</p>
+<p>/<em>实验3-1改错题程序：计算s=1!+2!+3!+…+n!</em>/</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main(void)
+3.{
+4.    int k;
+5.    for(k=1;k&lt;=20;k++)
+6.         printf(&quot;k=%d\tthe sum is %ld\n&quot;,k,sum_fac(k));
+7.    return 0;
+8.}
+9.long sum_fac(int n)
+10.{
+11.    long s=0;
+12.    int i,fac;
+13.   for(i=1;i&lt;=n;i++)
+14.        fac*=i;
+15.    s+=fac;
+16.    return s;
+17.}
+</code></pre>
+<h5 id="解答-3">解答：</h5>
+<p>（1）错误修改：<br>
+1)第3行未声明sum-fac函数，正确形式为：<br>
+long long sum_fac(int n);</p>
+<p>2)第9行的函数返回值类型出错，正确形式为：<br>
+long long sum_fac(int n);</p>
+<p>3)第11行s的数据类型出错，正确形式为：long long s = 0;</p>
+<p>4)第12行fac的数据类型出错且未初始化，正确形式为：<br>
+long long fac = 1;</p>
+<h4 id="2程序修改替换题">2．程序修改替换题</h4>
+<p>（1）根据将实验3-1改错题程序中sum_fac函数修改为一个递归函数，用递归的方式计算。</p>
+<h5 id="解答-4">解答：</h5>
+<p>替换后的程序如下所示：</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int main(void)
+3.{
+4.    long long sum_fac(int n);
+5.    int k;
+6.    for (k = 1; k &lt;= 20; k++)
+7.        printf(&quot;k=%d\tthe sum is %lld\n&quot;, k, sum_fac(k));
+8.    return 0;
+9.}
+10.long long sum_fac(int n)
+11.{
+12.    long long s = 0;
+13.    long long i, fac = 1;
+14.    for (i = 1; i &lt;= n; i++) {
+15.        fac *= i;
+16.    }
+17.    s += fac;
+18.    if (n == 1)
+19.        return s;
+20.    else
+21.        return s + sum_fac(n - 1);
+22.}
+</code></pre>
+<p>（2）下面是计算e^x麦克劳林展开的源程序，其中x是浮点数，n是整数。从键盘输入x和n，然后计算s的值。修改该程序中的sum和fac函数，使之计算量最小。<br>
+/<em>实验3-2程序修改替换第(2)题程序：根据公式计算 s</em>/</p>
+<pre><code class="language-c">1.#include&lt;stdio.h&gt;
+2.double mulx(double x,int n);
+3.long fac(int n);
+4.double sum(double x,int n)
+1.{
+5. int i;
+6. double z=1.0;
+7. for(i=1;i&lt;=n;i++)
+8. {
+9.  z=z+mulx(x,i)/fac(i);
+10. }
+11. return z;
+12. } 
+13. double mulx(double x,int n)
+2.{
+14. int i;
+15. double z=1.0;
+16. for(i=0;i&lt;n;i++)
+17. {
+18.  z=z*x;
+19. }
+20. return z;
+21. } 
+22. long fac(int n)
+3. {
+23.  int i;
+24.  long h=1;
+25.  for(i=2;i&lt;=n;i++)
+26. {
+27.  h=h*i;
+28. }
+29. return h;  
+30. }
+31. int main()
+32. {
+33.  double x;
+34. int n;
+35. printf(&quot;Input x and n:&quot;);
+36. scanf(&quot;%lf%d&quot;,&amp;x,&amp;n);
+37. printf(&quot;The result is %lf:&quot;,sum(x,n));
+38. return 0;   
+39. }
+</code></pre>
+<h5 id="解答-5">解答：</h5>
+<p>采用静态数据类型优化，修改后的程序如下所示：</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2./* 计算s=1+x+x2/2!+x3/3! */
+3.double mulx(double x)
+4.{
+5.    static double z = 1.0;
+6.    z *= x;
+7.    return z;
+8.}
+9.long fac(int n)
+10.{
+11.    static long f = 1; 
+12.//静态局部变量，静态局部变量使用static修饰符定义，
+13.//即使在声明时未赋初值，编译器也会把它初始化为0。且静态局部变量存储于进程的
+14.//全局数据区，即使函数返回，它的值也会保持不变。
+15.    f *= n;
+16.    return f;
+17.}
+18.double sum(double x, int n)
+19.{
+20.    int i;
+21.    double z = 1.0;
+22.    for (i = 1; i &lt;= n; i++)
+23.    {
+24.        z = z + mulx(x) / fac(i);
+25.    }
+26.    return z;
+27.}
+28.int main() {
+29.    double x;
+30.    int n;
+31.    printf(&quot;Input x and n:&quot;);
+32.    scanf(&quot;%lf%d&quot;, &amp;x, &amp;n);
+33.    printf(&quot;The result is %lf:&quot;, sum(x, n));
+34.    return 0;
+35.}
+</code></pre>
+<h4 id="3跟踪调试题">3．跟踪调试题</h4>
+<p>下面是计算fabonacci数列前n项和的源程序，现要求单步执行该程序，在watch窗口中观察Ik,sum,n值。具体操作如下：<br>
+（1）设输入5，观察刚执行完“scanf(&quot;%d&quot;,&amp;k);”语句时，sum、k的值是多少？</p>
+<p>（2）在从main函数第一次进入fabonacci函数前的一刻，观察各变量的值是多少？返回后光条停留在哪个语句上？</p>
+<p>（3）在从main函数第一次进入fabonacci函数后的一刻，观察光条从main函数“sum+=fabonacci(i);”语句调到了哪里？</p>
+<p>（4）在fabonacci函数内部单步执行，观察函数的递归执行过程。体会递归方式实现的计算过程是如何完成数计算的，并特别注意什么时刻结束递归，然后直接从第一个return语句返回到了哪里？</p>
+<p>（5）在fabonacci函数递归执行过程中观察参数n的变化情况，并回答为什么k、sum在fabonacci函数内部不可见？</p>
+<p>/<em>实验3-3跟踪调试题程序：计算fabonacci数列前n项和</em>/</p>
+<pre><code class="language-c">1.#include&lt;stdio.h&gt; 
+2.int main(void)
+3.{
+4.    int i,k;
+5.    long sum=0,fabonacci(int n);
+6.    printf(&quot;Inut n:&quot;);
+7.    scanf(&quot;%d&quot;,&amp;k);
+8.    for(i=1;i&lt;=k;i++){
+9.        sum+=fabonacci(i);
+10.        printf(&quot;i=%d\tthe sum is %ld\n&quot;,i,sum);
+11.    }
+12.    return 0;
+13.}
+14.long fabonacci(int n)
+15.{
+16.    if(n==1 || n==2)
+17.        return 1;
+18.    else
+19.        return fabonacci(n-1)+fabonacci(n-2);
+20.} 
+</code></pre>
+<h5 id="解答-6">解答：</h5>
+<p>(1)sum,k的值分别是0和5。</p>
+<p>(2)如图，sum,k,i的值分别为0，5，1，光条在sum+=fabonacci(i);语句前。</p>
+<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/2fvhj3ri.png" alt="" loading="lazy"></figure>
+<p>(3)光条调到了fabonacci函数体的开始,如图所示：<br>
+<img src="https://Ilosyi.github.io/post-images/1700494376523.png" alt="" loading="lazy"></p>
+<p>(4)观察递归可发现，当n=1或2时，函数直接返回1，当n&gt;=3时，函数调用自身两次，分别计算fabonacci(n-1) 和 fabonacci(n-2)，若fabonacci(n-1) 和 fabonacci(n-2）中n-1或n-2&gt;=3，函数会继续调用自身，直到n=1或2。当结束时，光条回到sum += fabonacci(i);处,如图：<br>
+<img src="https://Ilosyi.github.io/post-images/1700494405575.png" alt="" loading="lazy"></p>
+<p>(5)设输入3，n的值经历了从1-2-3-2-3-1-3的转变，符合上一问中所解释的递归调用过程。定义在函数内部的变量称为局部变量（Local Variable），它的作用域仅限于函数内部， 离开该函数后就是无效的，k,sum定义在main函数内，只在 main 函数内部可见。fabonacci 函数只能访问自己的参数 n，而不能访问 main 函数中的局部变量 k 和 sum。<br>
+<img src="https://Ilosyi.github.io/post-images/1700494463644.png" alt="" loading="lazy"></p>
+<h4 id="4程序设计">4．程序设计</h4>
+<p>（1）编程验证歌德巴赫猜想：任何一个大于等于4的偶数都是两个素数之和。要求设计一个函数，接受形参n，以“n=n1+n2”的形式输出结果，若有多种分解情况，取n1最小的一个输出。<br>
+例如：n=6，输出“6=3+3”。<br>
+main函数循环接收从键盘输入的整数n，如果n是大于或等于4的偶数，调用上述函数进行验证。</p>
+<h5 id="1解答-4">(1)解答：</h5>
+<p>1） 算法流程如图3.9所示<br>
+<img src="https://Ilosyi.github.io/post-images/1700494520909.png" alt="" loading="lazy"><br>
+2）源程序清单</p>
+<pre><code class="language-c">1.#include&lt;stdio.h&gt; 
+2.#include&lt;math.h&gt;
+3.int isPrime(int x)//素数
+4.{
+5.    int ret = 1;
+6.    int i;
+7.    if (x == 1 || (x % 2 == 0 &amp;&amp; x != 2))
+8.        ret = 0;
+9.    for (i = 3; i &lt; sqrt(x); i += 2)
+10.    {
+11.        if (x % i == 0)
+12.        {
+13.            ret = 0;
+14.            break;
+15.        }
+16.    }
+17.    if (ret == 1)
+18.        return ret;
+19.}
+20.void gedebahe(int n)//哥德巴赫猜想的函数和输出
+21.{
+22.
+23.    for (int i = 2; i &lt;= n / 2; i++)
+24.    {
+25.        if (isPrime(i) &amp;&amp; isPrime(n - i))
+26.        {
+27.            printf(&quot;%d=%d+%d\n&quot;, n, i, n - i);
+28.            return;
+29.        }
+30.    }
+31.}
+32.
+33.int main()
+34.{
+35.    int n;
+36.    while (scanf(&quot;%d&quot;, &amp;n) != EOF)
+37.    {
+38.        gedebahe(n);
+39.    }
+40.    return 0;
+41.}
+</code></pre>
+<p>3）测试<br>
+（a） 测试数据：</p>
+<p>表3-1 编程题1的测试数据<br>
+测试用例	程序输入	理论结果<br>
+用例1	       48	         48=5+43<br>
+用例2	       90	         90=7+83<br>
+用例3	       10	         10=3+7<br>
+（b） 对应测试数据的运行结果截图<br>
+<img src="https://Ilosyi.github.io/post-images/1700494616388.png" alt="" loading="lazy"></p>
+<p>2）完全数（Perfect number），又称完美数或完备数，特点是它的所有真因子（即除了自身以外的约数，包括1）之和恰好等于它本身。例如6=1+2+3，28=1+2+4+7+14等。<br>
+编程寻找10000以内的所有完全数。<br>
+要求设计一个函数，判定形参n是否为完全数，如果是，返回1，否则返回0。在main函数中调用该函数求10000以内的所有完全数，并以完全数的真因子之和的形式输出结果，例如“6=1+2+3”。程序输出中，每个完全数单独占一行。</p>
+<h5 id="2解答-4">(2)解答：</h5>
+<p>1） 算法流程如图3.11所示<br>
+<img src="https://Ilosyi.github.io/post-images/1700494638114.png" alt="" loading="lazy"><br>
+2）源程序清单</p>
+<pre><code class="language-c">1.#include &lt;stdio.h&gt;
+2.int wanshu(int n)
+3.{
+4.    int sum = 0;
+5.    for (int i = 1; i &lt;= n / 2; i++)
+6.    {
+7.        if (n % i == 0) {  //找到一个因子
+8.            sum += i;
+9.        }
+10.    }
+11.    if (sum == n)    //如果两者相等
+12.    {
+13.        return 1;
+14.    }
+15.    else
+16.    {
+17.        return 0;
+18.    }
+19.}
+20.
+21.int main() {
+22.    for (int num = 1; num &lt;= 10000; num++)
+23.    {
+24.        if (wanshu(num))
+25.        {
+26.            printf(&quot;%d=&quot;, num);
+27.            for (int i = 1; i &lt;= num / 2; i++) {
+28.                if (num % i == 0) {
+29.                    printf(&quot;%d&quot;, i);
+30.                    if (i != num / 2) {
+31.                        printf(&quot;+&quot;);
+32.                    }
+33.                }
+34.            }
+35.            printf(&quot;\n&quot;);
+36.        }
+37.    }
+38.    return 0;
+39.}
+</code></pre>
+<p>3）测试<br>
+对应测试数据的运行结果截图<br>
+<img src="https://Ilosyi.github.io/post-images/1700494667269.png" alt="" loading="lazy"><br>
+（3）自幂数是指一个n位数，它的每个位上的数字的n次幂之和等于它本身。水仙花数是3位的自幂数，除此之外，还有4位的四叶玫瑰数、5位的五角星数、6位的六合数、7位的北斗星数、8位的八仙数等。</p>
+<p>编写一个函数，判断其参数n是否为自幂数，如果是，返回1；否则，返回0。要求main函数能反复接收从键盘输入的整数k，k代表位数，然后调用上述函数求k位的自幂数，输出所有k位自幂数，并输出相应的信息，例如“3位的水仙花数共有4个153，370，371，407”。当k=0时程序结束执行。</p>
+<h5 id="3解答-4">(3)解答：</h5>
+<p>1） 算法流程如图3.13所示。<br>
+<img src="https://Ilosyi.github.io/post-images/1700494714778.png" alt="" loading="lazy"><br>
+2）源程序清单</p>
+<pre><code>1.	#include &lt;stdio.h&gt;
+2.#include &lt;math.h&gt;
+3.int shuixianhua(int n) {
+4.    int t = n;
+5.    int sum = 0;
+6.    int d = 0;
+7.    while (t != 0)
+8.    {
+9.        d++;
+10.        t /= 10;
+11.    }
+12.    t = n;
+13.    while (t != 0)
+14.    {
+15.        int a = t % 10;
+16.        sum += pow(a, d);
+17.        t /= 10;
+18.    }
+19.    if (sum == n)
+20.        return 1;
+21.    else
+22.        return 0;
+23.}
+24.int main()
+25.{
+26.    int arr[10];
+27.    int k;
+28.    while (1)
+29.    {
+30.        scanf(&quot;%d&quot;, &amp;k);
+31.        if (k == 0) {
+32.            break;
+33.        }
+34.        int count = 0;
+35.        switch (k)
+36.        {
+37.        case 3:
+38.            printf(&quot;%d位的水仙花数共有&quot;, k);
+39.            break;
+40.        case 4:
+41.            printf(&quot;%d位的四叶玫瑰数共有&quot;, k);
+42.            break;
+43.        case 5:
+44.            printf(&quot;%d位的五角星数共有&quot;, k);
+45.            break;
+46.        case 6:
+47.            printf(&quot;%d位的六合数共有&quot;, k);
+48.            break;
+49.        case 7:
+50.            printf(&quot;%d位的北斗星数共有&quot;, k);
+51.            break;
+52.        case 8:
+53.            printf(&quot;%d位的八仙数共有&quot;, k);
+54.            break;
+55.        default:
+56.            printf(&quot;%d位的数共有&quot;, k);
+57.            break;
+58.        }
+59.        for (int i = pow(10, k - 1); i &lt; pow(10, k); i++)
+60.        {
+61.            if (shuixianhua(i))
+62.            {
+63.                arr[count] = i;
+64.                count++;
+65.            }
+66.        }
+67.        printf(&quot;%d个&quot;, count);
+68.        for (count = count - 1; count &gt;= 0; count--)
+69.        {
+70.            printf(&quot;%d&quot;, arr[count]);
+71.            if (count != 0)
+72.            {
+73.                printf(&quot;,&quot;);
+74.            }
+75.
+76.        }
+77.        printf(&quot;\n&quot;);
+78.    }
+79.    return 0;
+80.}
+</code></pre>
+<p>3）测试<br>
+（a） 测试数据：<br>
+表3-2 编程题3的测试数据<br>
+测试用例	程序输入	理论结果<br>
+用例1	      3	      3位的水仙花数共有4个407,371,370,153<br>
+用例2	      4	      4位的四叶玫瑰数共有3个9474,8208,1634<br>
+用例3	      5	      5位的五角星数共有3个93084,92727,54748<br>
+（b） 对应测试数据的运行结果截图<br>
+<img src="https://Ilosyi.github.io/post-images/1700494773905.png" alt="" loading="lazy"></p>
+<h3 id="33-实验小结">3.3 实验小结</h3>
+<p>在这次上机实验中，我们旨在熟悉和掌握函数的定义、声明，函数调用与参数传递，函数返回值类型的定义和返回值使用，同时了解不了同存储类型变量的使用。此外，我们练习了使用集成开发环境的调试功能，包括单步执行、设置断点、观察变量值，并借此观察函数递归的过程，以下是我在本次实验中遇到的问题和收获。</p>
+<p>1.熟悉了函数的使用：通过实验，我学习了函数的定义，声明，返回值类型和使用，在跟踪调试过程中，我了解的递归的过程，并知道了其缺点，通过调试功能观察到变量在函数调用，递归过程中的变化，对计算机有了更深的了解。</p>
+<p>2.纠错能力得到提升：在改错题中，我意识到数据类型错误，却忘记了printf输出中格式符的变化，通过实验，锻炼了我思维的周密性。</p>
+<p>3.重视数学与编程相结合：本次实验的程序设计题均为数学相关问题，在实验过程中，经常不知道如何确定循环的终止条件，这时需要借助数学只是判断，如完数一定是偶数，可确定for循环中i&lt;=n/2。</p>
+<p>4.了解了算法的优化：通过程序修改替换题，我学会了利用静态数据类型优化算法，减少计算量。在水仙花数题中，通过摸索我知道了可以用数组储存后面需要用到的变量，避免了重复的运算。本次实验对算法思维有一定帮助。</p>
+<hr>
+<h2 id="实验4-编译预处理实验">实验4  编译预处理实验</h2>
+<h3 id="41实验目的">4.1实验目的</h3>
+<p>（1）掌握文件包含、宏定义、条件编译和assert宏的使用；</p>
+<p>（2）练习使用集成开发环境中的调试功能：单步执行、设置断点、观察变量值。</p>
+<p>（3）熟悉多文件编译技术</p>
+<h3 id="42实验内容">4.2实验内容</h3>
+<h4 id="1程序改错-2">1．程序改错</h4>
+<p>下面是用宏来计算平方差、交换两数的源程序.在这个源程序中存在若干错误，要求对该程序进行调试修改，使之能够正确完成指定任务。<br>
+/<em>实验4-1改错与跟踪调试题程序：计算平方差、将换两数</em>/</p>
+<pre><code>#include&lt;stdio.h&gt;
+#define SUM a+b
+#define DIF a-b
+#define SWAP(a,b)  a=b,b=a
+int main() 
+{
+    int a,b;
+    printf(&quot;Input two integers a, b:&quot;);
+    scanf(&quot;%d%d&quot;, &amp;a,&amp;b);
+    printf(&quot;\nSUM=%d\n the difference between square of a and square of b is:%d&quot;,SUM, SUM*DIF);
+    SWAP(a,b);
+    printf(&quot;\nNow a=%d,b=%d\n&quot;,a,b);
+    return 0;
+}
+</code></pre>
+<h4 id="2程序修改替换-2">2．程序修改替换</h4>
+<p>下面是用函数实现求三个数中最大数、计算两浮点数之和的程序。在这个源程序中存在若干语法和逻辑错误。<br>
+要求：（1）对这个例子程序进行调试修改，使之能够正确完成指定任务；<br>
+（2）用带参数的宏替换函数max，来实现求最大数的功能。<br>
+/<em>实验4-2程序修改替换题程序</em>/</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt; 
+int main(void)
+{
+	int a, b, c;
+  	float d, e;
+  	printf(&quot;Input three integers:&quot;);
+  	scanf(&quot;%d %d %d&quot;,&amp;a,&amp;b,&amp;c);
+  	printf(&quot;\nThe maximum of them is %d\n&quot;,max(a,b,c));
+
+  	printf(&quot;Input two floating point numbers:&quot;);
+	scanf(&quot;%f %f&quot;,&amp;d,&amp;e);
+	printf(&quot;\nThe sum of them is  %f\n&quot;,sum(d,e));
+	return 0;
+}
+	
+int max(int x, int y, int z)					
+{
+	int m=z;
+	if (x&gt;y)
+		if(x&gt;z) m=x;
+	else
+    	if(y&gt;z) m=y;
+    return m;
+}
+
+float sum(float x, float y)
+{
+	return x+y;
+}
+</code></pre>
+<h4 id="3跟踪调试">3．跟踪调试</h4>
+<p>下面程序利用R计算圆的面积s，以及面积s的整数部分。现要求：<br>
+（1）修改程序，使程序编译通过且能运行；</p>
+<p>（2）单步执行。进入函数integerl_fraction时，watch窗口中x为何值？在返回main时, watch窗口中i为何值？</p>
+<p>（3）修改程序，使程序能输出面积s值的整数部分（要求四舍五入），不会输出错误信息assertion failed。</p>
+<p>/<em>实验4-3跟踪调试题程序利用R计算圆的面积s</em>/</p>
+<pre><code class="language-c">#define  R
+int main(void)
+{
+	float  r, s;
+	int s_integer=0;
+    printf (&quot;Input a number: &quot;);
+    scanf(&quot;%f&quot;,&amp;r);
+    #ifdef  R
+       s=3.14159*r*r;
+       printf(&quot;Area of round is: %f\n&quot;,s);
+       s_integer=integer_fraction(s);
+       assert((s-s_integer)&lt;0.5);
+       printf(&quot;The integer fraction of area is %d\n&quot;, s_integer);
+    #endif
+    return 0;
+}
+
+int integer_fraction(float x)
+{
+  int i=x;
+  return i;
+}
+</code></pre>
+<h4 id="4程序设计-2">4．程序设计</h4>
+<p>（1）三角形的面积是，其中，a,b,c为三角形的三边，要求编写程序用带参数的宏来计算三角形的面积。定义两个带参数的宏，一个用来求s，另一个用来求area。</p>
+<p>2）用条件编译方法来编写程序。输入一行英文字符序列，可以任选两种方式之一输出：一为原文输出；二为变换字母的大小写后输出。例如小写‘a’变成大写‘A’，大写‘D’变成小写‘d’，其他字符不变。用#define命令控制是否变换字母的大小写。例如，#define CHANGE 1 则输出变换后的文字，若#define CHANGE 0则原文输出。</p>
+<p>（3）假设一个C程序由file1.c和file2.c两个源文件及一个file.h头文件组成，file1.c、file2.c和file.h的内容分别如下所述。试编辑该多文件C程序，补充file.h头文件内容，然后编译和链接。然后运行最后生成的可执行文件。<br>
+/<em>源文件file1.c的内容</em>/</p>
+<pre><code class="language-c">#include &quot;file.h&quot;
+int x,y;             /* 外部变量的定义性说明 */
+char ch;             /* 外部变量的定义性说明 */
+int main(void)
+{
+        x=10;
+        y=20;
+        ch=getchar();
+        printf(&quot;in file1 x=%d,y=%d,ch is %c\n&quot;,x,y,ch);
+        func1();
+ return 0;
+}
+
+/*源文件file2.c的内容为：*/
+#include &quot;file.h&quot;
+void func1(void)
+{
+        x++;
+        y++;
+        ch++;
+        printf(&quot;in file2 x=%d,y=%d,ch is %c\n&quot;,x,y,ch);
+}
+</code></pre>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://Ilosyi.github.io/post/hua-ke-song-qin-wai-mai-ping-jie/">
+                <h3 class="post-title">
+                  华科送寝外卖评价
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
+
+          
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://Ilosyi.github.io/images/avatar.png?v=1700494784369" class="no-responsive avatar">
+    <div class="text-muted"></div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/c-yu-yan-shi-yan-bao-gao/"> C语言实验报告</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/hua-ke-song-qin-wai-mai-ping-jie/">华科送寝外卖评价</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/pai-xu-suan-fa/">排序算法</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhi-zhen/"> 指针与数组</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zi-fu-chuan-yu-zi-fu-xiang-guan-han-shu-de-shi-yong/">字符串与字符相关函数的使用</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/da-xue-sheng-xin-li-jian-kang-zuo-ye/">大学生心理健康实践作业</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhong-guo-yu-wen-zi-ran-yu-yan-chu-li-zuo-ye/">中国语文（自然语言处理）作业</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/su-shu-de-ai-la-tuo-si-te-ni-shai-fa-yu-hui-wen-shu/">素数的埃拉托斯特尼筛法与回文数</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/er-wei-shu-zu-ba-huang-hou-yu-mi-gong-wen-ti/">二维数组：八皇后 幻方 迷宫问题</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/xin-xi-ji-zhu-dao-lun-shi-yan-ke-nei-rong-ji-cheng-xu-dai-ma/">信息技术导论实验课内容及程序代码</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge success">
+          报告/作业
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge secondary">
+          大一
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/zfuWuILQ3/" class="badge secondary">
+          校园生活
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge secondary">
+          C语言学习笔记（万老师）
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/ma9iK4-3D/" class="badge ">
+          Gridea
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Ilosyi.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '593c3417754a229396ac',
+        clientSecret: '3bb5bf5ee9f4bccb9ec5e4488b9c77469204f4e9',
+        repo: 'Ilosyi.github.io',
+        owner: 'Ilosyi',
+        admin: ['Ilosyi'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

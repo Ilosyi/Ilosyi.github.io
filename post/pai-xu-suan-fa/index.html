@@ -7,7 +7,7 @@
 <meta name="description" content="">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://Ilosyi.github.io/favicon.ico?v=1700478009395">
+<link rel="shortcut icon" href="https://Ilosyi.github.io/favicon.ico?v=1700494784369">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -95,7 +95,7 @@
                   C语言学习笔记（万老师）
                 </a>
               
-                <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge secondary">
+                <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge success">
                   大一
                 </a>
               
@@ -128,27 +128,27 @@
 <p>选择排序（Selection Sort）是一种简单直观的排序算法，其基本思想是在未排序的部分中选择最小（或最大）的元素，然后将其放到已排序部分的末尾。这个过程不断地重复，直到所有元素都排序完成。<br>
 <a href="https://www.bilibili.com/video/BV1qS4y1w7jM/?spm_id_from=333.337.search-card.all.click&amp;vd_source=3d122b36d70c1b8fb284bf43c2a63a86">选择排序的动画演示</a><br>
 /<em>代码实现</em>/</p>
-<pre><code>`void selectionSort(int arr[], int n) {
-int i, j, minIndex, temp;
+<pre><code class="language-c">   void selectionSort(int arr[], int n) {
+   int i, j, minIndex, temp;
 
-// 遍历数组
-for (i = 0; i &lt; n - 1; i++) {
-// 假设当前索引为最小值索引
-minIndex = i;
+   // 遍历数组
+   for (i = 0; i &lt; n - 1; i++) {
+   // 假设当前索引为最小值索引
+   minIndex = i;
 
-// 在未排序部分中寻找最小值的索引
-        for (j = i + 1; j &lt; n; j++) {
-         if (arr[j] &lt; arr[minIndex]) {
-            minIndex = j;
-        }
+   // 在未排序部分中寻找最小值的索引
+           for (j = i + 1; j &lt; n; j++) {
+            if (arr[j] &lt; arr[minIndex]) {
+               minIndex = j;
+           }
+       }
+
+   // 将找到的最小值与当前位置交换
+       temp = arr[minIndex];
+       arr[minIndex] = arr[i];
+       arr[i] = temp;
     }
-
-// 将找到的最小值与当前位置交换
-    temp = arr[minIndex];
-    arr[minIndex] = arr[i];
-    arr[i] = temp;
- }
-}
+   }
 </code></pre>
 <h2 id="font-color0000ff-二-冒泡排序font"><font color=#0000FF ><strong>二、冒泡排序</strong></font></h2>
 <h3 id="普通冒泡排序"><strong>普通冒泡排序</strong></h3>
@@ -156,23 +156,59 @@ minIndex = i;
 交换原则：两两比较进行交换，如果小的在后，大的在前即交换<br>
 <a href="https://www.bilibili.com/video/BV1qY4y1h7Lz/?spm_id_from=333.337.search-card.all.click&amp;vd_source=3d122b36d70c1b8fb284bf43c2a63a86">冒泡排序的动画演示</a><br>
 /<em>代码实现</em>/</p>
-<pre><code>#include &lt;stdio.h&gt;
-void bubbleSort(int arr[], int n) {
- int temp;
-for (int i = 0; i &lt; n - 1; i++) {
-for (int j = 0; j &lt; n - i - 1; j++) {
-if (arr[j] &gt; arr[j + 1]) {
-// 交换arr[j]和arr[j+1]
-temp = arr[j];
-arr[j] = arr[j + 1];
-arr[j + 1] = temp;
-} }}}
+<pre><code class="language-c">   #include &lt;stdio.h&gt;
+   void bubbleSort(int arr[], int n) {
+    int temp;
+   for (int i = 0; i &lt; n - 1; i++) {
+   for (int j = 0; j &lt; n - i - 1; j++) {
+   if (arr[j] &gt; arr[j + 1]) {
+   // 交换arr[j]和arr[j+1]
+   temp = arr[j];
+   arr[j] = arr[j + 1];
+   arr[j + 1] = temp;
+   }
+    }
+    }
+    }
 </code></pre>
 <h3 id="改进冒泡排序"><strong>改进冒泡排序</strong></h3>
 <p>冒泡排序改进1：在某次遍历中如果没有数据交换，说明整个数组已经有序。因此通过设置标志位来记录此次遍历有无数据交换就可以判断是否要继续循环。<br>
-冒泡排序改进2：记录某次遍历时最后发生数据交换的位置，这个位置之后的数据显然已经有序了。因此通过记录最后发生数据交换的位置就可以确定下次循环的范围了。</p>
+冒泡排序改进2：记录某次遍历时最后发生数据交换的位置，这个位置之后的数据显然已经有序了。因此通过记录最后发生数据交换的位置就可以确定下次循环的范围了。<br>
+/<em>代码实现</em>/</p>
+<pre><code class="language-c">   #include &lt;stdio.h&gt;
+   void bubbleSort(int arr[], int n) {
+   int temp;
+   int lastSwap = n - 1; // 初始化最后一次交换位置为数组的最后一个元素
+   for (int i = 0; i &lt; n - 1; i++) {
+   int newLastSwap = -1; // 初始化新的最后一次交换位置为-1，用于判断是否有交换发生
+   for (int j = 0; j &lt; lastSwap; j++) {
+   if (arr[j] &gt; arr[j + 1]) {
+    // 交换arr[j]和arr[j+1]
+   temp = arr[j];
+   arr[j] = arr[j + 1];
+   arr[j + 1] = temp;
+   newLastSwap = j; // 更新最后一次交换的位置
+   }
+   }
+   // 如果没有数据交换，说明整个数组已经有序，可以提前退出排序
+   if (newLastSwap == -1) {
+   break;
+    }
+   lastSwap = newLastSwap; // 更新最后一次交换的位置
+    }
+   }
+</code></pre>
 <h2 id="font-color0000ff-三-快速排序font"><font color=#0000FF ><strong>三、快速排序</strong></font></h2>
-<p>推荐一个讲解视频：<a href="https://www.bilibili.com/video/BV1vP411g7J3/?spm_id_from=333.337.search-card.all.click">全网最清晰快速排序，看完快排思想和代码全部通透，不通透你打我！</a></p>
+<p>推荐一个讲解视频：<a href="https://www.bilibili.com/video/BV1vP411g7J3/?spm_id_from=333.337.search-card.all.click">全网最清晰快速排序，看完快排思想和代码全部通透，不通透你打我！</a><br>
+快速排序的基本思想是选择一个基准元素，将数组分成两部分，左边的部分包含所有小于基准的元素，右边的部分包含所有大于基准的元素，然后对这两部分分别进行快速排序，最终将整个数组排序。<br>
+快速排序的步骤如下：<br>
+1.选择基准元素： 从数组中选择一个基准元素（通常是第一个元素、最后一个元素或者随机选择），记作pivot。<br>
+2.分区（Partition）： 将数组分成两部分，小于基准元素的放在左边，大于基准元素的放在右边，相等的可以放在任意一边。分区过程可以使用双指针法来实现。<br>
+3.递归排序： 递归地对左右两部分进行快速排序。<br>
+4.合并： 由于每次递归调用都会将一个元素放置到其最终位置，所以当递归调用完成时，整个数组就被排序好了。<br>
+这个过程是递归的，当数组被分割为单个元素时，递归结束。<br>
+快速排序的优势在于它的平均时间复杂度为O(n log n)，而且它是原地排序（in-place sorting），只需要常数级别的额外空间。但是，快速排序的性能高度依赖于选择的基准元素，如果选择的基准元素不合适，可能会导致算法的性能下降。为了避免这种情况，通常使用随机选择基准元素或者使用三数取中法（选择第一个、中间一个和最后一个元素中的中间值作为基准）来提高算法的稳定性。<br>
+/<em>代码实现</em>/</p>
 <h2 id="font-color0000ff-四-插入排序font"><font color=#0000FF ><strong>四、插入排序</strong></font></h2>
 <h3 id="普通插入排序"><strong>普通插入排序</strong></h3>
 <h3 id="折半插入排序"><strong>折半插入排序</strong></h3>
@@ -208,7 +244,7 @@ arr[j + 1] = temp;
 
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://Ilosyi.github.io/images/avatar.png?v=1700478009395" class="no-responsive avatar">
+    <img src="https://Ilosyi.github.io/images/avatar.png?v=1700494784369" class="no-responsive avatar">
     <div class="text-muted"></div>
     <div class="social-container">
       
@@ -230,6 +266,12 @@ arr[j + 1] = temp;
     </div>
     <div class="row">
       <ul>
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/c-yu-yan-shi-yan-bao-gao/"> C语言实验报告</a>
+            </li>
+          
         
           
             <li>
@@ -286,10 +328,6 @@ arr[j + 1] = temp;
           
         
           
-            <li>
-              <a href="https://Ilosyi.github.io/post/xin-xi-ji-zhu-dao-lun-ke-cheng-lun-wen/">信息技术导论课程论文</a>
-            </li>
-          
         
           
         
@@ -304,23 +342,23 @@ arr[j + 1] = temp;
     </div>
     <div class="row">
       
-        <a href="https://Ilosyi.github.io/tag/zfuWuILQ3/" class="badge success">
-          校园生活
-        </a>
-      
-        <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge success">
-          C语言学习笔记（万老师）
-        </a>
-      
-        <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge warning">
-          大一
-        </a>
-      
-        <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge success">
+        <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge ">
           报告/作业
         </a>
       
-        <a href="https://Ilosyi.github.io/tag/ma9iK4-3D/" class="badge warning">
+        <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge success">
+          大一
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/zfuWuILQ3/" class="badge warning">
+          校园生活
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge warning">
+          C语言学习笔记（万老师）
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/ma9iK4-3D/" class="badge ">
           Gridea
         </a>
       

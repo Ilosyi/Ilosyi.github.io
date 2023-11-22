@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Ilosyi.github.io</id>
     <title>losyi的博客</title>
-    <updated>2023-11-20T15:39:49.162Z</updated>
+    <updated>2023-11-22T04:25:20.656Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Ilosyi.github.io"/>
     <link rel="self" href="https://Ilosyi.github.io/atom.xml"/>
@@ -1018,16 +1018,38 @@ void func1(void)
         <link href="https://Ilosyi.github.io/post/hua-ke-song-qin-wai-mai-ping-jie/">
         </link>
         <updated>2023-11-20T10:43:23.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="一-逐趣校园篇">一、逐趣校园篇</h2>
-<h3 id="1铁锅锅"><strong>1.铁锅锅</strong></h3>
+        <content type="html"><![CDATA[<h3 id="一-逐趣校园篇">一、逐趣校园篇</h3>
+<h4 id="1铁锅锅"><strong>1.铁锅锅</strong></h4>
 <p>(1)类型:盖浇饭<br>
 (2)味道:2/5<br>
 (3)价格:3/5(指数越高越贵)<br>
 (4)总评:2/5<br>
 评价：口味淡，口感生，分量少，不推荐。</p>
-<h3 id="2川味小火锅"><strong>2.川味小火锅</strong></h3>
-<h2 id="二-饿了吗篇">二、饿了吗篇</h2>
-<h3 id="1"><strong>1.</strong></h3>
+<h4 id="2川味小火锅"><strong>2.川味小火锅</strong></h4>
+<p>(1)类型:火锅<br>
+(2)味道:3/5<br>
+(3)价格:2.5/5(指数越高越贵)<br>
+(4)总评:3/5<br>
+评价：中规中矩，分量还行</p>
+<h3 id="二-饿了吗篇">二、饿了吗篇</h3>
+<h4 id="1意味深长麻辣烫"><strong>1.意味深长麻辣烫</strong></h4>
+<p>(1)类型:麻辣烫<br>
+(2)味道:3/5<br>
+(3)价格:4/5(指数越高越贵)<br>
+(4)总评:2.5/5<br>
+评价：味道中规中矩，分量少，价格略高，不推荐。<br>
+（五套餐，纯自选菜）</p>
+<h4 id="2饭思思小碗菜"><strong>2.饭思思小碗菜</strong></h4>
+<p>(1)类型:饭菜<br>
+(2)味道:3.5/5<br>
+(3)价格:2.5/5(指数越高越贵)<br>
+(4)总评:3/5<br>
+评价：饭菜独立包装，味道还行，价格中等，可以常吃，有的菜口味略淡。</p>
+<h4 id="3华科被炒饭耽误的"><strong>3.华科被炒饭耽误的</strong></h4>
+<p>(1)类型:饭菜<br>
+(2)味道:3.5/5<br>
+(3)价格:2.5/5(指数越高越贵)<br>
+(4)总评:3/5</p>
 ]]></content>
     </entry>
     <entry>
@@ -1187,7 +1209,14 @@ void func1(void)
 </li>
 </ul>
 </li>
-<li><a href="#%E4%B8%89-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%8F%96%E5%80%BC%E5%8F%96%E5%9D%80%E8%BE%A8%E6%9E%90"><strong>三、二维数组取值取址辨析</strong></a></li>
+<li><a href="#%E4%B8%89-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%8F%96%E5%80%BC%E5%8F%96%E5%9D%80%E8%BE%A8%E6%9E%90"><strong>三、二维数组取值取址辨析</strong></a><br>
+*
+<ul>
+<li><a href="#%E9%97%AE%E9%A2%981-intpp-%E5%93%AA%E4%B8%AA%E6%AD%A3%E7%A1%AE">问题1: int*p;p=(     )哪个正确？</a></li>
+<li><a href="#%E9%97%AE%E9%A2%982-%E8%83%BD%E5%90%A6%E9%80%9A%E8%BF%87p%E9%81%8D%E5%8E%86%E5%85%83%E7%B4%A0">问题2: 能否通过p++遍历元素？</a></li>
+<li><a href="#%E9%97%AE%E9%A2%983%E5%A6%82%E6%9E%9C%E6%83%B3%E8%AE%A9p%E7%AD%89%E5%90%8C%E4%BA%8Ea%E5%BA%94%E5%A6%82%E4%BD%95%E5%A3%B0">问题3:如果想让p++等同于a++,应如何声</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1197,97 +1226,97 @@ void func1(void)
 <p>简单数据类型的变量仅能描述一个单独的数据，对客观对象的描述能力十分有限，<strong>数组</strong>属于构造类型，是相同数据类型数据的集合，<strong>元素</strong>是组成数组的数据，可以是各种类型。</p>
 <h4 id="数组特点">数组特点</h4>
 <h3 id="10逆波兰表达式">10.逆波兰表达式</h3>
-<pre><code>#define _CRT_SECURE_NO_WARNINGS
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;ctype.h&gt;
-#include&lt;string.h&gt;
-#define MAX_STACK_SIZE 100
+<pre><code class="language-c">    #define _CRT_SECURE_NO_WARNINGS
+    #include &lt;stdio.h&gt;
+    #include &lt;stdlib.h&gt;
+    #include &lt;ctype.h&gt;
+    #include&lt;string.h&gt;
+    #define MAX_STACK_SIZE 100
 
-// 定义全局变量和函数原型
-int stack[MAX_STACK_SIZE];
-int top = -1;
+    // 定义全局变量和函数原型
+    int stack[MAX_STACK_SIZE];
+    int top = -1;
 
-void push(int value) {
-// 将值压入栈
-if (top &lt; MAX_STACK_SIZE - 1) {
-    stack[++top] = value;
-}
-else {
-    printf(&quot;Stack overflow\n&quot;);
-    exit(EXIT_FAILURE);
-}
-}
-
-int pop() {
-// 从栈中弹出值
-if (top &gt;= 0) {
-    return stack[top--];
-}
-else {
-    printf(&quot;Stack underflow\n&quot;);
-    exit(EXIT_FAILURE);
-}
-}
-
-int isOperator(char ch) {
-// 检查字符是否是运算符
-return (ch == '+' || ch == '-' || ch == '*' || ch == '/');
-}
-
-int evaluateRPN(char* expression) {
-char* ptr = expression;
-int operand;
-while (*ptr != '\0') {
-if (isdigit(*ptr)) {
-        // 如果是数字，将其转换为整数并压入栈
-        operand = 0;
-        while (isdigit(*ptr)) {
-            operand = operand * 10 + (*ptr - '0');
-            ptr++;
-        }
-        push(operand);
-    }
-else if(isOperator(*ptr)) {
-        // 如果是运算符，弹出栈顶的两个操作数，进行运算，将结果压入栈
-        int operand2 = pop();
-        int operand1 = pop();
-
-        switch (*ptr) {
-        case '+':
-            push(operand1 + operand2);
-            break;
-        case '-':
-            push(operand1 - operand2);
-            break;
-        case '*':
-            push(operand1 * operand2);
-            break;
-        case '/':
-            push(operand1 / operand2);
-            break;
-        }
-        ptr++;
+    void push(int value) {
+    // 将值压入栈
+    if (top &lt; MAX_STACK_SIZE - 1) {
+        stack[++top] = value;
     }
     else {
-        // 忽略空格等非数字和运算符的字符
-        ptr++;
-}
-}
+        printf(&quot;Stack overflow\n&quot;);
+        exit(EXIT_FAILURE);
+    }
+    }
 
-// 栈中的最后一个元素即为计算结果
-return pop();
-}
-int main() {
-char expression[MAX_STACK_SIZE];
-gets_s(expression, MAX_STACK_SIZE);// 逆波兰表达式
-int result = evaluateRPN(expression);
+    int pop() {
+    // 从栈中弹出值
+    if (top &gt;= 0) {
+        return stack[top--];
+    }
+    else {
+        printf(&quot;Stack underflow\n&quot;);
+        exit(EXIT_FAILURE);
+    }
+    }
 
-// 输出计算结果
-printf(&quot;Result: %d\n&quot;, result);
+    int isOperator(char ch) {
+    // 检查字符是否是运算符
+    return (ch == '+' || ch == '-' || ch == '*' || ch == '/');
+    }
 
-return 0;
-}
+    int evaluateRPN(char* expression) {
+    char* ptr = expression;
+    int operand;
+    while (*ptr != '\0') {
+    if (isdigit(*ptr)) {
+            // 如果是数字，将其转换为整数并压入栈
+            operand = 0;
+            while (isdigit(*ptr)) {
+                operand = operand * 10 + (*ptr - '0');
+                ptr++;
+            }
+            push(operand);
+        }
+    else if(isOperator(*ptr)) {
+            // 如果是运算符，弹出栈顶的两个操作数，进行运算，将结果压入栈
+            int operand2 = pop();
+            int operand1 = pop();
+
+            switch (*ptr) {
+            case '+':
+                push(operand1 + operand2);
+                break;
+            case '-':
+                push(operand1 - operand2);
+                break;
+            case '*':
+                push(operand1 * operand2);
+                break;
+            case '/':
+                push(operand1 / operand2);
+                break;
+            }
+            ptr++;
+        }
+        else {
+            // 忽略空格等非数字和运算符的字符
+            ptr++;
+    }
+    }
+
+    // 栈中的最后一个元素即为计算结果
+    return pop();
+    }
+    int main() {
+    char expression[MAX_STACK_SIZE];
+    gets_s(expression, MAX_STACK_SIZE);// 逆波兰表达式
+    int result = evaluateRPN(expression);
+
+    // 输出计算结果
+    printf(&quot;Result: %d\n&quot;, result);
+
+    return 0;
+    }
 </code></pre>
 <h2 id="二-10个声明语句辨析">二、10个声明语句辨析：</h2>
 <h3 id="1int-a">1.int a;</h3>
@@ -1311,59 +1340,93 @@ return 0;
 <h3 id="font-color66ccff-10int-p10font"><font color=#66CCFF ><strong>10.int (*p[10])()</strong></font></h3>
 <p>声明一个包含10个指向返回整数的函数的指针的<strong>数组</strong> p</p>
 <h4 id="例1指针数组指向数组的指针">例1（指针数组，指向数组的指针）：</h4>
-<pre><code>int main() {
-int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+<pre><code class="language-c">    int main() {
+    int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-int *p1[10];      // 数组，每个元素是一个指向 int 的指针
-int (*p2)[10];    // 指针，指向一个包含 10 个 int 元素的数组
+    int *p1[10];      // 数组，每个元素是一个指向 int 的指针
+    int (*p2)[10];    // 指针，指向一个包含 10 个 int 元素的数组
 
-p1[0] = &amp;arr[0];  // 第一个元素指向数组的第一个元素
-p2 = &amp;arr;        // 指针指向整个数组
+    p1[0] = &amp;arr[0];  // 第一个元素指向数组的第一个元素
+    p2 = &amp;arr;        // 指针指向整个数组
 
-// 使用 p1 和 p2 访问数组元素
-printf(&quot;%d\n&quot;, *p1[0]);   // 输出 arr[0]
-printf(&quot;%d\n&quot;, (*p2)[0]); // 输出 arr[0]
+    // 使用 p1 和 p2 访问数组元素
+    printf(&quot;%d\n&quot;, *p1[0]);   // 输出 arr[0]
+    printf(&quot;%d\n&quot;, (*p2)[0]); // 输出 arr[0]
 
-return 0;
+    return 0;
+}
 </code></pre>
-<p>}</p>
 <h4 id="例2函数指针数组">例2（函数指针数组）：</h4>
-<pre><code>void task0() { printf(&quot;task0 is called!\n&quot;); }
-void task1() { printf(&quot;task1 is called!\n&quot;); }
-void task2() { printf(&quot;task2 is called!\n&quot;); }
-void task3() { printf(&quot;task3 is called!\n&quot;); }
-void task4() { printf(&quot;task4 is called!\n&quot;); }
-void task5() { printf(&quot;task5 is called!\n&quot;); }
-void task6() { printf(&quot;task6 is called!\n&quot;); }
-void task7() { printf(&quot;task7 is called!\n&quot;); }
-void execute(void (*tasks[])(), char *Task,int num) {
-for (int i = 0; i &lt; num; i++) {
-        tasks[Task[i]]();
-}
-}
-void (*function[8])() = { task0, task1, task2, task3, task4, task5, task6,task7 };
+<pre><code class="language-c">    void task0() { printf(&quot;task0 is called!\n&quot;); }
+    void task1() { printf(&quot;task1 is called!\n&quot;); }
+    void task2() { printf(&quot;task2 is called!\n&quot;); }
+    void task3() { printf(&quot;task3 is called!\n&quot;); }
+    void task4() { printf(&quot;task4 is called!\n&quot;); }
+    void task5() { printf(&quot;task5 is called!\n&quot;); }
+    void task6() { printf(&quot;task6 is called!\n&quot;); }
+    void task7() { printf(&quot;task7 is called!\n&quot;); }
+    void execute(void (*tasks[])(), char *Task,int num) {
+    for (int i = 0; i &lt; num; i++) {
+            tasks[Task[i]]();
+    }
+    }
+    void (*function[8])() = { task0, task1, task2, task3, task4, task5, task6,task7 };
 </code></pre>
 <h2 id="三-二维数组取值取址辨析"><strong>三、二维数组取值取址辨析</strong></h2>
-<pre><code>int a[3][3] = {
-{1, 2, 3},
-{4, 5, 6},
-{7, 8, 9},
-};
-int main()
-{
-printf(&quot;a=%x\n&quot;, a); //二维数组的起始地址
-printf(&quot;*a=%x\n&quot;, *a);//第0行的起始地址
-printf(&quot;*(a+1)=%x\n&quot;, *(a+1));//第1行的起始地址
-printf(&quot;*(a+2)=%x\n&quot;, *(a + 2));//第2行的起始地址
-printf(&quot;*a+1=%x\n&quot;, *a+1);//第0行第2个元素地址
-printf(&quot;*(a+1) + 1=%x\n&quot;, *(a+1) + 1);//第1行第2个元素地址
-printf(&quot;*(a + 2) + 1=%x\n&quot;, *(a + 2) + 1);//第2行第2个元素地址
-printf(&quot;*(*a+1)=%d\n&quot;, *(*a + 1));//第0行第2个元素的值
-printf(&quot;*(*(a+1) + 1)=%d\n&quot;, *(*(a+1) + 1));//第1行第2个元素的值
-printf(&quot;*(*(a+1) + 1)=%d\n&quot;, *(*(a + 2) + 1));//第2行第2个元素的值
-}
+<pre><code class="language-c"> int a[3][3] = {
+ {1, 2, 3},
+ {4, 5, 6},
+ {7, 8, 9},
+ };
+ int main()
+ {
+ printf(&quot;a=%x\n&quot;, a); //二维数组的起始地址
+ printf(&quot;*a=%x\n&quot;, *a);//第0行的起始地址
+ printf(&quot;*(a+1)=%x\n&quot;, *(a+1));//第1行的起始地址
+ printf(&quot;*(a+2)=%x\n&quot;, *(a + 2));//第2行的起始地址
+ printf(&quot;*a+1=%x\n&quot;, *a+1);//第0行第2个元素地址
+ printf(&quot;*(a+1) + 1=%x\n&quot;, *(a+1) + 1);//第1行第2个元素地址
+ printf(&quot;*(a + 2) + 1=%x\n&quot;, *(a + 2) + 1);//第2行第2个元素地址
+ printf(&quot;*(*a+1)=%d\n&quot;, *(*a + 1));//第0行第2个元素的值
+ printf(&quot;*(*(a+1) + 1)=%d\n&quot;, *(*(a+1) + 1));//第1行第2个元素的值
+ printf(&quot;*(*(a+1) + 1)=%d\n&quot;, *(*(a + 2) + 1));//第2行第2个元素的值
+ }
 </code></pre>
 <figure data-type="image" tabindex="1"><img src="https://Ilosyi.github.io/post-images/1700461359588.png" alt="运行结果示意图" loading="lazy"></figure>
+<h4 id="问题1-intpp-哪个正确">问题1: int*p;p=(     )哪个正确？</h4>
+<p>A  p=a<br>
+B  p=*a<br>
+C  p=&amp;a[0][0]<br>
+答案：BC</p>
+<h4 id="问题2-能否通过p遍历元素">问题2: 能否通过p++遍历元素？</h4>
+<p>答案：可以，在内存中二维数组是顺序存放的,a[0][2]后是a[1][0]<br>
+例如:  <code>for (int i = 0; i &lt; 9; i++, p++) { printf(&quot;%d &quot;, *p); }</code></p>
+<h4 id="问题3如果想让p等同于a应如何声">问题3:如果想让p++等同于a++,应如何声</h4>
+<p>A  int *P<br>
+B  int *P[4]<br>
+C  int (*p)[4]<br>
+答案:C<br>
+分析：<br>
+A 是一个指向整数的指针。<br>
+B 是一个包含 4 个指向整数的指针的<strong>数组</strong>，每个元素是一个指针，记录一个整数元素的地址。<br>
+C 是一个指向包含 4 个整数的数组的<strong>指针</strong>,p++将指向下一个数组。<br>
+例如:    <code>int* p[3];</code><br>
+<code>p[1] = *(a + 1);</code><br>
+<code>printf(&quot;%x\n&quot;, *p[1]);</code><br>
+<code>printf(&quot;%x\n&quot;, p[1]);</code><br>
+<code>printf(&quot;%x\n&quot;, a + 1);</code><br>
+其中p[1]不能赋值为(a+1)，因为(a+1)类型为 int(*)[3]，是一个指向包含3个整数的一维数组的指针类型。而 *(a+1)为整数元素的地址，上述程序输出为：<br>
+<code>4</code><br>
+<code>5b6ff644</code><br>
+<code>5b6ff644</code><br>
+若改为<br>
+<code>printf(&quot;%x\n&quot;, ++* p[1]);</code><br>
+<code>printf(&quot;%x\n&quot;, ++p[1]);</code><br>
+<code>printf(&quot;%x\n&quot;, (a + 2));</code><br>
+则输出<br>
+<code>5</code><br>
+<code>d2b0d078</code><br>
+<code>d2b0d080</code></p>
 ]]></content>
     </entry>
     <entry>

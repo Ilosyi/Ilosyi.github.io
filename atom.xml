@@ -2,15 +2,321 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Ilosyi.github.io</id>
     <title>losyi的博客</title>
-    <updated>2023-12-15T14:41:34.581Z</updated>
+    <updated>2024-06-18T09:52:45.644Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Ilosyi.github.io"/>
     <link rel="self" href="https://Ilosyi.github.io/atom.xml"/>
     <logo>https://Ilosyi.github.io/images/avatar.png</logo>
     <icon>https://Ilosyi.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2023, losyi的博客</rights>
+    <rights>All rights reserved 2024, losyi的博客</rights>
     <entry>
-        <title type="html"><![CDATA[ C语言实验报告]]></title>
+        <title type="html"><![CDATA[中国近现代史纲要课程作业]]></title>
+        <id>https://Ilosyi.github.io/post/zhong-guo-jin-xian-dai-shi-gang-yao-ke-cheng-zuo-ye/</id>
+        <link href="https://Ilosyi.github.io/post/zhong-guo-jin-xian-dai-shi-gang-yao-ke-cheng-zuo-ye/">
+        </link>
+        <updated>2024-06-18T09:49:23.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="下学期更新">下学期更新</h3>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[数据结构实验报告(CS)]]></title>
+        <id>https://Ilosyi.github.io/post/shu-ju-jie-gou-shi-yan-bao-gao-cs/</id>
+        <link href="https://Ilosyi.github.io/post/shu-ju-jie-gou-shi-yan-bao-gao-cs/">
+        </link>
+        <updated>2024-06-18T09:44:33.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="下学期再更新">下学期再更新</h3>
+<h1 id="center1-基于顺序存储结构的线性表实现center"><center>1 基于顺序存储结构的线性表实现</center ></h1>
+<h2 id="11-问题描述"><strong>1.1 问题描述</strong></h2>
+<h3 id="111-实验目的"><strong>1.1.1 实验目的</strong></h3>
+<p>通过实验达到：<br>
+（1）加深对线性表的概念、基本运算的理解；<br>
+（2）熟练掌 握线性表的逻辑结构与物理结构的关系；<br>
+（3）物理结构采用顺序表，熟练掌握 顺序表基本运算的实现。</p>
+<h3 id="112-线性表运算定义"><strong>1.1.2 线性表运算定义</strong></h3>
+<p>依据最小完备性和常用性相结合的原则，以函数形式定义了线性表的初始化 表、销毁表、清空表、判定空表、求表长和获得元素等 12 种基本运算，具体运 算功能定义如下：<br>
+（1）初始化表：函数名称是 InitList(L)；初始条件是线性表 L 不存在；操作 结果是构造一个空的线性表；<br>
+（2）销毁表：函数名称是 DestroyList(L)；初始条件是线性表 L 已存在；操 作结果是销毁线性表 L；<br>
+（3）清空表：函数名称是 ClearList(L)；初始条件是线性表 L 已存在；操作 结果是将 L 重置为空表；<br>
+（4）判定空表：函数名称是 ListEmpty(L)；初始条件是线性表 L 已存在； 操作结果是若 L 为空表则返回 TRUE,否则返回 FALSE；<br>
+（5）求表长：函数名称是 ListLength(L)；初始条件是线性表已存在；操作 结果是返回 L 中数据元素的个数；<br>
+（6）获得元素：函数名称是 GetElem(L,i,e)；初始条件是线性表已存在，1≤ i≤ListLength(L)；操作结果是用 e 返回 L 中第 i 个数据元素的值；<br>
+（7）查找元素：函数名称是 LocateElem(L,e,compare())；初始条件是线性表 已存在；操作结果是返回 L 中第 1 个与 e 满足关系 compare（）关系的数据元素 的位序，若这样的数据元素不存在，则返回值为 0；<br>
+（8）获得前驱：函数名称是 PriorElem(L,cur_e,pre_e)；初始条件是线性表 L 已存在；操作结果是若 cur_e 是 L 的数据元素，且不是第一个，则用 pre_e 返回 它的前驱，否则操作失败，pre_e 无定义；<br>
+（9）获得后继：函数名称是 NextElem(L,cur_e,next_e)；初始条件是线性表 L 已存在；操作结果是若 cur_e 是 L 的数据元素，且不是最后一个，则用 next_e 返回它的后继，否则操作失败，next_e 无定义；<br>
+（10）插入元素：函数名称是 ListInsert(L,i,e)；初始条件是线性表 L 已存在， 1≤i≤ListLength(L)+1；操作结果是在 L 的第 i 个位置之前插入新的数据元素 e。<br>
+（11）删除元素：函数名称是 ListDelete(L,i,e)；初始条件是线性表 L 已存在 且非空，1≤i≤ListLength(L)；操作结果：删除 L 的第 i 个数据元素，用 e 返回的 值；<br>
+（12）遍历表：函数名称是 ListTraverse(L,visit())，初始条件是线性表 L 已 存在；操作结果是依次对 L 的每个数据元素调用函数 visit()。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[新视野大学英语视听说教程4听力练习原文及翻译]]></title>
+        <id>https://Ilosyi.github.io/post/xin-shi-ye-da-xue-ying-yu-shi-ting-shuo-jiao-cheng-4-ting-li-lian-xi-yuan-wen-ji-fan-yi/</id>
+        <link href="https://Ilosyi.github.io/post/xin-shi-ye-da-xue-ying-yu-shi-ting-shuo-jiao-cheng-4-ting-li-lian-xi-yuan-wen-ji-fan-yi/">
+        </link>
+        <updated>2024-06-18T09:41:46.000Z</updated>
+        <content type="html"><![CDATA[<p><ul class="markdownIt-TOC">
+<li><a href="#unit-1">UNIT 1</a>
+<ul>
+<li><a href="#long-conversation-1">Long conversation 1</a></li>
+<li><a href="#passage-1">Passage 1</a></li>
+</ul>
+</li>
+<li><a href="#unit-2">UNIT 2</a>
+<ul>
+<li><a href="#passage-1-2">Passage 1</a></li>
+</ul>
+</li>
+<li><a href="#unit-3">UNIT 3</a></li>
+<li><a href="#unit-4">UNIT 4</a>
+<ul>
+<li><a href="#long-conversation-1-2">Long conversation 1</a></li>
+<li><a href="#passage-1-3">Passage 1</a></li>
+</ul>
+</li>
+<li><a href="#unit-5">UNIT 5</a>
+<ul>
+<li><a href="#long-conversation-1-3">Long conversation 1</a></li>
+<li><a href="#passage-1-4">Passage 1</a></li>
+</ul>
+</li>
+<li><a href="#unit-6">UNIT 6</a>
+<ul>
+<li><a href="#long-conversation-1-4">Long conversation 1</a></li>
+<li><a href="#passage-1-5">Passage 1</a></li>
+</ul>
+</li>
+<li><a href="#unit-7">UNIT 7</a>
+<ul>
+<li><a href="#long-conversation-1-5">Long conversation 1</a></li>
+<li><a href="#passage-1-6">Passage 1</a></li>
+</ul>
+</li>
+<li><a href="#unit-8">UNIT 8</a>
+<ul>
+<li><a href="#long-conversation-1-6">Long conversation 1</a></li>
+<li><a href="#passage-1-7">Passage 1</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<h1 id="unit-1">UNIT 1</h1>
+<h2 id="long-conversation-1">Long conversation 1</h2>
+<p>M:I love working out!<br>
+W:Ugh! You're sweating all over the floor..<br>
+M: I just ran five miles! A friend told me about this great park on Jefferson Street.I love exploring new parks!<br>
+W: I try running at the gym three days a week, but it's so boring looking at the TV monitor or the<br>
+wall in front of me for an hour.<br>
+M: You should run outside! Being in nature, enjoying the beautiful flowers and the trees, I feel my<br>
+mind relax and the stress just falls away.<br>
+W: It is nice outside.My mom loves t'ai chi and a nearby t'ai chi group meets every morning at 6<br>
+a.m. I've tried going, but it's too early for me to get out of bed<br>
+M: T'ai chi is really good. You need some kind of exercise. It's unhealthy for you to sit in front of your computer all day, every day!<br>
+W:Well,I recently spend my weekends away from my computer<br>
+M: Oh really? And what have you done recently that didn't involve a computer or TV screen?<br>
+W:Pandas! I just went to the San Diego Zoo with my sister on Saturday! They have one of the best panda exhibits in the US. The mother panda is from Wolong, China, and had had six baby pandas by 2012 since arriving at the San Diego Zoo in September of 1996.<br>
+M: Oh,I bet baby pandas are amazing! Hey! Maybe you should get a zoo membership and jogging in the zoo!<br>
+W: A zoo membership! Now that's a great idea! I love the San Diego Zoo. It's near my house, I can get good exercise and I can watch the baby pandas grow up!<br>
+M: 我喜欢锻炼！<br>
+W: 哎呀！你把地板弄得全是汗。<br>
+M: 我刚跑了五英里！一个朋友告诉我在杰斐逊街上有一个很棒的公园。我喜欢探索新的公园！<br>
+W: 我尝试每周三天在健身房跑步，但看着电视屏幕或前面的墙一个小时真是太无聊了。<br>
+M: 你应该到外面跑步！在大自然中，享受美丽的花朵和树木，我感觉我的心情放松了，压力也消散了。<br>
+W: 外面确实很不错。我妈妈喜欢太极，附近的一个太极小组每天早上6点都会聚会。我尝试过去，但太早了，我起不来。<br>
+M: 太极真的很好。你需要做一些运动。每天整天坐在电脑前对你身体不好！<br>
+W: 好吧，我最近周末都远离电脑。<br>
+M: 哦，真的吗？那你最近做了什么不涉及电脑或电视屏幕的事？<br>
+W: 熊猫！我上周六刚和我姐姐去了圣地亚哥动物园！他们有美国最好的熊猫展览之一。熊猫妈妈来自中国卧龙，自1996年9月到达圣地亚哥动物园以来，到2012年已经生了六只熊猫宝宝。<br>
+M: 哦，我敢打赌熊猫宝宝很棒！嘿！也许你应该办个动物园会员卡，在动物园里跑步！<br>
+W: 动物园会员卡！这是个好主意！我喜欢圣地亚哥动物园。它离我家很近，我可以好好锻炼，还能看着熊猫宝宝长大！</p>
+<h2 id="passage-1">Passage 1</h2>
+<p>Have you ever felt you don't have enough hours in the day? Or that you'd give anything for a whole day to catch up with yourself? Well, here are some ideas that work for me.<br>
+First of all, make a to-do list every day and set clear priorities. The trick here isn't making the list;that's the easy part. The trick is making the priorities. I look at my list and put a star next to anything that is really urgent.Then I put the number2 next to anything that will just take a couple of minutes. I actually do these quick tasks before I get on with the urgent ones; it's a bit like clearing off the top of your desk before sitting down to write that important letter<br>
+Second, know when is the most productive time of day for you and do your work or study then. One of the shocking discoveries I made about myself is that if I get up at 5 a.m., I can do a day's work and even fit breakfast in before half past nine. Of course, if you are an early bird, it can be difficult to accomplish tasks that involve phoning &quot;night owls&quot;, but that's what email's for!<br>
+Finally, do not let your inbox run your life.I just realized recently how frequently I interrupted my real work to check my inbox and respond to the most trivial of emails.So.now I only open it when<br>
+absolutely necessary and this saves me hours. If your work depends on you being constantly accessible by email,then you can't do this;but be honest and ask yourself,Am I an email addict?With these simple, practical techniques, you will become more efficient, less stressed and be able to win some&quot;me-time&quot;for yourself.</p>
+<p>你有没有感觉一天中的时间不够用？或者你愿意付出一切换来整整一天的时间来赶上自己的进度？好吧，这里有一些对我有效的建议。<br>
+首先，每天列一个待办事项清单并设定明确的优先级。这里的诀窍不是制作清单；那是简单的部分。诀窍在于设定优先级。我查看我的清单，并在任何非常紧急的事项旁边打上星号。然后，我在只需要几分钟完成的事项旁边标上数字2。我实际上会在处理紧急事项之前先完成这些快速任务；这有点像在坐下来写那封重要信之前清理你的书桌。<br>
+其次，知道一天中对你来说最有效率的时间，并在那个时间工作或学习。我对自己所做的一个令人震惊的发现是，如果我在早上5点起床，我可以在九点半之前完成一天的工作，甚至还能吃早餐。当然，如果你是早起的鸟儿，完成需要打电话给“夜猫子”的任务可能会很困难，但这就是为什么有电子邮件的存在！<br>
+最后，不要让你的收件箱控制你的生活。我最近才意识到我多么频繁地中断实际工作去检查收件箱并回复最琐碎的邮件。所以，现在我只有在绝对必要的时候才打开它，这为我节省了几个小时。如果你的工作依赖于你通过电子邮件不断保持联系，那么你不能这样做；但要诚实地问自己，我是邮件上瘾者吗？通过这些简单、实用的技巧，你将变得更有效率，压力更小，并能够为自己赢得一些“自我时间”。</p>
+<h1 id="unit-2">UNIT 2</h1>
+<p>Long conversation 1<br>
+M: Nancy, time to make a birthday wish!<br>
+W: I wish ... hmm. OK! I want a high-paying job, a husband with a perfect face and body, and a big house ... with a swimming pool!<br>
+M: Wow, Nancy! Those are your three wishes?<br>
+W: Of course! If I have those three things, I’ll be happy!<br>
+M: Now, Nancy. Let me tell you my story, and you may see things differently.<br>
+W: “See things differently?”What do you mean, Uncle Charlie?<br>
+M: Here is what I once experienced in life. When I married, 32 years ago, we had a happy marriage, a beautiful house, two expensive cars, and $200,000 in the bank!<br>
+W: See, just like now!<br>
+M: Wait! I would suggest three different wishes!<br>
+W: Well ... What would you wish for? You’re older and wiser!<br>
+M: What happens if you lose your job, lose your house, and your husband becomes sick? I suggest these three wishes: patience, courage and love!<br>
+W: Patience, courage and love?<br>
+M: Yes! If you have patience and courage, you and your husband will have good jobs and a nice house. And if you have true love, you and your husband will be beautiful to each other no matter how old you become together.<br>
+W: This is good.<br>
+M: Within six years of our marriage, we had three beautiful children, but we lost our jobs, our house, all our money, and then I got really sick for nine years. But we didn’t lose anything truly valuable, because we always said: “Wherever the five of us are together, we are at home!”And, little by little things did improve, and I finally got well. Patience, courage and love! These are what make life full, strong and happy!<br>
+W: Hmm, I will remember. Patience, courage and love! Thanks, Uncle Charlie!</p>
+<p>M: 南希，许个生日愿望吧！<br>
+W: 我希望……嗯，好吧！我想要一份高薪的工作，一个长得完美的老公，还有一栋带游泳池的大房子！<br>
+M: 哇，南希！这是你的三个愿望吗？<br>
+W: 当然了！如果我有这三样东西，我就会很幸福！<br>
+M: 好吧，南希。让我给你讲讲我的故事，你可能会有不同的看法。<br>
+W: “有不同的看法？”你什么意思，查理叔叔？<br>
+M: 这是我曾经的人生经历。32年前我结婚时，我们有一个幸福的婚姻，一个漂亮的房子，两辆昂贵的车，还有银行里20万美元！<br>
+W: 看，这不就像现在一样吗！<br>
+M: 等等！我会建议三个不同的愿望！<br>
+W: 嗯……你会许什么愿望？你年长又智慧！<br>
+M: 如果你失去了工作，失去了房子，你的丈夫生病了怎么办？我建议这三个愿望：耐心、勇气和爱！<br>
+W: 耐心、勇气和爱？<br>
+M: 是的！如果你有耐心和勇气，你和你的丈夫会有好的工作和漂亮的房子。而如果你有真爱，无论你们一起变得多老，你们在对方面前都会是美丽的。<br>
+W: 这很好。<br>
+M: 我们结婚六年后，拥有了三个漂亮的孩子，但我们失去了工作、房子、所有的钱，然后我病了九年。但是我们没有失去任何真正有价值的东西，因为我们总是说：“只要我们五个人在一起，我们就在家！”然后，情况一点一点地改善了，我终于康复了。耐心、勇气和爱！这些才是让生活充实、坚强和幸福的关键！<br>
+W: 嗯，我会记住的。耐心、勇气和爱！谢谢你，查理叔叔！</p>
+<h2 id="passage-1-2">Passage 1</h2>
+<p>If you think that you have to live up a remote mountain in order to live a long and healthy life, a religious community in Loma Linda, California, may prove you wrong. Its members are a group of Christians known as the Seventh-day Adventists. The Adventists enjoy a much higher life expectancy than average Californians. Adventist men can expect to live about seven years longer than other Californian men. Adventist women are likely to live around four years longer than other<br>
+Californian women. The Adventists also act much younger than they are and see doctors much less than ordinary people.<br>
+So what’s the secret of the Adventists’longevity? It is not all in their genes. Nor is their good health a mere accident. The Adventists live longer partly because they have a vegetable-based diet. Around 35 percent of them are vegetarian, and around one half eat meat only rarely. Tobacco and alcohol consumptions are discouraged. So are rich or spicy foods, meat, and drinks containing caffeine. The Adventist diet is high in fruit and vegetables. It also includes plenty of whole grains, nuts, seeds and beans, and water is the drink of choice.<br>
+The longevity of the Adventists is also related to their lifestyle and natural environment. They believe in having regular exercise, helping others, and maintaining strong social and familial ties. They live in a mild climate with warm summers and cool winters. Interestingly, the air quality of Loma Linda, however, is not as good as in other longevity hot spots. This should give us all hope, as it suggests that we don’t have to have every single factor in place in order to achieve excellent health. Despite this, the Adventists’good health certainly provides strong evidence that diet and lifestyle choices have a great impact on health and longevity.<br>
+如果你认为必须住在偏远的山上才能长寿健康，加利福尼亚洛马琳达的一个宗教社区可能会让你改变看法。这个社区的成员是一群被称为基督复临安息日会的基督徒。他们的平均寿命远高于普通加州人。基督复临安息日会的男性预期寿命比其他加州男性长约七年，而女性则比其他加州女性长约四年。他们的行动也比实际年龄显得年轻得多，看医生的次数也远少于普通人。<br>
+那么，基督复临安息日会长寿的秘密是什么呢？这并不仅仅是因为他们的基因，也不是偶然的健康。基督复临安息日会的成员长寿部分归功于他们的植物性饮食。大约35%的人是素食主义者，约一半的人很少吃肉。吸烟和饮酒受到抑制，富含脂肪或辛辣的食物、肉类以及含咖啡因的饮料也是如此。基督复临安息日会的饮食中富含水果和蔬菜，还包括大量的全谷物、坚果、种子和豆类，水是他们的首选饮品。<br>
+基督复临安息日会的长寿还与他们的生活方式和自然环境有关。他们相信定期锻炼、帮助他人以及维持强大的社会和家庭联系。他们生活在夏季温暖、冬季凉爽的温和气候中。有趣的是，洛马琳达的空气质量并不像其他长寿热点地区那样好。这给了我们所有人希望，因为这表明我们不必具备所有因素就能达到健康长寿。尽管如此，基督复临安息日会的良好健康状况确实强有力地证明了饮食和生活方式选择对健康和长寿有巨大的影响。</p>
+<h1 id="unit-3">UNIT 3</h1>
+<p>Long conversation 1<br>
+M: Rebecca, I just learned of an amazing park right here near our city!<br>
+W: Really? Is it a nature park or an entertainment park?<br>
+M: It’s a beautiful nature park, located 15 miles from our home.ar<br>
+W: What’s it called?<br>
+M: It is called Big Sky Park and has nice walking trails and camping sites!<br>
+W: Bill, this is perfect! We can have a vacation and still keep saving money to visit my family sometime. But, can we get to Big Sky Park without a car?<br>
+M: Yes, easily. We just take the No. 32 bus that goes right to the park. The only problem will be getting all of our camping stuff with us on the bus.<br>
+W: Well, I did just buy that new cart to help carry groceries home on the bus, plus we have your big backpack. Together, I think we will be fine. All of our camping equipment should easily fit on the bus.<br>
+M: Good. Good! I know we can make it a really special weekend. I have longed for a time when we could walk alone together in the quiet beauty of nature. I’m so, so happy to have this chance to be with you at the park.<br>
+W: I know me too! I know what I’ll do! I’ll pack all of our favorite food, and I’ll bake a small chocolate cake. Your favorite! Then we can drink tea and eat the chocolate cake around a campfire. I’m so happy you found Big Sky Park. I can’t wait, just two more days for the weekend to come!<br>
+M: I’m so happy as well. Big Sky Park will be wonderful. The fire, the dinner and spending time with you make me such a happy, happy man, Rebecca!<br>
+M: Rebecca，我刚刚得知我们城市附近有一个令人惊叹的公园！<br>
+W: 真的吗？是自然公园还是娱乐公园？<br>
+M: 这是一个美丽的自然公园，距离我们家15英里。<br>
+W: 它叫什么名字？<br>
+M: 它叫“大天空公园”，有很棒的步道和露营地！<br>
+W: 比尔，这太完美了！我们可以去度假，同时还能继续存钱，以后去看望我的家人。但我们没有车，能到“大天空公园”吗？<br>
+M: 可以的，很方便。我们只需乘坐32路公交车，它直接到公园。唯一的问题是如何把我们所有的露营装备带上公交车。<br>
+W: 嗯，我刚买了那个新的小推车来帮忙把食品带回家，加上你的大背包。我觉得我们应该没问题。我们所有的露营设备应该都能轻松带上车。<br>
+M: 太好了，太好了！我知道我们能度过一个非常特别的周末。我一直渴望能在大自然的静谧美景中与你独处。我真的很高兴能有这个机会和你一起去公园。<br>
+W: 我也一样！我知道我会做什么！我要打包我们最喜欢的食物，还会烤一个小巧克力蛋糕。你最喜欢的！然后我们可以在篝火旁边喝茶吃蛋糕。我真高兴你发现了“大天空公园”。我等不及了，只剩两天就到周末了！<br>
+M: 我也非常高兴。“大天空公园”一定会很棒。篝火、晚餐，还有和你在一起，让我觉得非常非常幸福，Rebecca！<br>
+Passage 1<br>
+A new museum entirely dedicated to laziness has opened in the capital city of Colombia. But you have to hurry if you want to see the exhibits and find out about being lazy because the exhibition lasts only for one week. The unusual show displays a whole range of things such as sofas, beds and anything that makes you feel like taking a rest. There are also plenty of televisions for those visiting couch potatoes to watch as they move around relaxingly in the museum.<br>
+It is no coincidence but rather an intentional decision for the museum to have opened right after the holiday season. The idea is for people to think about laziness, and perhaps change their behavior and lifestyle throughout the rest of the year. It offers a practical experience to make us think about laziness in our high-speed, fast-paced societies.<br>
+The museum’s founder Marcela Arrieta said she wanted people to rethink about laziness and decide whether it really is a bad thing. She told the media that people today always think about laziness as an enemy of work. For example, they may feel guilty if they sleep late, or they may feel they are wasting time after taking a nap or having a holiday.<br>
+Ms. Arrieta may not be proposing that we should have a shorter working week, but she could have a point in that we do need more leisure time than our jobs allow us, and change our lifestyle to a type that is more relaxing. Besides, according to scientists, avoiding the pressure and stress of work can make us healthier and live longer. So, why not try out Ms. Arrieta’s advice for yourself, slow down, and think about being lazy?<br>
+一个全新博物馆专门致力于懒惰，已经在哥伦比亚首都开幕。但是如果你想参观展览并了解懒惰的相关信息，必须抓紧时间，因为展览仅持续一周。这场特别的展览展示了各种让你想休息的物品，如沙发、床等等。博物馆内还有大量的电视供参观的“沙发土豆”在放松移动时观看。<br>
+博物馆选择在节日季后开幕并非偶然，而是一个有意的决定。这个想法是让人们思考懒惰，并可能在余下的一年中改变他们的行为和生活方式。它提供了一种实践体验，让我们在高速快节奏的社会中思考懒惰。<br>
+博物馆的创始人Marcela Arrieta表示，她希望人们重新思考懒惰，并决定懒惰是否真的那么糟糕。她对媒体说，如今人们总是把懒惰视为工作的敌人。例如，他们可能会因为睡懒觉而感到内疚，或者在打盹或度假后觉得自己在浪费时间。<br>
+Arrieta女士可能并没有建议我们应该缩短工作周，但她认为我们确实需要比工作所允许的更多的休闲时间，并且改变我们的生活方式，使其更加放松。此外，根据科学家的说法，避免工作压力和紧张可以使我们更健康，寿命更长。所以，为什么不亲自尝试一下Arrieta女士的建议，放慢脚步，思考一下懒惰呢？</p>
+<h1 id="unit-4">UNIT 4</h1>
+<h2 id="long-conversation-1-2">Long conversation 1</h2>
+<p>W: Hey, John! Everything OK? You look upset.<br>
+M: Oh, hi Kate. I was in the cafeteria eating alone. James from accounting walked by, sat down to eat at the table right next to me –didn’t say a single word to me. I wondered why.<br>
+W: Is that the main thing stressing you out, John?<br>
+M: No, I was silly to feel bad about that. What I am stressed about is my workload. My manager, Steven, is a great guy. He always counts on me to get the work done. But I have five meetings this week and two big projects to complete by next Monday. I don’t see how I can finish. I’m really worried I’ll let my team down.<br>
+W: I have some free time on Friday and over the weekend. I can help you with your extra work if you’d like. I know that feeling of being overwhelmed with work. It’s awful. I’d like to help.<br>
+M: Really? You’d do that for me?<br>
+W: Of course I will! John, a lot of us really admire your work. Some of us have asked to work on your team. You’re a great example to us, John. You shouldn’t doubt yourself. I’m glad to help out.<br>
+M: Wow, Kate. Thanks!<br>
+W: We could ... discuss it over dinner on Thursday. My treat!<br>
+M: Wow. No ... I mean I get to buy dinner, Kate! How about the new restaurant on 6th Street, 365?<br>
+It’s called 365 because it offers local, seasonal foods –fall, winter, spring, and summer –healthy choices with wonderful fresh fruits and vegetables. Let’s meet at 7 p.m.<br>
+W: Sounds wonderful! Thursday, 7 p.m. at the new restaurant 365 on 6th Street. Perfect!</p>
+<h2 id="passage-1-3">Passage 1</h2>
+<p>More than half of working Americans are dissatisfied with their jobs, according to a survey. That’s bad news for employers because workers’discontent can hurt productivity and hinder innovation. Lynn Franco, co-author of the report, says Americans’job satisfaction is at its lowest level in more than two decades: Only 45.3 percent of workers say they are satisfied with their jobs compared with 61 percent in 1987.<br>
+The report was produced by the Conference Board, a non-profit organization that helps businesses strengthen their performance. It is based on a survey of 5,000 US households. It shows a drop in satisfaction in many aspects of an employee’s work life, including interest in the job, dealing with co-workers and bosses, commuting and job security. As a group, neither young people who are just entering the workforce nor employees who are about to retire, Franco says, arehappy with what they do.<br>
+Only about 36 percent of workers under the age of 25 say they are currently satisfied with their jobs. And it’s not much better among baby boomers. Twenty years ago, more than 50 percent of baby boomers were satisfied. Today, that’s down to 46 percent.<br>
+The most satisfied group of workers in the survey was those aged 25 to 34. Franco suggests that they may see some opportunities for upward mobility as baby boomers retire.<br>
+The Conference Board survey also asked about the reasons behind job dissatisfaction. There are economic reasons such as wages, promotion policy and bonus policy that are sort of adding to this level of dissatisfaction. In addition, workers are also dissatisfied with the benefits: vacation policy, family-related leave time, work schedule flexibility, and a variety of other factors as well.</p>
+<h1 id="unit-5">UNIT 5</h1>
+<h2 id="long-conversation-1-3">Long conversation 1</h2>
+<p>W: This feels like a dream ... The last time I was in San Francisco was 30 years ago, when I was your age, 15 years old. So much has changed in the city–but you know–many of the sites are just the same.<br>
+M: Wow! San Francisco is as beautiful as a picture! I can’t believe it! Let’s get going! Let’s look at the map and take the streetcar to the Golden Gate Bridge.<br>
+W: Yes, of course. But, wait–let’s just take a moment to look at the Golden Gate Bridge from here–up high on the hill. See how amazing the sun looks, shining on the bridge there high above the water? Sometimes the best way to really enjoy something is to see it from different angles and perspectives.<br>
+M: Yes! Just beautiful from here! OK! Let’s get going! Wait! You know what, Aunt Lucy, I’m really, really hungry! May we eat before we head out to see the Golden Gate Bridge?<br>
+W: Yes, of course we can. We’re already here in Chinatown and near my favorite Chinese restaurant. Even after 30 years have passed since I last visited, it’s still busy and active.<br>
+M: That’s great, Aunt Lucy!<br>
+W: And, it’s right here!<br>
+M: Wow! This is amazing! The man inside the window is making noodles by hand–just by pulling on the flour dough. I’ve never seen anything like it before. How?<br>
+W: Yes, I know. It’s amazing, right? And the food is delicious, too! Sometimes the best way to enjoy culture is to simply slow down and truly experience it. We have five full days here in San Francisco. Let’s go slowly and enjoy every moment!</p>
+<h2 id="passage-1-4">Passage 1</h2>
+<p>The Mona Lisa is probably the most famous painting in the world. It was created by Leonardo da Vinci, the famous Italian artist, between around 1503 and 1506. The subject is the wife of a wealthy silk merchant of Italy. The woman’s husband requested Da Vinci to portray her as a celebration of their home’s completion and the birth of their second son. What is it about this painting that has created such a lasting impact on the artistic world?<br>
+One factor is the artist himself. Leonardo da Vinci was not only an artist, but also a scientist, an architect and an engineer. His knowledge of the human form came from the study of actual human bodies, so he was able to draw and paint it more accurately.<br>
+Another factor is the material used for the painting. The Mona Lisa is an oil painting, but unlike other paintings, which are usually created on canvas, the Mona Lisa has a wood panel as the surface. The use of a wood panel makes it possible for the work to have survived for centuries.<br>
+Lastly, the style and techniques used for the painting make the Mona Lisa a masterpiece. Da Vinci presented precise details in the subject’s hands and face. He applied a shadowing technique at the corners of her lips and her eyes, which gives her an unbelievably lifelike appearance. He also created a background with aerial views and a beautiful landscape. His remarkable skills left behind no visible brush marks at all.<br>
+All these factors–Da Vinci’s talent, the medium used for the painting, the style and techniques applied in the work–contribute to the lasting and mysterious beauty of the Mona Lisa.</p>
+<h1 id="unit-6">UNIT 6</h1>
+<h2 id="long-conversation-1-4">Long conversation 1</h2>
+<p>W: Hey Billy! It’s 7:30 p.m.! Turn off your TV and computer. Come down to dinner. It seems your father is finishing his conference call with his team in China.<br>
+M: OK Mom. Coming. But why is Dad on his computer while I can’t be on mine!<br>
+W: Billy, your father is working. But you are chatting with your friends about celebrities!<br>
+So your father needs to be on his computer. And you don’t!<br>
+M: OK. Sorry, Mom. What are we having for dinner? Pizza?<br>
+W: Pizza?! I’ve made us a nice dinner of roast chicken, mushroom soup and vegetable salad. I even made chocolate cake for dessert –and you want pizza!<br>
+M: Just kidding Mom! I love your cooking! Mmm I’m hungry, and it smells delicious!<br>
+W: Billy! I told you to shut down all electronics!<br>
+M: Mom! This isn’t fair. You told me to turn off my computer and my TV –you didn’t say all electronics –and you didn’t mention my cell phone! I have to check the news! My favorite golf player just got in trouble for drunk driving! Please Mom! I have to find out!<br>
+W: You can’t go five minutes without having your eyes on a screen! Hand me your phone. Now! I am turning it off so we can have a nice dinner.<br>
+M: OK Mom. Fine! Here’s my phone.<br>
+W: Now, where is your father?<br>
+M: Will you make Dad do the same? We never have family dinner anymore without Dad being on electronics!<br>
+W: Hmm, you know, Billy, you have a very good point. I think it’s time we had family dinner without any electronics. Here’s our new rule: Just for 45 minutes over dinner, no electronics!</p>
+<h2 id="passage-1-5">Passage 1</h2>
+<p>We as a society have intense interest in the celebrity news prevalent in our media. One of the key reasons is that in a world of constant death and disasters, celebrity news allows us to escape from the “real news”. After all, the job of celebrities is to entertain us, so it’s only natural that news about them would be a source of entertainment as well.<br>
+Of course the world isn’t always a depressing place filled with death, danger and sad events. But the media presents a dominant coverage of them. Watching hours of that news makes you depressed and want something different. This is why celebrity news fills that need for “happy news”or “light news”.<br>
+Celebrities also tend to live life on the edge and overdo everything they are engaged in. They long for attention and will do whatever to get it. We watch them with fascination as they party, do drugs, escape the law, get caught by the law, get married or divorced, and so forth.<br>
+Many people became attracted by the lifestyle of celebrities because they more or less wish they had the same lives as the stars. Celebrity news fuels people’s desire to look like the stars, dress like the stars, and even name children after the stars. It can be a source of making every life decision for some people. Although this may not be a healthy thing to do, it does boost the celebrity news business.<br>
+In a word, celebrity news gives us a well-needed break from the depressing and harsh news stories that we are flooded with daily. But as viewers and readers we need to keep in mind that celebrities are still common people, and that their lives are in many ways similar to ours, not merely to be shown for entertainment only.</p>
+<h1 id="unit-7">UNIT 7</h1>
+<h2 id="long-conversation-1-5">Long conversation 1</h2>
+<p>M: Have you heard? A big storm is coming!<br>
+W: Yes! The weatherman says a hurricane is coming! Even though our city is 50 miles from the  ocean, we will still be in the path of the hurricane.<br>
+M: I heard it on the radio news, too! We need to prepare. There’s an Emergency Items list on the  refrigerator. I’ll get it.<br>
+W: OK. Be prepared to be without food, water or electricity.<br>
+M: So the list says one gallon of water per person per day. It also says we need to get food that doesn’t need refrigeration.<br>
+W: How many days of supplies should we get?<br>
+M: It says to prepare emergency supplies for 10 days.<br>
+W: Well, we have four flashlights already.<br>
+M: Yes, but we need batteries for the flashlights.<br>
+W: OK, so let’s get ready and go to the store. I hope everyone else in town hasn’t already bought out the store for their own supplies. Should we bring cash, in case the credit card machines don’t work?<br>
+M: Yep! I already went by the bank this morning. I have $1,500 cash on hand. So, scratch off  flashlights and cash from our Emergency Items list.<br>
+W: Hmm, you know, if we don’t use the $1,500 cash for the storm – I could easily find a use for it  shopping at the mall. There’s a beautiful new suit and shoes and an amazing long coat and ...<br>
+M: Hahaha. Hmm let’s see: $1,500 is $1,300 more than our budget for clothing expenses per  month! Remember that we took this cash from our emergency savings account – my sweet love – so that we would be prepared in an emergency. Shopping in the mall is not an  emergency!</p>
+<h2 id="passage-1-6">Passage 1</h2>
+<p>Shoplifting is a common problem faced by retail businesses that can have a bad effect on their profitability. Retail businesses earn revenue by purchasing goods from wholesalers and manufacturers, and then selling those goods to consumers in retail stores or over the Internet. When a shoplifter steals an item from a retailer, the business can no longer sell that item to consumers to pay for the purchasing cost of it, as well as other expenses like rent and employee wages. Depending on a store’s profit margin, it may have to sell dozens of units to make up for the revenue that is lost due to the stolen items. For instance, if a store has a two percent profit margin and a shoplifter steals an item that is worth $10, then the store will have to sell $500 worth of goods to recover the loss.<br>
+Shoplifting not only causes harm to retailers, but also has a negative effect on customers. Since businesses lose profit due to shoplifting, they may set prices higher than they would otherwise do to compensate for the losses. In a sense, shoplifting acts as a tax on retailers that is ultimately passed on to consumers. Small businesses that raise prices may lose customers to larger competitors, who are often better equipped to absorb losses and keep their prices low.<br>
+Retail businesses can adopt a variety of measures to prevent theft and fight against shoplifting. Common prevention methods include: posting warning signs that shoplifters will be punished, installing security cameras, training employees to be aware of shoplifting, and putting security devices on products. Other measures like locking products away in display cases can also help to prevent shoplifting of valuable items.</p>
+<h1 id="unit-8">UNIT 8</h1>
+<h2 id="long-conversation-1-6">Long conversation 1</h2>
+<p>M: I love this song, “Starry Starry Night”! I wonder who wrote it.<br>
+W: Oh! That’s a song from 1971 by a famous American songwriter, Don McLean. But do you know what it’s about?<br>
+M: No. Not really. I just like the words about the starry night.<br>
+W: It’s a great story! The song says “Starry Starry Night” because it’s about the famous Dutch  painter, Vincent van Gogh, who lived more than 100 years ago.<br>
+M: Oh! I’ve always liked Van Gogh’s art work, especially his Starry Night painting. But why did  Don McLean write the song about Van Gogh over 80 years after Van Gogh died?<br>
+W: Well, the songwriter, Don McLean, read a book that told the story of the passionate life of Van  Gogh. He loved painting–but people didn’t understand him or his art. Did you know that Van  Gogh painted around 2,000 paintings but only sold one of them in his lifetime?<br>
+M: Gosh. That is a sad story, especially since his paintings are incredibly popular today. Let’s  see ... Wow! A Van Gogh painting today is worth around 100 million dollars!<br>
+W: I know. And, listen to this: The songwriter, Don McLean, had 72 attempts to finally get a  company who would produce his first music album.<br>
+M: What? 72 attempts?<br>
+W: Uh-huh. That’s right. All companies said “No, no, no” before one finally said “Yes! We love your music!”<br>
+M: That’s amazing. That’s a lot of “No’s!” to get to the one “Yes” he needed!<br>
+W: Yeah! I think that’s another reason Don McLean wrote the song about Van Gogh. They both  had to work so hard on their art for people to notice them.<br>
+M: Wow! All right. Turn up the volume. Let’s listen again.<br>
+W: Wonderful … So, three cheers to the artists that never give up and keep on trying!</p>
+<h2 id="passage-1-7">Passage 1</h2>
+<p>More than one million schoolchildren in the United States have gone through a program called Reading Recovery. The program is for six-year-olds who are struggling to learn to read. According to the Reading Recovery Council of North America, an association dedicated to literacy education in North America, more than 20 percent of United States public schools are using the program to help their first-grade students, and more than 99 percent of the students in the program passed the state reading examination.<br>
+The method used by Reading Recovery calls for a reading teacher to work with children one at a time. The lessons take half an hour each schoolday. The teacher helps students with reading, writing and the study of the alphabet. Reading Recovery lessons last for 12 to 20 weeks. During the lessons, the teacher looks for ways that the child learns best. Then he or she works to help the student develop effective strategies to solve their problems in reading. The idea behind this practice is for students to continue to use and extend these strategies each time they read.<br>
+Students participating in the program read many short books. Some of the books are written in a way similar to spoken language. They also read and write stories in their own words. The material gets harder with time. The lessons end when the student’s reading ability reaches the average level of the class. The Reading Recovery Council says 80 percent of students who finish the lessons can read and write within their class average.<br>
+However, not all schools embrace the Reading Recovery method happily. Some criticize it, saying that the cost of this method is much higher than other types of programs. But supporters say it saves money in the long run. They think it helps prevent the sad results and expense of letting children fail in school.</p>
+<p>ill remember. Patience, courage and love! Thanks, Uncle Charlie!</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ C语言实验报告（软件）]]></title>
         <id>https://Ilosyi.github.io/post/c-yu-yan-shi-yan-bao-gao/</id>
         <link href="https://Ilosyi.github.io/post/c-yu-yan-shi-yan-bao-gao/">
         </link>
@@ -1018,7 +1324,8 @@ void func1(void)
         <link href="https://Ilosyi.github.io/post/hua-ke-song-qin-wai-mai-ping-jie/">
         </link>
         <updated>2023-11-20T10:43:23.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="一-逐趣校园篇">一、逐趣校园篇</h3>
+        <content type="html"><![CDATA[<h3 id="停更ing">停更ing</h3>
+<h3 id="一-逐趣校园篇">一、逐趣校园篇</h3>
 <h4 id="1铁锅锅"><strong>1.铁锅锅</strong></h4>
 <p>(1)类型:盖浇饭<br>
 (2)味道:2/5<br>
@@ -1043,7 +1350,7 @@ void func1(void)
 <p>(1)类型:饭菜<br>
 (2)味道:3.5/5<br>
 (3)价格:2.5/5(指数越高越贵)<br>
-(4)总评:3/5<br>
+(4)总评:3.5/5<br>
 评价：饭菜独立包装，味道还行，价格中等，可以常吃，有的菜口味略淡,分量略少。</p>
 <h4 id="3华科被炒饭耽误的焖面店"><strong>3.华科被炒饭耽误的焖面店</strong></h4>
 <p>(1)类型:炒饭，焖面<br>
@@ -1052,17 +1359,17 @@ void func1(void)
 (4)总评:3/5、<br>
 评价：炒饭挺好的，不过吃多了还是容易腻，个人觉得油重了些。</p>
 <h4 id="47-11便利店"><strong>4.7-11便利店</strong></h4>
-<p>(1)类型<br>
-(2)味道:/5<br>
-(3)价格:/5(指数越高越贵)<br>
-(4)总评:/5、<br>
-评价：</p>
+<p>(1)类型:便当<br>
+(2)味道:3/5<br>
+(3)价格:4/5(指数越高越贵)<br>
+(4)总评:2.5/5、<br>
+评价：配送价格太高，味道中规中矩</p>
 <h4 id="5骨汤渔粉"><strong>5.骨汤渔粉</strong></h4>
-<p>(1)类型<br>
-(2)味道:/5<br>
-(3)价格:/5(指数越高越贵)<br>
-(4)总评:/5、<br>
-评价：</p>
+<p>(1)类型：粉<br>
+(2)味道:4/5<br>
+(3)价格:2.5/5(指数越高越贵)<br>
+(4)总评:3.5/5、<br>
+评价：顺滑有味，不过吃多了也有点腻</p>
 <h4 id="6新疆炒米粉"><strong>6.新疆炒米粉</strong></h4>
 <p>(1)类型<br>
 (2)味道:/5<br>
@@ -1082,17 +1389,17 @@ void func1(void)
 (4)总评:/5、<br>
 评价：</p>
 <h4 id="9邂逅饭先生"><strong>9.邂逅饭先生</strong></h4>
-<p>(1)类型<br>
+<p>(1)类型：<br>
 (2)味道:/5<br>
 (3)价格:/5(指数越高越贵)<br>
 (4)总评:/5、<br>
 评价：</p>
 <h4 id="10大师粥铺"><strong>10.大师粥铺</strong></h4>
-<p>(1)类型<br>
-(2)味道:/5<br>
-(3)价格:/5(指数越高越贵)<br>
-(4)总评:/5、<br>
-评价：</p>
+<p>(1)类型::粥<br>
+(2)味道:3.5/5<br>
+(3)价格:2.5/5(指数越高越贵)<br>
+(4)总评3:/5、<br>
+评价：拔牙的时候吃的，价格和味道还行，不过平时没有吃粥的习惯呢</p>
 <h4 id="11沙县小吃"><strong>11.沙县小吃</strong></h4>
 <p>(1)类型<br>
 (2)味道:/5<br>
@@ -1112,11 +1419,11 @@ void func1(void)
 (4)总评:/5、<br>
 评价：</p>
 <h4 id="14香茵波克"><strong>14.香茵波克</strong></h4>
-<p>(1)类型<br>
-(2)味道:/5<br>
-(3)价格:/5(指数越高越贵)<br>
-(4)总评:/5、<br>
-评价：</p>
+<p>(1)类型:炸鸡汉堡<br>
+(2)味道:3.5/5<br>
+(3)价格:3.5/5(指数越高越贵)<br>
+(4)总评:3.5/5、<br>
+评价：麦当劳替代品QAQ，薯条挺不错的，其它中规中矩</p>
 <h4 id="15吞口熊"><strong>15.吞口熊</strong></h4>
 <p>(1)类型<br>
 (2)味道:/5<br>
@@ -1281,6 +1588,7 @@ void func1(void)
 <ul>
 <li><a href="#%E4%BE%8B1%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E6%8C%87%E5%90%91%E6%95%B0%E7%BB%84%E7%9A%84%E6%8C%87%E9%92%88"><strong>例1（指针数组，指向数组的指针）：</strong></a></li>
 <li><a href="#%E4%BE%8B2%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E6%8C%87%E5%90%91%E5%87%BD%E6%95%B0%E7%9A%84%E6%8C%87%E9%92%88"><strong>例2（函数指针数组/指向函数的指针）</strong>：</a></li>
+<li><a href="#%E4%BE%8B3-%E5%A4%8D%E6%9D%82%E5%A3%B0%E6%98%8E%E5%88%86%E6%9E%90"><strong>例3 复杂声明分析</strong>：</a></li>
 </ul>
 </li>
 </ul>
@@ -1490,7 +1798,7 @@ int u[9]={ , 1, , ,2}; 错误：缺省u[0], u[2]不是最后连续 元素</p>
     }
     void (*function[8])() = { task0, task1, task2, task3, task4, task5, task6,task7 };
 </code></pre>
-<p>####** 例3 复杂声明的分析：  **</p>
+<h4 id="例3-复杂声明分析"><strong>例3 复杂声明分析</strong>：</h4>
 <pre><code class="language-c">int main()
 {
 	int (*   (*   (*  (*q)[2]  )(void)   )  [4]  )(double);
@@ -1937,509 +2245,6 @@ int main()
 咬死了猎人的狗－&gt;把猎人咬死了的狗<br>
 咬死了小明的老虎-&gt;把小明咬死了的老虎<br>
 拍死了蚊子的妈妈－&gt;把蚊子拍死了的妈妈</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[素数的埃拉托斯特尼筛法与回文数]]></title>
-        <id>https://Ilosyi.github.io/post/su-shu-de-ai-la-tuo-si-te-ni-shai-fa-yu-hui-wen-shu/</id>
-        <link href="https://Ilosyi.github.io/post/su-shu-de-ai-la-tuo-si-te-ni-shai-fa-yu-hui-wen-shu/">
-        </link>
-        <updated>2023-11-19T12:20:02.000Z</updated>
-        <content type="html"><![CDATA[<h5 id="2023111">2023/11/1</h5>
-<h3 id="p1217-usaco15-回文质数-prime-palindromes">P1217 [USACO1.5] 回文质数 Prime Palindromes</h3>
-<p>做这题时全是TEL，于是学习了下筛法与打表</p>
-<h5 id="筛法三种素数筛法普通筛法-埃氏筛法-欧拉筛法"><strong>筛法</strong>：<a href="https://blog.csdn.net/weixin_46052886/article/details/112255458">三种素数筛法(普通筛法、埃氏筛法、欧拉筛法)</a></h5>
-<p>埃拉托斯特尼筛法（Sieve of Eratosthenes）是一种用于找出一定范围内所有素数的古老算法。它的基本思想是从小到大遍历数字，将素数的倍数标记为合数，从而筛选出素数。码首先创建了一个布尔数组 isPrime，用于标记每个数字是否为素数。然后，它从2开始遍历到 n 的平方根，对于每个素数 p，将其倍数标记为合数。最后，遍历布尔数组，找到所有标记为素数的数字，它们就是小于等于 n 的素数。<br>
-埃拉托斯特尼筛法的时间复杂度是 O(n log log n)，这使得它是一种非常高效的素数筛选算法。</p>
-<p>学习教材C语言程序设计（清华大学出版社卢萍）116页有介绍。</p>
-<h5 id="回文数回文数题解"><strong>回文数</strong>：<a href="https://leetcode.cn/problems/palindrome-number/solutions/281686/hui-wen-shu-by-leetcode-solution/">回文数题解</a></h5>
-<p>要检查一个整数是否是回文数，可以使用一种更有效的方法而不是反转整个数字。以下是一种优化算法：</p>
-<p>处理特殊情况：<br>
-如果输入是负数，它不可能是回文数，因为负数的反转后的数字不会等于原始数字。<br>
-如果输入以0结尾（除了0本身），也不可能是回文数，因为不会存在以0开头的数字。<br>
-通过比较数字的前半部分和后半部分来检查回文性：<br>
-将整数分成前半部分和后半部分，例如，对于整数12321，前半部分是123，后半部分是21。<br>
-反转后半部分数字，然后与前半部分数字进行比较。<br>
-如果它们相等，那么这个数字是回文数。<br>
-这种算法只需要反转一半的数字，从而减少了计算的时间和内存开销。</p>
-<h4 id="对于回文质数它不可能是偶数位除11">对于回文质数，它不可能是偶数位（除11）</h4>
-<h4 id="具有偶数个数位的回文数一定是-11-的倍数">具有偶数个数位的回文数一定是 11 的倍数</h4>
-<p>证明：<a href="https://www.jianshu.com/p/35f19b524cb9">具备偶数个数位回文数一定是11的倍数证明</a></p>
-<p>具体代码：</p>
-<pre><code class="language-c">#define _CRT_SECURE_NO_WARNINGS
-#include &lt;stdio.h&gt;
-#include &lt;stdbool.h&gt;
-#include&lt;stdlib.h&gt;
-bool weishu(int k)  //位数
-{
-	if (k &gt;= 10 &amp;&amp; k &lt; 100 &amp;&amp; k != 11 || k &gt;= 1000 &amp;&amp; k &lt; 10000)return false;
-	else if (k &gt;= 100000 &amp;&amp; k &lt; 1000000 || k &gt;= 10000000 &amp;&amp; k &lt; 100000000)return false;
-	else return true;
-}
-bool isPalindrome(int x) {
-	if ( (x % 10 == 0)) {
-		return false; // 负数或以0结尾的数字不是回文数
-	}
-
-	int reversedHalf = 0;
-	while (x &gt; reversedHalf) {
-		int digit = x % 10;
-		reversedHalf = reversedHalf * 10 + digit;
-		x /= 10;
-	}
-
-	// 如果x的位数是奇数，将reversedHalf除以10后与x比较
-	return x == reversedHalf || x == reversedHalf / 10;
-}
-int main()
-{
-	FILE* file = fopen(&quot;E:\\123.txt&quot;, &quot;w&quot;);
-	int a, n;
-	scanf(&quot;%d%d&quot;, &amp;a, &amp;n);
-	bool* isPrime = (bool*)malloc(sizeof(int) * (n + 1));
-	for (int i = 0; i &lt;= n; i++) {
-		isPrime[i] = true; // 假设每个数字都是素数
-	}
-	isPrime[0] = isPrime[1] = false; // 0和1不是素数
-
-	for (int p = 2; p * p &lt;= n; p++) {
-		if (isPrime[p] == true) {
-			// 如果p是素数，将p的倍数标记为合数
-			for (int i = p * p; i &lt;= n; i += p) {
-				isPrime[i] = false;
-			}
-		}
-	}
-	if (a % 2 == 0) a++;
-	for (int i = a; i &lt;= n; i+=2)
-	{
-		if (i == 9989900)
-		{//如果到了这个数，就break 
-			break;
-		}
-		if (weishu(i)&amp;&amp;isPalindrome(i) &amp;&amp; isPrime[i])
-		{
-			printf(&quot;%d\n&quot;, i); 
-			fprintf(file, &quot;%d,&quot;,i);
-		}
-	}
-	fclose(file);
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[二维数组：八皇后 幻方 迷宫问题]]></title>
-        <id>https://Ilosyi.github.io/post/er-wei-shu-zu-ba-huang-hou-yu-mi-gong-wen-ti/</id>
-        <link href="https://Ilosyi.github.io/post/er-wei-shu-zu-ba-huang-hou-yu-mi-gong-wen-ti/">
-        </link>
-        <updated>2023-11-15T03:02:28.000Z</updated>
-        <content type="html"><![CDATA[<p><ul class="markdownIt-TOC">
-<li><a href="#%E4%B8%80-%E6%95%B0%E7%BB%84%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE">一、数组知识回顾</a>
-<ul>
-<li><a href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><strong>一维数组</strong></a></li>
-<li><a href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><strong>二维数组</strong></a></li>
-</ul>
-</li>
-<li><a href="#%E4%BA%8C-%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98">二、八皇后问题</a><br>
-*<br>
-*<br>
-* <a href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><strong>数据结构：二维数组？一维数组？</strong></a>
-<ul>
-<li><a href="#%E6%96%B9%E6%A1%88%E4%B8%80%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><strong>方案一：二维数组</strong></a></li>
-<li><a href="#%E6%96%B9%E6%A1%88%E4%BA%8C%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><strong>方案二：一维数组</strong></a></li>
-</ul>
-</li>
-<li><a href="#%E4%B8%89-%E6%9E%9A%E4%B8%BE%E6%96%B9%E6%B3%95">三、枚举方法</a></li>
-<li><a href="#%E5%9B%9B-%E5%9B%9E%E6%BA%AF%E6%96%B9%E6%B3%95"><strong>四、回溯方法</strong></a></li>
-<li><a href="#%E4%BA%94-%E5%B9%BB%E6%96%B9%E9%97%AE%E9%A2%98"><strong>五、幻方问题</strong></a></li>
-<li><a href="#%E5%85%AD-%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98"><strong>六、迷宫问题</strong></a></li>
-</ul>
-</p>
-<h1 id="一-数组知识回顾">一、数组知识回顾</h1>
-<h2 id="一维数组"><strong>一维数组</strong></h2>
-<figure data-type="image" tabindex="1"><img src="https://Ilosyi.github.io/post-images/1700017396788.png" alt="" loading="lazy"></figure>
-<h2 id="二维数组"><strong>二维数组</strong></h2>
-<figure data-type="image" tabindex="2"><img src="https://Ilosyi.github.io/post-images/1700017554841.png" alt="" loading="lazy"></figure>
-<h1 id="二-八皇后问题">二、八皇后问题</h1>
-<p>八皇后问题是国际西洋棋棋手马克 斯·贝瑟尔于1848年提出： 在8×8格的国际象棋上摆放八个皇 后，使其不能互相攻击，即任意两个皇 后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。<br>
-高斯认为有76种方案。1854年在柏林的 象棋杂志上不同的作者发表了40种不同的解 ，后来有人用图论的方法解出92种结果。 计算机发明后，有多种计算机语言可以 解决此问题。</p>
-<h4 id="数据结构二维数组一维数组"><strong>数据结构：二维数组？一维数组？</strong></h4>
-<h3 id="方案一二维数组"><strong>方案一：二维数组</strong></h3>
-<p><img src="https://Ilosyi.github.io/post-images/1700018201814.png" alt="" loading="lazy"><br>
-用一个8行8列的二维数组存储8*8的国际 象棋棋盘，数组元素初值为0；0-代表没有放皇后 1-代表放置了皇后。<br>
-<code>int board[MAX_N][MAX_N];</code><br>
-例如：<br>
-chess[0][5]=1;//在第0行第5列放一个皇后<br>
-chess[1][1]=1;//在第1行第1列放一个皇后</p>
-<h3 id="方案二一维数组"><strong>方案二：一维数组</strong></h3>
-<p>用下标代表行，值代表列。只要数组每个值各不相同，就说明不在同一行和列，从而简化了冲突的判断，只需要考虑是否<strong>对角线冲突</strong>。<br>
-<img src="https://Ilosyi.github.io/post-images/1700050927644.png" alt="" loading="lazy"><br>
-实际上等价于行号差与列号差的绝对值相同。因此可这样进行冲突检测：<br>
-<code>if (queen[i] == col || abs(queen[i] - col) == abs(i - row))</code><br>
-那么如何摆放呢？</p>
-<h1 id="三-枚举方法">三、枚举方法</h1>
-<p>最适合计算机也一定不会遗漏任何一种摆放的方法！摆放方式共有：8×8 ×8 ×8 ×8 ×8 ×8 ×8 = 8^8<br>
-用八层for循环枚举。<br>
-分析：同一列没有必要再摆放，若第n个皇后与前面冲突，则不用进行n+1个皇后的摆放，而应回到上一步。（回溯思想）</p>
-<pre><code class="language-c">    void queen() {
-    int chess[8], i; // chess数组存放皇后的摆放，i用于输出皇后的循环变量
-
-    for (chess[0] = 0; chess[0] &lt;= 7; chess[0]++) // 对应第0行的8种摆放
-        for (chess[1] = 0; chess[1] &lt;= 7; chess[1]++)
-            for (chess[2] = 0; chess[2] &lt;= 7; chess[2]++)
-                for (chess[3] = 0; chess[3] &lt;= 7; chess[3]++)
-                    for (chess[4] = 0; chess[4] &lt;= 7; chess[4]++)
-                        for (chess[5] = 0; chess[5] &lt;= 7; chess[5]++)
-                            for (chess[6] = 0; chess[6] &lt;= 7; chess[6]++)
-                                for (chess[7] = 0; chess[7] &lt;= 7; chess[7]++)
-                                    if (check(chess, 8) == 1) // 如果不存在冲突则输出这种摆放方案
-                                        for (i = 0; i &lt; 8; i++) // 输出每一行皇后的位置
-                                            printf(&quot;%d &quot;, chess[i]);}
-</code></pre>
-<p>这段代码通过嵌套的循环尝试所有可能的皇后摆放方式。对于每种摆放方式，它调用名为 check 的函数，检查是否存在皇后之间的冲突（即是否存在在同一行、同一列或对角线上）。如果没有冲突，它就打印出每一行皇后的位置。</p>
-<h1 id="四-回溯方法"><strong>四、回溯方法</strong></h1>
-<pre><code class="language-c">    void queen() {
-    int chess[8], i; // chess存放皇后的摆放 i用于输出皇后的循环变量
-
-    // 循环尝试每一行的摆放方式
-    for (chess[0] = 0; chess[0] &lt;= 7; chess[0]++) {
-        // 对应第0行的8种摆放
-        for (chess[1] = 0; chess[1] &lt;= 7; chess[1]++) {
-            // 如果存在冲突，则看下一种摆放
-            if (check(chess, 2) == 0)
-                continue;
-            else
-                // 循环尝试第2行的摆放方式
-                for (chess[2] = 0; chess[2] &lt;= 7; chess[2]++) {
-                    // 如果存在冲突，则看下一种摆放
-                    if (check(chess, 3) == 0)
-                        continue;
-                    else
-                        // 循环尝试第3行的摆放方式
-                        // ... （以此类推，一直到第7行）
-                        for (chess[7] = 0; chess[7] &lt;= 7; chess[7]++) {
-                            // 如果第8个皇后和前面7个冲突则看下一种摆放，否则输出这种摆放方式
-                            if (check(chess, 8) == 0)
-                                continue;
-                            else
-                                // 输出当前的摆放方式
-                                for (i = 0; i &lt;= 7; i++)
-                                    print(chess[i]);
-                        }
-                }
-        }
-    }
-    }
-    // 函数check用于检查当前皇后的摆放是否与前面的皇后有冲突
-    int check(int a[], int n) {
-    // 实现检查的逻辑，如果有冲突返回0，否则返回1}
-
-    // 函数print用于输出当前皇后的摆放
-    void print(int queenPosition) {
-    // 输出当前皇后的位置}
-</code></pre>
-<p>八重for循环 只能解决8皇后，如果变成N皇后呢？<br>
-有一种思路：<br>
-放下第1个皇后，还需要放下N-1个皇后；<br>
-放下第2个皇后，还需要放下N-2个皇后；<br>
-放下了第N个皇后，结束了(递归出口)<br>
-递归的回溯算法分析：实际上是一个DFS算法<br>
-<img src="https://Ilosyi.github.io/post-images/1700052099457.png" alt="" loading="lazy"><br>
-最终代码（一维数组实现）:</p>
-<pre><code class="language-c">    #include &lt;stdio.h&gt;
-    #include&lt;math.h&gt;
-    #define N 4
-    int queen[N];
-    bool isSafe(int row, int col) {
-    // 检查同一列是否有皇后
-    for (int i = 0; i &lt; row; i++) {
-        if (queen[i] == col || abs(queen[i] - col) == abs(i - row)) {
-            return false;
-        }
-    }
-    return true;}
-
-    int placeQueen(int row) {
-    int count = 0;
-    if (row == N) {
-        // 所有皇后都已经放置，找到一个解法       
-        return 1;
-    }
-
-    for (int col = 0; col &lt; N; col++) {
-        if (isSafe(row, col)) {
-            // 在当前位置放置皇后
-            queen[row] = col;
-            // 递归放置下一行的皇后
-            count+=placeQueen(row + 1);
-            
-        }
-    }
-    return count;}
-    int main()
-    {
-    int count=placeQueen(0);
-    printf(&quot;%d&quot;, count);
-    return 0;
-    }
-</code></pre>
-<h1 id="五-幻方问题"><strong>五、幻方问题</strong></h1>
-<p>幻方是指将若干个自然数排成纵横各为若干个数的正方形，使在同一行、同一列和同一对角线上的几个数的和都相等。此时我们只考虑奇幻方问题。可见：<a href="https://www.luogu.com.cn/problem/P2615"><strong>洛谷P2615</strong></a><br>
-简单来说就是将1放在第一行的中间，下一个数放在上一个数“右上角”，若已被占，放在正下方。<br>
-例如，三阶幻方为：<br>
-8 1 6<br>
-3 5 7<br>
-4 9 2<br>
-/<em>代码实现</em>/</p>
-<pre><code class="language-c">#include&lt;stdio.h&gt;
-int n, a[40][40], x, y;
- int main() {
-scanf(&quot;%d&quot;, &amp;n);
-x = 1, y = (n + 1) / 2;
-for (int i = 1; i &lt;= n * n; i++) {
-	a[x][y] = i;
-	if (!a[(x - 2 + n) % n + 1][y % n + 1])
-		{
-			x = (x - 2 + n) % n + 1, y = y % n + 1;
-		}
-	else x = x % n + 1;//数学运算
-	}
-	for (int i = 1; i &lt;= n; i++) {
-		for (int j = 1; j &lt;= n; j++) {
-			printf(&quot;%d &quot;, a[i][j]);
-		}
-		printf(&quot;\n&quot;);
-	}
-    }
-</code></pre>
-<p>以下是if法题解，采用了动态内存分配。</p>
-<pre><code class="language-c">#include &lt;stdio.h&gt; 
-#include &lt;stdlib.h&gt;
-
-int main()
-    {
-    int n;
-    scanf(&quot;%d&quot;, &amp;n);
-
-    if (n &lt;= 0)
-    {
-        printf(&quot;错误的输入。请输入一个正整数。&quot;);
-        return 1;
-    }
-
-    int** a = (int**)malloc(sizeof(int*) * n);
-    if (a == NULL)
-    {
-        printf(&quot;内存分配失败&quot;);
-        return 1;
-    }
-
-    for (int i = 0; i &lt; n; i++)
-    {
-        a[i] = (int*)malloc(sizeof(int) * n);
-        if (a[i] == NULL)
-        {
-            printf(&quot;内存分配失败&quot;);
-            return 1;
-        }
-    }
-    int i = 0;
-    int j = (n - 1) / 2;
-    a[i][j] = 1;
-    for (int k = 2; k &lt;= n * n; k++)
-    {
-        if (i == 0 &amp;&amp; j != n - 1)
-        {
-            i = n - 1;
-            j++;
-        }
-        else if (i != 0 &amp;&amp; j == n - 1)
-        {
-            i--;
-            j = 0;
-        }
-        else if (i == 0 &amp;&amp; j == n - 1)
-        {
-            i++;
-        }
-        else if (i != 0 &amp;&amp; j != n - 1)
-        {
-            if (i-1&gt;=0&amp;&amp;i-1&lt;n&amp;&amp;j+1&gt;=0&amp;&amp;j&lt;n&amp;&amp;(!(a[i - 1][j + 1] &gt;= 1 &amp;&amp; a[i - 1][j + 1] &lt;= n * n)))
-            {
-                i--;
-                j++;
-            }
-            else
-            {
-                i++;
-            }
-        }
-        a[i][j] = k;
-    }
-
-    for (int i = 0; i &lt; n; i++)
-    {
-        for (int j = 0; j &lt; n; j++)
-        {
-            printf(&quot;%d &quot;, a[i][j]);
-        }
-        printf(&quot;\n&quot;);
-    }
-
-    for (int i = 0; i &lt; n; i++)
-    {
-        free(a[i]);
-    }
-    free(a);
-
-    return 0;}
-</code></pre>
-<h1 id="六-迷宫问题"><strong>六、迷宫问题</strong></h1>
-<p>迷宫问题显然无法用一维数组解决，因为同一行不只有一个“皇后”。采用DFS思想，先试探一个方向，若走不通，再返回上一步试探其它方向。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[信息技术导论实验课内容及程序代码]]></title>
-        <id>https://Ilosyi.github.io/post/xin-xi-ji-zhu-dao-lun-shi-yan-ke-nei-rong-ji-cheng-xu-dai-ma/</id>
-        <link href="https://Ilosyi.github.io/post/xin-xi-ji-zhu-dao-lun-shi-yan-ke-nei-rong-ji-cheng-xu-dai-ma/">
-        </link>
-        <updated>2023-11-08T08:42:35.000Z</updated>
-        <content type="html"><![CDATA[<p><ul class="markdownIt-TOC">
-<li><a href="#%E5%AE%9E%E9%AA%8C%E4%B8%80">实验一</a>
-<ul>
-<li><a href="#1-%E5%BC%80%E6%9C%BA%E8%BF%9B%E5%85%A5%E5%9B%BA%E4%BB%B6%E6%9F%A5%E7%9C%8Bbios">1 开机进入固件查看（BIOS）</a></li>
-<li><a href="#2-%E9%94%AE%E7%9B%98%E6%8C%87%E6%B3%95%E7%BB%83%E4%B9%A0">2 键盘指法练习</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C">实验二</a>
-<ul>
-<li><a href="#1-windos%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C">1 windos常用命令操作</a></li>
-<li><a href="#2-%E7%BD%91%E7%BB%9C%E7%9A%84%E5%85%B4%E8%B5%B7%E8%A7%86%E9%A2%91">2 网络的兴起（视频）</a></li>
-<li><a href="#3-%E7%A8%8B%E5%BA%8F%E4%BD%9C%E4%B8%9A">3 程序作业</a>
-<ul>
-<li><a href="#1-%E7%AE%80%E8%BF%B0">1 简述</a></li>
-<li><a href="#2-%E7%A8%8B%E5%BA%8F%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82%E8%AF%B4%E6%98%8E">2 程序功能需求说明</a>
-<ul>
-<li><a href="#21-%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E8%A6%81%E6%B1%82">2.1 基本功能要求</a></li>
-<li><a href="#22-%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">2.2 补充说明</a></li>
-<li><a href="#3-%E7%8E%B0%E5%9C%BA%E6%A3%80%E6%9F%A5%E8%A6%81%E6%B1%82">3 现场检查要求</a></li>
-<li><a href="#%E8%A7%A3">解：</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</p>
-<h1 id="实验一">实验一</h1>
-<h2 id="1-开机进入固件查看bios">1 开机进入固件查看（BIOS）</h2>
-<h2 id="2-键盘指法练习">2 键盘指法练习</h2>
-<p>金山打字通，启动！<br>
-测试时会从书上找一句话让你打字。</p>
-<h1 id="实验二">实验二</h1>
-<h2 id="1-windos常用命令操作">1 windos常用命令操作</h2>
-<h2 id="2-网络的兴起视频">2 网络的兴起（视频）</h2>
-<h2 id="3-程序作业">3 程序作业</h2>
-<h3 id="1-简述">1 简述</h3>
-<p>用某种编程语言，实现一段程序，实现进制转换。</p>
-<h3 id="2-程序功能需求说明">2 程序功能需求说明</h3>
-<h4 id="21-基本功能要求">2.1 基本功能要求</h4>
-<p>输入：一串字符 功能：将字符串转为十六进制整数；并根据用户要求，分别将输入转为 3~12 进 制数，并输出转换结果。 输出范例： 输入（十六进制）：0x1234 输出（十进制）：4660</p>
-<h4 id="22-补充说明">2.2 补充说明</h4>
-<p>其他补充说明如下：</p>
-<p>（1）应根据进制转换的 原理自行编写对应代码，严禁直接调用高级语言已有的库函数来实现进制转换功能；</p>
-<p>（2）程序应具备基本的有效性校验功能，应能识别不合理的十六进制数，并给出错误提示，例如，0xG 是个错误的输入；</p>
-<p>（3）字母不区分大小写；</p>
-<p>（4）输出结果中的“十进制”字样，应根据不同进制转换，对应显示数制，如</p>
-<p>“三”、“八”、“十二”； （5）程序应能自动识别输入中多余的空格，例如，0x 6 应视为 0x6，即程序自动删除输入中多余的空格；</p>
-<p>（6）编程语言不限（可优先考虑 C 语言），其他常用编程语言包括：C++、Java、Python 。 （7）不要求实现图形用户界面，控制台程序即可；</p>
-<p>（8）要求用户从键盘输入，不应将输入直接写死在程序中 。</p>
-<p>（9）没有本地开发环境的，可使用如下的在线开发环境，支持 C/C++/Java/Python 等开发语言： https://lightly.teamcode.com/c?bd_vid=11680563935503538366</p>
-<h4 id="3-现场检查要求">3 现场检查要求</h4>
-<p>现场检查内容包括：</p>
-<p>（1）现场运行程序，观察运行结果；</p>
-<p>（2）针对教师提问进行回答，讲解程序实现主要思路；（并不会）</p>
-<p>（3）根据教师要求，改变输入条件，重新运行程序，观察运行结果(并不会)</p>
-<h4 id="解">解：</h4>
-<p>/<em>代码</em>/</p>
-<pre><code class="language-c">    #include &lt;stdio.h&gt;
-    #include &lt;stdlib.h&gt;
-
-    // 函数声明，将十六进制数转换为指定进制并打印
-    void convertAndPrint(char* hexadecimal, int Base);
-    int main() {
-    char input[20];
-    int Base;
-
-    // 用户输入十六进制数
-    printf(&quot;输入(16进制)：&quot;);
-    if (scanf_s(&quot;%19s&quot;, input, sizeof(input)) != 1) {
-    printf(&quot;输入错误\n&quot;);
-    return 1;
-    }
-
-    char input2[30]; // 删除空格后的字符串
-    for (int i = 0; input[i] != '\0'; i++) {
-    if (input[i] != ' ') {
-            input2[i] = input[i];
-        }
-        else {
-            i--;
-        }
-    }
-
-    // 用户输入目标进制
-    printf(&quot;输入目标进制（2-12）：&quot;);
-    if (scanf_s(&quot;%d&quot;, &amp;Base) != 1 || Base &lt; 2 || Base &gt; 12) {
-        printf(&quot;目标进制不在范围内\n&quot;);
-        return 1;
-    }
-
-    // 调用函数进行转换并打印结果
-    convertAndPrint(input, Base);
-
-    return 0;
-    }
-
-    // 十六进制数转换为指定进制并打印
-    void convertAndPrint(char* hexadecimal, int Base) {
-    long int d;
-    // 将十六进制数转换为十进制数字
-    if (sscanf_s(hexadecimal, &quot;%lx&quot;, &amp;d) == 1) {
-    printf(&quot;输出(%d进制): &quot;, Base);
-
-    if (Base == 10) {
-            printf(&quot;%ld\n&quot;, d);
-        }
-        else if (Base &gt;= 2 &amp;&amp; Base &lt;= 12) {
-            long int quo = d;
-            int i = 0;
-            char result[100];
-
-            // 反复相除，将余数保存在result数组中
-            while (quo &gt; 0) {
-                int r = quo % Base;
-                result[i] = (r &lt; 10) ? ('0' + r) : ('A' + r - 10);
-                i++;
-                quo /= Base;
-            }
-
-            // 打印结果
-            for (int j = i - 1; j &gt;= 0; j--) {
-                printf(&quot;%c&quot;, result[j]);
-            }
-            printf(&quot;\n&quot;);
-        }
-    }
-    else {
-        printf(&quot;输入错误\n&quot;);
-    }
-    }
-</code></pre>
-<p>注：助教测试时考虑到大家水平，可以不考虑输入有效性检查，可使用一些已有的库函数。❤️</p>
 ]]></content>
     </entry>
 </feed>

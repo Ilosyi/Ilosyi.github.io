@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>排序算法 | losyi的博客</title>
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://Ilosyi.github.io/favicon.ico?v=1726937820228">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://Ilosyi.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://Ilosyi.github.io">losyi的博客</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>排序算法</h1>
+            <p class="article-meta">
+              2023-11-20
+              
+                <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge secondary">
+                  C语言学习笔记（万老师）
+                </a>
+              
+                <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge success">
+                  大一
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <p><ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#font-color0000ff-%E4%B8%80-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Ffont"><font color=#0000FF ><strong>一、选择排序</strong></font></a></li>
+<li><a href="#font-color0000ff-%E4%BA%8C-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8Ffont"><font color=#0000FF ><strong>二、冒泡排序</strong></font></a>
+<ul>
+<li><a href="#%E6%99%AE%E9%80%9A%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><strong>普通冒泡排序</strong></a></li>
+<li><a href="#%E6%94%B9%E8%BF%9B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><strong>改进冒泡排序</strong></a></li>
+</ul>
+</li>
+<li><a href="#font-color0000ff-%E4%B8%89-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8Ffont"><font color=#0000FF ><strong>三、快速排序</strong></font></a></li>
+<li><a href="#font-color0000ff-%E5%9B%9B-%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8Ffont"><font color=#0000FF ><strong>四、插入排序</strong></font></a>
+<ul>
+<li><a href="#%E6%99%AE%E9%80%9A%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><strong>普通插入排序</strong></a></li>
+<li><a href="#%E6%8A%98%E5%8D%8A%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><strong>折半插入排序</strong></a></li>
+</ul>
+</li>
+<li><a href="#font-color0000ff-%E4%BA%94-%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8Ffont"><font color=#0000FF ><strong>五、希尔排序</strong></font></a></li>
+</ul>
+</li>
+</ul>
+</p>
+<h2 id="font-color0000ff-一-选择排序font"><font color=#0000FF ><strong>一、选择排序</strong></font></h2>
+<p>选择排序（Selection Sort）是一种简单直观的排序算法，其基本思想是在未排序的部分中选择最小（或最大）的元素，然后将其放到已排序部分的末尾。这个过程不断地重复，直到所有元素都排序完成。<br>
+<a href="https://www.bilibili.com/video/BV1qS4y1w7jM/?spm_id_from=333.337.search-card.all.click&amp;vd_source=3d122b36d70c1b8fb284bf43c2a63a86">选择排序的动画演示</a><br>
+/<em>代码实现</em>/</p>
+<pre><code class="language-c">   void selectionSort(int arr[], int n) {
+   int i, j, minIndex, temp;
+
+   // 遍历数组
+   for (i = 0; i &lt; n - 1; i++) {
+   // 假设当前索引为最小值索引
+   minIndex = i;
+
+   // 在未排序部分中寻找最小值的索引
+           for (j = i + 1; j &lt; n; j++) {
+            if (arr[j] &lt; arr[minIndex]) {
+               minIndex = j;
+           }
+       }
+
+   // 将找到的最小值与当前位置交换
+       temp = arr[minIndex];
+       arr[minIndex] = arr[i];
+       arr[i] = temp;
+    }
+   }
+</code></pre>
+<h2 id="font-color0000ff-二-冒泡排序font"><font color=#0000FF ><strong>二、冒泡排序</strong></font></h2>
+<h3 id="普通冒泡排序"><strong>普通冒泡排序</strong></h3>
+<p>冒泡排序是一种简单的比较排序算法，它反复遍历待排序的元素列表，比较相邻的元素，并将它们交换，直到整个列表按照升序或降序排列。它得名于比较过程中较小（或较大）的元素像气泡一样&quot;浮&quot;到数组的顶端。冒泡排序的时间复杂度为O(n^2)，其中n是元素的数量，因此它在大数据集上的性能不佳，但对于小数据集来说是一种简单的排序方法。<br>
+交换原则：两两比较进行交换，如果小的在后，大的在前即交换<br>
+<a href="https://www.bilibili.com/video/BV1qY4y1h7Lz/?spm_id_from=333.337.search-card.all.click&amp;vd_source=3d122b36d70c1b8fb284bf43c2a63a86">冒泡排序的动画演示</a><br>
+/<em>代码实现</em>/</p>
+<pre><code class="language-c">   #include &lt;stdio.h&gt;
+   void bubbleSort(int arr[], int n) {
+    int temp;
+   for (int i = 0; i &lt; n - 1; i++) {
+   for (int j = 0; j &lt; n - i - 1; j++) {
+   if (arr[j] &gt; arr[j + 1]) {
+   // 交换arr[j]和arr[j+1]
+   temp = arr[j];
+   arr[j] = arr[j + 1];
+   arr[j + 1] = temp;
+   }
+    }
+    }
+    }
+</code></pre>
+<h3 id="改进冒泡排序"><strong>改进冒泡排序</strong></h3>
+<p>冒泡排序改进1：在某次遍历中如果没有数据交换，说明整个数组已经有序。因此通过设置标志位来记录此次遍历有无数据交换就可以判断是否要继续循环。<br>
+冒泡排序改进2：记录某次遍历时最后发生数据交换的位置，这个位置之后的数据显然已经有序了。因此通过记录最后发生数据交换的位置就可以确定下次循环的范围了。<br>
+/<em>代码实现</em>/</p>
+<pre><code class="language-c">   #include &lt;stdio.h&gt;
+   void bubbleSort(int arr[], int n) {
+   int temp;
+   int lastSwap = n - 1; // 初始化最后一次交换位置为数组的最后一个元素
+   for (int i = 0; i &lt; n - 1; i++) {
+   int newLastSwap = -1; // 初始化新的最后一次交换位置为-1，用于判断是否有交换发生
+   for (int j = 0; j &lt; lastSwap; j++) {
+   if (arr[j] &gt; arr[j + 1]) {
+    // 交换arr[j]和arr[j+1]
+   temp = arr[j];
+   arr[j] = arr[j + 1];
+   arr[j + 1] = temp;
+   newLastSwap = j; // 更新最后一次交换的位置
+   }
+   }
+   // 如果没有数据交换，说明整个数组已经有序，可以提前退出排序
+   if (newLastSwap == -1) {
+   break;
+    }
+   lastSwap = newLastSwap; // 更新最后一次交换的位置
+    }
+   }
+</code></pre>
+<h2 id="font-color0000ff-三-快速排序font"><font color=#0000FF ><strong>三、快速排序</strong></font></h2>
+<p>推荐一个讲解视频：<a href="https://www.bilibili.com/video/BV1vP411g7J3/?spm_id_from=333.337.search-card.all.click">全网最清晰快速排序，看完快排思想和代码全部通透，不通透你打我！</a><br>
+快速排序的基本思想是选择一个基准元素，将数组分成两部分，左边的部分包含所有小于基准的元素，右边的部分包含所有大于基准的元素，然后对这两部分分别进行快速排序，最终将整个数组排序。<br>
+快速排序的步骤如下：<br>
+1.选择基准元素： 从数组中选择一个基准元素（通常是第一个元素、最后一个元素或者随机选择），记作pivot。<br>
+2.分区（Partition）： 将数组分成两部分，小于基准元素的放在左边，大于基准元素的放在右边，相等的可以放在任意一边。分区过程可以使用双指针法来实现。<br>
+3.递归排序： 递归地对左右两部分进行快速排序。<br>
+4.合并： 由于每次递归调用都会将一个元素放置到其最终位置，所以当递归调用完成时，整个数组就被排序好了。<br>
+这个过程是递归的，当数组被分割为单个元素时，递归结束。<br>
+快速排序的优势在于它的平均时间复杂度为O(n log n)，而且它是原地排序（in-place sorting），只需要常数级别的额外空间。但是，快速排序的性能高度依赖于选择的基准元素，如果选择的基准元素不合适，可能会导致算法的性能下降。为了避免这种情况，通常使用随机选择基准元素或者使用三数取中法（选择第一个、中间一个和最后一个元素中的中间值作为基准）来提高算法的稳定性。<br>
+/<em>代码实现</em>/</p>
+<h2 id="font-color0000ff-四-插入排序font"><font color=#0000FF ><strong>四、插入排序</strong></font></h2>
+<h3 id="普通插入排序"><strong>普通插入排序</strong></h3>
+<h3 id="折半插入排序"><strong>折半插入排序</strong></h3>
+<h2 id="font-color0000ff-五-希尔排序font"><font color=#0000FF ><strong>五、希尔排序</strong></font></h2>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://Ilosyi.github.io/post/zhi-zhen/">
+                <h3 class="post-title">
+                   指针与数组
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
+
+          
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://Ilosyi.github.io/images/avatar.png?v=1726937820228" class="no-responsive avatar">
+    <div class="text-muted"></div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/hua-ke-xi-gai-you-xue-yuan-xian-shang-zuo-ye-lian-xi/">华科习概优学院线上作业练习</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/2024-qiu-hua-zhong-ke-ji-da-xue-shu-ju-jie-gou-ke-she-ji-yu-satdpll-suan-fa-de-dui-jiao-xian-shu-du-you-xi-qiu-jie-cheng-xu/">2024秋华中科技大学数据结构课设：基于SAT(DPLL算法)的对角线数独游戏求解程序</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/23-ji-si-xiu-da-ti-chong-dian/">23级思修大题重点</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/si-xiang-dao-de-yu-fa-zhi-qi-mo-fu-xi-zhi-nan/">思想道德与法治期末复习指南</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/xin-shi-ye-da-xue-ying-yu-shi-ting-shuo-jiao-cheng-3-ting-li-lian-xi-fan-yi/">新视野大学英语视听说教程3听力练习翻译</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhuan-zai-hua-ke-jun-shi-li-lun-zai-xian-zuo-ye-da-an/">【转载】华科军事理论在线作业答案</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhuan-zi-hei-ma-cti-gao-bian-cheng-bi-ji/">【转自黑马】C++提高编程笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhuan-zi-hei-ma-che-xin-bian-cheng-bi-ji/">【转自黑马】C++核心编程笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/xi-bian-yue-du-jiao-cai-zong-he-jiao-cheng-3-fan-yi/">西边阅读教材综合教程3翻译</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhong-guo-jin-xian-dai-shi-gang-yao-ke-cheng-zuo-ye/">中国近现代史纲要课程作业</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://Ilosyi.github.io/tag/S4vw4ss20/" class="badge secondary">
+          大二
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/5rritS0Zr/" class="badge success">
+          学习笔记
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/jfMbAnzEf/" class="badge success">
+          水课指南
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge secondary">
+          大一
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge secondary">
+          报告/作业
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/zfuWuILQ3/" class="badge success">
+          校园生活
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge warning">
+          C语言学习笔记（万老师）
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/ma9iK4-3D/" class="badge warning">
+          Gridea
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Ilosyi.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '593c3417754a229396ac',
+        clientSecret: '3bb5bf5ee9f4bccb9ec5e4488b9c77469204f4e9',
+        repo: 'Ilosyi.github.io',
+        owner: 'Ilosyi',
+        admin: ['Ilosyi'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>数据结构实验报告(CS) | losyi的博客</title>
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://Ilosyi.github.io/favicon.ico?v=1726937820228">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://Ilosyi.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://Ilosyi.github.io">losyi的博客</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>数据结构实验报告(CS)</h1>
+            <p class="article-meta">
+              2024-06-18
+              
+                <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge warning">
+                  报告/作业
+                </a>
+              
+                <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge secondary">
+                  大一
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <h3 id="下学期再更新">下学期再更新</h3>
+<h1 id="center1-基于顺序存储结构的线性表实现center"><center>1 基于顺序存储结构的线性表实现</center ></h1>
+<h2 id="11-问题描述"><strong>1.1 问题描述</strong></h2>
+<h3 id="111-实验目的"><strong>1.1.1 实验目的</strong></h3>
+<p>通过实验达到：<br>
+（1）加深对线性表的概念、基本运算的理解；<br>
+（2）熟练掌 握线性表的逻辑结构与物理结构的关系；<br>
+（3）物理结构采用顺序表，熟练掌握 顺序表基本运算的实现。</p>
+<h3 id="112-线性表运算定义"><strong>1.1.2 线性表运算定义</strong></h3>
+<p>依据最小完备性和常用性相结合的原则，以函数形式定义了线性表的初始化 表、销毁表、清空表、判定空表、求表长和获得元素等 12 种基本运算，具体运 算功能定义如下：<br>
+（1）初始化表：函数名称是 InitList(L)；初始条件是线性表 L 不存在；操作 结果是构造一个空的线性表；<br>
+（2）销毁表：函数名称是 DestroyList(L)；初始条件是线性表 L 已存在；操 作结果是销毁线性表 L；<br>
+（3）清空表：函数名称是 ClearList(L)；初始条件是线性表 L 已存在；操作 结果是将 L 重置为空表；<br>
+（4）判定空表：函数名称是 ListEmpty(L)；初始条件是线性表 L 已存在； 操作结果是若 L 为空表则返回 TRUE,否则返回 FALSE；<br>
+（5）求表长：函数名称是 ListLength(L)；初始条件是线性表已存在；操作 结果是返回 L 中数据元素的个数；<br>
+（6）获得元素：函数名称是 GetElem(L,i,e)；初始条件是线性表已存在，1≤ i≤ListLength(L)；操作结果是用 e 返回 L 中第 i 个数据元素的值；<br>
+（7）查找元素：函数名称是 LocateElem(L,e,compare())；初始条件是线性表 已存在；操作结果是返回 L 中第 1 个与 e 满足关系 compare（）关系的数据元素 的位序，若这样的数据元素不存在，则返回值为 0；<br>
+（8）获得前驱：函数名称是 PriorElem(L,cur_e,pre_e)；初始条件是线性表 L 已存在；操作结果是若 cur_e 是 L 的数据元素，且不是第一个，则用 pre_e 返回 它的前驱，否则操作失败，pre_e 无定义；<br>
+（9）获得后继：函数名称是 NextElem(L,cur_e,next_e)；初始条件是线性表 L 已存在；操作结果是若 cur_e 是 L 的数据元素，且不是最后一个，则用 next_e 返回它的后继，否则操作失败，next_e 无定义；<br>
+（10）插入元素：函数名称是 ListInsert(L,i,e)；初始条件是线性表 L 已存在， 1≤i≤ListLength(L)+1；操作结果是在 L 的第 i 个位置之前插入新的数据元素 e。<br>
+（11）删除元素：函数名称是 ListDelete(L,i,e)；初始条件是线性表 L 已存在 且非空，1≤i≤ListLength(L)；操作结果：删除 L 的第 i 个数据元素，用 e 返回的 值；<br>
+（12）遍历表：函数名称是 ListTraverse(L,visit())，初始条件是线性表 L 已 存在；操作结果是依次对 L 的每个数据元素调用函数 visit()。</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://Ilosyi.github.io/post/xin-shi-ye-da-xue-ying-yu-shi-ting-shuo-jiao-cheng-4-ting-li-lian-xi-yuan-wen-ji-fan-yi/">
+                <h3 class="post-title">
+                  新视野大学英语视听说教程4听力练习原文及翻译
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
+
+          
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://Ilosyi.github.io/images/avatar.png?v=1726937820228" class="no-responsive avatar">
+    <div class="text-muted"></div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/hua-ke-xi-gai-you-xue-yuan-xian-shang-zuo-ye-lian-xi/">华科习概优学院线上作业练习</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/2024-qiu-hua-zhong-ke-ji-da-xue-shu-ju-jie-gou-ke-she-ji-yu-satdpll-suan-fa-de-dui-jiao-xian-shu-du-you-xi-qiu-jie-cheng-xu/">2024秋华中科技大学数据结构课设：基于SAT(DPLL算法)的对角线数独游戏求解程序</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/23-ji-si-xiu-da-ti-chong-dian/">23级思修大题重点</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/si-xiang-dao-de-yu-fa-zhi-qi-mo-fu-xi-zhi-nan/">思想道德与法治期末复习指南</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/xin-shi-ye-da-xue-ying-yu-shi-ting-shuo-jiao-cheng-3-ting-li-lian-xi-fan-yi/">新视野大学英语视听说教程3听力练习翻译</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhuan-zai-hua-ke-jun-shi-li-lun-zai-xian-zuo-ye-da-an/">【转载】华科军事理论在线作业答案</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhuan-zi-hei-ma-cti-gao-bian-cheng-bi-ji/">【转自黑马】C++提高编程笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhuan-zi-hei-ma-che-xin-bian-cheng-bi-ji/">【转自黑马】C++核心编程笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/xi-bian-yue-du-jiao-cai-zong-he-jiao-cheng-3-fan-yi/">西边阅读教材综合教程3翻译</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhong-guo-jin-xian-dai-shi-gang-yao-ke-cheng-zuo-ye/">中国近现代史纲要课程作业</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://Ilosyi.github.io/tag/S4vw4ss20/" class="badge secondary">
+          大二
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/5rritS0Zr/" class="badge success">
+          学习笔记
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/jfMbAnzEf/" class="badge secondary">
+          水课指南
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge secondary">
+          大一
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge secondary">
+          报告/作业
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/zfuWuILQ3/" class="badge success">
+          校园生活
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge ">
+          C语言学习笔记（万老师）
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/ma9iK4-3D/" class="badge ">
+          Gridea
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Ilosyi.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '593c3417754a229396ac',
+        clientSecret: '3bb5bf5ee9f4bccb9ec5e4488b9c77469204f4e9',
+        repo: 'Ilosyi.github.io',
+        owner: 'Ilosyi',
+        admin: ['Ilosyi'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

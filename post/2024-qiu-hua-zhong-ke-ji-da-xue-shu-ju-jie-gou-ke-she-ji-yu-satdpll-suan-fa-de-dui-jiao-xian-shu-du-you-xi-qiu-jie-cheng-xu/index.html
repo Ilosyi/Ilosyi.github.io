@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>2024秋华中科技大学数据结构课设：基于SAT(DPLL算法)的对角线数独游戏求解程序 | losyi的博客</title>
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://Ilosyi.github.io/favicon.ico?v=1726937820228">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://Ilosyi.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://Ilosyi.github.io">losyi的博客</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>2024秋华中科技大学数据结构课设：基于SAT(DPLL算法)的对角线数独游戏求解程序</h1>
+            <p class="article-meta">
+              2024-09-16
+              
+                <a href="https://Ilosyi.github.io/tag/S4vw4ss20/" class="badge secondary">
+                  大二
+                </a>
+              
+                <a href="https://Ilosyi.github.io/tag/5rritS0Zr/" class="badge ">
+                  学习笔记
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <p><font color=Crimson><strong>待更新</strong></font><br><br>
+<font color=Crimson><strong>完整源码将在结课后传到</strong></font><br><br>
+<a href="https://github.com/Ilosyi/HUSTCS2024-SAT-DPLL-XSudoku">HUSTCS2024-SAT-DPLL-XSudoku<br>
+</a><br>
+<ul class="markdownIt-TOC">
+<li><a href="#1-%E4%BB%80%E4%B9%88%E6%98%AFsat%E9%97%AE%E9%A2%98">1 什么是SAT问题？</a>
+<ul>
+<li><a href="#11-sat%E9%97%AE%E9%A2%98%E7%AE%80%E4%BB%8B">1.1 SAT问题简介</a></li>
+<li><a href="#12-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E7%BD%AE">1.2 数据结构设置</a>
+<ul>
+<li><a href="#121-vector%E7%B1%BB">1.2.1 vector类</a></li>
+</ul>
+</li>
+<li><a href="#122-literal%E7%B1%BB">1.2.2 Literal类</a></li>
+<li><a href="#123-clause%E7%B1%BB">1.2.3 Clause类</a></li>
+<li><a href="#124-cnf%E7%B1%BB">1.2.4 CNF类</a></li>
+</ul>
+</li>
+<li><a href="#2-%E4%BB%80%E4%B9%88%E6%98%AFdpll%E7%AE%97%E6%B3%95">2 什么是DPLL算法？</a>
+<ul>
+<li><a href="#21-%E5%8D%95%E5%AD%90%E5%8F%A5%E8%A7%84%E5%88%99">2.1 单子句规则</a></li>
+<li><a href="#22-%E5%88%86%E8%A3%82%E7%AD%96%E7%95%A5">2.2 分裂策略</a>
+<ul>
+<li><a href="#221-%E5%88%86%E8%A3%82%E7%AD%96%E7%95%A5%E6%A6%82%E5%BF%B5">2.2.1 分裂策略概念</a></li>
+<li><a href="#222-%E5%88%86%E8%A3%82%E4%BC%A0%E6%92%AD%E5%87%BD%E6%95%B0">2.2.2 分裂（传播）函数</a></li>
+</ul>
+</li>
+<li><a href="#23-%E8%AF%BB%E5%8F%96cnf%E6%96%87%E4%BB%B6">2.3 读取cnf文件</a>
+<ul>
+<li><a href="#231-%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6">2.3.1 打开文件</a></li>
+<li><a href="#232-%E8%AF%BB%E5%8F%96%E5%86%85%E5%AE%B9">2.3.2 读取内容</a>
+<ul>
+<li><a href="#2321-getline%E5%87%BD%E6%95%B0">2.3.2.1 getline函数</a>
+<ul>
+<li><a href="#%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95%E7%BB%93%E6%9E%84">函数语法结构：</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%98%E9%87%8F">函数的变量：</a></li>
+</ul>
+</li>
+<li><a href="#2322-istringstream%E7%B1%BB">2.3.2.2 istringstream类</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#24-dpll%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0">2.4 DPLL具体实现</a>
+<ul>
+<li><a href="#241-%E4%BC%A0%E6%92%AD%E5%87%BD%E6%95%B0">2.4.1 传播函数</a></li>
+<li><a href="#242-%E9%80%89%E6%8B%A9%E7%AD%96%E7%95%A5">2.4.2 选择策略</a>
+<ul>
+<li><a href="#2421-%E9%80%89%E6%8B%A9%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%96%87%E5%AD%97">2.4.2.1 选择第一个文字</a></li>
+<li><a href="#2422-%E9%9A%8F%E6%9C%BA%E9%80%89%E5%8F%96%E6%96%87%E5%AD%97">2.4.2.2 随机选取文字</a></li>
+<li><a href="#2423-%E9%80%89%E6%8B%A9%E5%87%BA%E7%8E%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E6%96%87%E5%AD%97">2.4.2.3 选择出现最多的文字</a></li>
+<li><a href="#2424-%E9%80%89%E6%8B%A9%E7%9F%AD%E5%AD%90%E5%8F%A5%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E6%96%87%E5%AD%97">2.4.2.4 选择短子句中出现最多的文字</a></li>
+</ul>
+</li>
+<li><a href="#243-dpll%E5%87%BD%E6%95%B0">2.4.3 DPLL函数</a></li>
+<li><a href="#244-%E6%89%93%E5%8D%B0%E8%B5%8B%E5%80%BC%E7%BB%93%E6%9E%9C%E5%B9%B6%E4%BF%9D%E5%AD%98%E8%87%B3%E5%90%8C%E5%90%8Dres%E6%96%87%E4%BB%B6">2.4.4 打印赋值结果并保存至同名.res文件</a>
+<ul>
+<li><a href="#2441-%E6%89%93%E5%8D%B0%E8%B5%8B%E5%80%BC%E7%BB%93%E6%9E%9C">2.4.4.1 打印赋值结果</a></li>
+<li><a href="#2442-%E4%BF%9D%E5%AD%98%E5%88%B0res%E6%96%87%E4%BB%B6">2.4.4.2 保存到res文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#3-%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F">3 数独游戏</a>
+<ul>
+<li><a href="#31-%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F%E6%A0%BC%E5%B1%80%E7%9A%84%E7%94%9F%E6%88%90%E4%B8%8E%E5%BD%92%E7%BA%A6">3.1 数独游戏格局的生成与归约</a></li>
+<li><a href="#32-%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E6%95%B0%E7%8B%AC%E6%A3%8B%E7%9B%98">3.2 自动生成数独棋盘</a>
+<ul>
+<li><a href="#321-%E7%94%9F%E6%88%90%E5%AE%8C%E6%95%B4%E6%95%B0%E7%8B%AC%E6%A3%8B%E7%9B%98">3.2.1 生成完整数独棋盘</a></li>
+<li><a href="#322-%E6%8C%96%E6%B4%9E%E6%B3%95%E7%94%9F%E6%88%90%E6%B8%B8%E6%88%8F%E6%A3%8B%E7%9B%98">3.2.2 挖洞法生成游戏棋盘</a></li>
+<li><a href="#33-%E8%BD%AC%E5%8C%96%E4%B8%BAsat%E9%97%AE%E9%A2%98">3.3 转化为SAT问题</a>
+<ul>
+<li><a href="#331-%E8%BD%AC%E5%8C%96%E6%96%B9%E6%A1%88">3.3.1 转化方案</a></li>
+<li><a href="#332%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0">3.3.2具体实现</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+<h1 id="1-什么是sat问题">1 什么是SAT问题？</h1>
+<h2 id="11-sat问题简介">1.1 SAT问题简介</h2>
+<p> SAT问题即命题逻辑公式的可满足性问题（satisfiability problem），是计算机科学与人工智能基本问题，是一个典型的NP完全问题，可广泛应用于许多实际问题如硬件设计、安全协议验证等，具有重要理论意义与应用价值。SAT问题也是程序设计与竞赛的经典问题。<br>
+对于任一布尔变元x，x与其非“¬x”称为<strong>文字(literal)</strong>。对于多个布尔变元，若干个文字的或运算l1∨l2∨…∨lk称为<strong>子句(clause)</strong>。只含一个文字的子句称为<strong>单子句</strong>。不含任何文字的子句称为<strong>空子句</strong>，常用符号□表示。子句所含文字越多，越易满足，空子句不可满足。<br>
+ SAT问题一般可描述为：给定布尔变元集合{x1, x2, ..., xn}以及相应的子句集合{c1, c2, ..., cm}，对于合取范式（CNF范式）：F = c1∧c2∧...∧cm，判定是<strong>否存在对每个布尔变元的一组真值赋值使F为真</strong>，当为真时（问题是可满足的，SAT），输出对应的变元赋值（一组解）结果。<br>
+   简单来说，CNF范式包含若干字句，且需要<strong>每个字句都为真</strong>，而字句为真的条件是子句中<strong>存在为真的文字</strong>。<br>
+ 一个CNF SAT公式或算例的具体信息通常存储在一个cnf文件中，例如<br>
+c    clause length = 3<br>
+c<br>
+p cnf 20 91<br>
+4 -18 19 0<br>
+3 18 -5 0<br>
+-5 -8 -15 0<br>
+在每个CNF文件的开始，由‘c’开头的是若干注释说明行；‘p’开头的行说明公式的总体信息，包括：范式为CNF；公式有20个布尔变元，由1到20的整数表示，91个子句。之后每行对应一个子句，0为结束标记。4表示第4号变元，且为正文字；-5则是5号变元对应对应的负文字，文字之间以空格分隔。注意，这里的数字仅代表布尔变元编号，而不是其值。<br>
+ 一个CNF公式也可以表示成子句集合的形式：S = {c1, c2, ..., cm}.<br>
+例如，由三个布尔变元a, b, c所形成的一个CNF公式（¬a∨b）∧（¬b∨c）,可用集合表示为{¬a∨b, ¬b∨c}，该公式是满足的，a=0, b=0,c=1是其一组解。</p>
+<h2 id="12-数据结构设置">1.2 数据结构设置</h2>
+<p>不难想到，一个CNF范式可以由一个二维数组表示，二维数组的每一行表示一个字句，由于无法知道每个字句包含的文字数量，故采用vector容器<br>
+然后lz写完后发现课设要求“数据结构不要使用C++现有的vector等类库”，那么首先先自己写（ai写）一个vector类吧</p>
+<h3 id="121-vector类">1.2.1 vector类</h3>
+<pre><code class="language-c++">#include &lt;algorithm&gt; // for std::copy
+#include &lt;stdexcept&gt; // for std::out_of_range
+
+template &lt;class T&gt;
+class vector {
+public:
+    // 数据
+    T* data;
+    // 大小
+    int Size;
+    // 容量
+    int capacity;
+
+    // 构造函数
+    vector();
+
+    // 析构函数
+    ~vector();
+	//含参构造函数(初始化大小,元素)
+	vector(int n, T t) ;
+    // 拷贝构造函数
+    vector(const vector&amp; v) ;
+
+    // 赋值运算符
+    vector&amp; operator=(const vector&amp; v);
+
+    // 添加元素
+    void push_back(T t);
+
+    // 删除元素
+	void pop_back(); // 删除最后一个元素
+    
+    // 返回大小
+    int size() const;
+
+    // 返回元素（非 const 版本）
+    T&amp; operator[](int index);
+
+    // 返回元素（const 版本）
+    const T&amp; operator[](int index) const;
+
+    //判断是否为空
+	bool empty();
+
+    //清空
+	void clear();
+    // 调整容量
+    void resize(int new_capacity);
+     // 迭代器类
+ class iterator {
+};
+     // 常量迭代器类
+    class const_iterator {
+};
+}
+</code></pre>
+<h2 id="122-literal类">1.2.2 Literal类</h2>
+<p><s>其实这个类没什么必要</s>，但是为了整齐还是写了，<s>实际上成员函数都没什么用</s></p>
+<pre><code class="language-c++">class Literal
+{
+public:
+	//布尔变量
+	int var;
+	Literal();
+	//构造函数
+	Literal(int var);
+	//析构函数
+	~Literal();
+	//是否是负文字
+	bool isNegative();
+	//返回绝对值
+	int getAbs();
+	//打印文字
+	void print();
+	//不等号重载
+	bool operator!=(const Literal&amp; l)const;
+	//等号重载
+	bool operator==(const Literal&amp; l)const;
+};
+</code></pre>
+<h2 id="123-clause类">1.2.3 Clause类</h2>
+<p>字句由若干文字组成，根据后续DPLL算法的思想（单子句和分裂策略），设置了如下成员函数</p>
+<pre><code class="language-c++">class Clause
+{
+public:
+	//文字集合
+	vector&lt;Literal&gt; literals;
+	//构造函数
+	Clause();
+	//析构函数
+	~Clause();
+	//添加文字
+	void addLiteral(Literal l);
+	//删除所有特定文字
+	void removeLiteral(const Literal&amp; l);
+	//打印子句
+	void print();
+	//判断是否是单子句
+	bool isUnit()const;
+
+};
+</code></pre>
+<h2 id="124-cnf类">1.2.4 CNF类</h2>
+<p>一个CNF公式可以表示成子句集合的形式,根据DPLL思想，设置如下成员函数</p>
+<pre><code class="language-c++">class CNF
+{
+public:
+	//子句集合
+	vector&lt;Clause&gt; clauses;
+	//构造函数
+	CNF();
+	//添加子句
+	void addClause(Clause c);
+	//移除所有包含单子句L的子句
+	void removeClause(const Clause&amp; clause);
+	//移除剩下所有子句中的~L
+	void removeLiteral(const Literal&amp; L);
+	bool isEmpty() const {
+		return clauses.empty();
+	}
+	bool hasNext() const {
+		// 如果列表中至少有一个子句，且不是空子句，则返回true
+		return !clauses.empty() &amp;&amp; !clauses[0].literals.empty();
+	}
+	void print();
+};
+</code></pre>
+<h1 id="2-什么是dpll算法">2 什么是DPLL算法？</h1>
+<p>DPLL算法是基于树/二叉树的回溯搜索算法，主要使用两种基本处理策略：</p>
+<h2 id="21-单子句规则">2.1 单子句规则</h2>
+<p>单子句规则。如果子句集S中有一个单子句L,那么L一定取真值，于是可以从S中删除所有包含L的子句（包括单子句本身），得到子句集S1，如果它是空集，则S可满足。否则对S1中的每个子句，如果它包含文字¬L(因为它为假）,则从该子句中去掉这个文字，这样可得到子句集合S2。S可满足当且仅当S2可满足。单子句传播策略就是反复利用单子句规则化简S的过程。<br>
+<font color=Blue><strong>即去掉包含L的字句，并去掉剩下子句中的¬L文字</strong></font><br>
+故在DPLL函数中，可优先寻找单子句进行传播</p>
+<pre><code class="language-c++"> while (true) {
+        bool unitClauseFound = false;
+        for (int i = 0; i &lt; cnf.clauses.size(); ++i) {
+            const Clause&amp; clause = cnf.clauses[i];
+            if (clause.isUnit()) {
+                //如果是单子句，传播
+                Literal unitLiteral = clause.literals[0];//取出单子句的文字
+                if (!propagate(cnf, unitLiteral, assignments)) {
+                    return false;//如果传播失败，返回false
+                }
+              
+                unitClauseFound = true;
+
+                break;
+            }
+        }
+</code></pre>
+<h2 id="22-分裂策略">2.2 分裂策略</h2>
+<h3 id="221-分裂策略概念">2.2.1 分裂策略概念</h3>
+<p>按<strong>某种策略</strong>选取一个文字L.如果L取真值，则根据单子句传播策略，可将S化成S2；若L取假值（即¬L成立）时，S可化成S1.<br>
+交错使用上述两种策略可不断地对公式化简，并最终达到终止状态，其执行过程可表示为一棵二叉搜索树,如下图所示。<br>
+<img src="https://img2024.cnblogs.com/blog/3507821/202409/3507821-20240907114939000-758044065.png#pic_center" alt="" width="200" height="300" loading="lazy"><br>
+基于单子句传播与分裂策略的DPLL算法可以描述为一个如后所示的递归过程DPLL( S ), DPLL算法也可用非递归实现。</p>
+<pre><code class="language-c++">DPLL( S) :
+/* S为公式对应的子句集。若其满足，返回TURE；否则返回FALSE. */
+{
+while(S中存在单子句) {//单子句传播
+在S中选一个单子句L；
+依据单子句规则，利用L化简S；
+if S = Φ return(TRUE);
+else if (S中有空子句 ) return（FALSE）；
+}//while
+基于某种策略选取变元v；         //策略对DPLL性能影响很大
+if DPLL（S ∪v ）return(TURE);  //在第一分支中搜索
+return DPLL(S ∪¬v);//回溯到对v执行分支策略的初态进入另一分支
+}
+</code></pre>
+<h3 id="222-分裂传播函数">2.2.2 分裂（传播）函数</h3>
+<p>这里的assignments是用来记录赋值状态(由于课程要求将可满足时的结果保存到.res文件中），后续会谈到</p>
+<pre><code class="language-c++">bool propagate(CNF&amp; cnf, const Literal&amp; literal,int *assignments) 
+{
+    //待更新
+</code></pre>
+<h2 id="23-读取cnf文件">2.3 读取cnf文件</h2>
+<p>课设要求读取cnf算例文件，解析文件，基于一定的物理结构，建立公式的内部表示；并实现对解析正确性的验证功能，即遍历内部结构逐行输出与显示每个子句，与输入算例对比可人工判断解析功能的正确性。<br>
+cnf文件的格式示例请见上文</p>
+<h3 id="231-打开文件">2.3.1 打开文件</h3>
+<p>这里用C++实现，同时，因为程序可能需要反复读入不同的cnf文件，这里对CNF进行清空操作</p>
+<pre><code class="language-c++">  ifstream file(filename);
+        std::string line;
+``
+		if (!file.is_open())//打开文件失败
+        {
+			cerr &lt;&lt; &quot;打开文件: &quot; &lt;&lt; filename &lt;&lt;&quot;失败&quot;&lt;&lt; endl;//输出错误信息
+            return false;
+        }
+   //调试     else
+   //     {
+			//printf(&quot;File opened successfully\n&quot;);//打开文件成功
+   //     }
+        if (!cnf.isEmpty())//如果CNF不为空
+        {
+			cnf.clauses.clear();//清空CNF
+        }
+</code></pre>
+<h3 id="232-读取内容">2.3.2 读取内容</h3>
+<h4 id="2321-getline函数">2.3.2.1 getline函数</h4>
+<pre><code>//定义
+_EXPORT_STD template &lt;class _Elem, class _Traits, class _Alloc&gt;
+basic_istream&lt;_Elem, _Traits&gt;&amp; getline(
+    basic_istream&lt;_Elem, _Traits&gt;&amp; _Istr, basic_string&lt;_Elem, _Traits, _Alloc&gt;&amp; _Str) {
+    // get characters into string, discard newline
+    return _STD getline(_STD move(_Istr), _Str, _Istr.widen('\n'));
+}
+</code></pre>
+<h5 id="函数语法结构">函数语法结构：</h5>
+<p>在&lt; string &gt;中的getline函数有四种重载形式：</p>
+<pre><code>1 istream&amp; getline (istream&amp;  is, string&amp; str, char delim);
+2 istream&amp; getline (istream&amp;&amp; is, string&amp; str, char delim);
+3 istream&amp; getline (istream&amp;  is, string&amp; str);
+4 istream&amp; getline (istream&amp;&amp; is, string&amp; str);
+</code></pre>
+<h5 id="函数的变量">函数的变量：</h5>
+<pre><code>is ：表示一个输入流，例如 cin。
+str ：string类型的引用，用来存储输入流中的流信息。
+delim ：char类型的变量，所设置的截断字符；在不自定义设置的情况下，遇到’\n’，则终止输入
+</code></pre>
+<p>该部分转载自CSDN博主Faith_xzc<a href="https://blog.csdn.net/weixin_44480968/article/details/104282535">原文链接</a></p>
+<h4 id="2322-istringstream类">2.3.2.2 istringstream类</h4>
+<p>注意包含头文件 #include <sstream></p>
+<pre><code>//定义
+_EXPORT_STD using istringstream = basic_istringstream&lt;char, char_traits&lt;char&gt;, allocator&lt;char&gt;&gt;;
+</code></pre>
+<p>istringstream 是 basic_istringstream 的一个特化版本，针对 char 类型的字符，使用标准的字符特征类和分配器类。这样可以确保 istringstream 适合处理标准的 char 类型的字符串。</p>
+<p>在C++中，std::istringstream 是 std::basic_istringstream 的一个具体实例，用于从字符串中提取数据。基于流提取操作符 &gt;&gt;，它能够从 istringstream 对象中逐个提取数据并赋值给相应的变量。</p>
+<p>因此，实现代码如下（这里仅展示读取第一行）,注意到首行的p cnf是我们不需要的数据，因此设置一个临时string format将它们读取掉</p>
+<pre><code class="language-c++">	while (std::getline(file, line)) // 逐行读取文件
+        {
+			//cout &lt;&lt; line &lt;&lt; endl;
+            istringstream iss(line);
+			
+            if (line[0] == 'c' || line.empty()) {
+                continue; // 忽略注释和空行
+            }
+
+            if (line[0] == 'p') {
+				string format;//读取掉p cnf
+				iss &gt;&gt; format &gt;&gt; format &gt;&gt; NumVars &gt;&gt; NumClauses;//读取变量数和子句
+                //调试 cout &lt;&lt; numVars &lt;&lt; &quot; &quot; &lt;&lt; numClauses &lt;&lt; endl; 
+            }
+            else{  
+                     //  读取字句   
+            }
+}
+</code></pre>
+<p>配合getline函数，还可以实现多样的分割操作，详情请见<a href="https://www.cnblogs.com/flix/p/13594908.html">使用 istringstream 根据分隔符来分割字符串</a></p>
+<h2 id="24-dpll具体实现">2.4 DPLL具体实现</h2>
+<h3 id="241-传播函数">2.4.1 传播函数</h3>
+<pre><code class="language-c++">/***********************************************
+*函数名称：propagate
+* 函数功能：根据给定的文字（literal）对 CNF 公式进行传播，更新 CNF 公式和赋值数组。
+* 注释：- 遍历 CNF 公式中的所有子句。
+        - 检查子句是否已被给定文字（literal）满足。
+        - 如果子句已被满足，则忽略该子句。
+        - 如果子句未被满足，删除子句中与给定文字相反的文字。
+        - 如果删除文字后子句为空，则返回 False，表示冲突。
+        - 如果子句非空，将其添加到新的 CNF 公式中。
+        - 更新赋值数组以记录文字的赋值。
+* 返回值：bool 类型，如果传播成功，则返回 True，若出现空子句，则返回 False。
+************************************************/
+bool propagate(CNF&amp; cnf, const Literal&amp; literal,int *assignments) {
+    //待更新
+}
+</code></pre>
+<h3 id="242-选择策略">2.4.2 选择策略</h3>
+<p>以下列出的是一些简单的决策方法<br>
+更多决策策略可见<a href="https://kns.cnki.net/kcms2/article/abstract?v=-4s28oSk47_7eHMwEzm3L8wfX3yKJX2gpjM6Khfd95jZpfW4bD_3CKKNHdkeABT0ZVjnYLuS17REiQgkvzDDCUBKDQVsH4td9hm_vbf0C3SRpDUC9GB02ov41G7vHwzswscE7JbcGax2MCRZB2LkRbqFr7bj1jgqH9FqN8p4ESXZmNtEQfxcywZze5IIfniJCFMdSXUX3TssrqypXTxnlGwMmKYZYXCt8noUgbAKI0UPykj-j7zDUA==&amp;uniplatform=NZKPT&amp;language=CHS">基于DPLL的SAT算法的研究及应用</a></p>
+<h4 id="2421-选择第一个文字">2.4.2.1 选择第一个文字</h4>
+<pre><code class="language-c++">   if (way == 2) 
+   {
+       if (!cnf.clauses.empty() &amp;&amp; !cnf.clauses[0].literals.empty()) //如果子句不为空
+       {
+           return cnf.clauses[0].literals[0];
+       }
+   }
+</code></pre>
+<h4 id="2422-随机选取文字">2.4.2.2 随机选取文字</h4>
+<p>先随机找一个非空子句，再随机找一个文字<br>
+虽然在大部分情况下效率低下，但也有小概率随机到有价值的决策变量（<s>其实就是想水一个策略出来</s>）</p>
+<pre><code class="language-c++"> else if (way == 1)
+ {
+        
+     // 找到一个非空子句
+     int clauseIndex = rand() % cnf.clauses.size();
+     while (cnf.clauses[clauseIndex].literals.empty()) {
+         clauseIndex = rand() % cnf.clauses.size();
+     }
+
+     // 选择子句中的一个文字
+     int literalIndex = rand() % cnf.clauses[clauseIndex].literals.size();
+     return cnf.clauses[clauseIndex].literals[literalIndex];
+ }
+</code></pre>
+<h4 id="2423-选择出现最多的文字">2.4.2.3 选择出现最多的文字</h4>
+<h4 id="2424-选择短子句中出现最多的文字">2.4.2.4 选择短子句中出现最多的文字</h4>
+<h3 id="243-dpll函数">2.4.3 DPLL函数</h3>
+<pre><code class="language-c++">/***********************************************
+*函数名称：DPLL
+* 函数功能：使用 DPLL 算法对给定的 CNF 公式进行求解。
+* 注释：- 不断查找单子句，并进行传播。
+        - 如果找到单子句且传播成功，则继续处理。
+        - 如果 CNF 公式为空，说明所有子句都满足，返回 True。
+        - 否则，选择一个文字进行分支搜索。
+        - 尝试给文字赋值为真或假，并递归地调用 DPLL 函数。
+        - 如果任一分支成功，则返回 True；否则，返回 False。
+* 返回值：bool 类型，如果 CNF 公式可满足，则返回 True，否则返回 False。
+************************************************/
+ bool DPLL(CNF&amp; cnf,int way, int* assignments) {
+//待更新
+}
+</code></pre>
+<h3 id="244-打印赋值结果并保存至同名res文件">2.4.4 打印赋值结果并保存至同名.res文件</h3>
+<h4 id="2441-打印赋值结果">2.4.4.1 打印赋值结果</h4>
+<p>从前面的代码可以看出，assignments[i]的值为1，表示布尔变元1为真，否则(assignments[i]的值为-1，当然你也可以设置为0，以bool的类型存储数据）其负文字为真</p>
+<pre><code class="language-c++"> void printAssignments(const int* assignments) {
+     for (int i = 1; i &lt;= numVars; ++i) {
+         if (assignments[i] == 1) {
+             std::cout &lt;&lt; i &lt;&lt; &quot; &quot;;
+         }
+         else if (assignments[i] == -1) {
+             std::cout &lt;&lt; -i &lt;&lt; &quot; &quot;;
+         }
+     }
+     std::cout &lt;&lt; std::endl;
+ }
+</code></pre>
+<h4 id="2442-保存到res文件">2.4.4.2 保存到res文件</h4>
+<p><strong>输出文件规范</strong></p>
+<p>---对每个算例的求解结果要求输出到一个与算例同名的文件（文件扩展名为.res），文件内容与格式要求如下：<br>
+---s 求解结果//1表示满足，0表示不满足，-1表示在限定时间内未完成求解<br>
+---v  -1 2 -3 … //满足时，每个变元的赋值序列，-1表示第一个变元1取假，2表示第二个变元取真，用空格分开，此处为示例。<br>
+---t  17     //以毫秒为单位的DPLL执行时间，可增加分支规则执行次数信息</p>
+<p>这里咱没有写超时（输出-1）的处理，有大佬愿意可以补充下~~</p>
+<pre><code class="language-c++">void saveResultToFile(const std::string&amp; baseFilename, bool result, const int* assignments,double duration)
+{
+//待更新
+}
+</code></pre>
+<h1 id="3-数独游戏">3 数独游戏</h1>
+<h2 id="31-数独游戏格局的生成与归约">3.1 数独游戏格局的生成与归约</h2>
+<p> 普通数独游戏要求在9×9的网格中每个单元（cell）填入1至9的一个数字，必须满足三种约束：每一行、每一列及9个3×3的盒子中的数字都不重复。<br>
+ 一个数独游戏初始时已经提供了一些提示数，要求在剩下的空格中填满数字。初始游戏格局要求只有唯一解（一般至少要有17个提示数），基于推理可以求解。如何生成一个有效的数独游戏格局？一种方案可以从互联网或数独文件读取不少于50个不同的初始合法格局（此生成设计计分评定为良）；另一种方案是设计一种算法自动生成（此生成设计计分评定为优），一般可采用从完整合法填充开始，基于挖洞法生成。<br>
+ 对角线数独游戏[12-13]是一种变型的数独，即在上述普通数独的基础上又增加了一类约束：<strong>对角线约束</strong>，如图2.4所示。对角线约束要求在两条对角线（撇对角线与捺对角线）上的数字也不能重复。<br>
+<img src="https://img2024.cnblogs.com/blog/3507821/202409/3507821-20240909181340373-2049152185.png#pic_center" alt="" width="480" height="240" loading="lazy"></p>
+<h2 id="32-自动生成数独棋盘">3.2 自动生成数独棋盘</h2>
+<h3 id="321-生成完整数独棋盘">3.2.1 生成完整数独棋盘</h3>
+<p>参考自<a href="https://blog.csdn.net/M1170780140/article/details/128053901">DPLL算法求解CNF-SAT与数独求解程序</a><br>
+以及  <a href="https://blog.csdn.net/nibiewuxuanze/article/details/47679927">随机数独局面生成</a></p>
+<p>采用了类似八皇后问题的<strong>递归回溯</strong>思想，即根据目前的状态，放置一个数，如果递归后返回false，则进行回溯。<br>
+如果从空棋盘开始遍历，该算法会永远将第一行填成123456789，因此我们需要先随机生成第一行（当然你也可你考虑其它方案），<br>
+再根据第一行的情况求解整个棋盘</p>
+<h3 id="322-挖洞法生成游戏棋盘">3.2.2 挖洞法生成游戏棋盘</h3>
+<p>以下内容来源于<s>ChatGPT-4o-mini</s></p>
+<pre><code class="language-c++">int generateGameBoard(const vector&lt;int&gt;&amp; normalBoard, vector&lt;int&gt;&amp; gameBoard) {
+	
+    // 随机挖去的数字数量
+    int numToRemove = 35 + rand() % 13;
+
+    // 复制 normalBoard 到 gameBoard
+    gameBoard = normalBoard;
+
+    // 创建索引数组
+    vector&lt;int&gt; indices(81,0);
+    for (int i = 0; i &lt;81; ++i) {
+        indices[i] = i;
+    }
+   
+    // 打乱索引数组
+    shuffleArray(indices);
+
+    // 挖去数字
+    for (int i = 0; i &lt; numToRemove; ++i) {
+        gameBoard[indices[i]] = 0; // 0 表示空白
+    }
+    return numToRemove;
+}
+</code></pre>
+<h3 id="33-转化为sat问题">3.3 转化为SAT问题</h3>
+<h4 id="331-转化方案">3.3.1 转化方案</h4>
+<p>本课程设计要求利用DPLL SAT求解算法对对角线数独游戏进行求解，因此首先必须理解如何将普通数独游戏转化（归约）为SAT问题，并把它表示为CNF公式的形式。这里要考虑三个问题：<br>
+（1）如何定义问题的BOOL变元？<br>
+（2）如何用CNF的子句集表示数独游戏的三种约束？<br>
+（3）如何表示游戏格局中的提示数条件？下面分别给出一种方案供参考。<br>
+变元可按语义编码为1～9之间数字构成的三位整数ijk，i, j, k∈{1,2,…,9}，其中i表示单元格的行号，j表示单元格的列号，k表示单元格&lt;i, j&gt;填入的数字为k。如163变元表示第1行6列填入3；负文字 -452表示第4行5列不填入2。这样编码共有729个变元。<br>
+数独游戏的基本要求是：每个单元格只能填入1～9之间唯一一个数字，称之为“格约束”。以单元格&lt;1,1&gt;例，这可以表示为如下子句：</p>
+<p>111 112 113 114 115 116 117 118 119 0 //单元格（1，1）必须填入1-9中的一个数<br>
+-111 -112 0<br>
+-111 -113 0<br>
+……<br>
+-118 -119 0//不能重复，这里共有（1+2+……+8)个子句<br>
+121 122 123 124 …… ////单元格（1，2）必须填入1-9中的一个数</p>
+<p>上述表示中，每个子句的末尾的0表示结束标记；第一个子句的含义是单元格&lt;1,1&gt;可填入至少一个数字；后面的子句集共同表示只能填入一个数字，子句-111 -112 0表示不能同时填1与2；其它类推。按这种方式需要对81个单元格进行类似表示，得到对应的子句集。<br>
+行约束要求每行需要填入1～9中的每个数字，且每个数字只出现一次。以第1行为例可表示为（此处在每个子句后加入注释，说明子句的含义）：<br>
+111 121 131 141 151 161 171 181 191 0     第1行含有1<br>
+112 122 132 142 152 162 172 182 192 0     第1行含有2<br>
+… …<br>
+119 129 139 149 159 169 179 189 199 0     第1行含有9<br>
+-111 -121 0             前两格不同时为1<br>
+-111 -131 0             第1与第3格不同时为1<br>
+… …<br>
+-111 -191 0             第1与第9格不同时为1<br>
+… …<br>
+列约束仿照行约束易于表示为对应子句集，同学们可自行写出。<br>
+对于3×3的盒子约束，以左上角的盒子为例进行说明，其子句集可表示如下：<br>
+111 121 131 211 221 231 311 321 331 0   包含1<br>
+112 122 132 212 222 232 312 322 332 0   包含2<br>
+… …<br>
+119 129 139 219 229 239 319 329 339 0   包含9<br>
+-111 -211 0        11格与21格不同时为1<br>
+-111 -311 0        11格与31格不同时为1<br>
+-111 -121 0        11格与12格不同时为1<br>
+… …<br>
+最后，对于每个具体的数独游戏，已经填入了部分提示数，如图2.3中的左图，每个提示数可表示为一个单子句，如第2行3列填入5，对应单子句如下：<br>
+235 0<br>
+SAT公式CNF文件中，一般变元是从1进行连续编码的，可以将上述语义编码转换为自然顺序编码，公式为：ijn → (i-1)*81+(j-1)*9+n；当按自然编码对数独游戏对应的CNF公式求解后，可设计逆变换公式将解解析为对应的游戏填充方案，完成填充，或给游戏玩家给予每一步填充的正误提示。<br>
+根据上面的分析，数独约束生成CNF子句集易于用<strong>多重循环</strong>结构实现。</p>
+<h4 id="332具体实现">3.3.2具体实现</h4>
+<p>建议直接~~<strong>打表</strong>~~<br>
+行列的代码较易写出，以下仅列出对角线部分和九宫格部分的转化代码。<br>
+通用的约束子句集请见<a href="https://github.com/HJNODM/DPLL-SAT-Solver">github</a>，注意删去数独上已有数产生的约束子句）<br>
+本项目中将该通用部分放到了资源文件中，后续只需在后追加由数独棋盘上已有数产生的约束条件</p>
+<pre><code class="language-c++">bool XSudokuToCnf(const vector&lt;int&gt;&amp; board, int empty)
+{
+//待更新
+|
+</code></pre>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://Ilosyi.github.io/post/23-ji-si-xiu-da-ti-chong-dian/">
+                <h3 class="post-title">
+                  23级思修大题重点
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
+
+          
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://Ilosyi.github.io/images/avatar.png?v=1726937820228" class="no-responsive avatar">
+    <div class="text-muted"></div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/hua-ke-xi-gai-you-xue-yuan-xian-shang-zuo-ye-lian-xi/">华科习概优学院线上作业练习</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/2024-qiu-hua-zhong-ke-ji-da-xue-shu-ju-jie-gou-ke-she-ji-yu-satdpll-suan-fa-de-dui-jiao-xian-shu-du-you-xi-qiu-jie-cheng-xu/">2024秋华中科技大学数据结构课设：基于SAT(DPLL算法)的对角线数独游戏求解程序</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/23-ji-si-xiu-da-ti-chong-dian/">23级思修大题重点</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/si-xiang-dao-de-yu-fa-zhi-qi-mo-fu-xi-zhi-nan/">思想道德与法治期末复习指南</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/xin-shi-ye-da-xue-ying-yu-shi-ting-shuo-jiao-cheng-3-ting-li-lian-xi-fan-yi/">新视野大学英语视听说教程3听力练习翻译</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhuan-zai-hua-ke-jun-shi-li-lun-zai-xian-zuo-ye-da-an/">【转载】华科军事理论在线作业答案</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhuan-zi-hei-ma-cti-gao-bian-cheng-bi-ji/">【转自黑马】C++提高编程笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhuan-zi-hei-ma-che-xin-bian-cheng-bi-ji/">【转自黑马】C++核心编程笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/xi-bian-yue-du-jiao-cai-zong-he-jiao-cheng-3-fan-yi/">西边阅读教材综合教程3翻译</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhong-guo-jin-xian-dai-shi-gang-yao-ke-cheng-zuo-ye/">中国近现代史纲要课程作业</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://Ilosyi.github.io/tag/S4vw4ss20/" class="badge secondary">
+          大二
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/5rritS0Zr/" class="badge warning">
+          学习笔记
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/jfMbAnzEf/" class="badge ">
+          水课指南
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge secondary">
+          大一
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge secondary">
+          报告/作业
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/zfuWuILQ3/" class="badge warning">
+          校园生活
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge secondary">
+          C语言学习笔记（万老师）
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/ma9iK4-3D/" class="badge secondary">
+          Gridea
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Ilosyi.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '593c3417754a229396ac',
+        clientSecret: '3bb5bf5ee9f4bccb9ec5e4488b9c77469204f4e9',
+        repo: 'Ilosyi.github.io',
+        owner: 'Ilosyi',
+        admin: ['Ilosyi'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

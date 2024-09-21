@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>素数的埃拉托斯特尼筛法与回文数 | losyi的博客</title>
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://Ilosyi.github.io/favicon.ico?v=1726937820228">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://Ilosyi.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://Ilosyi.github.io">losyi的博客</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>素数的埃拉托斯特尼筛法与回文数</h1>
+            <p class="article-meta">
+              2023-11-19
+              
+                <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge secondary">
+                  C语言学习笔记（万老师）
+                </a>
+              
+                <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge success">
+                  大一
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <h5 id="2023111">2023/11/1</h5>
+<h3 id="p1217-usaco15-回文质数-prime-palindromes">P1217 [USACO1.5] 回文质数 Prime Palindromes</h3>
+<p>做这题时全是TEL，于是学习了下筛法与打表</p>
+<h5 id="筛法三种素数筛法普通筛法-埃氏筛法-欧拉筛法"><strong>筛法</strong>：<a href="https://blog.csdn.net/weixin_46052886/article/details/112255458">三种素数筛法(普通筛法、埃氏筛法、欧拉筛法)</a></h5>
+<p>埃拉托斯特尼筛法（Sieve of Eratosthenes）是一种用于找出一定范围内所有素数的古老算法。它的基本思想是从小到大遍历数字，将素数的倍数标记为合数，从而筛选出素数。码首先创建了一个布尔数组 isPrime，用于标记每个数字是否为素数。然后，它从2开始遍历到 n 的平方根，对于每个素数 p，将其倍数标记为合数。最后，遍历布尔数组，找到所有标记为素数的数字，它们就是小于等于 n 的素数。<br>
+埃拉托斯特尼筛法的时间复杂度是 O(n log log n)，这使得它是一种非常高效的素数筛选算法。</p>
+<p>学习教材C语言程序设计（清华大学出版社卢萍）116页有介绍。</p>
+<h5 id="回文数回文数题解"><strong>回文数</strong>：<a href="https://leetcode.cn/problems/palindrome-number/solutions/281686/hui-wen-shu-by-leetcode-solution/">回文数题解</a></h5>
+<p>要检查一个整数是否是回文数，可以使用一种更有效的方法而不是反转整个数字。以下是一种优化算法：</p>
+<p>处理特殊情况：<br>
+如果输入是负数，它不可能是回文数，因为负数的反转后的数字不会等于原始数字。<br>
+如果输入以0结尾（除了0本身），也不可能是回文数，因为不会存在以0开头的数字。<br>
+通过比较数字的前半部分和后半部分来检查回文性：<br>
+将整数分成前半部分和后半部分，例如，对于整数12321，前半部分是123，后半部分是21。<br>
+反转后半部分数字，然后与前半部分数字进行比较。<br>
+如果它们相等，那么这个数字是回文数。<br>
+这种算法只需要反转一半的数字，从而减少了计算的时间和内存开销。</p>
+<h4 id="对于回文质数它不可能是偶数位除11">对于回文质数，它不可能是偶数位（除11）</h4>
+<h4 id="具有偶数个数位的回文数一定是-11-的倍数">具有偶数个数位的回文数一定是 11 的倍数</h4>
+<p>证明：<a href="https://www.jianshu.com/p/35f19b524cb9">具备偶数个数位回文数一定是11的倍数证明</a></p>
+<p>具体代码：</p>
+<pre><code class="language-c">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
+#include&lt;stdlib.h&gt;
+bool weishu(int k)  //位数
+{
+	if (k &gt;= 10 &amp;&amp; k &lt; 100 &amp;&amp; k != 11 || k &gt;= 1000 &amp;&amp; k &lt; 10000)return false;
+	else if (k &gt;= 100000 &amp;&amp; k &lt; 1000000 || k &gt;= 10000000 &amp;&amp; k &lt; 100000000)return false;
+	else return true;
+}
+bool isPalindrome(int x) {
+	if ( (x % 10 == 0)) {
+		return false; // 负数或以0结尾的数字不是回文数
+	}
+
+	int reversedHalf = 0;
+	while (x &gt; reversedHalf) {
+		int digit = x % 10;
+		reversedHalf = reversedHalf * 10 + digit;
+		x /= 10;
+	}
+
+	// 如果x的位数是奇数，将reversedHalf除以10后与x比较
+	return x == reversedHalf || x == reversedHalf / 10;
+}
+int main()
+{
+	FILE* file = fopen(&quot;E:\\123.txt&quot;, &quot;w&quot;);
+	int a, n;
+	scanf(&quot;%d%d&quot;, &amp;a, &amp;n);
+	bool* isPrime = (bool*)malloc(sizeof(int) * (n + 1));
+	for (int i = 0; i &lt;= n; i++) {
+		isPrime[i] = true; // 假设每个数字都是素数
+	}
+	isPrime[0] = isPrime[1] = false; // 0和1不是素数
+
+	for (int p = 2; p * p &lt;= n; p++) {
+		if (isPrime[p] == true) {
+			// 如果p是素数，将p的倍数标记为合数
+			for (int i = p * p; i &lt;= n; i += p) {
+				isPrime[i] = false;
+			}
+		}
+	}
+	if (a % 2 == 0) a++;
+	for (int i = a; i &lt;= n; i+=2)
+	{
+		if (i == 9989900)
+		{//如果到了这个数，就break 
+			break;
+		}
+		if (weishu(i)&amp;&amp;isPalindrome(i) &amp;&amp; isPrime[i])
+		{
+			printf(&quot;%d\n&quot;, i); 
+			fprintf(file, &quot;%d,&quot;,i);
+		}
+	}
+	fclose(file);
+	return 0;
+}
+</code></pre>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://Ilosyi.github.io/post/er-wei-shu-zu-ba-huang-hou-yu-mi-gong-wen-ti/">
+                <h3 class="post-title">
+                  二维数组：八皇后 幻方 迷宫问题
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
+
+          
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://Ilosyi.github.io/images/avatar.png?v=1726937820228" class="no-responsive avatar">
+    <div class="text-muted"></div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/hua-ke-xi-gai-you-xue-yuan-xian-shang-zuo-ye-lian-xi/">华科习概优学院线上作业练习</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/2024-qiu-hua-zhong-ke-ji-da-xue-shu-ju-jie-gou-ke-she-ji-yu-satdpll-suan-fa-de-dui-jiao-xian-shu-du-you-xi-qiu-jie-cheng-xu/">2024秋华中科技大学数据结构课设：基于SAT(DPLL算法)的对角线数独游戏求解程序</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/23-ji-si-xiu-da-ti-chong-dian/">23级思修大题重点</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/si-xiang-dao-de-yu-fa-zhi-qi-mo-fu-xi-zhi-nan/">思想道德与法治期末复习指南</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/xin-shi-ye-da-xue-ying-yu-shi-ting-shuo-jiao-cheng-3-ting-li-lian-xi-fan-yi/">新视野大学英语视听说教程3听力练习翻译</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhuan-zai-hua-ke-jun-shi-li-lun-zai-xian-zuo-ye-da-an/">【转载】华科军事理论在线作业答案</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhuan-zi-hei-ma-cti-gao-bian-cheng-bi-ji/">【转自黑马】C++提高编程笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhuan-zi-hei-ma-che-xin-bian-cheng-bi-ji/">【转自黑马】C++核心编程笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/xi-bian-yue-du-jiao-cai-zong-he-jiao-cheng-3-fan-yi/">西边阅读教材综合教程3翻译</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Ilosyi.github.io/post/zhong-guo-jin-xian-dai-shi-gang-yao-ke-cheng-zuo-ye/">中国近现代史纲要课程作业</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://Ilosyi.github.io/tag/S4vw4ss20/" class="badge warning">
+          大二
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/5rritS0Zr/" class="badge success">
+          学习笔记
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/jfMbAnzEf/" class="badge success">
+          水课指南
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/RFwo4Mm3J/" class="badge ">
+          大一
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/jYNzcukeJ/" class="badge secondary">
+          报告/作业
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/zfuWuILQ3/" class="badge secondary">
+          校园生活
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/z0X0I42ai/" class="badge secondary">
+          C语言学习笔记（万老师）
+        </a>
+      
+        <a href="https://Ilosyi.github.io/tag/ma9iK4-3D/" class="badge warning">
+          Gridea
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Ilosyi.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '593c3417754a229396ac',
+        clientSecret: '3bb5bf5ee9f4bccb9ec5e4488b9c77469204f4e9',
+        repo: 'Ilosyi.github.io',
+        owner: 'Ilosyi',
+        admin: ['Ilosyi'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>喻园易站 - 华中科技大学校园服务平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 为了更好的滚动体验 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <div id="app-container" class="min-h-screen bg-gray-50">
+        <header class="bg-indigo-700 shadow-sm sticky top-0 z-40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center">
+                        <h1 class="text-2xl font-bold text-white">喻园易站</h1>
+                        <span class="ml-2 text-sm text-indigo-200 hidden sm:inline">华中科技大学校园服务平台</span>
+                    </div>
+                    <nav class="flex space-x-1 sm:space-x-4">
+                        <button data-tab="home"
+                            class="nav-button px-3 py-2 rounded-md text-sm font-medium transition-colors bg-indigo-600 text-white">首页</button>
+                        <button data-tab="myListings"
+                            class="nav-button px-3 py-2 rounded-md text-sm font-medium transition-colors text-indigo-100 hover:text-white">我的商品</button>
+                        <button data-tab="orders"
+                            class="nav-button px-3 py-2 rounded-md text-sm font-medium transition-colors text-indigo-100 hover:text-white">我的订单</button>
+                        <button data-tab="messages"
+                            class="nav-button px-3 py-2 rounded-md text-sm font-medium transition-colors text-indigo-100 hover:text-white">消息</button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div id="home-tab" class="tab-content">
+                <div class="mb-8">
+                    <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                        <div class="flex bg-white rounded-lg p-1 shadow-sm w-full sm:w-auto">
+                            <button data-mode="sale"
+                                class="mode-button flex-1 px-4 py-2 rounded-md text-sm font-medium transition-colors bg-indigo-600 text-white">购买</button>
+                            <button data-mode="acquire"
+                                class="mode-button flex-1 px-4 py-2 rounded-md text-sm font-medium transition-colors text-gray-700 hover:text-indigo-600">收购</button>
+                            <button data-mode="help"
+                                class="mode-button flex-1 px-4 py-2 rounded-md text-sm font-medium transition-colors text-gray-700 hover:text-indigo-600">帮帮忙</button>
+                            <button data-mode="lostfound"
+                                class="mode-button flex-1 px-4 py-2 rounded-md text-sm font-medium transition-colors text-gray-700 hover:text-indigo-600">失物招领</button>
+                        </div>
+                        <div class="flex-1">
+                            <input id="search-term" type="text" placeholder="搜索购买..."
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div id="category-filter-container">
+                            <select id="category-filter"
+                                class="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                <option value="all">所有分类</option>
+                                <option value="electronics">电子产品</option>
+                                <option value="books">图书</option>
+                                <option value="sports">体育用品</option>
+                                <option value="clothing">服装</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="home-content-container">
+                </div>
+            </div>
+
+            <div id="myListings-tab" class="tab-content hidden">
+                <div>
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">我发布的</h2>
+                        <button id="add-new-listing-btn"
+                            class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                            发布内容
+                        </button>
+                    </div>
+                    <div id="my-listings-filter" class="flex flex-wrap gap-2 mb-6">
+                        <button data-status="all"
+                            class="my-listings-status-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-indigo-100 text-indigo-700">全部</button>
+                        <button data-status="available"
+                            class="my-listings-status-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-white text-gray-700 border border-gray-300">上架中</button>
+                        <button data-status="in_progress"
+                            class="my-listings-status-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-white text-gray-700 border border-gray-300">交易中</button>
+                        <button data-status="sold"
+                            class="my-listings-status-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-white text-gray-700 border border-gray-300">已售出</button>
+                    </div>
+                    <div id="my-listings-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    </div>
+                </div>
+            </div>
+
+            <div id="orders-tab" class="tab-content hidden">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">我的订单</h2>
+                    <div id="orders-filter" class="flex flex-wrap gap-2 mb-6">
+                        <button data-status="all"
+                            class="order-status-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-indigo-100 text-indigo-700">全部</button>
+                        <button data-status="to_pay"
+                            class="order-status-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-white text-gray-700 border border-gray-300">待付款</button>
+                        <button data-status="to_receive"
+                            class="order-status-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-white text-gray-700 border border-gray-300">待收货</button>
+                        <button data-status="completed"
+                            class="order-status-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-white text-gray-700 border border-gray-300">已完成</button>
+                    </div>
+                    <div id="orders-container" class="space-y-4">
+                    </div>
+                </div>
+            </div>
+
+            <div id="messages-tab" class="tab-content hidden">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">消息中心</h2>
+                <div class="bg-white rounded-lg shadow-md h-[70vh] flex">
+                    <div id="conversations-list" class="w-1/3 border-r border-gray-200 overflow-y-auto no-scrollbar">
+                    </div>
+                    <div id="chat-window" class="w-2/3 flex flex-col">
+                        <div id="chat-window-placeholder"
+                            class="flex flex-col items-center justify-center h-full text-gray-400">
+                            <svg class="h-16 w-16 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z">
+                                </path>
+                            </svg>
+                            <p>选择一个会话开始聊天</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="post-detail-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-y-auto">
+            <div id="post-detail-modal-content" class="p-6">
+            </div>
+        </div>
+    </div>
+
+    <div id="listing-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white rounded-lg max-w-md w-full max-h-screen overflow-y-auto no-scrollbar">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 id="listing-modal-title" class="text-xl font-bold text-gray-900">发布内容</h3>
+                    <button id="listing-modal-close-btn" class="text-gray-400 hover:text-gray-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <form id="listing-form">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // =================================================================
+            // MOCK DATABASE & STATE
+            // =================================================================
+            let state = {
+                activeTab: 'home',
+                currentHomeMode: 'sale',
+                myListingsFilter: 'all',
+                ordersFilter: 'all',
+                homeSearchTerm: '',
+                homeCategoryFilter: 'all',
+                editingListing: null, // null or the listing object being edited
+                activePost: null, // null or the post object for the detail modal
+                activeChatUser: null, // null or the username of the active chat
+                replyContent: '',
+                selectedImage: null,
+            };
+
+            let db = {
+                listings: [
+                    { id: 1, title: 'MacBook Pro 2020', description: '几乎全新，性能强劲，适合编程和设计', price: 8500, category: 'electronics', seller: '张三', status: 'available', type: 'sale', imageUrl: 'https://placehold.co/300x200/4F46E5/FFFFFF?text=MacBook+Pro', createdAt: '2025-09-20' },
+                    { id: 2, title: '求购二手自行车', description: '想要一辆山地车，预算500元以内', price: 500, category: 'sports', seller: '李四', status: 'available', type: 'acquire', imageUrl: 'https://placehold.co/300x200/059669/FFFFFF?text=Mountain+Bike', createdAt: '2025-09-18' },
+                    { id: 3, title: '专业相机 Canon EOS R5', description: '专业摄影师使用，配件齐全，成色95新', price: 12000, category: 'electronics', seller: '王五', status: 'in_progress', type: 'sale', imageUrl: 'https://placehold.co/300x200/DC2626/FFFFFF?text=Canon+EOS+R5', createdAt: '2025-09-15' },
+                    { id: 4, title: '出售九成新吉他', description: '民谣吉他，音色很好，带琴包', price: 300, category: 'other', seller: '赵六', status: 'available', type: 'sale', imageUrl: 'https://placehold.co/300x200/F97316/FFFFFF?text=Guitar', createdAt: '2025-09-24' },
+                    { id: 5, title: '求一本算法导论', description: '希望能便宜点收到一本二手算法导论，版本不限', price: 40, category: 'books', seller: '孙七', status: 'available', type: 'acquire', imageUrl: 'https://placehold.co/300x200/22C55E/FFFFFF?text=CLRS+Book', createdAt: '2025-09-23' },
+                ],
+                helpPosts: [
+                    { id: 1, title: '求问计算机组成原理课程群', content: '请问有同学知道计算机组成原理的课程群吗？想加入学习交流', author: '小明', category: 'course', replies: 12, createdAt: '2025-09-22', imageUrl: 'https://placehold.co/300x200/7C3AED/FFFFFF?text=Course+Help' },
+                    { id: 2, title: '数据结构作业求助', content: '第三章的作业题完全不会做，有大神能指导一下吗？', author: '小红', category: 'study', replies: 8, createdAt: '2025-09-21', imageUrl: 'https://placehold.co/300x200/0891B2/FFFFFF?text=Study+Help' },
+                    { id: 3, title: '求推荐东校区好吃的食堂', content: '刚来华科，不知道东校区哪个食堂最好吃？求推荐！', author: '新生小白', category: 'life', replies: 25, createdAt: '2025-09-20', imageUrl: 'https://placehold.co/300x200/EA580C/FFFFFF?text=Campus+Life' },
+                ],
+                lostFoundPosts: [
+                    { id: 1, title: '拾到校园卡一张', content: '在图书馆三楼拾到校园卡一张，卡号尾号1234，请失主联系我', author: '好心人', type: 'found', replies: 3, createdAt: '2025-09-23', imageUrl: 'https://placehold.co/300x200/16A34A/FFFFFF?text=Found+Card' },
+                    { id: 2, title: '丢失黑色书包', content: '昨天下午在西十二教学楼丢失黑色书包，内有笔记本和教材，有见到者请联系！', author: '焦急的学生', type: 'lost', replies: 5, createdAt: '2025-09-22', imageUrl: 'https://placehold.co/300x200/DC2626/FFFFFF?text=Lost+Bag' },
+                    { id: 3, title: '拾到iPhone手机', content: '在韵苑食堂门口拾到iPhone手机一部，已交到保卫处，请失主前往认领', author: '热心同学', type: 'found', replies: 1, createdAt: '2025-09-21', imageUrl: 'https://placehold.co/300x200/4F46E5/FFFFFF?text=Found+Phone' },
+                ],
+                orders: [
+                    { id: 1, listingId: 3, buyer: '用户A', seller: '王五', price: 12000, status: 'to_receive', createdAt: '2025-09-22', title: '专业相机 Canon EOS R5', imageUrl: 'https://placehold.co/300x200/DC2626/FFFFFF?text=Canon+EOS+R5' },
+                ],
+                userListings: [
+                    { id: 101, title: '我的MacBook Pro', description: '自用，几乎全新，性能强劲', price: 8500, category: 'electronics', status: 'available', type: 'sale', imageUrl: 'https://placehold.co/300x200/4F46E5/FFFFFF?text=MacBook+Pro', createdAt: '2025-09-20' },
+                    { id: 102, title: '我的相机', description: '配件齐全，成色95新', price: 12000, category: 'electronics', status: 'in_progress', type: 'sale', imageUrl: 'https://placehold.co/300x200/DC2626/FFFFFF?text=Canon+EOS+R5', createdAt: '2025-09-15' },
+                ],
+                messages: [
+                    { id: 1, from: '张三', to: '我', content: '你好，我对你的MacBook感兴趣', time: '10:30', read: false },
+                    { id: 2, from: '我', to: '李四', content: '你的自行车还在吗？', time: '11:15', read: true },
+                    { id: 3, from: '王五', to: '我', content: '相机已发货，请注意查收', time: '14:20', read: true },
+                    { id: 4, from: '我', to: '张三', content: '当然可以，随时可以看货。', time: '10:32', read: true },
+                    { id: 5, from: '小明', to: '我', content: '谢谢你提供的课程群信息！', time: '昨天', read: false },
+                ],
+                postReplies: {
+                    'help-1': [{ id: 1, author: '学霸', content: '这个课程群是888888，欢迎加入！', time: '2025-09-22 11:30' }, { id: 2, author: '助教', content: '作业题可以参考教材第56页的例题', time: '2025-09-22 14:20' }],
+                    'lostfound-2': [{ id: 3, author: '路人甲', content: '我好像在西十二见过一个类似的，已经交给楼管了', time: '2025-09-22 18:00' }],
+                },
+            };
+
+            const CURRENT_USER = '我';
+
+            // =================================================================
+            // UTILITY & HELPER FUNCTIONS
+            // =================================================================
+            const formatPrice = (price) => `¥${price.toLocaleString()}`;
+            const getStatusText = (status) => ({ 'available': '上架中', 'in_progress': '交易中', 'sold': '已售出', 'to_pay': '待付款', 'to_receive': '待收货', 'completed': '已完成' }[status] || status);
+            const getStatusColor = (status) => ({ 'available': 'bg-green-100 text-green-800', 'in_progress': 'bg-yellow-100 text-yellow-800', 'sold': 'bg-gray-100 text-gray-800', 'to_pay': 'bg-red-100 text-red-800', 'to_receive': 'bg-blue-100 text-blue-800', 'completed': 'bg-green-100 text-green-800' }[status] || 'bg-gray-100 text-gray-800');
+            const getPostTypeDisplay = (type) => ({ 'sale': '购买', 'acquire': '收购', 'help': '帮帮忙', 'lostfound': '失物招领' }[type] || '全部');
+
+            // =================================================================
+            // DOM SELECTORS
+            // =================================================================
+            const appContainer = document.getElementById('app-container');
+            const homeContentContainer = document.getElementById('home-content-container');
+            const myListingsContainer = document.getElementById('my-listings-container');
+            const ordersContainer = document.getElementById('orders-container');
+            const conversationsList = document.getElementById('conversations-list');
+            const chatWindow = document.getElementById('chat-window');
+
+            // =================================================================
+            // RENDER FUNCTIONS
+            // =================================================================
+
+            function render() {
+                // Update Nav buttons
+                document.querySelectorAll('.nav-button').forEach(btn => {
+                    if (btn.dataset.tab === state.activeTab) {
+                        btn.classList.add('bg-indigo-600', 'text-white');
+                        btn.classList.remove('text-indigo-100', 'hover:text-white');
+                    } else {
+                        btn.classList.remove('bg-indigo-600', 'text-white');
+                        btn.classList.add('text-indigo-100', 'hover:text-white');
+                    }
+                });
+
+                // Show/hide tab content
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.toggle('hidden', tab.id !== `${state.activeTab}-tab`);
+                });
+
+                // Call specific render function for the active tab
+                switch (state.activeTab) {
+                    case 'home':
+                        renderHome();
+                        break;
+                    case 'myListings':
+                        renderMyListings();
+                        break;
+                    case 'orders':
+                        renderOrders();
+                        break;
+                    case 'messages':
+                        renderMessages();
+                        break;
+                }
+            }
+
+            function renderHome() {
+                // Update mode buttons
+                document.querySelectorAll('.mode-button').forEach(btn => {
+                    btn.classList.toggle('bg-indigo-600', btn.dataset.mode === state.currentHomeMode);
+                    btn.classList.toggle('text-white', btn.dataset.mode === state.currentHomeMode);
+                    btn.classList.toggle('text-gray-700', btn.dataset.mode !== state.currentHomeMode);
+                    btn.classList.toggle('hover:text-indigo-600', btn.dataset.mode !== state.currentHomeMode);
+                });
+
+                // Update search placeholder
+                document.getElementById('search-term').placeholder = `搜索${getPostTypeDisplay(state.currentHomeMode)}...`;
+
+                // Update filters and content based on mode
+                const categoryFilterContainer = document.getElementById('category-filter-container');
+                let contentHTML = '';
+                let items = [];
+
+                switch (state.currentHomeMode) {
+                    case 'sale':
+                    case 'acquire':
+                        categoryFilterContainer.innerHTML = `
+                    <select id="category-filter" class="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="all">所有分类</option>
+                        <option value="electronics">电子产品</option>
+                        <option value="books">图书</option>
+                        <option value="sports">体育用品</option>
+                        <option value="clothing">服装</option>
+                        <option value="other">其他</option>
+                    </select>`;
+                        items = db.listings.filter(l =>
+                            l.type === state.currentHomeMode &&
+                            (state.homeCategoryFilter === 'all' || l.category === state.homeCategoryFilter) &&
+                            l.title.toLowerCase().includes(state.homeSearchTerm.toLowerCase())
+                        );
+                        contentHTML = items.map(renderListingCard).join('');
+                        break;
+                    case 'help':
+                        categoryFilterContainer.innerHTML = `
+                    <select id="category-filter" class="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="all">所有类型</option>
+                        <option value="course">课程相关</option>
+                        <option value="study">学习问题</option>
+                        <option value="life">生活咨询</option>
+                        <option value="other">其他</option>
+                    </select>`;
+                        items = db.helpPosts.filter(p =>
+                            (state.homeCategoryFilter === 'all' || p.category === state.homeCategoryFilter) &&
+                            (p.title.toLowerCase().includes(state.homeSearchTerm.toLowerCase()) || p.content.toLowerCase().includes(state.homeSearchTerm.toLowerCase()))
+                        );
+                        contentHTML = items.map(p => renderHelpPostCard(p, 'help')).join('');
+                        break;
+                    case 'lostfound':
+                        categoryFilterContainer.innerHTML = `
+                    <select id="category-filter" class="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="all">全部</option>
+                        <option value="lost">寻物启事</option>
+                        <option value="found">招领信息</option>
+                    </select>`;
+                        items = db.lostFoundPosts.filter(p =>
+                            (state.homeCategoryFilter === 'all' || p.type === state.homeCategoryFilter) &&
+                            (p.title.toLowerCase().includes(state.homeSearchTerm.toLowerCase()) || p.content.toLowerCase().includes(state.homeSearchTerm.toLowerCase()))
+                        );
+                        contentHTML = items.map(p => renderLostFoundPostCard(p, 'lostfound')).join('');
+                        break;
+                }
+
+                document.getElementById('category-filter').value = state.homeCategoryFilter;
+
+                if (items.length === 0) {
+                    contentHTML = renderEmptyState('暂无内容', '当前筛选条件下没有找到相关内容');
+                }
+
+                const containerClass = (state.currentHomeMode === 'sale' || state.currentHomeMode === 'acquire')
+                    ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
+                    : 'space-y-6';
+
+                homeContentContainer.innerHTML = `<div class="${containerClass}">${contentHTML}</div>`;
+            }
+
+            function renderMyListings() {
+                document.querySelectorAll('.my-listings-status-btn').forEach(btn => {
+                    const isSelected = btn.dataset.status === state.myListingsFilter;
+                    btn.classList.toggle('bg-indigo-100', isSelected);
+                    btn.classList.toggle('text-indigo-700', isSelected);
+                    btn.classList.toggle('bg-white', !isSelected);
+                    btn.classList.toggle('text-gray-700', !isSelected);
+                    btn.classList.toggle('border', !isSelected);
+                    btn.classList.toggle('border-gray-300', !isSelected);
+                });
+
+                const filteredListings = db.userListings.filter(l =>
+                    state.myListingsFilter === 'all' || l.status === state.myListingsFilter
+                );
+
+                if (filteredListings.length === 0) {
+                    myListingsContainer.innerHTML = renderEmptyState(
+                        '暂无商品',
+                        '您还没有发布任何商品',
+                        `<button id="add-first-listing-btn" class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">发布第一个商品</button>`
+                    );
+                } else {
+                    myListingsContainer.innerHTML = filteredListings.map(renderMyListingCard).join('');
+                }
+            }
+
+            function renderOrders() {
+                document.querySelectorAll('.order-status-btn').forEach(btn => {
+                    const isSelected = btn.dataset.status === state.ordersFilter;
+                    btn.classList.toggle('bg-indigo-100', isSelected);
+                    btn.classList.toggle('text-indigo-700', isSelected);
+                    btn.classList.toggle('bg-white', !isSelected);
+                    btn.classList.toggle('text-gray-700', !isSelected);
+                    btn.classList.toggle('border', !isSelected);
+                    btn.classList.toggle('border-gray-300', !isSelected);
+                });
+
+                const filteredOrders = db.orders.filter(o =>
+                    state.ordersFilter === 'all' || o.status === state.ordersFilter
+                );
+
+                if (filteredOrders.length === 0) {
+                    ordersContainer.innerHTML = renderEmptyState('暂无订单', '您还没有任何订单');
+                } else {
+                    ordersContainer.innerHTML = filteredOrders.map(renderOrderCard).join('');
+                }
+            }
+
+            function renderMessages() {
+                const conversations = {};
+                db.messages.forEach(msg => {
+                    const otherUser = msg.from === CURRENT_USER ? msg.to : msg.from;
+                    if (!conversations[otherUser]) {
+                        conversations[otherUser] = [];
+                    }
+                    conversations[otherUser].push(msg);
+                });
+
+                // Sort conversations by the time of the last message
+                const sortedUsers = Object.keys(conversations).sort((a, b) => {
+                    const lastMsgA = conversations[a][conversations[a].length - 1];
+                    const lastMsgB = conversations[b][conversations[b].length - 1];
+                    // Simple time comparison, for real app use timestamps
+                    return (lastMsgB.id || 0) - (lastMsgA.id || 0);
+                });
+
+                conversationsList.innerHTML = sortedUsers.map(user => {
+                    const userMessages = conversations[user];
+                    const lastMessage = userMessages[userMessages.length - 1];
+                    const isUnread = userMessages.some(m => m.to === CURRENT_USER && !m.read);
+
+                    return `
+                <div data-user="${user}" class="conversation-item p-4 border-b border-gray-200 cursor-pointer hover:bg-gray-50 ${state.activeChatUser === user ? 'bg-indigo-50' : ''}">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-semibold text-gray-800">${user}</h4>
+                        ${isUnread ? '<span class="w-2.5 h-2.5 bg-red-500 rounded-full"></span>' : ''}
+                    </div>
+                    <p class="text-sm text-gray-500 truncate">${lastMessage.content}</p>
+                </div>
+            `;
+                }).join('');
+
+                renderChatWindow();
+            }
+
+            function renderChatWindow() {
+                if (!state.activeChatUser) {
+                    chatWindow.innerHTML = `
+                <div class="flex flex-col items-center justify-center h-full text-gray-400">
+                    <svg class="h-16 w-16 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                    </svg>
+                    <p>选择一个会话开始聊天</p>
+                </div>`;
+                    return;
+                }
+
+                const chatMessages = db.messages.filter(msg =>
+                    (msg.from === CURRENT_USER && msg.to === state.activeChatUser) ||
+                    (msg.from === state.activeChatUser && msg.to === CURRENT_USER)
+                );
+
+                chatWindow.innerHTML = `
+            <div class="p-4 border-b border-gray-200">
+                <h3 class="font-semibold text-lg">${state.activeChatUser}</h3>
+            </div>
+            <div id="chat-messages" class="flex-1 p-4 space-y-4 overflow-y-auto no-scrollbar">
+                ${chatMessages.map(msg => `
+                    <div class="flex ${msg.from === CURRENT_USER ? 'justify-end' : 'justify-start'}">
+                        <div class="max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${msg.from === CURRENT_USER ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-800'}">
+                           ${msg.content}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="p-4 border-t border-gray-200">
+                <form id="message-form" class="flex items-center gap-2">
+                    <input id="message-input" type="text" placeholder="输入消息..." autocomplete="off" class="flex-1 w-full px-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                    <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition-colors">发送</button>
+                </form>
+            </div>
+        `;
+
+                // Scroll to bottom
+                const chatMessagesContainer = document.getElementById('chat-messages');
+                chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+            }
+
+            // =================================================================
+            // CARD & COMPONENT TEMPLATES
+            // =================================================================
+
+            function renderListingCard(listing) {
+                let actionButtons = '';
+                if (listing.status === 'available') {
+                    if (listing.type === 'sale') {
+                        actionButtons = `
+                    <button data-id="${listing.id}" class="buy-btn px-3 py-1 bg-indigo-600 text-white text-sm rounded-md hover:bg-indigo-700 transition-colors">立即购买</button>
+                    <button data-seller="${listing.seller}" data-title="${listing.title}" class="contact-btn px-3 py-1 border border-gray-300 text-gray-700 text-sm rounded-md hover:bg-gray-50 transition-colors">联系卖家</button>
+                `;
+                    } else if (listing.type === 'acquire') {
+                        actionButtons = `
+                     <button data-seller="${listing.seller}" data-title="${listing.title}" class="contact-btn px-3 py-1 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors">联系对方</button>
+                `;
+                    }
+                } else {
+                    actionButtons = `<span class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-md">${getStatusText(listing.status)}</span>`;
+                }
+
+                return `
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <img src="${listing.imageUrl}" alt="${listing.title}" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900">${listing.title}</h3>
+                        <span class="px-2 py-1 text-xs font-medium rounded-full ${getStatusColor(listing.status)}">${getStatusText(listing.status)}</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3 h-10 line-clamp-2">${listing.description}</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-bold text-indigo-600">${formatPrice(listing.price)}</span>
+                        <div class="flex space-x-2">${actionButtons}</div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200">
+                        <div class="flex justify-between text-xs text-gray-500">
+                            <span>发布者: ${listing.seller}</span>
+                            <span>${listing.createdAt}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+            }
+
+            function renderHelpPostCard(post, type) {
+                return `
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                 <img src="${post.imageUrl}" alt="${post.title}" class="w-full h-40 object-cover">
+                 <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900">${post.title}</h3>
+                        <span class="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">${{ course: '课程', study: '学习', life: '生活' }[post.category] || '其他'}</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3 h-12 line-clamp-3">${post.content}</p>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-4 text-sm text-gray-500">
+                            <span>作者: ${post.author}</span>
+                            <span>回复: ${post.replies}</span>
+                            <span>${post.createdAt}</span>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button data-id="${post.id}" data-type="${type}" class="view-replies-btn px-3 py-1 bg-indigo-600 text-white text-sm rounded-md hover:bg-indigo-700 transition-colors">查看回复</button>
+                            <button data-seller="${post.author}" data-title="${post.title}" class="contact-btn px-3 py-1 border border-gray-300 text-gray-700 text-sm rounded-md hover:bg-gray-50 transition-colors">私信作者</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+            }
+
+            function renderLostFoundPostCard(post, type) {
+                return `
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                 <img src="${post.imageUrl}" alt="${post.title}" class="w-full h-40 object-cover">
+                 <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900">${post.title}</h3>
+                        <span class="px-2 py-1 text-xs font-medium rounded-full ${post.type === 'lost' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}">${post.type === 'lost' ? '寻物' : '招领'}</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3 h-12 line-clamp-3">${post.content}</p>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-4 text-sm text-gray-500">
+                            <span>发布者: ${post.author}</span>
+                            <span>回复: ${post.replies}</span>
+                            <span>${post.createdAt}</span>
+                        </div>
+                        <div class="flex space-x-2">
+                             <button data-id="${post.id}" data-type="${type}" class="view-replies-btn px-3 py-1 bg-indigo-600 text-white text-sm rounded-md hover:bg-indigo-700 transition-colors">查看回复</button>
+                             <button data-seller="${post.author}" data-title="${post.title}" class="contact-btn px-3 py-1 border border-gray-300 text-gray-700 text-sm rounded-md hover:bg-gray-50 transition-colors">联系发布者</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+            }
+
+            function renderMyListingCard(listing) {
+                return `
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="${listing.imageUrl}" alt="${listing.title}" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900">${listing.title}</h3>
+                        <span class="px-2 py-1 text-xs font-medium rounded-full ${getStatusColor(listing.status)}">${getStatusText(listing.status)}</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3 h-10 line-clamp-2">${listing.description}</p>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-lg font-bold text-indigo-600">${formatPrice(listing.price)}</span>
+                        <span class="text-sm text-gray-500 capitalize">${listing.type === 'sale' ? '出售' : '收购'}</span>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button data-id="${listing.id}" class="edit-listing-btn flex-1 px-3 py-2 bg-yellow-500 text-white text-sm rounded-md hover:bg-yellow-600 transition-colors">编辑</button>
+                        <button data-id="${listing.id}" class="delete-listing-btn flex-1 px-3 py-2 bg-red-600 text-white text-sm rounded-md hover:bg-red-700 transition-colors">删除</button>
+                    </div>
+                </div>
+            </div>`;
+            }
+
+            function renderOrderCard(order) {
+                let actionButtons = '';
+                if (order.status === 'to_pay' && order.buyer === CURRENT_USER) {
+                    actionButtons = `
+                <button data-id="${order.id}" class="pay-btn px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors">去支付</button>
+                <button data-id="${order.id}" class="cancel-order-btn px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors">取消订单</button>
+            `;
+                } else if (order.status === 'to_receive' && order.buyer === CURRENT_USER) {
+                    actionButtons = `
+                <button data-id="${order.id}" data-listing-id="${order.listingId}" class="confirm-receipt-btn px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors">确认收货</button>
+                <button data-seller="${order.seller}" data-title="${order.title}" class="contact-btn px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors">联系卖家</button>
+             `;
+                } else if (order.status === 'completed') {
+                    actionButtons = `<span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md">交易完成</span>`;
+                }
+
+                return `
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <img src="${order.imageUrl}" alt="${order.title}" class="h-20 w-20 bg-gray-200 rounded-lg object-cover flex-shrink-0">
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-semibold text-gray-900">${order.title}</h3>
+                            <span class="px-2 py-1 text-xs font-medium rounded-full ${getStatusColor(order.status)}">${getStatusText(order.status)}</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-indigo-600">${formatPrice(order.price)}</span>
+                            <span class="text-sm text-gray-500">${order.buyer === CURRENT_USER ? `卖家: ${order.seller}` : `买家: ${order.buyer}`}</span>
+                        </div>
+                        <div class="flex space-x-3">${actionButtons}</div>
+                    </div>
+                </div>
+            </div>`;
+            }
+
+            function renderEmptyState(title, message, buttonHTML = '') {
+                return `
+            <div class="text-center py-12 col-span-full">
+                <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.291-.986-5.824-2.709M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+                <h3 class="text-lg font-medium text-gray-900 mt-2 mb-1">${title}</h3>
+                <p class="text-gray-500">${message}</p>
+                ${buttonHTML}
+            </div>`;
+            }
+
+            // =================================================================
+            // MODAL LOGIC
+            // =================================================================
+            const postDetailModal = document.getElementById('post-detail-modal');
+            const listingModal = document.getElementById('listing-modal');
+
+            function showPostDetailModal(postId, postType) {
+                const post = postType === 'help' ? db.helpPosts.find(p => p.id === postId) : db.lostFoundPosts.find(p => p.id === postId);
+                if (!post) return;
+                state.activePost = { ...post, type: postType };
+
+                const replies = db.postReplies[`${postType}-${postId}`] || [];
+                const modalContent = document.getElementById('post-detail-modal-content');
+
+                modalContent.innerHTML = `
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-gray-900">${post.title}</h3>
+                <button id="post-detail-modal-close" class="text-gray-400 hover:text-gray-600">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="mb-6">
+                <img src="${post.imageUrl}" alt="${post.title}" class="w-full h-48 object-cover rounded-lg mb-4">
+                <div class="bg-gray-50 p-4 rounded-lg mb-4"><p class="text-gray-800">${post.content}</p></div>
+                <div class="flex justify-between items-center text-sm text-gray-500">
+                    <span>作者: ${post.author}</span>
+                    <span>发布时间: ${post.createdAt}</span>
+                </div>
+            </div>
+            <div class="border-t pt-6">
+                <h4 class="text-lg font-semibold mb-4">回复 (${replies.length})</h4>
+                <div class="space-y-4 mb-6">
+                    ${replies.length > 0 ? replies.map(reply => `
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-gray-900">${reply.author}</span>
+                                <span class="text-xs text-gray-500">${reply.time}</span>
+                            </div>
+                            <p class="text-gray-700">${reply.content}</p>
+                        </div>
+                    `).join('') : '<p class="text-gray-500">暂无回复</p>'}
+                </div>
+                <form id="reply-form" class="border-t pt-4">
+                    <textarea id="reply-content" placeholder="写下你的回复..." class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" rows="3"></textarea>
+                    <div class="flex justify-end mt-3 space-x-3">
+                        <button type="button" id="reply-cancel-btn" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors">取消</button>
+                        <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors">发布回复</button>
+                    </div>
+                </form>
+            </div>`;
+
+                postDetailModal.classList.remove('hidden');
+            }
+
+            function hidePostDetailModal() {
+                state.activePost = null;
+                postDetailModal.classList.add('hidden');
+            }
+
+            function showListingModal(listing = null) {
+                state.editingListing = listing;
+                state.selectedImage = listing?.imageUrl || null;
+
+                const isEditing = !!listing;
+                const modalTitle = document.getElementById('listing-modal-title');
+                const form = document.getElementById('listing-form');
+
+                let postType = isEditing ? listing.type : 'sale'; // Default to 'sale' for new posts
+                if (state.activeTab === 'myListings' && !isEditing) {
+                    // Let user choose
+                } else if (state.activeTab === 'home' && !isEditing) {
+                    postType = state.currentHomeMode;
+                }
+
+                modalTitle.textContent = isEditing ? '编辑内容' : '发布内容';
+
+                // Generate form fields based on type
+                let formFields = '';
+
+                // Type selection for new posts from "My Listings" page
+                if (!isEditing && state.activeTab === 'myListings') {
+                    formFields += `
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">发布类型</label>
+                    <select id="form-post-type" name="type" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                        <option value="sale" ${postType === 'sale' ? 'selected' : ''}>出售商品</option>
+                        <option value="acquire" ${postType === 'acquire' ? 'selected' : ''}>收购需求</option>
+                        <option value="help" ${postType === 'help' ? 'selected' : ''}>帮帮忙</option>
+                        <option value="lostfound" ${postType === 'lostfound' ? 'selected' : ''}>失物招领</option>
+                    </select>
+                </div>`;
+                } else {
+                    formFields += `<input type="hidden" name="type" value="${postType}">`;
+                }
+
+                formFields += `
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">标题 *</label>
+                <input type="text" name="title" value="${listing?.title || ''}" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="请输入标题" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">${(postType === 'help' || postType === 'lostfound') ? '内容' : '描述'} *</label>
+                <textarea name="description" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="请输入详细信息" required>${listing?.description || listing?.content || ''}</textarea>
+            </div>
+        `;
+
+                if (postType === 'sale' || postType === 'acquire') {
+                    formFields += `
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">${postType === 'acquire' ? '期望价格' : '价格'} *</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span class="text-gray-500">¥</span></div>
+                        <input type="number" name="price" value="${listing?.price || ''}" class="w-full pl-8 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="0.00" min="0" step="0.01" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">分类</label>
+                    <select name="category" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option value="electronics" ${listing?.category === 'electronics' ? 'selected' : ''}>电子产品</option>
+                        <option value="books" ${listing?.category === 'books' ? 'selected' : ''}>图书</option>
+                        <option value="sports" ${listing?.category === 'sports' ? 'selected' : ''}>体育用品</option>
+                        <option value="clothing" ${listing?.category === 'clothing' ? 'selected' : ''}>服装</option>
+                        <option value="other" ${listing?.category === 'other' ? 'selected' : ''}>其他</option>
+                    </select>
+                </div>
+            `;
+                } else if (postType === 'help') {
+                    formFields += `
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">帮助类型</label>
+                    <select name="category" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                         <option value="course" ${listing?.category === 'course' ? 'selected' : ''}>课程相关</option>
+                         <option value="study" ${listing?.category === 'study' ? 'selected' : ''}>学习问题</option>
+                         <option value="life" ${listing?.category === 'life' ? 'selected' : ''}>生活咨询</option>
+                         <option value="other" ${listing?.category === 'other' ? 'selected' : ''}>其他</option>
+                    </select>
+                </div>
+             `;
+                } else if (postType === 'lostfound') {
+                    formFields += `
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">信息类型</label>
+                    <select name="lf_type" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option value="lost" ${listing?.type === 'lost' ? 'selected' : ''}>寻物启事</option>
+                        <option value="found" ${listing?.type === 'found' ? 'selected' : ''}>招领信息</option>
+                    </select>
+                </div>
+            `;
+                }
+
+                form.innerHTML = `
+            <div class="space-y-4">
+                ${formFields}
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">相关图片</label>
+                    <div id="image-upload-box" class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                        ${renderImageUploader()}
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 flex space-x-3">
+                <button type="submit" class="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors">${isEditing ? '保存修改' : '发布'}</button>
+                <button type="button" id="listing-form-cancel-btn" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors">取消</button>
+            </div>`;
+
+                listingModal.classList.remove('hidden');
+            }
+
+            function hideListingModal() {
+                state.editingListing = null;
+                state.selectedImage = null;
+                listingModal.classList.add('hidden');
+            }
+
+            function renderImageUploader() {
+                if (state.selectedImage) {
+                    return `
+                <div class="space-y-1 text-center">
+                    <img src="${state.selectedImage}" alt="Preview" class="h-32 w-32 mx-auto object-cover rounded-md">
+                    <div class="flex text-sm text-gray-600 justify-center">
+                        <label class="relative cursor-pointer rounded-md font-medium text-indigo-600 hover:text-indigo-500">
+                            <span>更换图片</span>
+                            <input id="image-upload-input" type="file" accept="image/*" class="sr-only">
+                        </label>
+                    </div>
+                </div>`;
+                } else {
+                    return `
+                <div class="space-y-1 text-center">
+                    <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48"><path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    <div class="flex text-sm text-gray-600 justify-center">
+                        <label class="relative cursor-pointer rounded-md font-medium text-indigo-600 hover:text-indigo-500">
+                            <span>上传图片</span>
+                            <input id="image-upload-input" type="file" accept="image/*" class="sr-only">
+                        </label>
+                    </div>
+                    <p class="text-xs text-gray-500">PNG, JPG, GIF 最大 2MB</p>
+                </div>`;
+                }
+            }
+
+
+            // =================================================================
+            // EVENT HANDLERS
+            // =================================================================
+            function handleNavClick(e) {
+                if (e.target.classList.contains('nav-button')) {
+                    state.activeTab = e.target.dataset.tab;
+                    render();
+                }
+            }
+
+            function handleHomeModeChange(e) {
+                if (e.target.classList.contains('mode-button')) {
+                    state.currentHomeMode = e.target.dataset.mode;
+                    state.homeCategoryFilter = 'all'; // Reset filter on mode change
+                    state.homeSearchTerm = '';
+                    document.getElementById('search-term').value = '';
+                    renderHome();
+                }
+            }
+
+            function handleHomeFilterChange(e) {
+                if (e.target.id === 'search-term') {
+                    state.homeSearchTerm = e.target.value;
+                }
+                if (e.target.id === 'category-filter') {
+                    state.homeCategoryFilter = e.target.value;
+                }
+                renderHome();
+            }
+
+            function handleMyListingsFilter(e) {
+                if (e.target.classList.contains('my-listings-status-btn')) {
+                    state.myListingsFilter = e.target.dataset.status;
+                    renderMyListings();
+                }
+            }
+
+            function handleOrdersFilter(e) {
+                if (e.target.classList.contains('order-status-btn')) {
+                    state.ordersFilter = e.target.dataset.status;
+                    renderOrders();
+                }
+            }
+
+            function handleContact(e) {
+                const seller = e.target.dataset.seller;
+                const title = e.target.dataset.title;
+                if (!seller || !title) return;
+
+                // Check if a message already exists
+                const messageExists = db.messages.some(m =>
+                    (m.from === CURRENT_USER && m.to === seller) || (m.from === seller && m.to === CURRENT_USER)
+                );
+
+                if (!messageExists) {
+                    db.messages.push({
+                        id: Date.now(),
+                        from: CURRENT_USER,
+                        to: seller,
+                        content: `你好，我对你的"${title}"感兴趣。`,
+                        time: new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' }),
+                        read: true,
+                    });
+                }
+
+                state.activeTab = 'messages';
+                state.activeChatUser = seller;
+                render();
+            }
+
+            function handlePurchase(listingId) {
+                const listing = db.listings.find(l => l.id === listingId);
+                if (!listing) return;
+
+                const newOrder = {
+                    id: Date.now(),
+                    listingId: listing.id,
+                    buyer: CURRENT_USER,
+                    seller: listing.seller,
+                    price: listing.price,
+                    status: 'to_pay',
+                    createdAt: new Date().toISOString().split('T')[0],
+                    title: listing.title,
+                    imageUrl: listing.imageUrl
+                };
+                db.orders.unshift(newOrder);
+
+                listing.status = 'in_progress';
+
+                alert(`商品 "${listing.title}" 已下单，请前往“我的订单”页面支付。`);
+                state.activeTab = 'orders';
+                state.ordersFilter = 'to_pay';
+                render();
+            }
+
+            function handleDeleteListing(listingId) {
+                if (confirm('确定要删除这个商品吗？')) {
+                    db.userListings = db.userListings.filter(l => l.id !== listingId);
+                    // Also remove from general listings if it's there
+                    db.listings = db.listings.filter(l => l.id !== listingId);
+                    renderMyListings();
+                }
+            }
+
+            function handleEditListing(listingId) {
+                const listing = db.userListings.find(l => l.id === listingId);
+                if (listing) {
+                    showListingModal(listing);
+                }
+            }
+
+            function handlePay(orderId) {
+                const order = db.orders.find(o => o.id === orderId);
+                if (order) {
+                    order.status = 'to_receive';
+                    renderOrders();
+                }
+            }
+
+            function handleConfirmReceipt(orderId, listingId) {
+                const order = db.orders.find(o => o.id === orderId);
+                if (order) {
+                    order.status = 'completed';
+                }
+                const listing = db.listings.find(l => l.id === listingId);
+                if (listing) {
+                    listing.status = 'sold';
+                }
+                const userListing = db.userListings.find(l => l.id === listingId);
+                if (userListing) {
+                    userListing.status = 'sold';
+                }
+                renderOrders();
+            }
+
+            function handlePostReply(e) {
+                e.preventDefault();
+                if (!state.activePost) return;
+
+                const content = document.getElementById('reply-content').value.trim();
+                if (!content) return;
+
+                const newReply = {
+                    id: Date.now(),
+                    author: CURRENT_USER,
+                    content: content,
+                    time: new Date().toLocaleString('zh-CN'),
+                };
+
+                const postKey = `${state.activePost.type}-${state.activePost.id}`;
+                if (!db.postReplies[postKey]) {
+                    db.postReplies[postKey] = [];
+                }
+                db.postReplies[postKey].push(newReply);
+
+                const postList = state.activePost.type === 'help' ? db.helpPosts : db.lostFoundPosts;
+                const post = postList.find(p => p.id === state.activePost.id);
+                if (post) {
+                    post.replies = (post.replies || 0) + 1;
+                }
+
+                if (post.author !== CURRENT_USER) {
+                    db.messages.push({
+                        id: Date.now(),
+                        from: CURRENT_USER,
+                        to: post.author,
+                        content: `我在帖子"${post.title}"下回复了您：${content}`,
+                        time: new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' }),
+                        read: true,
+                    });
+                }
+
+                showPostDetailModal(state.activePost.id, state.activePost.type); // Re-render modal with new reply
+            }
+
+            function handleListingFormSubmit(e) {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const data = Object.fromEntries(formData.entries());
+
+                const type = data.type;
+                if (type === 'help' || type === 'lostfound') {
+                    const newPost = {
+                        id: Date.now(),
+                        title: data.title,
+                        content: data.description,
+                        author: CURRENT_USER,
+                        category: type === 'help' ? data.category : null,
+                        type: type === 'lostfound' ? data.lf_type : null,
+                        replies: 0,
+                        createdAt: new Date().toISOString().split('T')[0],
+                        imageUrl: state.selectedImage || `https://placehold.co/300x200/6366F1/FFFFFF?text=${type}`
+                    };
+                    if (type === 'help') db.helpPosts.unshift(newPost);
+                    else db.lostFoundPosts.unshift(newPost);
+                } else {
+                    const newListing = {
+                        title: data.title,
+                        description: data.description,
+                        price: parseFloat(data.price),
+                        category: data.category,
+                        type: data.type,
+                        imageUrl: state.selectedImage || 'https://placehold.co/300x200/6366F1/FFFFFF?text=No+Image'
+                    };
+
+                    if (state.editingListing) { // Update
+                        const index = db.userListings.findIndex(l => l.id === state.editingListing.id);
+                        db.userListings[index] = { ...db.userListings[index], ...newListing };
+                    } else { // Create
+                        const listing = {
+                            ...newListing,
+                            id: Date.now(),
+                            seller: CURRENT_USER,
+                            status: 'available',
+                            createdAt: new Date().toISOString().split('T')[0]
+                        };
+                        db.userListings.unshift(listing);
+                        db.listings.unshift(listing);
+                    }
+                }
+
+                hideListingModal();
+                // Go to the relevant page to see the new item
+                if (state.activeTab === 'home') renderHome();
+                else {
+                    state.activeTab = 'myListings';
+                    render();
+                }
+            }
+
+            function handleConversationClick(e) {
+                const item = e.target.closest('.conversation-item');
+                if (item) {
+                    state.activeChatUser = item.dataset.user;
+
+                    // Mark messages as read
+                    db.messages.forEach(msg => {
+                        if (msg.from === state.activeChatUser && msg.to === CURRENT_USER) {
+                            msg.read = true;
+                        }
+                    });
+
+                    renderMessages(); // Re-render both list and window
+                }
+            }
+
+            function handleSendMessage(e) {
+                e.preventDefault();
+                const input = document.getElementById('message-input');
+                const content = input.value.trim();
+                if (!content || !state.activeChatUser) return;
+
+                db.messages.push({
+                    id: Date.now(),
+                    from: CURRENT_USER,
+                    to: state.activeChatUser,
+                    content: content,
+                    time: new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' }),
+                    read: true,
+                });
+
+                input.value = '';
+                renderChatWindow();
+            }
+
+            // =================================================================
+            // EVENT LISTENERS INITIALIZATION
+            // =================================================================
+            function init() {
+                // Main navigation
+                document.querySelector('header nav').addEventListener('click', handleNavClick);
+
+                // Universal event delegation on the app container
+                appContainer.addEventListener('click', (e) => {
+                    const target = e.target;
+
+                    // Home page mode buttons
+                    if (target.closest('.mode-button')) {
+                        handleHomeModeChange(e);
+                    }
+                    // My Listings page filter buttons
+                    if (target.closest('.my-listings-status-btn')) {
+                        handleMyListingsFilter(e);
+                    }
+                    // Orders page filter buttons
+                    if (target.closest('.order-status-btn')) {
+                        handleOrdersFilter(e);
+                    }
+                    // Contact buttons
+                    if (target.classList.contains('contact-btn')) {
+                        handleContact(e);
+                    }
+                    // Buy button
+                    if (target.classList.contains('buy-btn')) {
+                        handlePurchase(parseInt(target.dataset.id));
+                    }
+                    // Edit/Delete on My Listings
+                    if (target.classList.contains('edit-listing-btn')) {
+                        handleEditListing(parseInt(target.dataset.id));
+                    }
+                    if (target.classList.contains('delete-listing-btn')) {
+                        handleDeleteListing(parseInt(target.dataset.id));
+                    }
+                    // View Replies button
+                    if (target.classList.contains('view-replies-btn')) {
+                        showPostDetailModal(parseInt(target.dataset.id), target.dataset.type);
+                    }
+                    // Order actions
+                    if (target.classList.contains('pay-btn')) {
+                        handlePay(parseInt(target.dataset.id));
+                    }
+                    if (target.classList.contains('confirm-receipt-btn')) {
+                        handleConfirmReceipt(parseInt(target.dataset.id), parseInt(target.dataset.listingId));
+                    }
+                    // Add new listing buttons
+                    if (target.id === 'add-new-listing-btn' || target.id === 'add-first-listing-btn') {
+                        showListingModal();
+                    }
+                    // Message conversation selection
+                    if (target.closest('.conversation-item')) {
+                        handleConversationClick(e);
+                    }
+                });
+
+                // Home page filters with debounce for search
+                let searchTimeout;
+                document.getElementById('home-tab').addEventListener('input', (e) => {
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(() => handleHomeFilterChange(e), 300);
+                });
+                document.getElementById('home-tab').addEventListener('change', handleHomeFilterChange);
+
+                // Modals
+                postDetailModal.addEventListener('click', (e) => {
+                    if (e.target.id === 'post-detail-modal' || e.target.closest('#post-detail-modal-close') || e.target.id === 'reply-cancel-btn') {
+                        hidePostDetailModal();
+                    }
+                });
+                listingModal.addEventListener('click', (e) => {
+                    if (e.target.id === 'listing-modal' || e.target.closest('#listing-modal-close-btn') || e.target.id === 'listing-form-cancel-btn') {
+                        hideListingModal();
+                    }
+                });
+
+                // Dynamic form/modal content event handlers
+                document.addEventListener('submit', (e) => {
+                    if (e.target.id === 'reply-form') {
+                        handlePostReply(e);
+                    }
+                    if (e.target.id === 'listing-form') {
+                        handleListingFormSubmit(e);
+                    }
+                    if (e.target.id === 'message-form') {
+                        handleSendMessage(e);
+                    }
+                });
+
+                document.addEventListener('change', (e) => {
+                    // Handle image upload preview
+                    if (e.target.id === 'image-upload-input' && e.target.files[0]) {
+                        const reader = new FileReader();
+                        reader.onload = (event) => {
+                            state.selectedImage = event.target.result;
+                            document.getElementById('image-upload-box').innerHTML = renderImageUploader();
+                        };
+                        reader.readAsDataURL(e.target.files[0]);
+                    }
+                    // Dynamically change form fields when creating a new item
+                    if (e.target.id === 'formc-post-type') {
+                        showListingModal({ type: e.target.value }); // Re-render form with new fields
+                    }
+                });
+
+                // Initial Render
+                render();
+            }
+
+            init();
+        });
+    </script>
+
+</body>
+
+</html>

@@ -66,6 +66,8 @@ function conditionalSnowfall() {
 // https://astro.build/config
 export default defineConfig({
   site: yamlConfig.site.url,
+  output: 'static',
+  adapter: undefined, // GitHub Pages uses static output
   compressHTML: true,
   markdown: {
     // Enable GitHub Flavored Markdown

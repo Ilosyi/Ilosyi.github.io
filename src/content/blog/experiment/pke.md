@@ -198,7 +198,7 @@ static void handle_syscall(trapframe *tf) {
    $ git commit -a -m "my work on lab1_1 is done."
    ```
 
-![image-20251202180013841](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000804828.png)
+![image-20251202180013841](/img/posts/20260117000804828.png)
 
 ## lab1_2
 
@@ -307,7 +307,7 @@ case CAUSE_ILLEGAL_INSTRUCTION:
    $ git commit -a -m "my work on lab1_2 is done."
    ```
 
-![image-20251205231734644](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000836520.png)
+![image-20251205231734644](/img/posts/20260117000836520.png)
 
 
 **总结**：lab1_2 的核心是让你理解并非所有的异常都会进入操作系统（S 模式）。有些底层的、致命的或者特定的异常（取决于 OS 设计）会直接由 M 模式（固件/硬件抽象层）拦截。在这里，PKE 选择在 M 模式下直接拦截非法指令。
@@ -821,15 +821,15 @@ System is shutting down with exit code 0.
 $ git commit -a -m "lab1_challenge1 done"
 ```
 
-![image-20251206002641010](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000845184.png)
+![image-20251206002641010](/img/posts/20260117000845184.png)
 
 (5) AI 交互记录
 
 
 
-![image-20251206002721104](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000847983.png)
+![image-20251206002721104](/img/posts/20260117000847983.png)
 
-![image-20251206002736053](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000850226.png)
+![image-20251206002736053](/img/posts/20260117000850226.png)
 
 
 
@@ -951,7 +951,7 @@ System is shutting down with exit code 0.
 $ git commit -a -m "my work on lab2_1 is done."
 ```
 
-![image-20251206212342889](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000854813.png)
+![image-20251206212342889](/img/posts/20260117000854813.png)
 
 
 
@@ -1071,7 +1071,7 @@ System is shutting down with exit code 0.
 $ git commit -a -m "my work on lab2_2 is done."
 ```
 
-![image-20251207003621973](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000857598.png)
+![image-20251207003621973](/img/posts/20260117000857598.png)
 
 ## lab2_3 缺页异常
 
@@ -1305,7 +1305,7 @@ void smode_trap_handler(void) {
 
 如果不做步骤 1，内核永远无法进入 `handle_user_page_fault`，就会一直报 `unexpected scause`。
 
-![image-20251207015234999](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000859843.png)
+![image-20251207015234999](/img/posts/20260117000859843.png)
 
 
 
@@ -1581,7 +1581,7 @@ System is shutting down with exit code -1.
 
 
 
-![image-20251208174856477](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000902023.png)
+![image-20251208174856477](/img/posts/20260117000902023.png)
 
 # 实验三 进程管理
 
@@ -1707,7 +1707,7 @@ System is shutting down with exit code 0.
 $ git commit -a -m "lab3_1 done"
 ```
 
-![image-20251208230704669](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000904089.png)
+![image-20251208230704669](/img/posts/20260117000904089.png)
 
 用户：为什么头歌报错
 
@@ -1992,7 +1992,7 @@ System is shutting down with exit code 0.
 $ git commit -a -m "lab3_2 finished: implemented sys_user_yield and updated do_syscall"
 ```
 
-![image-20251209154941860](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000907354.png)
+![image-20251209154941860](/img/posts/20260117000907354.png)
 
 
 
@@ -2949,7 +2949,7 @@ System is shutting down with exit code 0.
 $ git commit -a -m "lab3_challenge1 finished"
 ```
 
-![image-20251209193435677](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000909659.png)
+![image-20251209193435677](/img/posts/20260117000909659.png)
 
 # 实验四 文件系统
 
@@ -3087,7 +3087,7 @@ System is shutting down with exit code 0.
 $ git commit -a -m "my work on lab4_1 is done."
 ```
 
-![image-20251210220934379](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000912120.png)
+![image-20251210220934379](/img/posts/20260117000912120.png)
 
 ## lab4_2
 
@@ -3353,7 +3353,7 @@ DATA_SEGMENT added at mapped info offset:4
 ```
 且所有测试用例依然通过。
 
-![image-20251210224428562](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000914740.png)
+![image-20251210224428562](/img/posts/20260117000914740.png)
 
 
 
@@ -3516,7 +3516,7 @@ System is shutting down with exit code 0.
 $ git commit -a -m "my work on lab4_3 is done."
 ```
 
-![image-20251211225602272](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000917634.png)
+![image-20251211225602272](/img/posts/20260117000917634.png)
 
 ## lab4_challenge1 相对路径
 
@@ -3768,4 +3768,4 @@ All tests passed!
 $ git commit -a -m "lab4_challenge1 finished"
 ```
 
-![image-20251212172621855](https://gitee.com/ilosyi/typora-image-bed/raw/master/typora/20260117000920151.png)
+![image-20251212172621855](/img/posts/20260117000920151.png)

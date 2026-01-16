@@ -11,16 +11,16 @@
 # Site Basic Information
 # =============================================================================
 site:
-  title: 余弦の博客 # 网站名称
-  alternate: cosine # 网站英文名称 用于页脚、Logo、@ handle 等
+  title: losyiの博客 # 网站名称
+  alternate: losyi's Blog # 网站英文名称 用于页脚、Logo、@ handle 等
   subtitle: WA 的一声就哭了 # 网站副标题
-  name: cos # 作者名称 - 请修改为你的名字
-  description: 一个基于 Astro 的现代化博客主题 # 网站描述
-  avatar: /img/avatar.webp # 网站头像
-  showLogo: true # 是否显示 Logo
-  author: Author # 作者名称 - 请修改为你的名字
+  name: losyi # 作者名称 - 请修改为你的名字
+  description: 个人学习笔记记录 # 网站描述
+  avatar: /img/avatar.jpg # 网站头像
+  showLogo: False # 是否显示 Logo
+  author: losyi # 作者名称 - 请修改为你的名字
   url: https://koharu.cosine.ren # 站点 URL 用于 RSS 和 SEO
-  startYear: 2024 # 建站年份
+  startYear: 2026 # 建站年份
   keywords: # SEO 关键词
     - 博客
     - Astro
@@ -42,9 +42,9 @@ categoryMap:
   # Secondary categories (for nested paths)
   前端: front-end
   # Add more as needed:
-  # 后端: back-end
+  后端: back-end
   # 算法: algorithm
-  # 项目: project
+  项目: project
 
 # =============================================================================
 # Featured Categories (Homepage)
@@ -98,7 +98,7 @@ featuredSeries:
   cover: /img/weekly_header.webp # 系列页面头图
   enabled: true # 总开关
   links: # 相关链接（可选）
-    github: https://github.com/your-username/your-repo # (可选) GitHub 仓库
+    github: https://github.com/ilosyi # (可选) GitHub 仓库
     rss: /rss.xml # (可选) RSS 订阅链接
     # chrome: https://chromewebstore.google.com/detail/your-extension-id # (可选) 浏览器插件
     # docs: https://your-docs-url # (可选) 文档链接
@@ -117,17 +117,17 @@ featuredSeries:
 # -----------------------------------------------------------------------------
 social:
   github:
-    url: https://github.com/your-username # 替换为你的 GitHub 链接
+    url: https://github.com/ilosyi # 替换为你的 GitHub 链接
     icon: ri:github-fill # Remix Icon 的 GitHub 图标
     color: '#191717' # (可选) 图标颜色
   email:
-    url: mailto:your@email.com # 替换为你的邮箱，需加 mailto: 前缀
+    url:  mailto:losyi@hust.edu.cn # 替换为你的邮箱，需加 mailto: 前缀
     icon: ri:mail-line
     color: '#55acd5'
-  rss:
-    url: /rss.xml # 站内 RSS 订阅地址
-    icon: ri:rss-line
-    color: '#ff6600'
+  # rss:
+  #   url: /rss.xml # 站内 RSS 订阅地址
+  #   icon: ri:rss-line
+  #   color: '#ff6600'
   # -------------------------------------------------------------------------
   # 以下是更多可选的社交平台配置示例，取消注释并修改即可启用：
   # -------------------------------------------------------------------------
@@ -135,10 +135,10 @@ social:
   #   url: https://x.com/your-handle
   #   icon: ri:twitter-fill
   #   color: '#4b9ae4'
-  # bilibili:
-  #   url: https://space.bilibili.com/your-id
-  #   icon: ri:bilibili-fill
-  #   color: '#da708a'
+  bilibili:
+     url: https://space.bilibili.com/23527984
+     icon: ri:bilibili-fill
+     color: '#da708a'
   # zhihu:
   #   url: https://www.zhihu.com/people/your-id
   #   icon: ri:zhihu-fill

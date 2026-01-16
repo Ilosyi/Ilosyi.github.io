@@ -1,0 +1,59 @@
+---
+import { CONTENT_PADDING } from '@constants/layout';
+import { type Category, getPostsByCategory } from '@lib/content';
+import { cn } from '@lib/utils';
+import { formatInTimeZone } from 'date-fns-tz';
+import SubCategory from './SubCategory.astro';
+
+interface Props {
+  categories: Category[];
+  countMap: Record<string, number>;
+  // category page
+  rootCategory: Category | null;
+}
+const { categories, countMap, rootCategory } = Astro.props;
+const posts = await getPostsByCategory(rootCategory?.name ?? '');
+---
+
+<div class={`shadow-box mx-0 flex w-full flex-col bg-gradient-start ${CONTENT_PADDING.normal}`}>
+  <h2
+    class={cn('shoka-decoration-circle px-6 group relative py-5 text-2xl/9 font-bold', {
+      'has-children': posts?.length || rootCategory?.children?.length,
+    })}
+  >
+    <a href="/" class="dashed-border text-muted-foreground hover:text-blue border-b"> 首页 </a>
+    <span class="text-muted-foreground mx-2 text-xl">/</span>
+    <span class="text-muted-foreground">{rootCategory?.name}</span>
+    <span class="text-muted-foreground mx-2 text-xl">分类</span>
+  </h2>
+
+  <div class="flex w-full flex-col">
+    {
+      categories.map(
+        (category) =>
+          category?.children?.length && (
+            <div class="category-first-level-container flex flex-col">
+              {category?.children?.length &&
+                category.children.map((child) => (
+                  <SubCategory category={child} parentName={category.name} countMap={countMap} />
+                ))}
+            </div>
+          ),
+      )
+    }
+    {
+      posts?.length && (
+        <div class="category-second-level-container flex flex-col">
+          {posts.map((post) => (
+            <p class="shoka-decoration-circle group text-primary hover:text-blue relative px-6 py-2 text-base/9">
+              <span class="text-muted-foreground mr-2 text-xs">{formatInTimeZone(post.data.date, 'UTC', 'yy-MM-dd')}</span>
+              <a href={'/post/' + post?.data?.link} class="dashed-border">
+                {post?.data?.title}
+              </a>
+            </p>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</div>

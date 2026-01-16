@@ -1,0 +1,44 @@
+---
+import { categoryMap } from '@constants/category';
+import { CONTENT_PADDING } from '@constants/layout';
+import type { Category } from '@lib/content';
+import CategoryTitle from './CategoryTitle.astro';
+import SubCategory from './SubCategory.astro';
+
+interface Props {
+  categories: Category[];
+  countMap: Record<string, number>;
+  totalCount: number;
+}
+const { categories, countMap, totalCount } = Astro.props;
+---
+
+<div class={`shadow-box mx-0 flex w-full flex-col bg-gradient-start ${CONTENT_PADDING.standard}`}>
+  <h2 class="shoka-decoration-circle group relative px-6 py-5 text-2xl/9 font-bold md:text-xl/9">
+    <a href="/" class="dashed-border text-muted-foreground group-hover:border-blue group-hover:text-blue border-b"> 首页 </a>
+    <span class="text-muted-foreground text-xl md:text-base">/</span> 共 {totalCount} 个分类
+  </h2>
+
+  <div class="flex w-full flex-col">
+    {
+      categories.map((category) => (
+        <>
+          <CategoryTitle
+            title={category.name}
+            count={countMap[category.name]}
+            href={`/categories/${categoryMap[category.name]}`}
+            className={category?.children?.length ? 'has-children' : ''}
+          />
+          {category?.children?.length && (
+            <div class="category-first-level-container flex flex-col">
+              {category?.children?.length &&
+                category.children.map((child) => (
+                  <SubCategory category={child} parentName={category.name} countMap={countMap} />
+                ))}
+            </div>
+          )}
+        </>
+      ))
+    }
+  </div>
+</div>

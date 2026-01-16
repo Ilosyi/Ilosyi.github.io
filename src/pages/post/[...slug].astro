@@ -1,0 +1,135 @@
+---
+import CustomContent from '@components/common/CustomContent.astro';
+import Remark from '@components/common/Remark.astro';
+import HomeSider from '@components/layout/HomeSider.astro';
+import SummaryPanel, { type SummarySource } from '@components/post/SummaryPanel';
+import Cover from '@components/ui/cover/Cover.astro';
+import { HomeSiderType } from '@constants/enum';
+import { CONTENT_PADDING } from '@constants/layout';
+import { siteConfig } from '@constants/site-config';
+import Layout from '@layouts/Layout.astro';
+import TwoColumnLayout from '@layouts/TwoColumnLayout.astro';
+import { buildCategoryPath, getCategoryArr, getPostDescription, getPostSummary, getSortedPosts } from '@lib/content';
+import { Icon } from 'astro-icon/components';
+import { formatInTimeZone } from 'date-fns-tz';
+import { extractTextFromMarkdown } from '@/lib/sanitize';
+
+export async function getStaticPaths() {
+  const postCollections = await getSortedPosts();
+
+  return postCollections.map((post) => {
+    const link = post.data?.link ?? post.slug;
+    return {
+      params: { slug: link },
+      props: { post },
+    };
+  });
+}
+const { post } = Astro.props;
+const { Content } = await post.render();
+const { title, categories = [], tags = [], date } = post?.data ?? {};
+
+// 使用统一的工具函数获取文章描述
+const finalDescription = getPostDescription(post);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description: finalDescription,
+  keywords: categories?.length ? tags.concat(categories[0]) : tags,
+  author: {
+    '@type': 'Person',
+    name: siteConfig.author ?? siteConfig.name,
+    url: Astro.site,
+  },
+  datePublished: formatInTimeZone(date, 'UTC', 'yyyy-MM-dd'),
+};
+
+const categoryArr = getCategoryArr(categories?.[0]);
+const categoryStr = categoryArr?.length ? ` | ${categoryArr.join(' / ')}` : '';
+
+// Generate breadcrumb data for categories
+const breadcrumbCategories = [];
+if (categoryArr?.length) {
+  for (let i = 0; i < categoryArr.length; i++) {
+    const partialCategories = categoryArr.slice(0, i + 1);
+    const link = buildCategoryPath(partialCategories);
+    breadcrumbCategories.push({
+      name: categoryArr[i],
+      link: link,
+    });
+  }
+}
+
+// 确定显示的摘要内容和来源类型
+const postSlug = post.data?.link ?? post.slug;
+let summaryText: string | null = null;
+let summarySource: SummarySource | null = null;
+
+if (post.data.description) {
+  // 优先使用手写描述
+  summaryText = post.data.description;
+  summarySource = 'description';
+} else {
+  // 尝试获取 AI 摘要
+  const aiSummary = getPostSummary(postSlug);
+  if (aiSummary) {
+    summaryText = aiSummary;
+    summarySource = 'ai';
+  } else {
+    // 降级到自动提取
+    summaryText = extractTextFromMarkdown(post.body, 200);
+    summarySource = 'auto';
+  }
+}
+---
+
+<Layout
+  title={`${post.data.title}${categoryStr} | ${siteConfig.title}`}
+  description={finalDescription}
+  siderType={HomeSiderType.POST}
+  post={post}
+>
+  <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <TwoColumnLayout post={post}>
+    <Cover slot="cover" data={post} />
+    <HomeSider slot="sider" type={HomeSiderType.POST} post={post} />
+    <div class={`shadow-box bg-gradient-start flex flex-col gap-2 ${CONTENT_PADDING.standard}`}>
+      <!-- Breadcrumb Navigation -->
+      <nav class="text-muted-foreground flex items-center gap-2 text-sm">
+        <div class="flex items-center gap-1">
+          <!-- Home Icon and Link -->
+          <Icon name="fa6-solid:house-chimney" class="h-4 w-4" />
+          <a href="/" aria-label="返回首页">
+            <span class="hover:text-blue transition-colors duration-300">首页</span>
+          </a>
+        </div>
+        <!-- Category Breadcrumbs -->
+        {
+          breadcrumbCategories.map((category, index) => (
+            <>
+              <Icon name="ri:arrow-right-s-line" class="text-muted-foreground/60 h-4 w-4" />
+              <a
+                href={category.link}
+                class={`hover:text-blue transition-colors duration-300 ${index === breadcrumbCategories.length - 1 ? 'text-primary bg-primary/10 hover:text-primary hover:bg-primary/20 rounded-full px-2.5 py-1' : ''}`}
+                aria-label={`前往${category.name}分类`}
+              >
+                {category.name}
+              </a>
+            </>
+          ))
+        }
+      </nav>
+      {
+        summaryText && summarySource && (
+          <SummaryPanel client:visible summary={summaryText} source={summarySource} className="mt-2" />
+        )
+      }
+      <article class="prose md:prose-sm dark:prose-invert">
+        <CustomContent Content={Content} />
+      </article>
+      <Remark />
+    </div>
+  </TwoColumnLayout>
+</Layout>

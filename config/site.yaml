@@ -1,0 +1,391 @@
+# yaml-language-server: $schema=https://json-schema.org/draft-07/schema
+# =============================================================================
+# Site Configuration
+# =============================================================================
+# This file contains all site-specific configurations.
+# Modify this file to customize your blog.
+# After changes, rebuild the site: docker compose up -d --build
+# =============================================================================
+
+# =============================================================================
+# Site Basic Information
+# =============================================================================
+site:
+  title: 余弦の博客 # 网站名称
+  alternate: cosine # 网站英文名称 用于页脚、Logo、@ handle 等
+  subtitle: WA 的一声就哭了 # 网站副标题
+  name: cos # 作者名称 - 请修改为你的名字
+  description: 一个基于 Astro 的现代化博客主题 # 网站描述
+  avatar: /img/avatar.webp # 网站头像
+  showLogo: true # 是否显示 Logo
+  author: Author # 作者名称 - 请修改为你的名字
+  url: https://koharu.cosine.ren # 站点 URL 用于 RSS 和 SEO
+  startYear: 2024 # 建站年份
+  keywords: # SEO 关键词
+    - 博客
+    - Astro
+    - 技术
+    - 前端
+    # 请根据你的网站内容添加关键词
+
+# =============================================================================
+# Category Map
+# Maps Chinese category names to URL-friendly English slugs
+# Example: '随笔' category URL becomes /categories/life
+# =============================================================================
+categoryMap:
+  # Primary categories
+  随笔: life
+  笔记: note
+  工具: tools
+  周刊: weekly
+  # Secondary categories (for nested paths)
+  前端: front-end
+  # Add more as needed:
+  # 后端: back-end
+  # 算法: algorithm
+  # 项目: project
+
+# =============================================================================
+# Featured Categories (Homepage)
+# 首页精选分类 - 在首页以卡片形式展示的分类入口
+# =============================================================================
+# 字段说明：
+#   link: 分类链接路径，对应 categoryMap 中的英文 slug
+#   label: 卡片上显示的分类名称
+#   image: 封面图片路径（相对于 public 目录）
+#   description: 分类描述文字，显示在卡片上
+# -----------------------------------------------------------------------------
+featuredCategories:
+  - link: life # 对应 categoryMap 中 随笔: life
+    label: 随笔
+    image: /img/cover/2.webp
+    description: 生活记录、随想随笔
+  - link: note # 对应 categoryMap 中 笔记: note
+    label: 笔记
+    image: /img/cover/4.webp
+    description: 技术笔记、学习笔记
+  - link: note/front-end # 嵌套分类：笔记/前端
+    label: 前端
+    image: /img/cover/1.webp
+    description: 前端技术相关
+  - link: tools # 对应 categoryMap 中 工具: tools
+    label: 工具
+    image: /img/cover/11.webp
+    description: 工具使用、效率提升
+
+# =============================================================================
+# Featured Series (Weekly)
+# 精选系列/周刊功能 - 用于展示定期更新的系列内容
+# =============================================================================
+# 字段说明：
+#   categoryName: 对应的分类名称（需在 categoryMap 中存在）
+#   label: 侧边栏/导航中显示的简短名称
+#   fullName: 系列页面标题显示的完整名称
+#   description: 系列介绍文字，支持多行
+#   cover: 系列页面头图路径（相对于 public 目录）
+#   enabled: 是否启用此功能（设为 false 可关闭）
+#   links: 相关链接配置
+# -----------------------------------------------------------------------------
+featuredSeries:
+  categoryName: 周刊 # 必须与 categoryMap 中的分类名匹配
+  label: 我的周刊 # 简短名称
+  fullName: 我的技术周刊 # 完整名称
+  description: | # 支持多行文本
+    这是周刊/系列文章功能的示例配置。
+    你可以用它来发布定期更新的系列内容，如技术周刊、读书笔记系列等。
+    设置 enabled: false 可以关闭此功能。
+  cover: /img/weekly_header.webp # 系列页面头图
+  enabled: true # 总开关
+  links: # 相关链接（可选）
+    github: https://github.com/your-username/your-repo # (可选) GitHub 仓库
+    rss: /rss.xml # (可选) RSS 订阅链接
+    # chrome: https://chromewebstore.google.com/detail/your-extension-id # (可选) 浏览器插件
+    # docs: https://your-docs-url # (可选) 文档链接
+
+# =============================================================================
+# Social Links
+# 社交链接 - 显示在页脚和个人信息区域
+# =============================================================================
+# 字段说明：
+#   url: 链接地址（邮箱需加 mailto: 前缀）
+#   icon: Iconify 图标标识，格式为 "集合:图标名"
+#         图标查询：https://icon-sets.iconify.design/ri/
+#   color: (可选) 图标颜色，十六进制格式如 '#191717'
+# -----------------------------------------------------------------------------
+# 添加新平台：复制现有配置块，修改键名和各字段值即可
+# -----------------------------------------------------------------------------
+social:
+  github:
+    url: https://github.com/your-username # 替换为你的 GitHub 链接
+    icon: ri:github-fill # Remix Icon 的 GitHub 图标
+    color: '#191717' # (可选) 图标颜色
+  email:
+    url: mailto:your@email.com # 替换为你的邮箱，需加 mailto: 前缀
+    icon: ri:mail-line
+    color: '#55acd5'
+  rss:
+    url: /rss.xml # 站内 RSS 订阅地址
+    icon: ri:rss-line
+    color: '#ff6600'
+  # -------------------------------------------------------------------------
+  # 以下是更多可选的社交平台配置示例，取消注释并修改即可启用：
+  # -------------------------------------------------------------------------
+  # twitter:
+  #   url: https://x.com/your-handle
+  #   icon: ri:twitter-fill
+  #   color: '#4b9ae4'
+  # bilibili:
+  #   url: https://space.bilibili.com/your-id
+  #   icon: ri:bilibili-fill
+  #   color: '#da708a'
+  # zhihu:
+  #   url: https://www.zhihu.com/people/your-id
+  #   icon: ri:zhihu-fill
+  #   color: '#1e88e5'
+  # music:
+  #   url: https://music.163.com/#/user/home?id=your-id
+  #   icon: ri:netease-cloud-music-line
+  #   color: '#e60026'
+
+# =============================================================================
+# Friends Links
+# 友情链接页面配置 - 展示友链列表和申请说明
+# =============================================================================
+# intro: 页面介绍文字配置
+#   title: 页面标题
+#   subtitle: 页面副标题
+#   applyTitle: 申请区块标题
+#   applyDesc: 申请说明文字
+#   exampleYaml: 申请格式示例（YAML 格式）
+# data: 友链列表数组
+#   - site: 站点名称
+#   - url: 站点地址
+#   - owner: 站长昵称
+#   - desc: 站点描述/简介
+#   - image: 头像图片 URL
+#   - color: (可选) 卡片背景色，十六进制格式
+# -----------------------------------------------------------------------------
+friends:
+  intro:
+    title: 友情链接 # 页面标题
+    subtitle: 欢迎交换友链！ # 页面副标题
+    applyTitle: 申请友链 # 申请区块标题
+    applyDesc: 请在本页留言，格式如下 # 申请说明
+    exampleYaml: | # 申请格式示例，会显示在页面上
+      - site: 你的博客名称 # 站点名称
+        url: https://your-blog.com/ # 站点网址
+        owner: 你的昵称 # 昵称
+        desc: 站点简介 # 站点简介
+        image: https://your-blog.com/avatar.jpg # 头像链接
+        color: "#ffc0cb" # 主题色（可选）
+  data: # 友链列表
+    - site: 余弦の博客
+      url: https://blog.cosine.ren
+      owner: cos
+      desc: FE / ACG / 手工 / 深色模式强迫症 / INFP / 兴趣广泛养两只猫的老宅女 / remote
+      image: https://blog.cosine.ren/img/avatar.webp
+      color: '#ed788b'
+    - site: 示例博客 A
+      url: https://example-a.com
+      owner: Alice
+      desc: 一个热爱技术的开发者
+      image: https://api.dicebear.com/7.x/avataaars/svg?seed=Alice
+      color: '#BEDCFF'
+    - site: 示例博客 B
+      url: https://example-b.com
+      owner: Bob
+      desc: 分享生活与技术的小站
+      image: https://api.dicebear.com/7.x/avataaars/svg?seed=Bob
+      color: '#FBC1CC'
+    - site: 示例博客 C
+      url: https://example-c.com
+      owner: Carol
+      desc: 记录学习与成长的地方
+      image: https://api.dicebear.com/7.x/avataaars/svg?seed=Carol
+      color: '#ABDCFF'
+
+# =============================================================================
+# Announcements
+# 公告系统 - 在页面顶部显示重要通知
+# =============================================================================
+# 字段说明：
+#   id: 唯一标识符，用于记录用户已读状态（localStorage）
+#   title: 公告标题
+#   content: 公告内容文字
+#   type: 类型，影响样式颜色 (info/success/warning/error)
+#   priority: 优先级数字，数值越大排序越靠前
+#   color: (可选) 自定义颜色，覆盖 type 默认色
+#   publishDate: 发布日期，格式 'YYYY-MM-DD'
+#   startDate: (可选) 开始显示时间，ISO 8601 格式
+#   endDate: (可选) 结束显示时间，过期后自动隐藏
+#   link: (可选) 相关链接
+#     url: 链接地址
+#     text: 链接文字
+#     external: 是否在新窗口打开 (true/false)
+# -----------------------------------------------------------------------------
+# 取消下方注释即可启用公告示例：
+# -----------------------------------------------------------------------------
+announcements:
+  # - id: welcome-2026 # 唯一标识符
+  #   title: 2026 年新年快乐! # 公告标题
+  #   content: 新年快乐! 感谢大家一直以来的支持~ # 公告内容
+  #   type: success # 类型: info/success/warning/error
+  #   priority: 10 # 优先级，数值越大越靠前
+  #   color: '#FF6B6B' # (可选) 自定义颜色
+  #   publishDate: '2026-01-01' # 发布日期
+  #   startDate: '2025-12-31T00:00:00+08:00' # (可选) 开始显示时间
+  #   endDate: '2026-01-15T23:59:59+08:00' # (可选) 结束显示时间
+  #   link: # (可选) 相关链接
+  #     url: https://example.com
+  #     text: 了解更多
+  #     external: true # 新窗口打开
+  # - id: maintenance-notice
+  #   title: 系统维护通知
+  #   content: 计划于本周末进行系统维护，届时可能短暂无法访问。
+  #   type: warning
+  #   priority: 8
+  #   publishDate: '2025-12-28'
+  # - id: site-update
+  #   title: 站点更新公告
+  #   content: 公告系统已升级，现支持多条公告同时显示！
+  #   type: info
+  #   priority: 5
+  #   color: '#6366F1'
+  #   publishDate: '2025-12-25'
+
+# =============================================================================
+# Content Processing Options
+# 内容处理选项 - 控制文章渲染和交互行为
+# =============================================================================
+# 字段说明：
+#   addBlankTarget: 外部链接在新窗口打开
+#   smoothScroll: 启用平滑滚动动画
+#   addHeadingLevel: 自动为标题添加层级锚点
+#   enhanceCodeBlock: 增强代码块样式（行号、语言标签等）
+#   enableCodeCopy: 显示代码块复制按钮
+#   enableCodeFullscreen: 显示代码块全屏按钮
+#   enableLinkEmbed: 启用链接卡片预览（解析 OG 信息）
+#   enableTweetEmbed: 启用推文嵌入展示
+#   enableOGPreview: 启用 Open Graph 预览卡片
+#   previewCacheTime: 预览信息缓存时间（秒）
+#   lazyLoadEmbeds: 延迟加载嵌入内容（提升性能）
+# -----------------------------------------------------------------------------
+content:
+  addBlankTarget: true # 外部链接新窗口打开
+  smoothScroll: true # 平滑滚动
+  addHeadingLevel: true # 标题锚点
+  enhanceCodeBlock: true # 增强代码块
+  enableCodeCopy: true # 代码复制按钮
+  enableCodeFullscreen: true # 代码全屏按钮
+  enableLinkEmbed: true # 链接卡片预览
+  enableTweetEmbed: true # 推文嵌入
+  enableOGPreview: true # OG 预览卡片
+  previewCacheTime: 3600 # 预览缓存时间(秒)
+  lazyLoadEmbeds: true # 延迟加载嵌入
+
+# =============================================================================
+# Navigation Routes
+# 导航菜单配置 - 定义顶部导航栏的菜单项
+# =============================================================================
+# 字段说明：
+#   name: 菜单项显示名称
+#   path: 链接路径（有 children 时可省略，点击展开子菜单）
+#   icon: Iconify 图标标识，格式 "集合:图标名"
+#   children: (可选) 子菜单列表，结构与父级相同
+# -----------------------------------------------------------------------------
+# 图标参考：
+#   - Font Awesome 6: https://icon-sets.iconify.design/fa6-solid/
+#   - Remix Icon: https://icon-sets.iconify.design/ri/
+# -----------------------------------------------------------------------------
+navigation:
+  - name: 首页 # 菜单显示名称
+    path: / # 链接路径
+    icon: ri:home-heart-fill # 图标
+  - name: 周刊
+    path: /weekly
+    icon: ri:newspaper-line
+  - name: 文章 # 有子菜单时，path 可省略
+    icon: ri:quill-pen-ai-fill
+    children: # 子菜单列表
+      - name: 分类
+        path: /categories
+        icon: ri:grid-fill
+      - name: 标签
+        path: /tags
+        icon: fa6-solid:tags
+      - name: 归档
+        path: /archives
+        icon: ri:archive-2-fill
+  - name: 友链
+    path: /friends
+    icon: ri:links-line
+  - name: 关于
+    path: /about
+    icon: fa6-regular:circle-user
+
+# =============================================================================
+# Christmas/Seasonal Features
+# 圣诞/季节性装饰功能 - 节日期间的特殊视觉效果 后续考虑新增 theme.yaml 来管理
+# =============================================================================
+# enabled: 总开关，设为 false 关闭所有节日效果
+# features: 各功能独立开关
+#   snowfall: 飘雪动画效果
+#   christmasColorScheme: 圣诞主题配色
+#   christmasCoverDecoration: 封面圣诞装饰
+#   christmasHat: 头像添加圣诞帽
+#   readingTimeSnow: 阅读时间旁显示雪花图标
+# snowfall: 飘雪效果参数（影响性能，移动端建议降低）
+#   speed: 下落速度 (0-1)，越大越快
+#   intensity: 雪花密度 (0-1)，越大越密
+#   mobileIntensity: 移动端密度，建议低于桌面端
+#   maxLayers: 最大层数，影响立体感
+#   maxIterations: 最大迭代次数，影响雪花数量
+#   mobileMaxLayers: 移动端最大层数
+#   mobileMaxIterations: 移动端最大迭代次数
+# -----------------------------------------------------------------------------
+# =============================================================================
+# Comment System (Remark42)
+# =============================================================================
+# host: Remark42 服务器地址
+# siteId: 站点 ID
+# enabled: 是否启用评论系统
+# -----------------------------------------------------------------------------
+comment:
+  remark42:
+    enabled: true
+    host: https://comment.example.com/
+    siteId: your-site-id
+
+# =============================================================================
+# Analytics (Umami)
+# =============================================================================
+# id: Umami 网站 ID
+# endpoint: Umami 服务器地址
+# enabled: 是否启用统计
+# -----------------------------------------------------------------------------
+analytics:
+  umami:
+    enabled: true
+    id: your-umami-id
+    endpoint: https://stats.example.com
+
+# =============================================================================
+# Christmas/Seasonal Features
+# =============================================================================
+christmas:
+  enabled: false # 总开关
+  # features: # 各功能独立开关
+  #   snowfall: true # 飘雪效果
+  #   christmasColorScheme: true # 圣诞配色
+  #   christmasCoverDecoration: true # 封面装饰
+  #   christmasHat: true # 头像圣诞帽
+  #   readingTimeSnow: true # 阅读时间雪花图标
+  # snowfall: # 飘雪参数配置
+  #   speed: 0.5 # 下落速度 (0-1)
+  #   intensity: 0.7 # 雪花密度 (0-1)
+  #   mobileIntensity: 0.4 # 移动端密度（建议较低）
+  #   maxLayers: 6 # 最大层数
+  #   maxIterations: 8 # 最大迭代次数
+  #   mobileMaxLayers: 4 # 移动端最大层数
+  #   mobileMaxIterations: 6 # 移动端最大迭代次数

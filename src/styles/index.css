@@ -4,6 +4,7 @@
 @import "./christmas/christmas-theme.css";
 @import "./global/animate.css";
 @import "./global/tailwind.css";
+@import "katex/dist/katex.min.css";
 
 @import "./theme/markdown.css";
 @import "./components/wave.css";

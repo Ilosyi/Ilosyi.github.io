@@ -9,8 +9,10 @@ import icon from 'astro-icon';
 import mermaid from 'astro-mermaid';
 import pagefind from 'astro-pagefind';
 import jsYaml from 'js-yaml';
+import rehypeKatex from 'rehype-katex';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import remarkMath from 'remark-math';
 import { visualizer } from 'rollup-plugin-visualizer';
 import svgr from 'vite-plugin-svgr';
 import { rehypeImagePlaceholder } from './src/lib/markdown/rehype-image-placeholder.ts';
@@ -74,6 +76,7 @@ export default defineConfig({
     gfm: true,
     // Configure remark plugins for link embedding
     remarkPlugins: [
+      remarkMath,
       [
         remarkLinkEmbed,
         {
@@ -84,6 +87,7 @@ export default defineConfig({
     ],
     // Configure rehype plugins for automatic heading IDs and anchor links
     rehypePlugins: [
+      rehypeKatex,
       rehypeSlug,
       [
         rehypeAutolinkHeadings,

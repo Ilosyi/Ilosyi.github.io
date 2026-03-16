@@ -1,6 +1,6 @@
 ---
 import EmptySvg from '@components/svg/EmptySvg';
-import { defaultCoverList } from '@constants/site-config';
+import { getDefaultCoverList, getFallbackCover } from '@lib/covers';
 import type { Page } from 'astro';
 import { shuffle } from 'es-toolkit';
 import type { BlogPost } from 'types/blog';
@@ -17,7 +17,8 @@ interface Props {
 }
 
 const { posts, page, showPaginator = true, baseUrl, isHomePage = false, isSimple = false } = Astro.props;
-const covers = shuffle(defaultCoverList);
+const covers = shuffle(getDefaultCoverList());
+const coverPool = covers.length ? covers : [getFallbackCover()];
 ---
 
 {
@@ -38,7 +39,7 @@ const covers = shuffle(defaultCoverList);
             data={post}
             showTags={!isSimple}
             leftClip={index % 2 === 0}
-            randomCover={covers[index % covers.length]}
+            randomCover={coverPool[index % coverPool.length]}
             hideCover={isSimple}
             isSimple={isSimple}
           />

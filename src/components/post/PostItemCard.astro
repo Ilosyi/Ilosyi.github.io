@@ -3,8 +3,8 @@
 import { Badge } from '@components/ui/badge';
 import { Button } from '@components/ui/button';
 import { Routes } from '@constants/router';
-import { defaultCoverList } from '@constants/site-config';
 import { buildCategoryPath, getCategoryArr, getPostDescriptionWithSummary } from '@lib/content';
+import { getFallbackCover } from '@lib/covers';
 import { getLqipProps } from '@lib/lqip';
 import { routeBuilder } from '@lib/route';
 import { cn } from '@lib/utils';
@@ -38,7 +38,7 @@ const { cover, date, catalog, categories, title, draft } = data?.data ?? {};
 const { body } = data ?? {};
 
 const readState = readingTime(body ?? '');
-const finalCover = cover ?? randomCover ?? defaultCoverList[0];
+const finalCover = cover ?? randomCover ?? getFallbackCover();
 const href = routeBuilder(Routes.Post, data as BlogPost);
 const isDraft = import.meta.env.DEV && draft === true;
 

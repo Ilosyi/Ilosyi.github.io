@@ -4225,4 +4225,451 @@ Vue2 Options API → Vue3 Options API → Vue3 Composition API → TypeScript + 
 > 💡 建议：新项目直接使用 Vue3 + Composition API + TypeScript，老项目可以渐进式迁移。
 
 
+# 19_Axios 网络请求
+
+## 什么是 Axios？
+
+Axios 是一个基于 Promise 的 HTTP 客户端，用于浏览器和 Node.js 中发送 HTTP 请求。它是目前最流行的 HTTP 请求库之一。
+
+## Axios 的特点
+
+| 特点 | 说明 |
+|------|------|
+| **Promise 支持** | 使用 Promise API，支持 async/await |
+| **拦截器** | 请求和响应拦截器，统一处理 |
+| **转换数据** | 自动转换 JSON 数据 |
+| **取消请求** | 可以取消未完成的请求 |
+| **防御 XSRF** | 自动防止跨站请求伪造 |
+| **浏览器兼容** | 支持所有现代浏览器 |
+| **Node.js 支持** | 可在服务器端使用 |
+
+## 基本用法
+
+### 19.1 安装 Axios
+
+```bash
+# npm 安装
+npm install axios
+
+# yarn 安装
+yarn add axios
+
+# pnpm 安装
+pnpm add axios
+```
+
+### 19.2 导入和使用
+
+```javascript
+// ES6 模块导入
+import axios from 'axios'
+
+// CommonJS 导入
+const axios = require('axios')
+```
+
+### 19.3 发送请求
+
+#### GET 请求
+
+```javascript
+// 基础 GET 请求
+axios.get('/api/users')
+  .then(response => {
+    console.log(response.data)
+  })
+  .catch(error => {
+    console.error(error)
+  })
+
+// 使用 async/await
+async function fetchUsers() {
+  try {
+    const response = await axios.get('/api/users')
+    console.log(response.data)
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+// 带参数的 GET 请求
+axios.get('/api/users', {
+  params: {
+    id: 1,
+    page: 1
+  }
+})
+```
+
+#### POST 请求
+
+```javascript
+// 基础 POST 请求
+axios.post('/api/users', {
+  name: '张三',
+  age: 25
+})
+  .then(response => {
+    console.log(response.data)
+  })
+  .catch(error => {
+    console.error(error)
+  })
+
+// 使用 async/await
+async function createUser() {
+  try {
+    const response = await axios.post('/api/users', {
+      name: '张三',
+      age: 25
+    })
+    console.log(response.data)
+  } catch (error) {
+    console.error(error)
+  }
+}
+```
+
+#### PUT 请求
+
+```javascript
+axios.put('/api/users/1', {
+  name: '李四',
+  age: 30
+})
+```
+
+#### DELETE 请求
+
+```javascript
+axios.delete('/api/users/1')
+```
+
+### 19.4 请求配置
+
+```javascript
+axios({
+  method: 'get',           // 请求方法：get, post, put, delete 等
+  url: '/api/users',     // 请求地址
+  baseURL: 'https://api.example.com', // 基础 URL
+  headers: {              // 请求头
+    'Authorization': 'Bearer token',
+    'Content-Type': 'application/json'
+  },
+  params: {               // URL 参数
+    id: 1,
+    page: 1
+  },
+  data: {                 // 请求体（用于 POST、PUT）
+    name: '张三',
+    age: 25
+  },
+  timeout: 5000,          // 超时时间（毫秒）
+  withCredentials: true    // 跨域请求是否携带凭证
+})
+```
+
+### 19.5 响应结构
+
+```javascript
+axios.get('/api/users').then(response => {
+  // response.data: 服务器返回的数据
+  console.log(response.data)
+  
+  // response.status: HTTP 状态码
+  console.log(response.status)
+  
+  // response.statusText: HTTP 状态文本
+  console.log(response.statusText)
+  
+  // response.headers: 响应头
+  console.log(response.headers)
+  
+  // response.config: 请求配置
+  console.log(response.config)
+})
+```
+
+## 19.6 拦截器
+
+### 请求拦截器
+
+```javascript
+axios.interceptors.request.use(
+  // 请求发送前的配置
+  config => {
+    // 添加 token
+    const token = localStorage.getItem('token')
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`
+    }
+    
+    // 转换数据（如使用 qs 库）
+    if (config.method === 'post') {
+      config.data = qs.stringify(config.data)
+    }
+    
+    return config
+  },
+  // 请求错误
+  error => {
+    return Promise.reject(error)
+  }
+)
+```
+
+### 响应拦截器
+
+```javascript
+axios.interceptors.response.use(
+  // 响应成功（状态码 2xx）
+  response => {
+    // 直接返回 data，简化使用
+    return response.data
+  },
+  // 响应错误
+  error => {
+    if (error.response) {
+      // 服务器返回了错误状态码
+      const { status, data } = error.response
+      
+      switch (status) {
+        case 401:
+          console.log('未登录')
+          // 跳转到登录页
+          break
+        case 403:
+          console.log('无权限')
+          break
+        case 404:
+          console.log('资源不存在')
+          break
+        case 500:
+          console.log('服务器错误')
+          break
+      }
+    } else if (error.request) {
+      // 请求已发出，但没有收到响应
+      console.log('网络错误')
+    } else {
+      // 请求配置出错
+      console.log('请求配置错误')
+    }
+    
+    return Promise.reject(error)
+  }
+)
+```
+
+## 19.7 创建 Axios 实例
+
+```javascript
+// 创建 axios 实例
+const instance = axios.create({
+  baseURL: 'https://api.example.com',
+  timeout: 5000,
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+
+// 使用实例发送请求
+instance.get('/users')
+instance.post('/users', { name: '张三' })
+```
+
+## 19.8 实际应用示例
+
+### 完整的 HTTP 封装（项目中的 http.js）
+
+```javascript
+import axios from 'axios'
+import qs from 'qs'
+
+// 创建 axios 实例
+const instance = axios.create({
+  timeout: 5000
+})
+
+// 请求拦截器
+instance.interceptors.request.use(
+  config => {
+    // POST 请求使用 qs 转换数据
+    if (config.method === 'post') {
+      config.data = qs.stringify(config.data)
+    }
+    return config
+  },
+  error => {
+    return Promise.reject(error)
+  }
+)
+
+// 响应拦截器
+instance.interceptors.response.use(
+  response => {
+    // 直接返回 data，简化使用
+    return response.data
+  },
+  error => {
+    // 错误处理
+    if (error.response) {
+      errorHandler(error.response.status, error.message)
+    } else if (error.request) {
+      console.log('请求已发出，但没有收到响应')
+    } else {
+      console.log('请求配置出错', error.message)
+    }
+    return Promise.reject(error)
+  }
+)
+
+// 错误处理函数
+const errorHandler = (status, info) => {
+  switch (status) {
+    case 401:
+      console.log('未登录或登录过期')
+      break
+    case 403:
+      console.log('没有权限访问该资源')
+      break
+    case 404:
+      console.log('请求的资源不存在')
+      break
+    case 500:
+      console.log('服务器内部错误')
+      break
+    default:
+      console.log('未知错误', info)
+  }
+}
+
+export default instance
+```
+
+### 在 Vue 组件中使用
+
+```javascript
+import http from '../utils/http'
+
+export default {
+  data() {
+    return {
+      users: [],
+      loading: false
+    }
+  },
+  methods: {
+    async fetchUsers() {
+      this.loading = true
+      try {
+        // 使用封装的 http 实例
+        const users = await http.get('/users')
+        this.users = users
+      } catch (error) {
+        console.error('获取用户列表失败', error)
+      } finally {
+        this.loading = false
+      }
+    },
+    async createUser(user) {
+      try {
+        const result = await http.post('/users', user)
+        console.log('创建成功', result)
+      } catch (error) {
+        console.error('创建失败', error)
+      }
+    }
+  },
+  mounted() {
+    this.fetchUsers()
+  }
+}
+```
+
+## 19.9 Axios vs 其他 HTTP 库
+
+| 特性 | Axios | Fetch API | jQuery AJAX |
+|------|-------|-----------|-------------|
+| **浏览器支持** | IE11+ | 现代浏览器 | 所有浏览器 |
+| **Promise** | ✅ | ✅ | ❌（需要插件） |
+| **拦截器** | ✅ | ❌ | ❌ |
+| **请求取消** | ✅ | ✅ | ❌ |
+| **自动 JSON** | ✅ | ❌（需手动） | ✅ |
+| **文件大小** | ~14KB | 内置 | ~30KB（jQuery） |
+| **学习曲线** | 简单 | 中等 | 简单 |
+
+## 19.10 常见问题
+
+### 跨域问题
+
+**问题**：浏览器阻止跨域请求
+
+**解决方案**：
+- 开发环境：配置代理（如项目中的 vue.config.js）
+- 生产环境：服务器设置 CORS 头
+
+```javascript
+// vue.config.js
+devServer: {
+  proxy: {
+    '/api': {
+      target: 'https://api.example.com',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/api': ''
+      }
+    }
+  }
+}
+```
+
+### 请求超时
+
+```javascript
+axios.get('/api/users', {
+  timeout: 5000  // 5 秒超时
+})
+```
+
+### 取消请求
+
+```javascript
+const CancelToken = axios.CancelToken
+const source = CancelToken.source()
+
+axios.get('/api/users', {
+  cancelToken: source.token
+})
+
+// 取消请求
+source.cancel('取消请求')
+```
+
+### 并发请求
+
+```javascript
+// 同时发送多个请求
+axios.all([
+  axios.get('/api/users'),
+  axios.get('/api/posts')
+])
+.then(axios.spread((users, posts) => {
+  console.log(users, posts)
+}))
+```
+
+## 19.11 总结
+
+Axios 是一个强大、易用的 HTTP 客户端，特别适合 Vue.js 项目。它的主要优势包括：
+
+✅ **Promise 支持**：可以使用 async/await
+✅ **拦截器**：统一处理请求和响应
+✅ **自动转换**：自动处理 JSON 数据
+✅ **错误处理**：完善的错误处理机制
+✅ **浏览器兼容**：支持所有现代浏览器
+
+
+
+
 

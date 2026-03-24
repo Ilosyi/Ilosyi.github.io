@@ -66,7 +66,7 @@ featuredCategories:
     label: 笔记
     image: /img/cover/4.webp
     description: 技术笔记、学习笔记
-  - link: note/experiment # 嵌套分类：笔记/前端
+  - link: note/experiment 
     label: 实验
     image: /img/cover/1.webp
     description: 课程实验相关

@@ -110,6 +110,12 @@ export default defineConfig({
         light: 'github-light',
         dark: 'github-dark',
       },
+      langAlias: {
+        // Redis command examples use shell-like syntax
+        redis: 'bash',
+        // Common config snippets map to ini highlighting
+        conf: 'ini',
+      },
     },
   },
   integrations: [

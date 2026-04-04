@@ -65,6 +65,35 @@ site:
     - 技术
 ```
 
+### 代码块主题（Shiki）
+
+本主题使用 Shiki 做 Markdown 代码高亮，可在 `astro.config.mjs` 的 `markdown.shikiConfig.themes` 中设置。
+
+当前默认（VS Code 风格）：
+
+```js
+shikiConfig: {
+  themes: {
+    light: 'light-plus', // VS Code Light+
+    dark: 'dark-plus',   // VS Code Dark+
+  },
+}
+```
+
+常用可选主题示例：
+
+- `light-plus` / `dark-plus`（VS Code 默认风格，推荐）
+- `github-light` / `github-dark`
+- `nord`
+- `dracula`
+- `material-theme`
+- `one-dark-pro`
+
+> 提示：
+>
+> - 若只写一个主题字符串（如 `themes: 'nord'`），明暗模式都会使用同一套配色。
+> - 修改后请重启开发服务器使配置生效。
+
 ### 替换头像
 
 将你的头像图片替换到 `public/img/avatar.webp`

@@ -103,7 +103,7 @@ export default defineConfig({
     ],
     syntaxHighlight: {
       type: 'shiki',
-      excludeLangs: ['mermaid'],
+      excludeLangs: ['mermaid', 'infographic'],
     },
     shikiConfig: {
       themes: {
@@ -131,12 +131,12 @@ export default defineConfig({
     // Umami analytics - configured via config/site.yaml
     ...(umamiEnabled && umamiId
       ? [
-          umami({
-            id: umamiId,
-            endpointUrl: umamiEndpoint,
-            hostUrl: umamiEndpoint,
-          }),
-        ]
+        umami({
+          id: umamiId,
+          endpointUrl: umamiEndpoint,
+          hostUrl: umamiEndpoint,
+        }),
+      ]
       : []),
     pagefind(),
     mermaid({

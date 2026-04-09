@@ -1,6 +1,6 @@
 ---
 title: go-redis入门
-link: go
+link: go-redis-study
 catalog: true
 date: 2026-03-16 12:00:00
 description: 基于 Go 生态的 Redis 入门学习笔记，包含基础概念、常用命令、客户端使用
@@ -15991,7 +15991,7 @@ func main() {
 	// 测试设置大Hash
 	testSetBigKey(rdb)
 	
-	//plainplainplain 测试大Hash
+	//plainplainplainplain 测试大Hash
 	testBigHash(rdb)
 	
 	// 测试大String
@@ -16036,7 +16036,7 @@ func testSmallHash(rdb *redis.Client) {
 	hashSize := 100
 	data := make(map[string]interface{})
 	
-	foplainplainplainr i := 1; i <= 100000; i++ {
+	foplainplainplainplainr i := 1; i <= 100000; i++ {
 		k := (i - 1) / hashSize
 		v := i % hashSize
 		

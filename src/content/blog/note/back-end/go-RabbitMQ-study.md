@@ -2,7 +2,7 @@
 title: RabbitMQ入门
 link: go-RabbitMQ-study
 catalog: true
-date: 2026-03-16 12:00:00
+date: 2026-04-9 12:00:00
 description: 基于 Go 生态的 RabbitMQ 入门学习笔记
 tags:
   - Go

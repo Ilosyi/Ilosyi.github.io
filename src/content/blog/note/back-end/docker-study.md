@@ -2,7 +2,7 @@
 title: Docker基础
 link: docker-study
 catalog: true
-date: 2026-12-20 21:30:00
+date: 2025-12-20 21:30:00
 description: 一篇系统化的 Docker 学习笔记，覆盖容器与镜像核心概念、数据与网络、Dockerfile 实战、生产优化与私有仓库建设，适合从入门到落地部署的完整路径学习。
 tags:
   - Docker

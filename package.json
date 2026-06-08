@@ -3,6 +3,7 @@
   "type": "module",
   "version": "2.1.0",
   "scripts": {
+    "admin": "tsx scripts/admin/server/index.ts",
     "dev": "astro dev",
     "generate:lqips": "npx tsx src/scripts/generateLqips.ts",
     "generate:similarities": "npx tsx src/scripts/generateSimilarities.ts",
@@ -13,6 +14,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
+    "test:admin": "node --import tsx --test \"scripts/admin/**/*.test.ts\"",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "lint:fix:unssafe": "biome check --write --unsafe",

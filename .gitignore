@@ -33,3 +33,9 @@ pnpm-debug.log*
 
 # Backup files
 backups/
+
+# Local agent/browser tooling
+.agents/
+.codex/
+.playwright-cli/
+skills-lock.json
